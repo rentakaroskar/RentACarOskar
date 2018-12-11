@@ -39,7 +39,7 @@ namespace RentACarOskar.PropertClass
 
         [DisplayName("Datum zaposlenja")]
         [SqlName("DatumZaposlenja")]
-        public string DatumZaposlenja { get; set; }
+        public DateTime DatumZaposlenja { get; set; }
 
         #endregion
 
@@ -145,23 +145,19 @@ namespace RentACarOskar.PropertClass
         {
           return
             @"INSERT INTO [dbo].[Radnik]
-                ([RadnikID]
-                ,[OsobaID]
+                ([OsobaID]
                 ,[Pozicija]
                 ,[Plata]
                 ,[MjestoRodjenja]
                 ,[BracniStatus]
-                ,[DatumZaposlenja]
-                ,[BonusNaPlatu])
+                ,[DatumZaposlenja])
            VALUES
-               (@RadnikID
-               ,@OsobaID
+               (@OsobaID
                ,@Pozicija
                ,@Plata
                ,@MjestoRodjenja
                ,@BracniStatus
-               ,@DatumZaposlenja
-               ,@BonusNaPlatu)";
+               ,@DatumZaposlenja)";
         }
 
         public string GetSelectQuery()
@@ -175,7 +171,6 @@ namespace RentACarOskar.PropertClass
                    ,[MjestoRodjenja]
                    ,[BracniStatus]
                    ,[DatumZaposlenja]
-                   ,[BonusNaPlatu]
                FROM [dbo].[Radnik]";
         }       
 
@@ -189,7 +184,6 @@ namespace RentACarOskar.PropertClass
                       ,[MjestoRodjenja] = @MjestoRodjenja
                       ,[BracniStatus] = @BracniStatus
                       ,[DatumZaposlenja] = @DatumZaposlenja
-                      ,[BonusNaPlatu] = @BonusNaPlatu
                   WHERE [Radnik] = @Radnik";
         }
         #endregion
