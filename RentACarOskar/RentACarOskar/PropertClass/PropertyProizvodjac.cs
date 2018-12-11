@@ -82,7 +82,7 @@ namespace RentACarOskar.PropertClass
         public string GetUpdateQuery()
         {
             return @"UPDATE[dbo].[Proizvodjac]
-                     SET[ProizvodjacID] = @ProizvodjacID, [Naziv] = @Naziv
+                     SET [Naziv] = @Naziv
                      WHERE[ProizvodjacID] = @ProizvodjacID";
         }
         #endregion

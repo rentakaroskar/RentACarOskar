@@ -215,8 +215,7 @@ namespace RentACarOskar.PropertClass
         {
             return
                  @"UPDATE [dbo].[Vozilo]
-                   SET [VoziloID] = @VoziloID
-                    ,[ModelID] = @ModelID
+                   SET [ModelID] = @ModelID
                     ,[GodinaProizvodnje] = @GodinaProizvodnje
                     ,[BrojRegistracije] = @BrojRegistracije
                     ,[VrstaGoriva] = @VrstaGoriva
@@ -224,7 +223,7 @@ namespace RentACarOskar.PropertClass
                     ,[BrojVrata] = @BrojVrata
                     ,[ZadnjiServis] = @ZadnjiServis
                     ,[Kilometraza] = @Kilometraza
-                WHERE [Vozilo] = @Vozilo";
+                WHERE [VoziloID] = @VoziloID";
         }
         #endregion
     }
