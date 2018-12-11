@@ -260,9 +260,9 @@ namespace RentACarOskar.PropertClass
         public string GetInsertQuery()
         {
 
-           return @"INSERT INTO[dbo].[Osoba] ([OsobaID], [Ime], [Prezime], [JMB], [DatumRodjenja]
+            return @"INSERT INTO[dbo].[Osoba] ([OsobaID], [Ime], [Prezime], [JMB], [DatumRodjenja]
                       ,[Pol] ,[BrojTelefon] ,[Adresa] ,[GradID])                  
-                 VALUES(@OsobaID , @Ime , @Prezime  , @JMB  , @DatumRodjenja , @Pol   , @BrojTelefon , @Adresa , @GradID)"
+                 VALUES(@OsobaID , @Ime , @Prezime  , @JMB  , @DatumRodjenja , @Pol   , @BrojTelefon , @Adresa , @GradID)";
 
 
         }
