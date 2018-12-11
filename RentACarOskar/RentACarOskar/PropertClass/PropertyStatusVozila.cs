@@ -114,7 +114,7 @@ namespace RentACarOskar.PropertClass
         {
             return @"UPDATE [dbo].[StatusVozila]
                     SET [DostupnostID] = @DostupnostID, [VoziloID]=@VoziloID, [DatumStatusa]=@DatumStatusa
-                     WHERE [StatusVozila] = @StatusVozila";
+                     WHERE [StatusID] = @StatusID";
         }
 
         #endregion
