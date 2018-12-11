@@ -75,7 +75,7 @@ namespace RentACarOskar.PropertClass
             return parameters;
         }
         #endregion
-
+        
         #region Queries
         public string GetSelectQuery()
         {
