@@ -12,63 +12,31 @@ namespace RentACarOskar.PropertClass
     class PropertyModel: PropertInterface
     {
         #region Atributi
-        public int ModelId;
-        public string Naziv;
-        public int ProizvodjacID;
-        [DisplayName("ModelId")]
+        [DisplayName("Model ID")]
         [SqlName("ModelID")]
         [PrimaryKey]
-        public int modelId
-        {
-            get
-            {
-                return ModelId;
-            }
-            set
-            {
-                ModelId = value;
-            }
-        }
+        public int ModelID { get; set; }
         [DisplayName("Naziv")]
         [SqlName("Naziv")]
-        public string naziv
-        {
-            get
-            {
-                return Naziv;
-            }
-            set
-            {
-                Naziv = value;
-            }
-        }
-        [DisplayName("ProizvodjacID")]
+        public string Naziv { get; set; }
+        [DisplayName("Proizvodjac ID")]
         [SqlName("ProizvodjacID")]
         //[ForeignKey]
-        public int proizvodjacId
-        {
-            get
-            {
-                return ProizvodjacID;
-            }
-            set
-            {
-                ProizvodjacID = value;
-            }
-        }
+        public int ProizvodjacID { get; set; }
         #endregion
+
         #region Parameters
         public List<SqlParameter> GetInsertParameters()
         {
             List<SqlParameter> lista = new List<SqlParameter>();
             {
                 SqlParameter parameter = new SqlParameter("@Naziv", System.Data.SqlDbType.NVarChar);
-                parameter.Value = naziv;
+                parameter.Value = Naziv;
                 lista.Add(parameter);
             }
             {
                 SqlParameter parameter = new SqlParameter("@ProizvodjacID", System.Data.SqlDbType.Int);
-                parameter.Value = proizvodjacId;
+                parameter.Value = ProizvodjacID;
                 lista.Add(parameter);
             }
             return lista;
@@ -76,15 +44,20 @@ namespace RentACarOskar.PropertClass
 
         public List<SqlParameter> GetUpdateParameters()
         {
-            List<SqlParameter> lista = new List<SqlParameter>();     
+            List<SqlParameter> lista = new List<SqlParameter>();
+            {
+                SqlParameter parameter = new SqlParameter("@ModelID", System.Data.SqlDbType.Int);
+                parameter.Value = ModelID;
+                lista.Add(parameter);
+            }
             {
                 SqlParameter parameter = new SqlParameter("@Naziv", System.Data.SqlDbType.NVarChar);
-                parameter.Value = naziv;
+                parameter.Value = Naziv;
                 lista.Add(parameter);
             }
             {
                 SqlParameter parameter = new SqlParameter("@ProizvodjacID", System.Data.SqlDbType.Int);
-                parameter.Value = proizvodjacId;
+                parameter.Value = ProizvodjacID;
                 lista.Add(parameter);
             }
             return lista;
@@ -93,18 +66,14 @@ namespace RentACarOskar.PropertClass
         {
             List<SqlParameter> lista = new List<SqlParameter>();
             {
-                SqlParameter parameter = new SqlParameter("@Naziv", System.Data.SqlDbType.NVarChar);
-                parameter.Value = naziv;
-                lista.Add(parameter);
-            }
-            {
-                SqlParameter parameter = new SqlParameter("@ProizvodjacID", System.Data.SqlDbType.Int);
-                parameter.Value = proizvodjacId;
+                SqlParameter parameter = new SqlParameter("@ModelID", System.Data.SqlDbType.Int);
+                parameter.Value = ModelID;
                 lista.Add(parameter);
             }
             return lista;
         }
         #endregion
+
         #region Queries
         public string GetSelectQuery()
         {
@@ -123,16 +92,14 @@ namespace RentACarOskar.PropertClass
     public string GetUpdateQuery()
         {
            return @"UPDATE[dbo].[ModelVozila] SET[Naziv] = @Naziv, [ProizvodjacID] = @ProizvodjacID
-                    WHERE[ModelVozila] = @ModelVozila";
+                    WHERE[ModelID] = @ModelID";
         }
 
         public string GetDeleteQuery()
         {
             return @" DELETE FROM[dbo].[ModelVozila]
-                    WHERE[ModelVozila] = @ModelVozila";
+                    WHERE[ModelID] = @ModelID";
     }
         #endregion
-
-
     }
 }
