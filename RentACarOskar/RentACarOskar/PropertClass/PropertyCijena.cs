@@ -92,11 +92,7 @@ namespace RentACarOskar.PropertClass
                 novi.Value = CijenaPoDanu;
                 parametri.Add(novi);
             }
-            {
-                SqlParameter novi = new SqlParameter("@Popust", System.Data.SqlDbType.Decimal);
-                novi.Value = Popust;
-                parametri.Add(novi);
-            }
+           
             {
                 SqlParameter novi = new SqlParameter("@DatumCijene", System.Data.SqlDbType.Int);
                 novi.Value = DatumCijene;
