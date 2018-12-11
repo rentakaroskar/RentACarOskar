@@ -76,6 +76,8 @@
       <DependentUpon>NovaForma.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="PropertClass\PropertyModel.cs" />
+    <Compile Include="PropertClass\PropertyOsoba.cs" />
     <Compile Include="PropertClass\PropertyRadnik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertInterface.cs" />
