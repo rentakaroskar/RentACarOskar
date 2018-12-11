@@ -78,6 +78,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="PropertClass\PropertyKlijent.cs" />
     <Compile Include="PropertClass\PropertyRadnik.cs" />
+    <Compile Include="PropertClass\PropertyVozilo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertInterface.cs" />
     <EmbeddedResource Include="Form1.resx">
