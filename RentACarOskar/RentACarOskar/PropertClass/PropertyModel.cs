@@ -108,38 +108,29 @@ namespace RentACarOskar.PropertClass
         #region Queries
         public string GetSelectQuery()
         {
-            throw new NotImplementedException();
+            return @"SELECT[ModelID], [Naziv], [ProizvodjacID] FROM[dbo].[ModelVozila]";
         }
 
         public string GetInsertQuery()
         {
-            throw new NotImplementedException();
+
+            return @"INSERT INTO[dbo].[ModelVozila]
+                  ([Naziv],[ProizvodjacID])
+                     VALUES (@Naziv, @ProizvodjacID)";
+
         }
 
-        public string GetUpdateQuery()
+    public string GetUpdateQuery()
         {
-            throw new NotImplementedException();
+           return @"UPDATE[dbo].[ModelVozila] SET[Naziv] = @Naziv, [ProizvodjacID] = @ProizvodjacID
+                    WHERE[ModelVozila] = @ModelVozila";
         }
 
         public string GetDeleteQuery()
         {
-            throw new NotImplementedException();
-        }
-
-        public List<SqlParameter> GetInsertParameters()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<SqlParameter> GetUpdateParameters()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<SqlParameter> GetDeleteParameters()
-        {
-            throw new NotImplementedException();
-        }
+            return @" DELETE FROM[dbo].[ModelVozila]
+                    WHERE[ModelVozila] = @ModelVozila";
+    }
         #endregion
 
 

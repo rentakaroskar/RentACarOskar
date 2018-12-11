@@ -101,7 +101,7 @@ namespace RentACarOskar.PropertClass
             }
         }
         [DisplayName("BrojTelefona")]
-        [SqlName("BrojTelefona")]
+        [SqlName("BrojTelefon")]
         public string brojTelefona
         {
             get
@@ -157,7 +157,7 @@ namespace RentACarOskar.PropertClass
                 lista.Add(parameter);
             }
             {
-                SqlParameter parameter = new SqlParameter("@BrojTelefona", System.Data.SqlDbType.NVarChar);
+                SqlParameter parameter = new SqlParameter("@BrojTelefon", System.Data.SqlDbType.NVarChar);
                 parameter.Value = brojTelefona;
                 lista.Add(parameter);
             }
@@ -197,7 +197,7 @@ namespace RentACarOskar.PropertClass
                 lista.Add(parameter);
             }
             {
-                SqlParameter parameter = new SqlParameter("@BrojTelefona", System.Data.SqlDbType.NVarChar);
+                SqlParameter parameter = new SqlParameter("@BrojTelefon", System.Data.SqlDbType.NVarChar);
                 parameter.Value = brojTelefona;
                 lista.Add(parameter);
             }
@@ -237,7 +237,7 @@ namespace RentACarOskar.PropertClass
                 lista.Add(parameter);
             }
             {
-                SqlParameter parameter = new SqlParameter("@BrojTelefona", System.Data.SqlDbType.NVarChar);
+                SqlParameter parameter = new SqlParameter("@BrojTelefon", System.Data.SqlDbType.NVarChar);
                 parameter.Value = brojTelefona;
                 lista.Add(parameter);
             }
@@ -250,40 +250,37 @@ namespace RentACarOskar.PropertClass
         }
         #endregion
         #region Queries
-        public List<SqlParameter> GetDeleteParameters()
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public string GetDeleteQuery()
         {
-            throw new NotImplementedException();
+            return @"DELETE FROM [dbo].[Osoba] WHERE [Osoba] = @Osoba";
         }
 
-        public List<SqlParameter> GetInsertParameters()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public string GetInsertQuery()
         {
-            throw new NotImplementedException();
+
+           return @"INSERT INTO[dbo].[Osoba] ([OsobaID], [Ime], [Prezime], [JMB], [DatumRodjenja]
+                      ,[Pol] ,[BrojTelefon] ,[Adresa] ,[GradID])                  
+                 VALUES(@OsobaID , @Ime , @Prezime  , @JMB  , @DatumRodjenja , @Pol   , @BrojTelefon , @Adresa , @GradID)"
+
+
         }
 
-        public string GetSelectQuery()
+    public string GetSelectQuery()
         {
-            throw new NotImplementedException();
-        }
-
-        public List<SqlParameter> GetUpdateParameters()
-        {
-            throw new NotImplementedException();
+            return @"SELECT [OsobaID] ,[Ime] ,[Prezime],[JMB], [DatumRodjenja], [Pol], [BrojTelefon]
+             ,[Adresa], [GradID]  FROM [dbo].[Osoba]";
         }
 
         public string GetUpdateQuery()
         {
-            throw new NotImplementedException();
+
+            return @" UPDATE[dbo].[Osoba] SET[OsobaID] = @OsobaID, [Ime] = @Ime, [Prezime] = @Prezime
+                 ,[JMB] = @JMB, [DatumRodjenja] = @DatumRodjenja, [Pol] = @Pol, [BrojTelefon] = @BrojTelefon
+                 ,[Adresa] = @Adresa, [GradID] = @GradID WHERE[OsobaID] = @OsobaID";
+
         }
-        #endregion
-    }
+    #endregion
+}
 }
