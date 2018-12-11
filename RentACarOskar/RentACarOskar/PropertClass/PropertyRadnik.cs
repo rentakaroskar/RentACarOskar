@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    class PropertyRadnik
+     public class PropertyRadnik
     {
+
+
     }
 }
