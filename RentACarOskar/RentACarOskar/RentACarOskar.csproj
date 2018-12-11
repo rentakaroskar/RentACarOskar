@@ -73,6 +73,7 @@
     <Compile Include="PropertClass\PropertyKlijent.cs" />
     <Compile Include="PropertClass\PropertyModel.cs" />
     <Compile Include="PropertClass\PropertyOsoba.cs" />
+    <Compile Include="PropertClass\PropertyProizvodjac.cs" />
     <Compile Include="PropertClass\PropertyRadnik.cs" />
     <Compile Include="PropertClass\PropertyStatusVozila.cs" />
     <Compile Include="PropertClass\PropertyVozilo.cs" />
