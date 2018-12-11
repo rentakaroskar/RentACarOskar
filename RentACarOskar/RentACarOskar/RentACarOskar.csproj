@@ -74,6 +74,7 @@
     <Compile Include="PropertClass\PropertyModel.cs" />
     <Compile Include="PropertClass\PropertyOsoba.cs" />
     <Compile Include="PropertClass\PropertyRadnik.cs" />
+    <Compile Include="PropertClass\PropertyStatusVozila.cs" />
     <Compile Include="PropertClass\PropertyVozilo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertInterface.cs" />
