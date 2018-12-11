@@ -177,14 +177,13 @@ namespace RentACarOskar.PropertClass
         public string GetUpdateQuery()
         {
             return @"UPDATE [dbo].[Radnik]
-                   SET [RadnikID] = @RadnikID
-                      ,[OsobaID] = @OsobaID
+                   SET [OsobaID] = @OsobaID
                       ,[Pozicija] = @Pozicija
                       ,[Plata] = @Plata
                       ,[MjestoRodjenja] = @MjestoRodjenja
                       ,[BracniStatus] = @BracniStatus
                       ,[DatumZaposlenja] = @DatumZaposlenja
-                  WHERE [Radnik] = @Radnik";
+                  WHERE [RadnikID] = @RadnikID";
         }
         #endregion
     }

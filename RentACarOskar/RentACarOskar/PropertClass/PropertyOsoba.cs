@@ -276,7 +276,7 @@ namespace RentACarOskar.PropertClass
         public string GetUpdateQuery()
         {
 
-            return @" UPDATE[dbo].[Osoba] SET[OsobaID] = @OsobaID, [Ime] = @Ime, [Prezime] = @Prezime
+            return @" UPDATE[dbo].[Osoba] SET [Ime] = @Ime, [Prezime] = @Prezime
                  ,[JMB] = @JMB, [DatumRodjenja] = @DatumRodjenja, [Pol] = @Pol, [BrojTelefon] = @BrojTelefon
                  ,[Adresa] = @Adresa, [GradID] = @GradID WHERE[OsobaID] = @OsobaID";
 
