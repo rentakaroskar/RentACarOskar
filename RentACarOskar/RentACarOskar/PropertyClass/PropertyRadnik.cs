@@ -41,6 +41,13 @@ namespace RentACarOskar.PropertClass
         [SqlName("DatumZaposlenja")]
         public DateTime DatumZaposlenja { get; set; }
 
+        [DisplayName("Lozinka")]
+        [SqlName("Lozinka")]
+        public string Lozinka { get; set; }
+
+        [DisplayName("Email")]
+        [SqlName("Email")]
+        public string Email { get; set; }
         #endregion
 
         #region Parameters
@@ -89,6 +96,16 @@ namespace RentACarOskar.PropertClass
                 novi.Value = DatumZaposlenja;
                 parametri.Add(novi);
             }
+            {
+                SqlParameter novi = new SqlParameter("@Lozinka", System.Data.SqlDbType.NVarChar);
+                novi.Value = Lozinka;
+                parametri.Add(novi);
+            }
+            {
+                SqlParameter novi = new SqlParameter("@Email", System.Data.SqlDbType.NVarChar);
+                novi.Value = Email;
+                parametri.Add(novi);
+            }
             return parametri;
         }
 
@@ -130,6 +147,16 @@ namespace RentACarOskar.PropertClass
                 novi.Value = DatumZaposlenja;
                 parametri.Add(novi);
             }
+            {
+                SqlParameter novi = new SqlParameter("@Lozinka", System.Data.SqlDbType.NVarChar);
+                novi.Value = Lozinka;
+                parametri.Add(novi);
+            }
+            {
+                SqlParameter novi = new SqlParameter("@Email", System.Data.SqlDbType.NVarChar);
+                novi.Value = Email;
+                parametri.Add(novi);
+            }
             return parametri;
         }
         #endregion
@@ -150,19 +177,23 @@ namespace RentACarOskar.PropertClass
                 ,[Plata]
                 ,[MjestoRodjenja]
                 ,[BracniStatus]
-                ,[DatumZaposlenja])
+                ,[DatumZaposlenja]
+                ,[Lozinka]
+                ,[Email])
            VALUES
                (@OsobaID
                ,@Pozicija
                ,@Plata
                ,@MjestoRodjenja
                ,@BracniStatus
-               ,@DatumZaposlenja)";
+               ,@DatumZaposlenja
+               ,@Lozinka
+               ,@Email)";
         }
 
         public string GetSelectQuery()
         {
-            return 
+            return
                 @"SELECT 
                     [RadnikID]
                    ,[OsobaID]
@@ -171,6 +202,8 @@ namespace RentACarOskar.PropertClass
                    ,[MjestoRodjenja]
                    ,[BracniStatus]
                    ,[DatumZaposlenja]
+                   ,[Lozinka]
+                   ,[Email]
                FROM [dbo].[Radnik]";
         }       
 
@@ -183,6 +216,8 @@ namespace RentACarOskar.PropertClass
                       ,[MjestoRodjenja] = @MjestoRodjenja
                       ,[BracniStatus] = @BracniStatus
                       ,[DatumZaposlenja] = @DatumZaposlenja
+                      ,[Lozinka] = @Lozinka
+                      ,[Email] = @Email
                   WHERE [RadnikID] = @RadnikID";
         }
         #endregion
