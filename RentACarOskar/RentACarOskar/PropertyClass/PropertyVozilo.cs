@@ -20,6 +20,7 @@ namespace RentACarOskar.PropertClass
 
         [SqlName("ModelID")]
         [DisplayName("Model ID")]
+        [ForeignKey("Model", "ModelID", "RentACarOscar.PropertyClass.PropertyModel")]
         public int ModelID { get; set; }
 
         [SqlName("GodinaProizvodnje")]

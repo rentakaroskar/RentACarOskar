@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\DateTimePicker.cs" />
     <Compile Include="Attributes\ForeignKeyAttribute.cs" />
     <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
     <Compile Include="Attributes\SqlNameAttribute.cs" />

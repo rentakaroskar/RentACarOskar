@@ -9,13 +9,15 @@ namespace RentACarOskar.Attributes
     [AttributeUsage(AttributeTargets.Property)]
     class ForeignKeyAttribute : Attribute
     {
-        string TableName;
-        string ColumnName;
+        public string TableName;
+        public string ColumnName;
+        public string ClassName;
 
-        public ForeignKeyAttribute(string tableName, string columnName)
+        public ForeignKeyAttribute(string tableName, string columnName, string className)
         {
             TableName = tableName;
             ColumnName = columnName;
+            ClassName = className;
         }
     }
 }

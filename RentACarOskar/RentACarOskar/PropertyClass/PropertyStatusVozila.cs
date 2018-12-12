@@ -19,10 +19,12 @@ namespace RentACarOskar.PropertClass
 
         [DisplayName("Dostupnost ID")]
         [SqlName("DostupnostID")]
+        [ForeignKey("Dostupnost", "DostupnostID", "RentACarOscar.PropertyClass.PropertyDostupnost")]
         public int DostupnostID { get; set; }
 
         [DisplayName("Vozilo ID")]
         [SqlName("VoziloID")]
+        [ForeignKey("Vozilo", "VoziloID", "RentACarOscar.PropertyClass.PropertyVozilo")]
         public int VoziloID { get; set; }
 
         [DisplayName("Datum statusa")]

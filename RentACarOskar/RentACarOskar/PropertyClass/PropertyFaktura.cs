@@ -20,14 +20,17 @@ namespace RentACarOskar.PropertClass
 
         [DisplayName("Radnik ID")]
         [SqlName("RadnikID")]
+        [ForeignKey("Radnik", "RadnikID", "RentACarOscar.PropertyClass.PropertyRadnik")]
         public int RadnikID { get; set; }
 
         [DisplayName("Klijent ID")]
         [SqlName("KlijentID")]
+        [ForeignKey("Klijent", "KlijentID", "RentACarOscar.PropertyClass.PropertyKlijent")]
         public int KlijentID { get; set; }
 
         [DisplayName("TipFakture ID")]
         [SqlName("TipFaktureID")]
+        [ForeignKey("TipFakture", "TipFaktureID", "RentACarOscar.PropertyClass.PropertyTipFakture")]
         public int TipFaktureID { get; set; }
 
         [DisplayName("Napomena")]
@@ -39,6 +42,7 @@ namespace RentACarOskar.PropertClass
         public DateTime DatumFakture { get; set; }
 
         #endregion
+
         #region Parameters
         public List<SqlParameter> GetDeleteParameters()
         {
