@@ -20,12 +20,12 @@ namespace RentACarOskar.PropertClass
 
         [DisplayName("Vozilo ID")]
         [SqlName("VoziloID")]
+        [ForeignKey()]
         public int VoziloID { get; set; }
 
         [DisplayName("Cijena po danu")]
         [SqlName("CijenaPoDanu")]
         public decimal CijenaPoDanu { get; set; }
-
         
         [DisplayName("Datum cijene")]
         [SqlName("DatumCijene")]
