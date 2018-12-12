@@ -11,11 +11,13 @@ namespace RentACarOskar.Attributes
     {
         string TableName;
         string ColumnName;
+        string ClassName;
 
-        public ForeignKeyAttribute(string tableName, string columnName)
+        public ForeignKeyAttribute(string tableName, string columnName, string className)
         {
             TableName = tableName;
             ColumnName = columnName;
+            ClassName = className;
         }
     }
 }
