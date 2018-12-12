@@ -10,19 +10,24 @@ using System.Windows.Forms;
 
 namespace RentACarOskar
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class Dashboard : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public Dashboard()
         {
-
             InitializeComponent();
+            
            
+       
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void metroPanel1_Paint(object sender, PaintEventArgs e)
         {
-            Dashboard02 nova = new Dashboard02();
-            nova.ShowDialog();
+
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
