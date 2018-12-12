@@ -19,6 +19,7 @@ namespace RentACarOskar.PropertClass
 
         [DisplayName("Osoba ID")]
         [SqlName("OsobaID")]
+        [ForeignKey("Osoba", "OsobaID", "RentACarOscar.PropertyClass.PropertyOsoba")]
         public int OsobaID { get; set; }
 
         [DisplayName("Pozicija")]
