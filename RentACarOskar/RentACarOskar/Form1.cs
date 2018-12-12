@@ -22,6 +22,11 @@ namespace RentACarOskar
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            if(tbUserName.Text == "" || tbPassword.Text == "")
+            {
+                MessageBox.Show("Molim vas unesite sve potrebne podatke!");
+                return;
+            }
             DataTable dt = new DataTable();
 
             PropertyRadnik myProperty = new PropertyRadnik();
@@ -43,7 +48,7 @@ namespace RentACarOskar
                     break;
                 }
                 else if (i == dt.Rows.Count - 1)
-                    MessageBox.Show("korisnik nije u bazi podataka");
+                    MessageBox.Show("Pogresan E-mail ili loznika!");
             }
         }
     }
