@@ -10,27 +10,28 @@ using System.Windows.Forms;
 
 namespace RentACarOskar.UserControls
 {
-    public partial class InputDateControl : UserControl
+    public partial class InputControl : UserControl
     {
-        public InputDateControl()
+        public InputControl()
         {
             InitializeComponent();
         }
+
         //SetLabel
         public void SetLabel(string name)
         {
-            lblNaziv.Text = name;
+            lblNaziv.Text = name;    
 
         }
         //GetValue
-        public string GetValueFromDateBox()
+        public string GetValueFromTextBox()
         {
-            return dtNaziv.Text;
+            return tbNaziv.Text;
         }
         //SetValue
-        public void SetValueInDateBox(string value)
+        public void SetValueInTextBox(string value)
         {
-            dtNaziv.Text = value;
+            tbNaziv.Text = value;
         }
     }
 }
