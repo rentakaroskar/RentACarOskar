@@ -1,7 +1,10 @@
-﻿using System;
+﻿using KonekcijaNaBazu;
+using RentACarOskar.PropertClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,9 +17,34 @@ namespace RentACarOskar
     {
         public Form1()
         {
-
             InitializeComponent();
-           
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+
+            PropertyRadnik myProperty = new PropertyRadnik();
+
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                myProperty.GetSelectQuery());
+
+            dt.Load(reader);
+            reader.Close();
+
+            var type = myProperty.GetType();
+            var properties = type.GetProperties();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
+                {
+                    MessageBox.Show("Uspjesan Login");
+                    break;
+                }
+                else if (i == dt.Rows.Count - 1)
+                    MessageBox.Show("korisnik nije u bazi podataka");
+            }
         }
     }
 }
