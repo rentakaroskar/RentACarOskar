@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    public class PropertyCijena : PropertInterface
-    {
-                
+    public class PropertyCijena : PropertyInterface
+    {       
         #region Attributes
 
         [DisplayName("Cijena ID")]
@@ -25,17 +24,16 @@ namespace RentACarOskar.PropertClass
 
         [DisplayName("Cijena po danu")]
         [SqlName("CijenaPoDanu")]
-        public int CijenaPoDanu { get; set; }
+        public decimal CijenaPoDanu { get; set; }
 
         
         [DisplayName("Datum cijene")]
         [SqlName("DatumCijene")]
-        public int DatumCijene { get; set; }
+        public DateTime DatumCijene { get; set; }
 
 
         #endregion
-
-
+        
         #region Parameters
         public List<SqlParameter> GetDeleteParameters()
         {
@@ -64,7 +62,7 @@ namespace RentACarOskar.PropertClass
                 parametri.Add(novi);
             }
             {
-                SqlParameter novi = new SqlParameter("@DatumCijene", System.Data.SqlDbType.Int);
+                SqlParameter novi = new SqlParameter("@DatumCijene", System.Data.SqlDbType.Date);
                 novi.Value = DatumCijene;
                 parametri.Add(novi);
             }
@@ -92,17 +90,15 @@ namespace RentACarOskar.PropertClass
                 novi.Value = CijenaPoDanu;
                 parametri.Add(novi);
             }
-           
             {
-                SqlParameter novi = new SqlParameter("@DatumCijene", System.Data.SqlDbType.Int);
+                SqlParameter novi = new SqlParameter("@DatumCijene", System.Data.SqlDbType.Date);
                 novi.Value = DatumCijene;
                 parametri.Add(novi);
             }
             return parametri;
         }
         #endregion
-
-
+        
         #region Queries
         public string GetDeleteQuery()
         {

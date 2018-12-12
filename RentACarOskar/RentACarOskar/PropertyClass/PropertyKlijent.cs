@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    class PropertyKlijent : PropertInterface
+    class PropertyKlijent : PropertyInterface
     {
         #region Attributes
         [SqlName("KlijentID")]

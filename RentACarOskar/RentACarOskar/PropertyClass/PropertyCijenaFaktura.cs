@@ -7,11 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACarOskar.PropertClass
+namespace RentACarOskar.PropertyClass
 {
-    public class CijenaFaktura : PropertInterface
+    public class PropertyCijenaFaktura : PropertyInterface
     {
-
         #region Attributes
 
         [DisplayName("Cijena faktura ID")]

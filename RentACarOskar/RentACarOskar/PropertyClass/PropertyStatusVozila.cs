@@ -9,28 +9,27 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    class PropertyStatusVozila:PropertInterface
+    class PropertyStatusVozila:PropertyInterface
     {
         #region Atributi
-
-
-        [DisplayName("StatusID")]
+        [DisplayName("Status ID")]
         [SqlName("StatusID")]
         [PrimaryKey]
         public int StatusID { get; set; }
 
-        [DisplayName("DostupnostId")]
+        [DisplayName("Dostupnost ID")]
         [SqlName("DostupnostID")]
         public int DostupnostID { get; set; }
 
-        [DisplayName("VoziloId")]
+        [DisplayName("Vozilo ID")]
         [SqlName("VoziloID")]
         public int VoziloID { get; set; }
 
-        [DisplayName("DatumStatusa")]
+        [DisplayName("Datum statusa")]
         [SqlName("DatumStatusa")]
         public DateTime DatumStatusa { get; set; }
         #endregion
+
         #region Parameters
         public List<SqlParameter> GetDeleteParameters()
         {
@@ -43,6 +42,7 @@ namespace RentACarOskar.PropertClass
            
             return lista;
         }
+
         public List<SqlParameter> GetInsertParameters()
         {
             List<SqlParameter> lista = new List<SqlParameter>();
@@ -97,27 +97,27 @@ namespace RentACarOskar.PropertClass
             return @"SELECT [StatusID], [DostupnostID], [VoziloID], [DatumStatusa]
             FROM [dbo].[StatusVozila]";
         }
+
         public string GetDeleteQuery()
         {
             return @"DELETE FROM [dbo].[StatusVozila]
                     WHERE [StatusID] = @StatusID";
         }
+
         public string GetInsertQuery()
         {
             return @"INSERT INTO[dbo].[StatusVozila]
                      ([DostupnosID], [VoziloID], [DatumStatusa])
                      VALUES
                     (@DostupnostID, @VoziloID, @DatumStatusa)";
-
         }
-    public string GetUpdateQuery()
+
+        public string GetUpdateQuery()
         {
             return @"UPDATE [dbo].[StatusVozila]
                     SET [DostupnostID] = @DostupnostID, [VoziloID]=@VoziloID, [DatumStatusa]=@DatumStatusa
                      WHERE [StatusID] = @StatusID";
         }
-
         #endregion
-
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    public class PropertyVozilo : PropertInterface
+    public class PropertyVozilo : PropertyInterface
     {
         #region Attributes
 
@@ -23,15 +23,15 @@ namespace RentACarOskar.PropertClass
         public int ModelID { get; set; }
 
         [SqlName("GodinaProizvodnje")]
-        [DisplayName("GodinaProizvodnje")]
+        [DisplayName("Godina proizvodnje")]
         public DateTime GodinaProizvodnje { get; set; }
 
         [SqlName("BrojRegistracije")]
-        [DisplayName("Broj Registracije")]
+        [DisplayName("Broj registracije")]
         public string BrojRegistracije { get; set; }
 
         [SqlName("VrstaGoriva")]
-        [DisplayName("Vrsta Goriva")]
+        [DisplayName("Vrsta goriva")]
         public string VrstaGoriva { get; set; }
 
         [SqlName("Boja")]
@@ -39,11 +39,11 @@ namespace RentACarOskar.PropertClass
         public string Boja { get; set; }
 
         [SqlName("BrojVrata")]
-        [DisplayName("Broj Vrata")]
+        [DisplayName("Broj vrata")]
         public int BrojVrata { get; set; }
 
         [SqlName("ZadnjiServis")]
-        [DisplayName("Zadnji Servis")]
+        [DisplayName("Zadnji servis")]
         public DateTime ZadnjiServis { get; set; }
 
         [SqlName("Kilometraza")]

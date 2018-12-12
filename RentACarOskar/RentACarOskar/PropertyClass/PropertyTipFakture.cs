@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    class PropertyTipFakture : PropertInterface
+    class PropertyTipFakture : PropertyInterface
     {
         #region Attributes
         [DisplayName("Tip fakture ID")]
@@ -27,7 +27,7 @@ namespace RentACarOskar.PropertClass
         {
             List<SqlParameter> lista = new List<SqlParameter>();
             {
-                SqlParameter parameter = new SqlParameter("@NazivTipa", System.Data.SqlDbType.NVarChar);
+                SqlParameter parameter = new SqlParameter("@NazivTipa", System.Data.SqlDbType.VarChar);
                 parameter.Value = NazivTipa;
                 lista.Add(parameter);
             }
@@ -43,7 +43,7 @@ namespace RentACarOskar.PropertClass
                 lista.Add(parameter);
             }
             {
-                SqlParameter parameter = new SqlParameter("@NazivTipa", System.Data.SqlDbType.NVarChar);
+                SqlParameter parameter = new SqlParameter("@NazivTipa", System.Data.SqlDbType.VarChar);
                 parameter.Value = NazivTipa;
                 lista.Add(parameter);
             }

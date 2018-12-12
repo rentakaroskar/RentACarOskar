@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    class PropertyDostupnost : PropertInterface
+    class PropertyDostupnost : PropertyInterface
     {
         #region Attributes
         [DisplayName("Dostupnost ID")]
@@ -22,7 +22,7 @@ namespace RentACarOskar.PropertClass
         public string TipDostupnosti { get; set; }
         #endregion
 
-        #region parameters
+        #region Parameters
         public List<SqlParameter> GetDeleteParameters()
         {
             List<SqlParameter> parameters = new List<SqlParameter>();

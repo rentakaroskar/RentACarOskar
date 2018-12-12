@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    public class PropertyRadnik : PropertInterface
+    public class PropertyRadnik : PropertyInterface
     {
         #region Properties
         [DisplayName("Radnik ID")]
@@ -35,7 +35,7 @@ namespace RentACarOskar.PropertClass
 
         [DisplayName("Bracni status")]
         [SqlName("BracniStatus")]
-        public string BracniStatus { get; set; }
+        public char BracniStatus { get; set; }
 
         [DisplayName("Datum zaposlenja")]
         [SqlName("DatumZaposlenja")]

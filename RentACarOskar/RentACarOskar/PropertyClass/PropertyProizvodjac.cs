@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    class PropertyProizvodjac : PropertInterface
+    class PropertyProizvodjac : PropertyInterface
     {
         #region Atributi
-        [DisplayName("ProizvodjacID")]
+        [DisplayName("Proizvodjac ID")]
         [SqlName("ProizvodjacID")]
         [PrimaryKey]
         public int ProizvodjacID { get; set; }
@@ -22,6 +22,7 @@ namespace RentACarOskar.PropertClass
         public string Naziv { get; set; }
 
         #endregion
+
         #region Parameters
         public List<SqlParameter> GetDeleteParameters()
         {
@@ -34,6 +35,7 @@ namespace RentACarOskar.PropertClass
 
             return lista;
         }
+
         public List<SqlParameter> GetInsertParameters()
         {
             List<SqlParameter> lista = new List<SqlParameter>();
@@ -45,6 +47,7 @@ namespace RentACarOskar.PropertClass
 
             return lista;
         }
+
         public List<SqlParameter> GetUpdateParameters()
         {
             List<SqlParameter> lista = new List<SqlParameter>();
@@ -62,28 +65,32 @@ namespace RentACarOskar.PropertClass
             return lista;
         }
         #endregion
+
         #region Queries
         public string GetDeleteQuery()
         {
             return @"DELETE FROM [dbo].[Proizvodjac]
                      WHERE [ProizvodjacID] = @ProizvodjacID";
         }
+
         public string GetInsertQuery()
         {
             return @"INSERT INTO[dbo].[Proizvodjac]
                     ([Naziv])
                      VALUES(@Naziv)";
         }
-    public string GetSelectQuery()
+
+        public string GetSelectQuery()
         {
             return @"SELECT [ProizvodjacID], [Naziv]
                      FROM [dbo].[Proizvodjac]";
         }
+
         public string GetUpdateQuery()
         {
             return @"UPDATE[dbo].[Proizvodjac]
                      SET [Naziv] = @Naziv
-                     WHERE[ProizvodjacID] = @ProizvodjacID";
+                     WHERE [ProizvodjacID] = @ProizvodjacID";
         }
         #endregion
     }

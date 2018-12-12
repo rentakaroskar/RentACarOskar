@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    class PropertyModel: PropertInterface
+    class PropertyModelVozila: PropertyInterface
     {
         #region Atributi
         [DisplayName("Model ID")]
@@ -62,6 +62,7 @@ namespace RentACarOskar.PropertClass
             }
             return lista;
         }
+
         public List<SqlParameter> GetDeleteParameters()
         {
             List<SqlParameter> lista = new List<SqlParameter>();
@@ -82,14 +83,12 @@ namespace RentACarOskar.PropertClass
 
         public string GetInsertQuery()
         {
-
             return @"INSERT INTO[dbo].[ModelVozila]
                   ([Naziv],[ProizvodjacID])
                      VALUES (@Naziv, @ProizvodjacID)";
-
         }
 
-    public string GetUpdateQuery()
+        public string GetUpdateQuery()
         {
            return @"UPDATE[dbo].[ModelVozila] SET[Naziv] = @Naziv, [ProizvodjacID] = @ProizvodjacID
                     WHERE[ModelID] = @ModelID";
@@ -99,7 +98,7 @@ namespace RentACarOskar.PropertClass
         {
             return @" DELETE FROM[dbo].[ModelVozila]
                     WHERE[ModelID] = @ModelID";
-    }
+        }
         #endregion
     }
 }
