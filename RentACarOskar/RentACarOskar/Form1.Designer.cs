@@ -96,8 +96,7 @@
             this.tbPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbPassword.CustomButton.UseSelectable = true;
             this.tbPassword.CustomButton.Visible = false;
-            this.tbPassword.Lines = new string[] {
-        "metroTextBox2"};
+            this.tbPassword.Lines = new string[0];
             this.tbPassword.Location = new System.Drawing.Point(111, 3);
             this.tbPassword.MaxLength = 32767;
             this.tbPassword.Name = "tbPassword";
@@ -109,7 +108,6 @@
             this.tbPassword.ShortcutsEnabled = true;
             this.tbPassword.Size = new System.Drawing.Size(236, 23);
             this.tbPassword.TabIndex = 3;
-            this.tbPassword.Text = "metroTextBox2";
             this.tbPassword.UseSelectable = true;
             this.tbPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -163,8 +161,7 @@
             this.tbUserName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbUserName.CustomButton.UseSelectable = true;
             this.tbUserName.CustomButton.Visible = false;
-            this.tbUserName.Lines = new string[] {
-        "metroTextBox1"};
+            this.tbUserName.Lines = new string[0];
             this.tbUserName.Location = new System.Drawing.Point(149, 0);
             this.tbUserName.MaxLength = 32767;
             this.tbUserName.Name = "tbUserName";
@@ -176,7 +173,6 @@
             this.tbUserName.ShortcutsEnabled = true;
             this.tbUserName.Size = new System.Drawing.Size(234, 23);
             this.tbUserName.TabIndex = 2;
-            this.tbUserName.Text = "metroTextBox1";
             this.tbUserName.UseSelectable = true;
             this.tbUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbUserName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
