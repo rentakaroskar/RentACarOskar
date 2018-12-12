@@ -71,6 +71,7 @@
     <Compile Include="Helper\SqlHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PropertClass\PropertyDostupnost.cs" />
+    <Compile Include="PropertClass\PropertyFaktura.cs" />
     <Compile Include="PropertClass\PropertyKlijent.cs" />
     <Compile Include="PropertClass\PropertyModel.cs" />
     <Compile Include="PropertClass\PropertyOsoba.cs" />
