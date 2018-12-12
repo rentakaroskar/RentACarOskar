@@ -51,7 +51,6 @@
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.metroPanel1.Controls.Add(this.metroButton1);
             this.metroPanel1.Controls.Add(this.metroPanel4);
             this.metroPanel1.Controls.Add(this.metroPanel3);
             this.metroPanel1.Controls.Add(this.btnLogIn);
