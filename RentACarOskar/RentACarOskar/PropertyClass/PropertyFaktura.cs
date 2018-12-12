@@ -133,8 +133,7 @@ namespace RentACarOskar.PropertClass
         }
         public string GetSelectQuery()
         {
-            return @"SELECT [FakturaID], [RadnikID], [KlijentID], [TipFaktureID], [Napomena], [DatumFakture]
-                     FROM [dbo].[Faktura]";
+            return @"EXEC dbo.IspisFakturaProc";
         }
         public string GetUpdateQuery()
         {
