@@ -73,6 +73,7 @@
     <Compile Include="PropertyClass\PropertyDostupnost.cs" />
     <Compile Include="PropertyClass\PropertyCijenaFaktura.cs" />
     <Compile Include="PropertyClass\PropertyCijena.cs" />
+    <Compile Include="PropertyClass\PropertyFaktura.cs" />
     <Compile Include="PropertyClass\PropertyKlijent.cs" />
     <Compile Include="PropertyClass\PropertyModelVozila.cs" />
     <Compile Include="PropertyClass\PropertyOsoba.cs" />
