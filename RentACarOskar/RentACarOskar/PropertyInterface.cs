@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar
 {
-    interface PropertyInterface
+   public interface PropertyInterface
     {
         string GetSelectQuery();
         string GetInsertQuery();
