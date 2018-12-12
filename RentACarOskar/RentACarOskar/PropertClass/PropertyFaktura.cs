@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    class PropertyFakturaL : PropertInterface
+    class PropertyFakturaL : PropertyInterface
     {
         #region Attributes
 

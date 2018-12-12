@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.PropertClass
 {
-    class PropertyOsoba : PropertInterface
+    class PropertyOsoba : PropertyInterface
     {
         #region Atributi
         public int OsobaId;
@@ -282,5 +282,5 @@ namespace RentACarOskar.PropertClass
 
         }
     #endregion
-}
+    }
 }
