@@ -32,7 +32,7 @@
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnDelete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -66,7 +66,7 @@
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelCentar.Controls.Add(this.btnDelete);
             this.panelCentar.Controls.Add(this.btnUpdate);
-            this.panelCentar.Controls.Add(this.bunifuFlatButton1);
+            this.panelCentar.Controls.Add(this.btnInsert);
             this.panelCentar.Controls.Add(this.panelPanelZaGV);
             this.panelCentar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentar.GradientBottomLeft = System.Drawing.Color.White;
@@ -81,9 +81,8 @@
             // 
             // btnDelete
             // 
-            //this.btnDelete.Active = false;
             this.btnDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelete.BorderRadius = 6;
             this.btnDelete.ButtonText = "DELETE";
@@ -116,9 +115,8 @@
             // 
             // btnUpdate
             // 
-            //this.btnUpdate.Active = false;
             this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdate.BorderRadius = 6;
             this.btnUpdate.ButtonText = "UPDATE";
@@ -149,40 +147,40 @@
             this.btnUpdate.Textcolor = System.Drawing.Color.White;
             this.btnUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bunifuFlatButton1
+            // btnInsert
             // 
-            //this.bunifuFlatButton1.Active = false;
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 6;
-            this.bunifuFlatButton1.ButtonText = "INSERT";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 90D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(132, 590);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(108, 34);
-            this.bunifuFlatButton1.TabIndex = 1;
-            this.bunifuFlatButton1.Text = "INSERT";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
+            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsert.BorderRadius = 6;
+            this.btnInsert.ButtonText = "INSERT";
+            this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsert.DisabledColor = System.Drawing.Color.Gray;
+            this.btnInsert.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnInsert.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnInsert.Iconimage")));
+            this.btnInsert.Iconimage_right = null;
+            this.btnInsert.Iconimage_right_Selected = null;
+            this.btnInsert.Iconimage_Selected = null;
+            this.btnInsert.IconMarginLeft = 0;
+            this.btnInsert.IconMarginRight = 0;
+            this.btnInsert.IconRightVisible = true;
+            this.btnInsert.IconRightZoom = 0D;
+            this.btnInsert.IconVisible = true;
+            this.btnInsert.IconZoom = 90D;
+            this.btnInsert.IsTab = false;
+            this.btnInsert.Location = new System.Drawing.Point(132, 590);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnInsert.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
+            this.btnInsert.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnInsert.selected = false;
+            this.btnInsert.Size = new System.Drawing.Size(108, 34);
+            this.btnInsert.TabIndex = 1;
+            this.btnInsert.Text = "INSERT";
+            this.btnInsert.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInsert.Textcolor = System.Drawing.Color.White;
+            this.btnInsert.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // panelPanelZaGV
             // 
@@ -450,7 +448,7 @@
         private Bunifu.Framework.UI.BunifuImageButton slicica3;
         private Bunifu.Framework.UI.BunifuFlatButton btnDelete;
         private Bunifu.Framework.UI.BunifuFlatButton btnUpdate;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnInsert;
         private System.Windows.Forms.PictureBox loptica;
     }
 }
