@@ -33,6 +33,8 @@ namespace RentACarOskar
             DataTable dt = new DataTable();
             DataGridView dgv = new DataGridView();
             panelPanelZaGV.Controls.Add(dgv);
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             dgv.Size = panelPanelZaGV.Size;
             
             //logika za popunjavanje tabele
@@ -42,7 +44,7 @@ namespace RentACarOskar
 
             dt.Load(reader);
             reader.Close();
-
+            
             dgv.DataSource = dt; //prikazi tabelu
 
             //izvuci display name

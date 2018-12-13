@@ -371,7 +371,7 @@
             this.btnFaktura.TabIndex = 3;
             this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
             // 
-            // btnRadnik
+            // slicica3
             // 
             this.btnRadnik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnRadnik.color = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
