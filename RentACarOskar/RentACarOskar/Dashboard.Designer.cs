@@ -85,6 +85,7 @@
             this.btnFaktura.Name = "btnFaktura";
             this.btnFaktura.Size = new System.Drawing.Size(245, 98);
             this.btnFaktura.TabIndex = 3;
+            this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
             // 
             // btnRadnik
             // 
@@ -104,6 +105,7 @@
             this.btnRadnik.Name = "btnRadnik";
             this.btnRadnik.Size = new System.Drawing.Size(245, 98);
             this.btnRadnik.TabIndex = 2;
+            this.btnRadnik.Click += new System.EventHandler(this.btnRadnik_Click);
             // 
             // btnVozilo
             // 
@@ -137,7 +139,6 @@
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
-            //this.logoPic.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panelCentar
             // 
