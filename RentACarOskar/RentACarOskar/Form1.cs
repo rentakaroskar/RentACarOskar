@@ -19,6 +19,7 @@ namespace RentACarOskar
         public Form1()
         {
             InitializeComponent();
+            tbPassword.PasswordChar = '*';
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
