@@ -9,7 +9,7 @@ namespace RentACarOskar.Attributes
     [AttributeUsage(AttributeTargets.Property)]
     class SqlNameAttribute : Attribute
     {
-        string Name;
+       public string Name;
 
         public SqlNameAttribute(string name)
         {

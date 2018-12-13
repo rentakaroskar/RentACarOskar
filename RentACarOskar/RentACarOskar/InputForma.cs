@@ -3,6 +3,7 @@ using RentACarOskar.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -45,22 +46,40 @@ namespace RentACarOskar
             this.state = state;
             PopulateControls();
         }
+
+
+        // PopulateControls treba testirati i jod dodati date time picker
         private void PopulateControls()
         {
             // int i = 0;
             foreach (PropertyInfo item in myInterface.GetType().GetProperties())
             {
                 InputControl inputControl = new InputControl();
-                inputControl.Name = item.Name;
-                inputControl.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
                 if (state == StateEnum.Update)
                 {
-                    inputControl.SetValueInTextBox(item.GetValue(myInterface).ToString());
+                    if (item.GetCustomAttribute<ForeignKeyAttribute>() != null)
+                    {
+                        PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
+                        CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().Name)
+                        as PropertyInterface;
+                        LookUpControl ul = new LookUpControl(foreignKeyInterface);
+                        ul.Name = item.Name;
+                        ul.SetLabel(item.GetCustomAttribute<DisplayNameAttribute>().DisplayName);
+                        flowPanel.Controls.Add(ul);
+                    }
+                    else
+                    {
+                        
+                        inputControl.Name = item.Name;
+                        inputControl.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                        inputControl.SetValueInTextBox(item.GetValue(myInterface).ToString());
+                    }
+
                     // inputControl.SetValue(listaUpdate[i]);
                     // i++;
-
+                    flowPanel.Controls.Add(inputControl);
                 }
-                flowPanel.Controls.Add(inputControl);
+               
                 //if (item.)
                 //{
 

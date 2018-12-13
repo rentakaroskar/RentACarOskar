@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.Attributes
 {
-    [AttributeUsage(AttributeTargets.Property)]
-    class ForeignKeyAttribute : Attribute
+    //[AttributeUsage(AttributeTargets.Property)]
+    public class ForeignKeyAttribute : Attribute
     {
         public string TableName;
         public string ColumnName;
