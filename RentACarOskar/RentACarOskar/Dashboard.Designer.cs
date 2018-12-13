@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.MenuVertical = new MetroFramework.Controls.MetroPanel();
-            this.BarTitle = new MetroFramework.Controls.MetroPanel();
-            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.btnSlide = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BarTitle = new MetroFramework.Controls.MetroPanel();
+            this.btnSlide = new System.Windows.Forms.PictureBox();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.MenuVertical.SuspendLayout();
-            this.BarTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.BarTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -60,6 +60,16 @@
             this.MenuVertical.VerticalScrollbarSize = 10;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.metroPanel1_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.logo_primjer1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 432);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(241, 230);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // BarTitle
             // 
             this.BarTitle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -77,29 +87,19 @@
             this.BarTitle.VerticalScrollbarHighlightOnWheel = false;
             this.BarTitle.VerticalScrollbarSize = 10;
             // 
-            // metroStyleManager1
-            // 
-            this.metroStyleManager1.Owner = this;
-            // 
             // btnSlide
             // 
             this.btnSlide.Image = global::RentACarOskar.Properties.Resources.menu1;
-            this.btnSlide.Location = new System.Drawing.Point(17, 4);
+            this.btnSlide.Location = new System.Drawing.Point(17, 3);
             this.btnSlide.Name = "btnSlide";
             this.btnSlide.Size = new System.Drawing.Size(35, 35);
             this.btnSlide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnSlide.TabIndex = 2;
             this.btnSlide.TabStop = false;
             // 
-            // pictureBox1
+            // metroStyleManager1
             // 
-            this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.logo_primjer1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 432);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(241, 230);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.metroStyleManager1.Owner = this;
             // 
             // Dashboard
             // 
@@ -120,10 +120,10 @@
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.MenuVertical.ResumeLayout(false);
-            this.BarTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.BarTitle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
 
         }

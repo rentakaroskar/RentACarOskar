@@ -1,4 +1,5 @@
 ﻿using KonekcijaNaBazu;
+using MetroFramework;
 using RentACarOskar.PropertClass;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,9 @@ namespace RentACarOskar
         {
             if(tbUserName.Text == "" || tbPassword.Text == "")
             {
-                MessageBox.Show("Molim vas unesite sve potrebne podatke!");
+                //MessageBox.Show("Molim vas unesite sve potrebne podatke!");
+                DialogResult dr = MetroMessageBox.Show(this, "\n\nMolim vas unesite sve potrebne podatke!", "Molim vas unesite sve potrebne podatke!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 return;
             }
             DataTable dt = new DataTable();
@@ -44,11 +47,13 @@ namespace RentACarOskar
             {
                 if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                 {
-                    MessageBox.Show("Uspjesan Login");                 
+                    MessageBox.Show("Uspjesan Login");
                     break;
                 }
                 else if (i == dt.Rows.Count - 1)
-                    MessageBox.Show("Pogresan E-mail ili loznika!");
+                {   //MessageBox.Show("Pogresan E-mail ili loznika!");
+                    DialogResult dr = MetroMessageBox.Show(this, "\n\nPogresan E-mail ili loznika!", "Pogresan E-mail ili loznika!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

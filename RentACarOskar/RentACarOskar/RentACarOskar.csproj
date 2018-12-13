@@ -98,6 +98,7 @@
     <Compile Include="PropertyClass\PropertyVozilo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyInterface.cs" />
+    <Compile Include="StateEnum.cs" />
     <Compile Include="UserControls\InputControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
