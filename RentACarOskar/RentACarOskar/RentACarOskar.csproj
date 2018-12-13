@@ -187,5 +187,35 @@
   <ItemGroup>
     <None Include="Resources\cross.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-wash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-wash1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-people-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-people-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-invoice-80.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
