@@ -16,6 +16,8 @@ namespace RentACarOskar
     public partial class Dashboard : Form
     {
         PropertyInterface myProperty;
+        DataTable dt;
+        DataGridView dgv;
         public Dashboard()
         {
         
@@ -30,8 +32,8 @@ namespace RentACarOskar
         {
             myProperty = property;
             panelPanelZaGV.Controls.Clear();
-            DataTable dt = new DataTable();
-            DataGridView dgv = new DataGridView();
+             dt = new DataTable();
+             dgv = new DataGridView();
             panelPanelZaGV.Controls.Add(dgv);
             dgv.Size = panelPanelZaGV.Size;
             
@@ -56,7 +58,15 @@ namespace RentACarOskar
                 ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
         }
+        private void refreshGrid()
+        {
+            DataGridView dgv = new DataGridView();DataTable dataTable = new DataTable();
+            SqlDataReader dataReader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text, myProperty.GetSelectQuery());
 
+            dataTable.Load(dataReader);
+            dataReader.Close();
+            dgv.DataSource = dataTable;
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (PanelLeft.Width == 245)

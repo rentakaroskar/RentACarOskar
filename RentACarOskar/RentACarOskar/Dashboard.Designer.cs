@@ -84,7 +84,7 @@
             this.btnDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.BorderRadius = 6;
+            this.btnDelete.BorderRadius = 0;
             this.btnDelete.ButtonText = "DELETE";
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.DisabledColor = System.Drawing.Color.Gray;
@@ -112,13 +112,14 @@
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDelete.Textcolor = System.Drawing.Color.White;
             this.btnDelete.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdate.BorderRadius = 6;
+            this.btnUpdate.BorderRadius = 0;
             this.btnUpdate.ButtonText = "UPDATE";
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.DisabledColor = System.Drawing.Color.Gray;
