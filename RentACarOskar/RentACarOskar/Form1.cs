@@ -50,6 +50,7 @@ namespace RentACarOskar
                     MessageBox.Show("Uspjesan Login");
                     Dashboard pom = new Dashboard();
                     pom.ShowDialog();
+                    break;
                 }
                 else if (i == dt.Rows.Count - 1)
                 {   //MessageBox.Show("Pogresan E-mail ili loznika!");

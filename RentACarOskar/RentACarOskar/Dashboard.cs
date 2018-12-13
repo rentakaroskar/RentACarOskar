@@ -12,40 +12,48 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RentACarOskar.Attributes;
+using System.Reflection;
+using RentACarOskar.PropertClass;
 
 namespace RentACarOskar
 {
     public partial class Dashboard : Form
     {
+        
         public Dashboard()
         {
             InitializeComponent();
+            PropertyVozilo pom = new PropertyVozilo();
+            PopulateGrid(pom);
         }
 
-        public void PopulateGrid(PropertyInterface myProperty)
+        private void PopulateGrid(PropertyInterface myProperty)
         {
             DataTable dt = new DataTable();
             DataGridView dgv = new DataGridView();
             panelPanelZaGV.Controls.Add(dgv);
             dgv.Size = panelPanelZaGV.Size;
-            
-            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text, myProperty.GetSelectQuery());
+            //logika za popunjavanje tabele
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                myProperty.GetSelectQuery());
+
             dt.Load(reader);
             reader.Close();
-            dgv.DataSource = dt;
+
+            dgv.DataSource = dt; //prikazi tabelu
+
             //izvuci display name
             var type = myProperty.GetType();
             var properties = type.GetProperties();
 
-            //promjeniti nazive kolona
+            //promijeniti nazive kolona
             foreach (DataGridViewColumn item in dgv.Columns)
             {
-                item.HeaderText = properties.Where(x => x.GetCustomAttribute<SqlNameAttribute>().Name ==
-                item.HeaderText).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
-
+                item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>().FirstOrDefault().Name == item.HeaderText
+                ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (PanelLeft.Width == 245)
@@ -58,10 +66,14 @@ namespace RentACarOskar
                 logoPic.Visible = true;
         }
 
+        private void btnVozilo_Click(object sender, EventArgs e)
         private void btnRadnik_Click(object sender, EventArgs e)
         {
+           PropertyVozilo pom = new PropertyVozilo();
+            PopulateGrid(pom);
             PropertyRadnik pom = new PropertyRadnik();
             PopulateGrid(pom);
         }
+
     }
 }
