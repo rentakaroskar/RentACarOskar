@@ -36,13 +36,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnFaktura = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnRadnik = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnVozilo = new Bunifu.Framework.UI.BunifuTileButton();
             this.logoPic = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRadnik = new Bunifu.Framework.UI.BunifuTileButton();
-            this.slicica1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.slicica2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.slicica3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.slicica2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.slicica1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -50,103 +50,10 @@
             this.PanelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.slicica1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slicica2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slicica3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slicica2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slicica1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PanelLeft
-            // 
-            this.PanelLeft.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.PanelLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelLeft.BackgroundImage")));
-            this.PanelLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelLeft.Controls.Add(this.btnFaktura);
-            this.PanelLeft.Controls.Add(this.btnRadnik);
-            this.PanelLeft.Controls.Add(this.btnVozilo);
-            this.PanelLeft.Controls.Add(this.logoPic);
-            this.PanelLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelLeft.GradientBottomLeft = System.Drawing.Color.White;
-            this.PanelLeft.GradientBottomRight = System.Drawing.Color.White;
-            this.PanelLeft.GradientTopLeft = System.Drawing.Color.White;
-            this.PanelLeft.GradientTopRight = System.Drawing.Color.White;
-            this.PanelLeft.Location = new System.Drawing.Point(0, 0);
-            this.PanelLeft.Name = "PanelLeft";
-            this.PanelLeft.Quality = 10;
-            this.PanelLeft.Size = new System.Drawing.Size(245, 700);
-            this.PanelLeft.TabIndex = 0;
-            // 
-            // btnFaktura
-            // 
-            this.btnFaktura.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnFaktura.color = System.Drawing.Color.SeaGreen;
-            this.btnFaktura.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnFaktura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFaktura.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnFaktura.ForeColor = System.Drawing.Color.White;
-            this.btnFaktura.Image = ((System.Drawing.Image)(resources.GetObject("btnFaktura.Image")));
-            this.btnFaktura.ImagePosition = 10;
-            this.btnFaktura.ImageZoom = 20;
-            this.btnFaktura.LabelPosition = 41;
-            this.btnFaktura.LabelText = "Faktura";
-            this.btnFaktura.Location = new System.Drawing.Point(0, 521);
-            this.btnFaktura.Margin = new System.Windows.Forms.Padding(6);
-            this.btnFaktura.Name = "btnFaktura";
-            this.btnFaktura.Size = new System.Drawing.Size(245, 98);
-            this.btnFaktura.TabIndex = 3;
-            this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
-            // 
-            // btnRadnik
-            // 
-            this.btnRadnik.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnRadnik.color = System.Drawing.Color.SeaGreen;
-            this.btnRadnik.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnRadnik.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRadnik.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnRadnik.ForeColor = System.Drawing.Color.White;
-            this.btnRadnik.Image = ((System.Drawing.Image)(resources.GetObject("btnRadnik.Image")));
-            this.btnRadnik.ImagePosition = 10;
-            this.btnRadnik.ImageZoom = 20;
-            this.btnRadnik.LabelPosition = 41;
-            this.btnRadnik.LabelText = "Radnici";
-            this.btnRadnik.Location = new System.Drawing.Point(0, 376);
-            this.btnRadnik.Margin = new System.Windows.Forms.Padding(6);
-            this.btnRadnik.Name = "btnRadnik";
-            this.btnRadnik.Size = new System.Drawing.Size(245, 98);
-            this.btnRadnik.TabIndex = 2;
-            this.btnRadnik.Click += new System.EventHandler(this.btnRadnik_Click);
-            // 
-            // btnVozilo
-            // 
-            this.btnVozilo.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnVozilo.color = System.Drawing.Color.SeaGreen;
-            this.btnVozilo.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.btnVozilo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVozilo.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnVozilo.ForeColor = System.Drawing.Color.White;
-            this.btnVozilo.Image = ((System.Drawing.Image)(resources.GetObject("btnVozilo.Image")));
-            this.btnVozilo.ImagePosition = 10;
-            this.btnVozilo.ImageZoom = 20;
-            this.btnVozilo.LabelPosition = 41;
-            this.btnVozilo.LabelText = "Automobili";
-            this.btnVozilo.Location = new System.Drawing.Point(0, 239);
-            this.btnVozilo.Margin = new System.Windows.Forms.Padding(6);
-            this.btnVozilo.Name = "btnVozilo";
-            this.btnVozilo.Size = new System.Drawing.Size(245, 98);
-            this.btnVozilo.TabIndex = 1;
-            this.btnVozilo.Click += new System.EventHandler(this.btnVozilo_Click);
-            // 
-            // logoPic
-            // 
-            this.logoPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.logoPic.ErrorImage = null;
-            this.logoPic.Image = global::RentACarOskar.Properties.Resources.logo_primjer1;
-            this.logoPic.InitialImage = null;
-            this.logoPic.Location = new System.Drawing.Point(0, 0);
-            this.logoPic.Name = "logoPic";
-            this.logoPic.Size = new System.Drawing.Size(245, 180);
-            this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logoPic.TabIndex = 0;
-            this.logoPic.TabStop = false;
             // 
             // panelCentar
             // 
@@ -206,6 +113,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox1
             // 
@@ -254,6 +162,27 @@
             this.btnFaktura.Name = "btnFaktura";
             this.btnFaktura.Size = new System.Drawing.Size(245, 94);
             this.btnFaktura.TabIndex = 3;
+            this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
+            // 
+            // btnRadnik
+            // 
+            this.btnRadnik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnRadnik.color = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnRadnik.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
+            this.btnRadnik.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRadnik.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnRadnik.ForeColor = System.Drawing.Color.White;
+            this.btnRadnik.Image = global::RentACarOskar.Properties.Resources.icons8_people_96__1_;
+            this.btnRadnik.ImagePosition = 12;
+            this.btnRadnik.ImageZoom = 20;
+            this.btnRadnik.LabelPosition = 41;
+            this.btnRadnik.LabelText = "Radnici";
+            this.btnRadnik.Location = new System.Drawing.Point(0, 389);
+            this.btnRadnik.Margin = new System.Windows.Forms.Padding(6);
+            this.btnRadnik.Name = "btnRadnik";
+            this.btnRadnik.Size = new System.Drawing.Size(245, 94);
+            this.btnRadnik.TabIndex = 2;
+            this.btnRadnik.Click += new System.EventHandler(this.btnRadnik_Click);
             // 
             // btnVozilo
             // 
@@ -273,6 +202,7 @@
             this.btnVozilo.Name = "btnVozilo";
             this.btnVozilo.Size = new System.Drawing.Size(245, 94);
             this.btnVozilo.TabIndex = 1;
+            this.btnVozilo.Click += new System.EventHandler(this.btnVozilo_Click);
             // 
             // logoPic
             // 
@@ -302,40 +232,21 @@
             this.panel1.Size = new System.Drawing.Size(245, 700);
             this.panel1.TabIndex = 0;
             // 
-            // btnRadnik
+            // slicica3
             // 
-            this.btnRadnik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.btnRadnik.color = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.btnRadnik.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.btnRadnik.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRadnik.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnRadnik.ForeColor = System.Drawing.Color.White;
-            this.btnRadnik.Image = global::RentACarOskar.Properties.Resources.icons8_people_96__1_;
-            this.btnRadnik.ImagePosition = 12;
-            this.btnRadnik.ImageZoom = 20;
-            this.btnRadnik.LabelPosition = 41;
-            this.btnRadnik.LabelText = "Radnici";
-            this.btnRadnik.Location = new System.Drawing.Point(0, 389);
-            this.btnRadnik.Margin = new System.Windows.Forms.Padding(6);
-            this.btnRadnik.Name = "btnRadnik";
-            this.btnRadnik.Size = new System.Drawing.Size(245, 94);
-            this.btnRadnik.TabIndex = 2;
-            // 
-            // slicica1
-            // 
-            this.slicica1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.slicica1.Image = global::RentACarOskar.Properties.Resources.car__2_;
-            this.slicica1.ImageActive = null;
-            this.slicica1.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.slicica1.Location = new System.Drawing.Point(0, 239);
-            this.slicica1.Name = "slicica1";
-            this.slicica1.Size = new System.Drawing.Size(40, 92);
-            this.slicica1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.slicica1.TabIndex = 6;
-            this.slicica1.TabStop = false;
-            this.slicica1.Visible = false;
-            this.slicica1.Zoom = 10;
-            this.slicica1.Click += new System.EventHandler(this.slicica1_Click);
+            this.slicica3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.slicica3.Image = global::RentACarOskar.Properties.Resources.icons8_invoice_80;
+            this.slicica3.ImageActive = null;
+            this.slicica3.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
+            this.slicica3.Location = new System.Drawing.Point(0, 529);
+            this.slicica3.Name = "slicica3";
+            this.slicica3.Size = new System.Drawing.Size(40, 92);
+            this.slicica3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.slicica3.TabIndex = 8;
+            this.slicica3.TabStop = false;
+            this.slicica3.Visible = false;
+            this.slicica3.Zoom = 10;
+            this.slicica3.Click += new System.EventHandler(this.slicica3_Click);
             // 
             // slicica2
             // 
@@ -353,21 +264,21 @@
             this.slicica2.Zoom = 10;
             this.slicica2.Click += new System.EventHandler(this.slicica2_Click);
             // 
-            // slicica3
+            // slicica1
             // 
-            this.slicica3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.slicica3.Image = global::RentACarOskar.Properties.Resources.icons8_invoice_80;
-            this.slicica3.ImageActive = null;
-            this.slicica3.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.slicica3.Location = new System.Drawing.Point(0, 529);
-            this.slicica3.Name = "slicica3";
-            this.slicica3.Size = new System.Drawing.Size(40, 92);
-            this.slicica3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.slicica3.TabIndex = 8;
-            this.slicica3.TabStop = false;
-            this.slicica3.Visible = false;
-            this.slicica3.Zoom = 10;
-            this.slicica3.Click += new System.EventHandler(this.slicica3_Click);
+            this.slicica1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.slicica1.Image = global::RentACarOskar.Properties.Resources.car__2_;
+            this.slicica1.ImageActive = null;
+            this.slicica1.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
+            this.slicica1.Location = new System.Drawing.Point(0, 239);
+            this.slicica1.Name = "slicica1";
+            this.slicica1.Size = new System.Drawing.Size(40, 92);
+            this.slicica1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.slicica1.TabIndex = 6;
+            this.slicica1.TabStop = false;
+            this.slicica1.Visible = false;
+            this.slicica1.Zoom = 10;
+            this.slicica1.Click += new System.EventHandler(this.slicica1_Click);
             // 
             // Dashboard
             // 
@@ -388,9 +299,9 @@
             this.PanelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.slicica1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slicica2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slicica3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slicica2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slicica1)).EndInit();
             this.ResumeLayout(false);
 
         }

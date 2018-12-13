@@ -31,6 +31,8 @@ namespace RentACarOskar
             DataTable dt = new DataTable();
             DataGridView dgv = new DataGridView();
             panelPanelZaGV.Controls.Add(dgv);
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             dgv.Size = panelPanelZaGV.Size;
             //logika za popunjavanje tabele
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
@@ -38,7 +40,7 @@ namespace RentACarOskar
 
             dt.Load(reader);
             reader.Close();
-
+            
             dgv.DataSource = dt; //prikazi tabelu
 
             //izvuci display name
@@ -129,6 +131,11 @@ namespace RentACarOskar
             btnVozilo.Visible = true;
             btnRadnik.Visible = true;
             btnFaktura.Visible = true;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
