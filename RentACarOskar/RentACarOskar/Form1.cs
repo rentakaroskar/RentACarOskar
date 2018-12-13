@@ -1,6 +1,6 @@
 ﻿using KonekcijaNaBazu;
 using MetroFramework;
-using RentACarOskar.PropertClass;
+using RentACarOskar.PropertyClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

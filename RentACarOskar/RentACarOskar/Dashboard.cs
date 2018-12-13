@@ -1,6 +1,6 @@
 ﻿using KonekcijaNaBazu;
 using RentACarOskar.Attributes;
-using RentACarOskar.PropertClass;
+using RentACarOskar.PropertyClass;
 using System;
 using System.ComponentModel;
 using System.Data;
@@ -74,5 +74,10 @@ namespace RentACarOskar
             PopulateGrid(pom);
         }
 
+        private void btnFaktura_Click(object sender, EventArgs e)
+        {
+            PropertyFaktura pom = new PropertyFaktura();
+            PopulateGrid(pom);
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACarOskar.PropertClass
+namespace RentACarOskar.PropertyClass
 {
     class PropertyStatusVozila:PropertyInterface
     {

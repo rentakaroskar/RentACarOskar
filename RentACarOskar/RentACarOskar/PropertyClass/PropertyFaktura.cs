@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACarOskar.PropertClass
+namespace RentACarOskar.PropertyClass
 {
-    class PropertyFakturaL : PropertyInterface
+    class PropertyFaktura : PropertyInterface
     {
         #region Attributes
 

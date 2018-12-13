@@ -85,6 +85,7 @@
             this.btnFaktura.Name = "btnFaktura";
             this.btnFaktura.Size = new System.Drawing.Size(245, 98);
             this.btnFaktura.TabIndex = 3;
+            this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
             // 
             // btnRadnik
             // 
