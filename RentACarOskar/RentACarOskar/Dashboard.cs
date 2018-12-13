@@ -2,25 +2,18 @@
 using RentACarOskar.Attributes;
 using RentACarOskar.PropertClass;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using RentACarOskar.Attributes;
-using System.Reflection;
-using RentACarOskar.PropertClass;
 
 namespace RentACarOskar
 {
     public partial class Dashboard : Form
     {
-        
+
         public Dashboard()
         {
             InitializeComponent();
@@ -62,15 +55,20 @@ namespace RentACarOskar
                 logoPic.Visible = false;
             }
             else
+            {
                 PanelLeft.Width = 245;
                 logoPic.Visible = true;
+            }
         }
 
         private void btnVozilo_Click(object sender, EventArgs e)
+        {
+            PropertyVozilo pom = new PropertyVozilo();
+            PopulateGrid(pom);
+        }
+
         private void btnRadnik_Click(object sender, EventArgs e)
         {
-           PropertyVozilo pom = new PropertyVozilo();
-            PopulateGrid(pom);
             PropertyRadnik pom = new PropertyRadnik();
             PopulateGrid(pom);
         }
