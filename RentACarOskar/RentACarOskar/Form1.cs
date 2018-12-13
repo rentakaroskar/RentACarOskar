@@ -48,7 +48,8 @@ namespace RentACarOskar
                 if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                 {
                     MessageBox.Show("Uspjesan Login");
-                    break;
+                    Dashboard pom = new Dashboard();
+                    pom.ShowDialog();
                 }
                 else if (i == dt.Rows.Count - 1)
                 {   //MessageBox.Show("Pogresan E-mail ili loznika!");
