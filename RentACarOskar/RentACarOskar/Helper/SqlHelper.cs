@@ -1412,9 +1412,14 @@ namespace KonekcijaNaBazu
                 }
             }
 
-
-            #endregion ExecuteXmlReader
+        internal static SqlDataReader ExecuteReader(string v, CommandType text, object p)
+        {
+            throw new NotImplementedException();
         }
+
+
+        #endregion ExecuteXmlReader
+    }
 
         /// <summary>
         /// SqlHelperParameterCache provides functions to leverage a static cache of procedure parameters, and the
