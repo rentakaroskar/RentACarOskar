@@ -38,5 +38,10 @@ namespace RentACarOskar
         {
             Application.Exit();
         }
+
+        private void btnVozilo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
