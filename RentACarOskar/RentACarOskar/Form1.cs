@@ -44,7 +44,7 @@ namespace RentACarOskar
             {
                 if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                 {
-                    MessageBox.Show("Uspjesan Login");
+                    MessageBox.Show("Uspjesan Login");                 
                     break;
                 }
                 else if (i == dt.Rows.Count - 1)
@@ -54,8 +54,8 @@ namespace RentACarOskar
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            Dashboard02 nova = new Dashboard02();
-            nova.ShowDialog();
+            //Dashboard02 nova = new Dashboard02();
+           // nova.ShowDialog();
         }
     }
 }
