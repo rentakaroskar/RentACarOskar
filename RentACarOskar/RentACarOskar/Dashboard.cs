@@ -29,6 +29,7 @@ namespace RentACarOskar
             panelPanelZaGV.Controls.Add(dgv);
             dgv.Size = panelPanelZaGV.Size;
             //logika za popunjavanje tabele
+            
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
                 myProperty.GetSelectQuery());
 
@@ -48,6 +49,7 @@ namespace RentACarOskar
                 ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
         }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (PanelLeft.Width == 245)
@@ -79,6 +81,5 @@ namespace RentACarOskar
             PropertyFaktura pom = new PropertyFaktura();
             PopulateGrid(pom);
         }
-
     }
 }
