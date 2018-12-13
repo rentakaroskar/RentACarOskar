@@ -145,5 +145,11 @@ namespace RentACarOskar
         {
             Application.Exit();
         }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            InputForma pom = new InputForma(myProperty, StateEnum.Create);
+            pom.ShowDialog();
+        }
     }
 }

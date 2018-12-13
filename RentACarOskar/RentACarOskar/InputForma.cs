@@ -54,36 +54,11 @@ namespace RentACarOskar
             // int i = 0;
             foreach (PropertyInfo item in myInterface.GetType().GetProperties())
             {
-                InputControl inputControl = new InputControl();
-                if (state == StateEnum.Update)
-                {
-                    if (item.GetCustomAttribute<ForeignKeyAttribute>() != null)
-                    {
-                        PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
-                        CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().Name)
-                        as PropertyInterface;
-                        LookUpControl ul = new LookUpControl(foreignKeyInterface);
-                        ul.Name = item.Name;
-                        ul.SetLabel(item.GetCustomAttribute<DisplayNameAttribute>().DisplayName);
-                        flowPanel.Controls.Add(ul);
-                    }
-                    else
-                    {
-                        
-                        inputControl.Name = item.Name;
-                        inputControl.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                        inputControl.SetValueInTextBox(item.GetValue(myInterface).ToString());
-                    }
+                InputControl uc = new InputControl();
+                uc.Name = item.Name;
+                uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
 
-                    // inputControl.SetValue(listaUpdate[i]);
-                    // i++;
-                    flowPanel.Controls.Add(inputControl);
-                }
-               
-                //if (item.)
-                //{
-
-                //}
+                flowPanel.Controls.Add(uc);
             }
         }
 
