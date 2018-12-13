@@ -66,6 +66,12 @@
     <Compile Include="Attributes\ForeignKeyAttribute.cs" />
     <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
     <Compile Include="Attributes\SqlNameAttribute.cs" />
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <Compile Include="UserControls\LookUpControl.Designer.cs">
       <DependentUpon>LookUpControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\p-trans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
