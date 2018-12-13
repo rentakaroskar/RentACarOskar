@@ -61,7 +61,7 @@ namespace RentACarOskar
         {
             if (PanelLeft.Width == 245)
             {
-                PanelLeft.Width = 45;
+                PanelLeft.Width = 40;
                 logoPic.Visible = false;
                 slicica1.Visible = true;
                 slicica2.Visible = true;
