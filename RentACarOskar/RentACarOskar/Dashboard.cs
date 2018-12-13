@@ -1,5 +1,6 @@
 ﻿using KonekcijaNaBazu;
 using RentACarOskar.Attributes;
+using RentACarOskar.IspisDGV;
 using RentACarOskar.PropertyClass;
 using System;
 using System.ComponentModel;
@@ -76,9 +77,8 @@ namespace RentACarOskar
 
         private void btnFaktura_Click(object sender, EventArgs e)
         {
-            PropertyFaktura pom = new PropertyFaktura();
+            FakturaIspis pom = new FakturaIspis();
             PopulateGrid(pom);
         }
-
     }
 }
