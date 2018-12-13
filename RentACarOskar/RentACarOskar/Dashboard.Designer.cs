@@ -85,7 +85,6 @@
             this.btnFaktura.Name = "btnFaktura";
             this.btnFaktura.Size = new System.Drawing.Size(245, 98);
             this.btnFaktura.TabIndex = 3;
-            this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
             // 
             // btnRadnik
             // 
@@ -105,7 +104,6 @@
             this.btnRadnik.Name = "btnRadnik";
             this.btnRadnik.Size = new System.Drawing.Size(245, 98);
             this.btnRadnik.TabIndex = 2;
-            this.btnRadnik.Click += new System.EventHandler(this.btnRadnik_Click);
             // 
             // btnVozilo
             // 
@@ -125,7 +123,6 @@
             this.btnVozilo.Name = "btnVozilo";
             this.btnVozilo.Size = new System.Drawing.Size(245, 98);
             this.btnVozilo.TabIndex = 1;
-            this.btnVozilo.Click += new System.EventHandler(this.btnVozilo_Click);
             // 
             // logoPic
             // 
@@ -139,6 +136,7 @@
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
+            this.logoPic.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panelCentar
             // 
@@ -153,7 +151,7 @@
             this.panelCentar.Location = new System.Drawing.Point(245, 50);
             this.panelCentar.Name = "panelCentar";
             this.panelCentar.Quality = 10;
-            this.panelCentar.Size = new System.Drawing.Size(960, 650);
+            this.panelCentar.Size = new System.Drawing.Size(927, 650);
             this.panelCentar.TabIndex = 2;
             // 
             // panelPanelZaGV
@@ -184,7 +182,7 @@
             this.PanelTop.Location = new System.Drawing.Point(245, 0);
             this.PanelTop.Name = "PanelTop";
             this.PanelTop.Quality = 10;
-            this.PanelTop.Size = new System.Drawing.Size(960, 50);
+            this.PanelTop.Size = new System.Drawing.Size(927, 50);
             this.PanelTop.TabIndex = 1;
             // 
             // pictureBox3
@@ -192,12 +190,13 @@
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox3.Image = global::RentACarOskar.Properties.Resources.cross;
-            this.pictureBox3.Location = new System.Drawing.Point(920, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(887, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox1
             // 
@@ -216,7 +215,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1205, 700);
+            this.ClientSize = new System.Drawing.Size(1172, 700);
             this.Controls.Add(this.panelCentar);
             this.Controls.Add(this.PanelTop);
             this.Controls.Add(this.PanelLeft);
