@@ -38,7 +38,9 @@
             this.btnVozilo = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnRadnik = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnFaktura = new Bunifu.Framework.UI.BunifuTileButton();
+            this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.PanelLeft.SuspendLayout();
+            this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,6 +70,7 @@
             // 
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentar.Controls.Add(this.panelPanelZaGV);
             this.panelCentar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentar.GradientBottomLeft = System.Drawing.Color.White;
             this.panelCentar.GradientBottomRight = System.Drawing.Color.White;
@@ -192,6 +195,20 @@
             this.btnFaktura.Size = new System.Drawing.Size(245, 98);
             this.btnFaktura.TabIndex = 3;
             // 
+            // panelPanelZaGV
+            // 
+            this.panelPanelZaGV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPanelZaGV.BackgroundImage")));
+            this.panelPanelZaGV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPanelZaGV.GradientBottomLeft = System.Drawing.Color.White;
+            this.panelPanelZaGV.GradientBottomRight = System.Drawing.Color.White;
+            this.panelPanelZaGV.GradientTopLeft = System.Drawing.Color.White;
+            this.panelPanelZaGV.GradientTopRight = System.Drawing.Color.White;
+            this.panelPanelZaGV.Location = new System.Drawing.Point(0, 189);
+            this.panelPanelZaGV.Name = "panelPanelZaGV";
+            this.panelPanelZaGV.Quality = 10;
+            this.panelPanelZaGV.Size = new System.Drawing.Size(960, 380);
+            this.panelPanelZaGV.TabIndex = 0;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,6 +222,7 @@
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.PanelLeft.ResumeLayout(false);
+            this.panelCentar.ResumeLayout(false);
             this.PanelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -224,5 +242,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnVozilo;
         private Bunifu.Framework.UI.BunifuTileButton btnFaktura;
         private Bunifu.Framework.UI.BunifuTileButton btnRadnik;
+        private Bunifu.Framework.UI.BunifuGradientPanel panelPanelZaGV;
     }
 }
