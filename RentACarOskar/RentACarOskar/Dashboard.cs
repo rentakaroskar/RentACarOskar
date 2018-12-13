@@ -74,5 +74,10 @@ namespace RentACarOskar
             PopulateGrid(pom);
         }
 
+        private void btnFaktura_Click(object sender, EventArgs e)
+        {
+            PropertyFaktura pom = new PropertyFaktura();
+            PopulateGrid(pom);
+        }
     }
 }

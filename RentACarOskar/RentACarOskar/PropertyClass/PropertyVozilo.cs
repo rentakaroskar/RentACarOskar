@@ -198,18 +198,17 @@ namespace RentACarOskar.PropertyClass
 
         public string GetSelectQuery()
         {
-            return
-                 @"SELECT 
-                  [VoziloID]
-                 ,[ModelID]
-                 ,[GodinaProizvodnje]
-                 ,[BrojRegistracije]
-                 ,[VrstaGoriva]
-                 ,[Boja]
-                 ,[BrojVrata]
-                 ,[ZadnjiServis]
-                 ,[Kilometraza]
-                 FROM [dbo].[Vozilo]";
+            return @"SELECT 
+                 [VoziloID]
+                ,[ModelID]
+                ,[GodinaProizvodnje]
+                ,[BrojRegistracije]
+                ,[VrstaGoriva]
+                ,[Boja]
+                ,[BrojVrata]
+                ,[ZadnjiServis]
+                ,[Kilometraza]
+                FROM [dbo].[Vozilo]";
         }
         
         public string GetUpdateQuery()
@@ -224,7 +223,7 @@ namespace RentACarOskar.PropertyClass
                     ,[BrojVrata] = @BrojVrata
                     ,[ZadnjiServis] = @ZadnjiServis
                     ,[Kilometraza] = @Kilometraza
-                WHERE [VoziloID] = @VoziloID";
+                    WHERE [VoziloID] = @VoziloID";
         }
         #endregion
     }
