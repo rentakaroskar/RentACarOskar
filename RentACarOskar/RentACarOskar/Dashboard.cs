@@ -32,6 +32,7 @@ namespace RentACarOskar
             DataGridView dgv = new DataGridView();
             panelPanelZaGV.Controls.Add(dgv);
             dgv.Size = panelPanelZaGV.Size;
+            
             //logika za popunjavanje tabele
             
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
