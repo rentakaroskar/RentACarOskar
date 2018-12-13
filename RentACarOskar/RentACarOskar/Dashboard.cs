@@ -61,7 +61,7 @@ namespace RentACarOskar
         {
             if (PanelLeft.Width == 245)
             {
-                PanelLeft.Width = 40;
+                PanelLeft.Width = 45;
                 logoPic.Visible = false;
                 slicica1.Visible = true;
                 slicica2.Visible = true;
@@ -69,6 +69,7 @@ namespace RentACarOskar
                 btnVozilo.Visible = false;
                 btnRadnik.Visible = false;
                 btnFaktura.Visible = false;
+                loptica.Visible = true;
 
             }
             else
@@ -81,6 +82,7 @@ namespace RentACarOskar
                 btnVozilo.Visible = true;
                 btnRadnik.Visible = true;
                 btnFaktura.Visible = true;
+                loptica.Visible = false;
             }
         }
 
@@ -112,6 +114,7 @@ namespace RentACarOskar
             btnVozilo.Visible = true;
             btnRadnik.Visible = true;
             btnFaktura.Visible = true;
+            loptica.Visible = false;
         }
         private void slicica2_Click(object sender, EventArgs e)
         {
@@ -123,6 +126,7 @@ namespace RentACarOskar
             btnVozilo.Visible = true;
             btnRadnik.Visible = true;
             btnFaktura.Visible = true;
+            loptica.Visible = false;
         }
         private void slicica3_Click(object sender, EventArgs e)
         {
@@ -134,6 +138,7 @@ namespace RentACarOskar
             btnVozilo.Visible = true;
             btnRadnik.Visible = true;
             btnFaktura.Visible = true;
+            loptica.Visible = false;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
