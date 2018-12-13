@@ -124,6 +124,7 @@
             this.btnVozilo.Name = "btnVozilo";
             this.btnVozilo.Size = new System.Drawing.Size(245, 98);
             this.btnVozilo.TabIndex = 1;
+            this.btnVozilo.Click += new System.EventHandler(this.btnVozilo_Click);
             // 
             // logoPic
             // 

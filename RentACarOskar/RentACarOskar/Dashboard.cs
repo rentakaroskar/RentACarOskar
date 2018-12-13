@@ -23,6 +23,7 @@ namespace RentACarOskar
 
         private void PopulateGrid(PropertyInterface myProperty)
         {
+            panelPanelZaGV.Controls.Clear();
             DataTable dt = new DataTable();
             DataGridView dgv = new DataGridView();
             panelPanelZaGV.Controls.Add(dgv);
