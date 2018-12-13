@@ -27,7 +27,7 @@ namespace RentACarOskar
             if(tbUserName.Text == "" || tbPassword.Text == "")
             {
                 //MessageBox.Show("Molim vas unesite sve potrebne podatke!");
-                DialogResult dr = MetroMessageBox.Show(this, "\n\nMolim vas unesite sve potrebne podatke!", "Molim vas unesite sve potrebne podatke!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult dr = MetroMessageBox.Show(this, "\n\nMolimo Vas unesite sve potrebne podatke!", "Molimo Vas unesite sve potrebne podatke!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return;
             }
