@@ -14,7 +14,7 @@ namespace RentACarOskar
 {
     public partial class Dashboard : Form
     {
-
+        PropertyInterface myProperty;
         public Dashboard()
         {
         
@@ -25,8 +25,9 @@ namespace RentACarOskar
             PopulateGrid(pom);
         }
 
-        private void PopulateGrid(PropertyInterface myProperty)
+        private void PopulateGrid(PropertyInterface property)
         {
+            myProperty = property;
             panelPanelZaGV.Controls.Clear();
             DataTable dt = new DataTable();
             DataGridView dgv = new DataGridView();
@@ -34,7 +35,7 @@ namespace RentACarOskar
             dgv.Size = panelPanelZaGV.Size;
             //logika za popunjavanje tabele
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
-                myProperty.GetSelectQuery());
+                property.GetSelectQuery());
 
             dt.Load(reader);
             reader.Close();
@@ -42,7 +43,7 @@ namespace RentACarOskar
             dgv.DataSource = dt; //prikazi tabelu
 
             //izvuci display name
-            var type = myProperty.GetType();
+            var type = property.GetType();
             var properties = type.GetProperties();
 
             //promijeniti nazive kolona
