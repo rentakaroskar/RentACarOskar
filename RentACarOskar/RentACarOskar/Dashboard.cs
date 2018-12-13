@@ -32,13 +32,13 @@ namespace RentACarOskar
             panelPanelZaGV.Controls.Clear();
             DataTable dt = new DataTable();
             DataGridView dgv = new DataGridView();
-            panelPanelZaGV.Controls.Add(dgv);
+            panelPanelZaGV.Controls.Add(dgv);          
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             dgv.Size = panelPanelZaGV.Size;
-            
+   
             //logika za popunjavanje tabele
-            
+
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
                 property.GetSelectQuery());
 
