@@ -286,7 +286,6 @@
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
-            this.logoPic.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panel1
             // 
