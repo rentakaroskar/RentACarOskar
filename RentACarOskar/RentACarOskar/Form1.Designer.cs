@@ -233,7 +233,6 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel4.ResumeLayout(false);
             this.metroPanel4.PerformLayout();
