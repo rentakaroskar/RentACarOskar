@@ -25,14 +25,14 @@ namespace RentACarOskar
 
         private void btnSlide_Click(object sender, EventArgs e)
         {
-            if (MenuVertical.Width == 241)
+            if (MenuVertical.Width == 279)
             {
-                MenuVertical.Width = 65;
+                MenuVertical.Width = 67;
                 pictureBox1.Visible = false;
             }
             else
             {
-                MenuVertical.Width = 241;
+                MenuVertical.Width = 279;
                 pictureBox1.Visible = true;
             }
         }
@@ -49,10 +49,15 @@ namespace RentACarOskar
             
         }
 
-       /* private void BarTitle_MouseDown(object sender, MouseEventArgs e)
+        private void Dashboard02_Load(object sender, EventArgs e)
         {
-            RelaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012,0);
-        }*/
+
+        }
+
+        /* private void BarTitle_MouseDown(object sender, MouseEventArgs e)
+         {
+             RelaseCapture();
+             SendMessage(this.Handle, 0x112, 0xf012,0);
+         }*/
     }
 }
