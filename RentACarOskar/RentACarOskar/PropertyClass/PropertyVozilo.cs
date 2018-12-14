@@ -79,7 +79,7 @@ namespace RentACarOskar.PropertyClass
             }
             {
                 SqlParameter parameter = new SqlParameter("@BrojRegistracije", System.Data.SqlDbType.NVarChar);
-                parameter.Value = ModelID;
+                parameter.Value = BrojRegistracije;
                 parameters.Add(parameter);
             }
             {
@@ -131,7 +131,7 @@ namespace RentACarOskar.PropertyClass
             }
             {
                 SqlParameter parameter = new SqlParameter("@BrojRegistracije", System.Data.SqlDbType.NVarChar);
-                parameter.Value = ModelID;
+                parameter.Value = BrojRegistracije;
                 parameters.Add(parameter);
             }
             {
@@ -176,7 +176,7 @@ namespace RentACarOskar.PropertyClass
             return
            @"INSERT INTO [dbo].[Vozilo]
            (
-           ,[ModelID]
+           [ModelID]
            ,[GodinaProizvodnje]
            ,[BrojRegistracije]
            ,[VrstaGoriva]
@@ -186,7 +186,7 @@ namespace RentACarOskar.PropertyClass
            ,[Kilometraza])
            VALUES
            (
-           ,@ModelID
+           @ModelID
            ,@GodinaProizvodnje
            ,@BrojRegistracije
            ,@VrstaGoriva

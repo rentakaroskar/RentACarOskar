@@ -42,5 +42,10 @@ namespace RentACarOskar.UserControls
         {
             tbNaziv.Text = value;
         }
+
+        public string GetKeyValue()
+        {
+            return tbNaziv.Text;
+        }
     }
 }
