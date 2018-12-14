@@ -88,6 +88,7 @@
       <DependentUpon>InputForma.cs</DependentUpon>
     </Compile>
     <Compile Include="IspisDGV\FakturaIspis.cs" />
+    <Compile Include="IspisDGV\VoziloIspis.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PropertyClass\PropertyDostupnost.cs" />
     <Compile Include="PropertyClass\PropertyCijenaFaktura.cs" />

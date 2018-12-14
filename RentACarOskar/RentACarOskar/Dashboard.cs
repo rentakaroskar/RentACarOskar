@@ -32,7 +32,7 @@ namespace RentACarOskar
             InitializeComponent();
             PanelLeft.BackColor = Color.Red;
 
-            PropertyVozilo pom = new PropertyVozilo();
+            VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
         }
 
@@ -91,6 +91,12 @@ namespace RentACarOskar
                 item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>().FirstOrDefault().Name == item.HeaderText
                 ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
+            
+            //sortiranje
+            if (property.GetType() == typeof(VoziloIspis))
+            {
+                dgv.Sort(dgv.Columns[0], ListSortDirection.Ascending);
+            }
         }
 
         private void refreshGrid()
@@ -142,7 +148,7 @@ namespace RentACarOskar
 
         private void btnVozilo_Click(object sender, EventArgs e)
         {
-            PropertyVozilo pom = new PropertyVozilo();
+            VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
 
             //Pom za Input formu

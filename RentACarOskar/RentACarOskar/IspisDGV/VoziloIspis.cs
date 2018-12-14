@@ -9,32 +9,37 @@ using System.Threading.Tasks;
 
 namespace RentACarOskar.IspisDGV
 {
-    class FakturaIspis : PropertyInterface
+    class VoziloIspis : PropertyInterface
     {
-        #region Attributes
-        [DisplayName("Faktura ID")]
-        [SqlName("BrojFakture")]
+
+        [SqlName("VoziloID")]
+        [DisplayName("Vozilo ID")]
         [PrimaryKey]
-        public int FakturaID { get; set; }
+        public int VoziloID { get; set; }
 
-        [DisplayName("Datum fakture")]
-        [SqlName("DatumFakture")]
-        public DateTime DatumFakture { get; set; }
+        [DisplayName("Proizvodjac")]
+        [SqlName("Proizvodjac")]
+        public string Proizvodjac { get; set; }
 
-        [DisplayName("Klijent")]
-        [SqlName("Klijent")]
-        public string Klijent { get; set; }
+        [DisplayName("Model")]
+        [SqlName("Model")]
+        public string Model { get; set; }
 
-        [DisplayName("Iznos")]
-        [SqlName("Iznos")]
-        public decimal Iznos { get; set; }
+        [DisplayName("Registracija")]
+        [SqlName("BrojRegistracije")]
+        public string Registracija { get; set; }
 
-        [DisplayName("Tipa fakture")]
-        [SqlName("TipFakture")]
-        public string TipFakture { get; set; }
+        [DisplayName("Boja")]
+        [SqlName("Boja")]
+        public string Boja { get; set; }
 
-        #endregion
+        [DisplayName("Dostupnost")]
+        [SqlName("Dostupnost")]
+        public string Dostupnost { get; set; }
 
+        [DisplayName("Datum Rezervacije")]
+        [SqlName("DatumRezervacije")]
+        public DateTime DatumRezervacije { get; set; }
 
         public List<SqlParameter> GetDeleteParameters()
         {
@@ -58,7 +63,7 @@ namespace RentACarOskar.IspisDGV
 
         public string GetSelectQuery()
         {
-            return @"EXEC dbo.IspisFakturaProc";
+            return @"EXEC dbo.spIspisVozila";
         }
 
         public List<SqlParameter> GetUpdateParameters()
