@@ -27,8 +27,6 @@ namespace RentACarOskar
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
         DGV ispisivati procedure koje je marko sastavio a mi saljemo InputFormi pravu property klasu*/
         PropertyInterface myForm;
-        DataTable dt;
-        DataGridView dgv;
         public Dashboard()
         {
             InitializeComponent();
