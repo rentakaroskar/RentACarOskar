@@ -103,17 +103,37 @@ namespace RentACarOskar
         private void btnOk_Click(object sender, EventArgs e)
         {
             var properties = myInterface.GetType().GetProperties();
-
+            bool i = true;
             foreach (var item in flowPanel.Controls)
             {
-                if (item.GetType() == typeof(InputControl))
+                if (i == false)
                 {
-                    InputControl input = item as InputControl;
-                    string value = input.GetValueFromTextBox();
+                    if (item.GetType() == typeof(InputControl))
+                    {
+                        InputControl input = item as InputControl;
+                        string value = input.GetValueFromTextBox();
 
-                    PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
-                    property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+                    }
+                    else if (item.GetType() == typeof(InputDateControl))
+                    {
+                        InputDateControl input = item as InputDateControl;
+                        string value = input.GetValueFromDateBox();
+
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+                    }
+                    else if (item.GetType() == typeof(LookUpControl))
+                    {
+                        LookUpControl input = item as LookUpControl;
+                        string value = input.GetKeyValue();
+
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+                    }
                 }
+                i = false;
             }
             if (state == StateEnum.Create)
             {
@@ -125,6 +145,13 @@ namespace RentACarOskar
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
             }
+
+            DialogResult = DialogResult.OK;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }
