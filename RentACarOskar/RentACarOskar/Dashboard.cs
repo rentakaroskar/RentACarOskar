@@ -52,7 +52,8 @@ namespace RentACarOskar
             dgv.Dock = DockStyle.Fill;
 
             dgv.Size = panelPanelZaGV.Size;
-          
+
+            
 
             //logika za popunjavanje tabele
 

@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\ForeignKeyAttribute.cs" />
+    <Compile Include="Attributes\LookupKeyAttribute.cs" />
+    <Compile Include="Attributes\LookupValueAttribute.cs" />
     <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
     <Compile Include="Attributes\SqlNameAttribute.cs" />
     <Compile Include="Dashboard.cs">
@@ -88,6 +90,12 @@
       <DependentUpon>InputForma.cs</DependentUpon>
     </Compile>
     <Compile Include="IspisDGV\FakturaIspis.cs" />
+    <Compile Include="LookUpForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LookUpForma.Designer.cs">
+      <DependentUpon>LookUpForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="PropertyClass\PropertyDostupnost.cs" />
     <Compile Include="PropertyClass\PropertyCijenaFaktura.cs" />
@@ -130,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputForma.resx">
       <DependentUpon>InputForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LookUpForma.resx">
+      <DependentUpon>LookUpForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
