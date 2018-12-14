@@ -46,7 +46,7 @@ namespace RentACarOskar
             myProperty = property;
             panelPanelZaGV.Controls.Clear();
             dt = new DataTable();
-            var dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             //pozadina hedera
             dgv.HeaderBgColor = Color.FromArgb(128, 185, 209);    
             panelPanelZaGV.Controls.Add(dgv);
@@ -113,7 +113,7 @@ namespace RentACarOskar
                 slicica2.Visible = true;
                 slicica3.Visible = true;
                 btnVozilo.Visible = false;
-                btnRadnik.Visible = false;
+                btnKlijent.Visible = false;
                 btnFaktura.Visible = false;
                 panelPanelZaGV.Width = 1115;
                 dgv.Size = panelPanelZaGV.Size;
@@ -129,7 +129,7 @@ namespace RentACarOskar
                 slicica2.Visible = false;
                 slicica3.Visible = false;
                 btnVozilo.Visible = true;
-                btnRadnik.Visible = true;
+                btnKlijent.Visible = true;
                 btnFaktura.Visible = true;
                 panelPanelZaGV.Width = 906;
                 dgv.Size = panelPanelZaGV.Size;
@@ -149,13 +149,13 @@ namespace RentACarOskar
             myForm = pomInput;
         }
 
-        private void btnRadnik_Click(object sender, EventArgs e)
+        private void btnKlijent_Click(object sender, EventArgs e)
         {
-            PropertyRadnik pom = new PropertyRadnik();
+            PropertyKlijent pom = new PropertyKlijent();
             PopulateGrid(pom);
 
             //Pom za Input formu
-            PropertyRadnik pomInput = new PropertyRadnik();
+            PropertyKlijent pomInput = new PropertyKlijent();
             myForm = pomInput;
         }
 
@@ -177,7 +177,7 @@ namespace RentACarOskar
             slicica2.Visible = false;
             slicica3.Visible = false;
             btnVozilo.Visible = true;
-            btnRadnik.Visible = true;
+            btnKlijent.Visible = true;
             btnFaktura.Visible = true;
             loptica.Visible = false;
         }
@@ -190,7 +190,7 @@ namespace RentACarOskar
             slicica2.Visible = false;
             slicica3.Visible = false;
             btnVozilo.Visible = true;
-            btnRadnik.Visible = true;
+            btnKlijent.Visible = true;
             btnFaktura.Visible = true;
             loptica.Visible = false;
         }
@@ -203,7 +203,7 @@ namespace RentACarOskar
             slicica2.Visible = false;
             slicica3.Visible = false;
             btnVozilo.Visible = true;
-            btnRadnik.Visible = true;
+            btnKlijent.Visible = true;
             btnFaktura.Visible = true;
             loptica.Visible = false;
         }

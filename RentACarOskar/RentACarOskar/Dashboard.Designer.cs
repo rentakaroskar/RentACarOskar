@@ -46,7 +46,7 @@
             this.btnVozilo = new Bunifu.Framework.UI.BunifuTileButton();
             this.logoPic = new System.Windows.Forms.PictureBox();
             this.btnFaktura = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnRadnik = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnKlijent = new Bunifu.Framework.UI.BunifuTileButton();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -266,7 +266,7 @@
             this.panel1.Controls.Add(this.btnVozilo);
             this.panel1.Controls.Add(this.logoPic);
             this.panel1.Controls.Add(this.btnFaktura);
-            this.panel1.Controls.Add(this.btnRadnik);
+            this.panel1.Controls.Add(this.btnKlijent);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(245, 700);
@@ -384,25 +384,25 @@
             this.btnFaktura.TabIndex = 3;
             this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
             // 
-            // btnRadnik
+            // btnKlijent
             // 
-            this.btnRadnik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.btnRadnik.color = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.btnRadnik.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.btnRadnik.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRadnik.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnRadnik.ForeColor = System.Drawing.Color.White;
-            this.btnRadnik.Image = global::RentACarOskar.Properties.Resources.icons8_people_96__1_;
-            this.btnRadnik.ImagePosition = 12;
-            this.btnRadnik.ImageZoom = 20;
-            this.btnRadnik.LabelPosition = 41;
-            this.btnRadnik.LabelText = "Klijenti";
-            this.btnRadnik.Location = new System.Drawing.Point(0, 389);
-            this.btnRadnik.Margin = new System.Windows.Forms.Padding(6);
-            this.btnRadnik.Name = "btnRadnik";
-            this.btnRadnik.Size = new System.Drawing.Size(245, 94);
-            this.btnRadnik.TabIndex = 2;
-            this.btnRadnik.Click += new System.EventHandler(this.btnRadnik_Click);
+            this.btnKlijent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnKlijent.color = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnKlijent.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
+            this.btnKlijent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKlijent.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnKlijent.ForeColor = System.Drawing.Color.White;
+            this.btnKlijent.Image = global::RentACarOskar.Properties.Resources.icons8_people_96__1_;
+            this.btnKlijent.ImagePosition = 12;
+            this.btnKlijent.ImageZoom = 20;
+            this.btnKlijent.LabelPosition = 41;
+            this.btnKlijent.LabelText = "Klijenti";
+            this.btnKlijent.Location = new System.Drawing.Point(0, 389);
+            this.btnKlijent.Margin = new System.Windows.Forms.Padding(6);
+            this.btnKlijent.Name = "btnKlijent";
+            this.btnKlijent.Size = new System.Drawing.Size(245, 94);
+            this.btnKlijent.TabIndex = 2;
+            this.btnKlijent.Click += new System.EventHandler(this.btnKlijent_Click);
             // 
             // Dashboard
             // 
@@ -441,7 +441,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private Bunifu.Framework.UI.BunifuTileButton btnVozilo;
         private Bunifu.Framework.UI.BunifuTileButton btnFaktura;
-        private Bunifu.Framework.UI.BunifuTileButton btnRadnik;
+        private Bunifu.Framework.UI.BunifuTileButton btnKlijent;
         private Bunifu.Framework.UI.BunifuGradientPanel panelPanelZaGV;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuImageButton slicica1;
