@@ -16,11 +16,14 @@ namespace RentACarOskar
     public partial class Dashboard : Form
     {
         PropertyInterface myProperty;
+
+        /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
+        DGV ispisivati procedure koje je marko sastavio a mi saljemo InputFormi pravu property klasu*/
+        PropertyInterface myForm;
         DataTable dt;
         DataGridView dgv;
         public Dashboard()
         {
-        
             InitializeComponent();
             PanelLeft.BackColor = Color.Red;
 
@@ -32,8 +35,8 @@ namespace RentACarOskar
         {
             myProperty = property;
             panelPanelZaGV.Controls.Clear();
-             dt = new DataTable();
-             dgv = new DataGridView();
+            dt = new DataTable();
+            dgv = new DataGridView();
             panelPanelZaGV.Controls.Add(dgv);
             dgv.Size = panelPanelZaGV.Size;
             
@@ -58,6 +61,7 @@ namespace RentACarOskar
                 ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
         }
+
         private void refreshGrid()
         {
             DataGridView dgv = new DataGridView();DataTable dataTable = new DataTable();
@@ -67,6 +71,7 @@ namespace RentACarOskar
             dataReader.Close();
             dgv.DataSource = dataTable;
         }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (PanelLeft.Width == 245)
@@ -100,18 +105,30 @@ namespace RentACarOskar
         {
             PropertyVozilo pom = new PropertyVozilo();
             PopulateGrid(pom);
+
+            //Pom za Input formu
+            PropertyVozilo pomInput = new PropertyVozilo();
+            myForm = pomInput;
         }
 
         private void btnRadnik_Click(object sender, EventArgs e)
         {
             PropertyRadnik pom = new PropertyRadnik();
             PopulateGrid(pom);
+
+            //Pom za Input formu
+            PropertyRadnik pomInput = new PropertyRadnik();
+            myForm = pomInput;
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
         {
             FakturaIspis pom = new FakturaIspis();
             PopulateGrid(pom);
+
+            //Pom za Input formu
+            PropertyFaktura pomInput = new PropertyFaktura();
+            myForm = pomInput;
         }
 
         private void slicica1_Click(object sender, EventArgs e)
@@ -126,6 +143,7 @@ namespace RentACarOskar
             btnFaktura.Visible = true;
             loptica.Visible = false;
         }
+
         private void slicica2_Click(object sender, EventArgs e)
         {
             PanelLeft.Width = 245;
@@ -138,6 +156,7 @@ namespace RentACarOskar
             btnFaktura.Visible = true;
             loptica.Visible = false;
         }
+
         private void slicica3_Click(object sender, EventArgs e)
         {
             PanelLeft.Width = 245;
@@ -158,8 +177,15 @@ namespace RentACarOskar
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            InputForma pom = new InputForma(myProperty, StateEnum.Create);
+            InputForma pom = new InputForma(myForm, StateEnum.Create);
             pom.ShowDialog();
         }
+
+        //private void btnUpdate_Click(object sender, EventArgs e)
+        //{
+            
+        //    InputForma pom = new InputForma(, StateEnum.Update);
+        //    pom.ShowDialog();
+        //}
     }
 }

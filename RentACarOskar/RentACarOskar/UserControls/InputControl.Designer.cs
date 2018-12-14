@@ -35,7 +35,7 @@
             // lblNaziv
             // 
             this.lblNaziv.AutoSize = true;
-            this.lblNaziv.Location = new System.Drawing.Point(3, 9);
+            this.lblNaziv.Location = new System.Drawing.Point(16, 10);
             this.lblNaziv.Name = "lblNaziv";
             this.lblNaziv.Size = new System.Drawing.Size(47, 19);
             this.lblNaziv.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // 
             this.tbNaziv.CustomButton.Image = null;
-            this.tbNaziv.CustomButton.Location = new System.Drawing.Point(190, 1);
+            this.tbNaziv.CustomButton.Location = new System.Drawing.Point(184, 1);
             this.tbNaziv.CustomButton.Name = "";
             this.tbNaziv.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbNaziv.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -56,7 +56,7 @@
             this.tbNaziv.CustomButton.UseSelectable = true;
             this.tbNaziv.CustomButton.Visible = false;
             this.tbNaziv.Lines = new string[0];
-            this.tbNaziv.Location = new System.Drawing.Point(92, 9);
+            this.tbNaziv.Location = new System.Drawing.Point(149, 9);
             this.tbNaziv.MaxLength = 32767;
             this.tbNaziv.Name = "tbNaziv";
             this.tbNaziv.PasswordChar = '\0';
@@ -65,7 +65,7 @@
             this.tbNaziv.SelectionLength = 0;
             this.tbNaziv.SelectionStart = 0;
             this.tbNaziv.ShortcutsEnabled = true;
-            this.tbNaziv.Size = new System.Drawing.Size(212, 23);
+            this.tbNaziv.Size = new System.Drawing.Size(210, 23);
             this.tbNaziv.TabIndex = 1;
             this.tbNaziv.UseSelectable = true;
             this.tbNaziv.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -78,7 +78,7 @@
             this.Controls.Add(this.tbNaziv);
             this.Controls.Add(this.lblNaziv);
             this.Name = "InputControl";
-            this.Size = new System.Drawing.Size(312, 41);
+            this.Size = new System.Drawing.Size(371, 41);
             this.ResumeLayout(false);
             this.PerformLayout();
 

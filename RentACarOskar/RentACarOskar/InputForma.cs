@@ -48,17 +48,62 @@ namespace RentACarOskar
         }
 
 
-        // PopulateControls treba testirati i jod dodati date time picker
+        // PopulateControls je gotov treba jos napraviti lookup funkciju
         private void PopulateControls()
         {
-            // int i = 0;
+            bool i = true;
             foreach (PropertyInfo item in myInterface.GetType().GetProperties())
             {
-                InputControl uc = new InputControl();
-                uc.Name = item.Name;
-                uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-
-                flowPanel.Controls.Add(uc);
+                if (i == false)
+                {
+                    if (item.PropertyType.Name == "DateTime")
+                    {
+                        InputDateControl uc = new InputDateControl();
+                        uc.Name = item.Name;
+                        uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                        flowPanel.Controls.Add(uc);
+                        if (state == StateEnum.Update)
+                        {
+                            try
+                            {
+                                uc.SetValueInDateBox(item.GetValue(myInterface).ToString());
+                            }
+                            catch { }
+                        }
+                    }
+                    else if(item.GetCustomAttributes<ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
+                    {
+                        LookUpControl uc = new LookUpControl(myInterface);
+                        uc.Name = item.Name;
+                        uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                        flowPanel.Controls.Add(uc);
+                        if (state == StateEnum.Update)
+                        {
+                            try
+                            {
+                                uc.SetValueTextBox(item.GetValue(myInterface).ToString());
+                            }
+                            catch { }
+                        }
+                    }
+                    else
+                    {
+                        InputControl uc = new InputControl();
+                        uc.Name = item.Name;
+                        uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                        flowPanel.Controls.Add(uc);
+                        if (state == StateEnum.Update)
+                        {
+                            try
+                            {
+                                uc.SetValueInTextBox(item.GetValue(myInterface).ToString());
+                            }
+                            catch { }
+                        }
+                    }
+                    
+                }
+                i = false;
             }
         }
 
