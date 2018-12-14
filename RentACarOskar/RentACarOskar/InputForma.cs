@@ -19,24 +19,11 @@ namespace RentACarOskar
 
         PropertyInterface myInterface;
         StateEnum state;
-
-        List<string> listaUpdate;
-
+        
         public InputForma()
         {
             InitializeComponent();
         }
-
-        public InputForma(PropertyInterface myInterface, StateEnum state, List<string> listaUpdate)
-        {
-            InitializeComponent();
-
-            this.myInterface = myInterface;
-            this.listaUpdate = listaUpdate;
-            this.state = state;
-            PopulateControls();
-        }
-
 
         public InputForma(PropertyInterface myInterface, StateEnum state)
         {
@@ -61,7 +48,7 @@ namespace RentACarOskar
                         InputDateControl uc = new InputDateControl();
                         uc.Name = item.Name;
                         uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                        flowPanel.Controls.Add(uc);
+
                         if (state == StateEnum.Update)
                         {
                             try
@@ -70,13 +57,15 @@ namespace RentACarOskar
                             }
                             catch { }
                         }
+
+                        flowPanel.Controls.Add(uc);
                     }
                     else if(item.GetCustomAttributes<ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
                     {
                         LookUpControl uc = new LookUpControl(myInterface);
                         uc.Name = item.Name;
                         uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                        flowPanel.Controls.Add(uc);
+                        
                         if (state == StateEnum.Update)
                         {
                             try
@@ -85,13 +74,15 @@ namespace RentACarOskar
                             }
                             catch { }
                         }
+
+                        flowPanel.Controls.Add(uc);
                     }
                     else
                     {
                         InputControl uc = new InputControl();
                         uc.Name = item.Name;
                         uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                        flowPanel.Controls.Add(uc);
+                        
                         if (state == StateEnum.Update)
                         {
                             try
@@ -100,6 +91,8 @@ namespace RentACarOskar
                             }
                             catch { }
                         }
+
+                        flowPanel.Controls.Add(uc);
                     }
                     
                 }
