@@ -35,7 +35,7 @@
             // lblNaziv
             // 
             this.lblNaziv.AutoSize = true;
-            this.lblNaziv.Location = new System.Drawing.Point(3, 11);
+            this.lblNaziv.Location = new System.Drawing.Point(18, 10);
             this.lblNaziv.Name = "lblNaziv";
             this.lblNaziv.Size = new System.Drawing.Size(47, 19);
             this.lblNaziv.TabIndex = 1;
@@ -43,10 +43,10 @@
             // 
             // dtNaziv
             // 
-            this.dtNaziv.Location = new System.Drawing.Point(99, 6);
+            this.dtNaziv.Location = new System.Drawing.Point(149, 3);
             this.dtNaziv.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtNaziv.Name = "dtNaziv";
-            this.dtNaziv.Size = new System.Drawing.Size(200, 29);
+            this.dtNaziv.Size = new System.Drawing.Size(209, 29);
             this.dtNaziv.TabIndex = 2;
             // 
             // InputDateControl
@@ -56,7 +56,7 @@
             this.Controls.Add(this.dtNaziv);
             this.Controls.Add(this.lblNaziv);
             this.Name = "InputDateControl";
-            this.Size = new System.Drawing.Size(310, 40);
+            this.Size = new System.Drawing.Size(371, 41);
             this.ResumeLayout(false);
             this.PerformLayout();
 

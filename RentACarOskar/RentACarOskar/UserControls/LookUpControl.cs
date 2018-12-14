@@ -37,5 +37,10 @@ namespace RentACarOskar.UserControls
             //Value = sf.Value;
             tbNaziv.Text = Value;
         }
+
+        public void SetValueTextBox(string value)
+        {
+            tbNaziv.Text = value;
+        }
     }
 }
