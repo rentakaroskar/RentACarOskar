@@ -13,9 +13,16 @@ using System.Windows.Forms;
 
 namespace RentACarOskar
 {
+
     public partial class Dashboard : Form
     {
         PropertyInterface myProperty;
+        DataTable dt;
+        Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+
+
+
+
         public Dashboard()
         {
         
@@ -28,24 +35,48 @@ namespace RentACarOskar
 
         private void PopulateGrid(PropertyInterface property)
         {
+          
+          
             myProperty = property;
             panelPanelZaGV.Controls.Clear();
-            DataTable dt = new DataTable();
-            DataGridView dgv = new DataGridView();
-            panelPanelZaGV.Controls.Add(dgv);          
+            dt = new DataTable();
+            var dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            //pozadina hedera
+            dgv.HeaderBgColor = Color.FromArgb(128, 185, 209);    
+            panelPanelZaGV.Controls.Add(dgv);
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.MultiSelect = false;
+            dgv.Dock = DockStyle.Fill;
 
             dgv.Size = panelPanelZaGV.Size;
-   
+          
+
             //logika za popunjavanje tabele
 
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
-                property.GetSelectQuery());
+            property.GetSelectQuery());
 
             dt.Load(reader);
             reader.Close();
             
             dgv.DataSource = dt; //prikazi tabelu
+
+            //Auto size kolona i redova u tabeli
+            dgv.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //boja header teksta u tabeli
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+            //boja teksta i pozadina kada selektujemo item 
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(46, 139, 87);
+            dgv.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+
+            //This code allows the user to edit the information in the DataGrid.
+            //***********************************************
+            dt.DefaultView.AllowEdit = false;
+            dt.DefaultView.AllowDelete = false;
+            dt.DefaultView.AllowNew = false;
+            //*
 
             //izvuci display name
             var type = property.GetType();
@@ -63,6 +94,7 @@ namespace RentACarOskar
         {
             if (PanelLeft.Width == 245)
             {
+                
                 PanelLeft.Width = 40;
                 logoPic.Visible = false;
                 slicica1.Visible = true;
@@ -71,10 +103,13 @@ namespace RentACarOskar
                 btnVozilo.Visible = false;
                 btnRadnik.Visible = false;
                 btnFaktura.Visible = false;
+                panelPanelZaGV.Width = 1115;
+                dgv.Size = panelPanelZaGV.Size;
+
 
             }
             else
-            {
+            {               
                 PanelLeft.Width = 245;
                 logoPic.Visible = true;
                 slicica1.Visible = false;
@@ -83,6 +118,10 @@ namespace RentACarOskar
                 btnVozilo.Visible = true;
                 btnRadnik.Visible = true;
                 btnFaktura.Visible = true;
+                panelPanelZaGV.Width = 906;
+                dgv.Size = panelPanelZaGV.Size;
+
+
             }
         }
 
@@ -106,7 +145,7 @@ namespace RentACarOskar
 
         private void slicica1_Click(object sender, EventArgs e)
         {
-            PanelLeft.Width = 245;
+            
             logoPic.Visible = true;
             slicica1.Visible = false;
             slicica2.Visible = false;
@@ -117,7 +156,7 @@ namespace RentACarOskar
         }
         private void slicica2_Click(object sender, EventArgs e)
         {
-            PanelLeft.Width = 245;
+            
             logoPic.Visible = true;
             slicica1.Visible = false;
             slicica2.Visible = false;
@@ -128,7 +167,7 @@ namespace RentACarOskar
         }
         private void slicica3_Click(object sender, EventArgs e)
         {
-            PanelLeft.Width = 245;
+            
             logoPic.Visible = true;
             slicica1.Visible = false;
             slicica2.Visible = false;
