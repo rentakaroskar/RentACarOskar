@@ -65,16 +65,6 @@ namespace RentACarOskar
             }
         }
 
-        private void refreshGrid()
-        {
-            DataGridView dgv = new DataGridView();DataTable dataTable = new DataTable();
-            SqlDataReader dataReader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text, myProperty.GetSelectQuery());
-
-            dataTable.Load(dataReader);
-            dataReader.Close();
-            dgv.DataSource = dataTable;
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (PanelLeft.Width == 245)
@@ -180,8 +170,10 @@ namespace RentACarOskar
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            Visible = false;
             InputForma pom = new InputForma(myForm, StateEnum.Create);
             pom.ShowDialog();
+            Visible = true;
             PopulateGrid(myProperty);
         }
 
@@ -190,8 +182,10 @@ namespace RentACarOskar
             int red = dgv.SelectedRows[0].Index;
             var type = myForm.GetType();
             var properties = type.GetProperties();
+            PropertyInterface pom = myProperty;
             PopulateGrid(myForm);
-            dgv.Visible = false;
+            myProperty = pom;
+            Visible = false;
             int i = 0;
             foreach (DataGridViewCell cell in dgv.Rows[red].Cells)
             {
@@ -201,10 +195,10 @@ namespace RentACarOskar
                 property.SetValue(myForm, Convert.ChangeType(value, property.PropertyType));
                 i++;
             }
-
             InputForma inputForma = new InputForma(myForm, StateEnum.Update);
             inputForma.ShowDialog();
-            PopulateGrid(myForm);
+            Visible = true;
+            PopulateGrid(myProperty);
         }
     }
 }
