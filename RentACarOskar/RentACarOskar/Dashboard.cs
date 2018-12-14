@@ -46,6 +46,7 @@ namespace RentACarOskar
             panelPanelZaGV.Controls.Clear();
             dt = new DataTable();
             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            dgv.BackgroundColor = Color.White;
             //pozadina hedera
             dgv.HeaderBgColor = Color.FromArgb(128, 185, 209);
             panelPanelZaGV.Controls.Add(dgv);
