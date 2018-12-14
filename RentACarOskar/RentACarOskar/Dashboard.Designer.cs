@@ -325,7 +325,6 @@
             this.panelKlijenti.Name = "panelKlijenti";
             this.panelKlijenti.Size = new System.Drawing.Size(245, 45);
             this.panelKlijenti.TabIndex = 8;
-            this.panelKlijenti.Click += new System.EventHandler(this.btnRadnik_Click);
             this.panelKlijenti.MouseLeave += new System.EventHandler(this.panelKlijenti_MouseLeave);
             this.panelKlijenti.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
@@ -339,7 +338,6 @@
             this.lblKlijenti.Size = new System.Drawing.Size(64, 22);
             this.lblKlijenti.TabIndex = 7;
             this.lblKlijenti.Text = "Klijenti";
-            this.lblKlijenti.Click += new System.EventHandler(this.btnRadnik_Click);
             // 
             // slicicaPeople
             // 
@@ -354,7 +352,6 @@
             this.slicicaPeople.TabIndex = 6;
             this.slicicaPeople.TabStop = false;
             this.slicicaPeople.Zoom = 10;
-            this.slicicaPeople.Click += new System.EventHandler(this.btnRadnik_Click);
             this.slicicaPeople.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
             // panelAutomobili
