@@ -70,7 +70,7 @@ namespace RentACarOskar
         {
             if (PanelLeft.Width == 245)
             {
-                PanelLeft.Width = 40;
+                PanelLeft.Width = 63;
                 logoPic.Visible = false;
                 slicicaAuto.Visible = true;
                 loptica.Visible = true;
@@ -80,7 +80,6 @@ namespace RentACarOskar
             {
                 PanelLeft.Width = 245;
                 logoPic.Visible = true;
-                slicicaAuto.Visible = false;
                 loptica.Visible = false;
             }
         }
@@ -89,19 +88,31 @@ namespace RentACarOskar
         {
             PropertyVozilo pom = new PropertyVozilo();
             PopulateGrid(pom);
-            
+            panelPanelZaGV.Visible = true;
+            btnInsert.Visible = true;
+            btnDelete.Visible = true;
+            btnUpdate.Visible = true;
+
         }
 
         private void btnRadnik_Click(object sender, EventArgs e)
         {
             PropertyRadnik pom = new PropertyRadnik();
             PopulateGrid(pom);
+            panelPanelZaGV.Visible = true;
+            btnInsert.Visible = true;
+            btnDelete.Visible = true;
+            btnUpdate.Visible = true;
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
         {
             FakturaIspis pom = new FakturaIspis();
             PopulateGrid(pom);
+            panelPanelZaGV.Visible = true;
+            btnInsert.Visible = true;
+            btnDelete.Visible = true;
+            btnUpdate.Visible = true;
         }
 
         
@@ -114,6 +125,75 @@ namespace RentACarOskar
         {
             InputForma pom = new InputForma(myProperty, StateEnum.Create);
             pom.ShowDialog();
+        }
+
+        private void panelAutomobili_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelAutomobili_MouseLeave(object sender, EventArgs e)
+        {
+            panelAutomobili.BackColor =Color.FromArgb(44, 46, 62);
+            slicicaAuto.BackColor = Color.FromArgb(44, 46, 62);
+
+            PanelLeft.Width = 63;
+            logoPic.Visible = false;
+            loptica.Visible = true;
+        }
+
+        private void panelKlijenti_MouseHover(object sender, EventArgs e)
+        {
+            panelKlijenti.BackColor = Color.FromArgb(40, 42, 60);
+            slicicaPeople.BackColor = Color.FromArgb(40, 42, 60);
+
+            if (PanelLeft.Width == 63)
+            {
+                PanelLeft.Width = 245;
+                logoPic.Visible = true;
+                loptica.Visible = false;
+            }
+        }
+
+        private void panelKlijenti_MouseLeave(object sender, EventArgs e)
+        {
+            panelKlijenti.BackColor = Color.FromArgb(44, 46, 62);
+            slicicaPeople.BackColor = Color.FromArgb(44, 46, 62);
+
+            PanelLeft.Width = 63;
+            logoPic.Visible = false;
+            loptica.Visible = true;
+        }
+
+        private void btnFaktura_MouseLeave(object sender, EventArgs e)
+        {
+            panelFaktura.BackColor = Color.FromArgb(44, 46, 62);
+            btnFaktura.BackColor = Color.FromArgb(44, 46, 62);
+
+            PanelLeft.Width = 63;
+            logoPic.Visible = false;
+            loptica.Visible = true;
+
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            panelPanelZaGV.Visible = false;
+            btnInsert.Visible = false;
+            btnDelete.Visible = false;
+            btnUpdate.Visible = false;
+        }
+
+        private void panelMenu_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMenu_MouseLeave(object sender, EventArgs e)
+        {
+            PanelLeft.Width = 63;
+            logoPic.Visible = false;
+            loptica.Visible = true;
         }
     }
 }
