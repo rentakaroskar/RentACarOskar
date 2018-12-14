@@ -29,6 +29,9 @@ namespace RentACarOskar
 
             PropertyVozilo pom = new PropertyVozilo();
             PopulateGrid(pom);
+
+            PropertyVozilo pomInput = new PropertyVozilo();
+            myForm = pomInput;
         }
 
         private void PopulateGrid(PropertyInterface property)
@@ -105,7 +108,7 @@ namespace RentACarOskar
         {
             PropertyVozilo pom = new PropertyVozilo();
             PopulateGrid(pom);
-
+            
             //Pom za Input formu
             PropertyVozilo pomInput = new PropertyVozilo();
             myForm = pomInput;
@@ -179,13 +182,29 @@ namespace RentACarOskar
         {
             InputForma pom = new InputForma(myForm, StateEnum.Create);
             pom.ShowDialog();
+            PopulateGrid(myProperty);
         }
 
-        //private void btnUpdate_Click(object sender, EventArgs e)
-        //{
-            
-        //    InputForma pom = new InputForma(, StateEnum.Update);
-        //    pom.ShowDialog();
-        //}
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int red = dgv.SelectedRows[0].Index;
+            var type = myForm.GetType();
+            var properties = type.GetProperties();
+            PopulateGrid(myForm);
+            dgv.Visible = false;
+            int i = 0;
+            foreach (DataGridViewCell cell in dgv.Rows[red].Cells)
+            {
+                String value = cell.Value.ToString();
+
+                PropertyInfo property = properties.Where(x => dgv.Columns[i].HeaderText == x.GetCustomAttribute<DisplayNameAttribute>().DisplayName).FirstOrDefault();
+                property.SetValue(myForm, Convert.ChangeType(value, property.PropertyType));
+                i++;
+            }
+
+            InputForma inputForma = new InputForma(myForm, StateEnum.Update);
+            inputForma.ShowDialog();
+            PopulateGrid(myForm);
+        }
     }
 }
