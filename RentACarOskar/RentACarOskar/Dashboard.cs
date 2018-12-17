@@ -274,14 +274,22 @@ namespace RentACarOskar
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var type = myForm.GetType();
-            var properties = type.GetProperties();
+            try
+            {
+                var type = myForm.GetType();
+                var properties = type.GetProperties();
 
-            PropertyInfo property = properties.Where(x => x.IsDefined(typeof(PrimaryKeyAttribute))).FirstOrDefault();
-            property.SetValue(myForm, Convert.ChangeType(dgv.SelectedRows[0].Cells[0].Value, property.PropertyType));
+                PropertyInfo property = properties.Where(x => x.IsDefined(typeof(PrimaryKeyAttribute))).FirstOrDefault();
+                property.SetValue(myForm, Convert.ChangeType(dgv.SelectedRows[0].Cells[0].Value, property.PropertyType));
 
-            SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, myForm.GetDeleteQuery(), myForm.GetDeleteParameters().ToArray());
-            PopulateGrid(myProperty);
+                SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, myForm.GetDeleteQuery(), myForm.GetDeleteParameters().ToArray());
+                PopulateGrid(myProperty);
+            }
+            catch(System.Data.SqlClient.SqlException sql)
+            {
+                MessageBox.Show("Nemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\nError code: " + sql.Message,
+                    "Greska pri brisanju", MessageBoxButtons.OK);
+            }
         }
         #endregion
     }
