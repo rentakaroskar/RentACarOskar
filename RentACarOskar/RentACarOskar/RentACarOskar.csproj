@@ -69,6 +69,7 @@
     <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
     <Compile Include="Attributes\NotRequiredAttribute.cs" />
     <Compile Include="Attributes\SqlNameAttribute.cs" />
+    <Compile Include="Attributes\TwoRadioButtonsAttribute.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +133,12 @@
     <Compile Include="UserControls\LookUpControl.Designer.cs">
       <DependentUpon>LookUpControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TwoRadioButtonsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TwoRadioButtonsControl.Designer.cs">
+      <DependentUpon>TwoRadioButtonsControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LookUpControl.resx">
       <DependentUpon>LookUpControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TwoRadioButtonsControl.resx">
+      <DependentUpon>TwoRadioButtonsControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
