@@ -51,6 +51,7 @@
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
+            this.btnIzdaj = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,6 +72,7 @@
             // 
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentar.Controls.Add(this.btnIzdaj);
             this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.btnDelete);
             this.panelCentar.Controls.Add(this.btnUpdate);
@@ -100,7 +102,6 @@
             // 
             // btnDelete
             // 
-            //this.btnDelete.Active = false;
             this.btnDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -136,7 +137,6 @@
             // 
             // btnUpdate
             // 
-           // this.btnUpdate.Active = false;
             this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -156,7 +156,7 @@
             this.btnUpdate.IconVisible = true;
             this.btnUpdate.IconZoom = 90D;
             this.btnUpdate.IsTab = false;
-            this.btnUpdate.Location = new System.Drawing.Point(419, 590);
+            this.btnUpdate.Location = new System.Drawing.Point(396, 590);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnUpdate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
@@ -172,7 +172,6 @@
             // 
             // btnInsert
             // 
-            //this.btnInsert.Active = false;
             this.btnInsert.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -436,6 +435,41 @@
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
             // 
+            // btnIzdaj
+            // 
+            this.btnIzdaj.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
+            this.btnIzdaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnIzdaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIzdaj.BorderRadius = 6;
+            this.btnIzdaj.ButtonText = "IZDAJ";
+            this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIzdaj.DisabledColor = System.Drawing.Color.Gray;
+            this.btnIzdaj.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnIzdaj.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnIzdaj.Iconimage")));
+            this.btnIzdaj.Iconimage_right = null;
+            this.btnIzdaj.Iconimage_right_Selected = null;
+            this.btnIzdaj.Iconimage_Selected = null;
+            this.btnIzdaj.IconMarginLeft = 0;
+            this.btnIzdaj.IconMarginRight = 0;
+            this.btnIzdaj.IconRightVisible = true;
+            this.btnIzdaj.IconRightZoom = 0D;
+            this.btnIzdaj.IconVisible = true;
+            this.btnIzdaj.IconZoom = 90D;
+            this.btnIzdaj.IsTab = false;
+            this.btnIzdaj.Location = new System.Drawing.Point(557, 590);
+            this.btnIzdaj.Name = "btnIzdaj";
+            this.btnIzdaj.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnIzdaj.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
+            this.btnIzdaj.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnIzdaj.selected = false;
+            this.btnIzdaj.Size = new System.Drawing.Size(108, 34);
+            this.btnIzdaj.TabIndex = 3;
+            this.btnIzdaj.Text = "IZDAJ";
+            this.btnIzdaj.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIzdaj.Textcolor = System.Drawing.Color.White;
+            this.btnIzdaj.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIzdaj.Click += new System.EventHandler(this.btnIzdaj_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,5 +529,6 @@
         private System.Windows.Forms.Label lblFaktura;
         private Bunifu.Framework.UI.BunifuImageButton btnFaktura;
         private System.Windows.Forms.Label Dobrodosli;
+        private Bunifu.Framework.UI.BunifuFlatButton btnIzdaj;
     }
 }
