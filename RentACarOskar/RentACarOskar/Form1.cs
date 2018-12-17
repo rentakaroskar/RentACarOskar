@@ -50,7 +50,15 @@ namespace RentACarOskar
                 {
                     MessageBox.Show("Uspjesan Login");
                     Dashboard pom = new Dashboard();
+                    Visible = false;
                     pom.ShowDialog();
+                    if (pom.DialogResult == DialogResult.Cancel)
+                    {
+                        pom.Close();
+                        Visible = true;
+                        tbUserName.Text = "";
+                        tbPassword.Text = "";
+                    }
                     break;
                 }
                 else if (i == dt.Rows.Count - 1)
@@ -58,12 +66,6 @@ namespace RentACarOskar
                     DialogResult dr = MetroMessageBox.Show(this, "\n\nPogresan E-mail ili loznika!", "Pogresan E-mail ili loznika!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            //Dashboard02 nova = new Dashboard02();
-           // nova.ShowDialog();
         }
     }
 }

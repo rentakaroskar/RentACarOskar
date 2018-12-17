@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            this.lblLogOut = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.Dobrodosli = new System.Windows.Forms.Label();
             this.panelFilter = new System.Windows.Forms.Panel();
@@ -43,7 +45,8 @@
             this.PanelLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelLogOut = new System.Windows.Forms.Panel();
-            this.lblLogOut = new System.Windows.Forms.Label();
+            this.btnLogOut = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelFaktura = new System.Windows.Forms.Panel();
             this.lblFaktura = new System.Windows.Forms.Label();
             this.btnFaktura = new Bunifu.Framework.UI.BunifuImageButton();
@@ -55,9 +58,11 @@
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
-            this.btnIzdaj = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblLogOut = new System.Windows.Forms.Label();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnIzdaj = new System.Windows.Forms.Button();
+            this.bDelete = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -65,6 +70,7 @@
             this.PanelLeft.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogOut.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
             this.panelFaktura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).BeginInit();
             this.panelKlijenti.SuspendLayout();
@@ -75,10 +81,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
             this.SuspendLayout();
             // 
+            // lblLogOut
+            // 
+            this.lblLogOut.AutoSize = true;
+            this.lblLogOut.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogOut.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblLogOut.Location = new System.Drawing.Point(0, 578);
+            this.lblLogOut.Name = "lblLogOut";
+            this.lblLogOut.Size = new System.Drawing.Size(80, 22);
+            this.lblLogOut.TabIndex = 7;
+            this.lblLogOut.Text = "Log out";
+            this.lblLogOut.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
+            this.lblLogOut.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.panel1.Controls.Add(this.lblLogOut);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1.Location = new System.Drawing.Point(0, 578);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(245, 45);
+            this.panel1.TabIndex = 10;
+            // 
             // panelCentar
             // 
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentar.Controls.Add(this.bDelete);
             this.panelCentar.Controls.Add(this.btnIzdaj);
             this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.panelFilter);
@@ -86,6 +116,7 @@
             this.panelCentar.Controls.Add(this.btnDelete);
             this.panelCentar.Controls.Add(this.btnUpdate);
             this.panelCentar.Controls.Add(this.btnInsert);
+            this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.panelPanelZaGV);
             this.panelCentar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentar.GradientBottomLeft = System.Drawing.Color.White;
@@ -321,27 +352,45 @@
             // panelLogOut
             // 
             this.panelLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.panelLogOut.Controls.Add(this.lblLogOut);
+            this.panelLogOut.Controls.Add(this.btnLogOut);
+            this.panelLogOut.Controls.Add(this.label2);
             this.panelLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelLogOut.Location = new System.Drawing.Point(0, 578);
+            this.panelLogOut.Location = new System.Drawing.Point(0, 652);
             this.panelLogOut.Name = "panelLogOut";
             this.panelLogOut.Size = new System.Drawing.Size(245, 45);
             this.panelLogOut.TabIndex = 10;
+            this.panelLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             this.panelLogOut.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
             this.panelLogOut.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
             // 
-            // lblLogOut
+            // btnLogOut
             // 
-            this.lblLogOut.AutoSize = true;
-            this.lblLogOut.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOut.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblLogOut.Location = new System.Drawing.Point(68, 13);
-            this.lblLogOut.Name = "lblLogOut";
-            this.lblLogOut.Size = new System.Drawing.Size(80, 22);
-            this.lblLogOut.TabIndex = 7;
-            this.lblLogOut.Text = "Log out";
-            this.lblLogOut.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
-            this.lblLogOut.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnLogOut.Image = global::RentACarOskar.Properties.Resources.logout;
+            this.btnLogOut.ImageActive = null;
+            this.btnLogOut.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
+            this.btnLogOut.Location = new System.Drawing.Point(11, 9);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(40, 31);
+            this.btnLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLogOut.TabIndex = 9;
+            this.btnLogOut.TabStop = false;
+            this.btnLogOut.Zoom = 10;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Location = new System.Drawing.Point(95, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 22);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Log Out";
+            this.label2.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.label2.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
+            this.label2.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
             // 
             // panelFaktura
             // 
@@ -496,61 +545,77 @@
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
             // 
+            // btnInsert
+            // 
+            this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnInsert.FlatAppearance.BorderSize = 2;
+            this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Location = new System.Drawing.Point(165, 579);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(111, 34);
+            this.btnInsert.TabIndex = 0;
+            this.btnInsert.Text = "INSERT";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            this.btnInsert.MouseLeave += new System.EventHandler(this.btnInsert_MouseLeave);
+            this.btnInsert.MouseHover += new System.EventHandler(this.btnInsert_MouseHover);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnUpdate.FlatAppearance.BorderSize = 2;
+            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(416, 579);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(111, 34);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
+            this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
+            // 
             // btnIzdaj
             // 
-            this.btnIzdaj.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.btnIzdaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.btnIzdaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIzdaj.BorderRadius = 6;
-            this.btnIzdaj.ButtonText = "IZDAJ";
             this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIzdaj.DisabledColor = System.Drawing.Color.Gray;
-            this.btnIzdaj.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnIzdaj.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnIzdaj.Iconimage")));
-            this.btnIzdaj.Iconimage_right = null;
-            this.btnIzdaj.Iconimage_right_Selected = null;
-            this.btnIzdaj.Iconimage_Selected = null;
-            this.btnIzdaj.IconMarginLeft = 0;
-            this.btnIzdaj.IconMarginRight = 0;
-            this.btnIzdaj.IconRightVisible = true;
-            this.btnIzdaj.IconRightZoom = 0D;
-            this.btnIzdaj.IconVisible = true;
-            this.btnIzdaj.IconZoom = 90D;
-            this.btnIzdaj.IsTab = false;
-            this.btnIzdaj.Location = new System.Drawing.Point(557, 590);
+            this.btnIzdaj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnIzdaj.FlatAppearance.BorderSize = 2;
+            this.btnIzdaj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnIzdaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIzdaj.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIzdaj.Location = new System.Drawing.Point(665, 579);
             this.btnIzdaj.Name = "btnIzdaj";
-            this.btnIzdaj.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.btnIzdaj.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.btnIzdaj.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnIzdaj.selected = false;
-            this.btnIzdaj.Size = new System.Drawing.Size(108, 34);
-            this.btnIzdaj.TabIndex = 3;
+            this.btnIzdaj.Size = new System.Drawing.Size(111, 34);
+            this.btnIzdaj.TabIndex = 6;
             this.btnIzdaj.Text = "IZDAJ";
-            this.btnIzdaj.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIzdaj.Textcolor = System.Drawing.Color.White;
-            this.btnIzdaj.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIzdaj.UseVisualStyleBackColor = true;
             this.btnIzdaj.Click += new System.EventHandler(this.btnIzdaj_Click);
+            this.btnIzdaj.MouseLeave += new System.EventHandler(this.btnIzdaj_MouseLeave);
+            this.btnIzdaj.MouseHover += new System.EventHandler(this.btnIzdaj_MouseHover);
             // 
-            // panel1
+            // bDelete
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.panel1.Controls.Add(this.lblLogOut);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(0, 578);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 45);
-            this.panel1.TabIndex = 10;
-            // 
-            // lblLogOut
-            // 
-            this.lblLogOut.AutoSize = true;
-            this.lblLogOut.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOut.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblLogOut.Location = new System.Drawing.Point(68, 13);
-            this.lblLogOut.Name = "lblLogOut";
-            this.lblLogOut.Size = new System.Drawing.Size(80, 22);
-            this.lblLogOut.TabIndex = 7;
-            this.lblLogOut.Text = "Log out";
+            this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.bDelete.FlatAppearance.BorderSize = 2;
+            this.bDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.bDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDelete.Location = new System.Drawing.Point(665, 579);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(111, 34);
+            this.bDelete.TabIndex = 7;
+            this.bDelete.Text = "DELETE";
+            this.bDelete.UseVisualStyleBackColor = true;
+            this.bDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.bDelete.MouseLeave += new System.EventHandler(this.bDelete_MouseLeave);
+            this.bDelete.MouseHover += new System.EventHandler(this.bDelete_MouseHover);
             // 
             // Dashboard
             // 
@@ -565,6 +630,8 @@
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelCentar.ResumeLayout(false);
             this.panelCentar.PerformLayout();
             this.PanelTop.ResumeLayout(false);
@@ -574,6 +641,7 @@
             this.panelMenu.ResumeLayout(false);
             this.panelLogOut.ResumeLayout(false);
             this.panelLogOut.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
             this.panelFaktura.ResumeLayout(false);
             this.panelFaktura.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).EndInit();
@@ -600,9 +668,6 @@
         private Bunifu.Framework.UI.BunifuGradientPanel panelPanelZaGV;
         private System.Windows.Forms.Panel panelMenu;
         private Bunifu.Framework.UI.BunifuImageButton slicicaAuto;
-        private Bunifu.Framework.UI.BunifuFlatButton btnDelete;
-        private Bunifu.Framework.UI.BunifuFlatButton btnUpdate;
-        private Bunifu.Framework.UI.BunifuFlatButton btnInsert;
         private System.Windows.Forms.PictureBox loptica;
         private System.Windows.Forms.Panel panelAutomobili;
         private System.Windows.Forms.Label lblAutomobili;
@@ -613,10 +678,15 @@
         private System.Windows.Forms.Label lblFaktura;
         private Bunifu.Framework.UI.BunifuImageButton btnFaktura;
         private System.Windows.Forms.Label Dobrodosli;
-        private Bunifu.Framework.UI.BunifuFlatButton btnIzdaj;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLogOut;
         private System.Windows.Forms.Label lblLogOut;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuImageButton btnLogOut;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnIzdaj;
+        private System.Windows.Forms.Button bDelete;
         private System.Windows.Forms.Panel panelFilter;
         private MetroFramework.Controls.MetroButton btnFilter;
     }
