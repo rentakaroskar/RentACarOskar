@@ -164,7 +164,7 @@ namespace RentACarOskar
 
 
             //Filter 
-            FilterProperty = new FakturaIspis();
+            FilterProperty = new PropertyKlijent();
 
         }
 
