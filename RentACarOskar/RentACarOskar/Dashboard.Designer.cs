@@ -50,6 +50,7 @@
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
+            this.Dobrodosli = new System.Windows.Forms.Label();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -70,6 +71,7 @@
             // 
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.btnDelete);
             this.panelCentar.Controls.Add(this.btnUpdate);
             this.panelCentar.Controls.Add(this.btnInsert);
@@ -422,6 +424,17 @@
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
             // 
+            // Dobrodosli
+            // 
+            this.Dobrodosli.AutoSize = true;
+            this.Dobrodosli.Font = new System.Drawing.Font("Maiandra GD", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dobrodosli.ForeColor = System.Drawing.Color.CadetBlue;
+            this.Dobrodosli.Location = new System.Drawing.Point(339, 134);
+            this.Dobrodosli.Name = "Dobrodosli";
+            this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
+            this.Dobrodosli.TabIndex = 4;
+            this.Dobrodosli.Text = "Dobrodošli!";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,6 +449,7 @@
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panelCentar.ResumeLayout(false);
+            this.panelCentar.PerformLayout();
             this.PanelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -479,5 +493,6 @@
         private System.Windows.Forms.Panel panelFaktura;
         private System.Windows.Forms.Label lblFaktura;
         private Bunifu.Framework.UI.BunifuImageButton btnFaktura;
+        private System.Windows.Forms.Label Dobrodosli;
     }
 }

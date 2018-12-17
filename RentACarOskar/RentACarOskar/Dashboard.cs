@@ -127,6 +127,8 @@ namespace RentACarOskar
             btnInsert.Visible = true;
             btnDelete.Visible = true;
             btnUpdate.Visible = true;
+            Dobrodosli.Visible = false;
+
         }
 
         private void btnKlijent_Click(object sender, EventArgs e)
@@ -141,6 +143,8 @@ namespace RentACarOskar
             btnInsert.Visible = true;
             btnDelete.Visible = true;
             btnUpdate.Visible = true;
+
+            Dobrodosli.Visible = false;
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
@@ -155,6 +159,8 @@ namespace RentACarOskar
             btnInsert.Visible = true;
             btnDelete.Visible = true;
             btnUpdate.Visible = true;
+
+            Dobrodosli.Visible = false;
         }
         #endregion
 
