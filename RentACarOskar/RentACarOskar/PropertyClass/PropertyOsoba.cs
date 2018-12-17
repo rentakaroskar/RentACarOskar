@@ -35,14 +35,17 @@ namespace RentACarOskar.PropertyClass
 
         [DisplayName("Pol")]
         [SqlName("Pol")]
+        [NotRequired]
         public char Pol { get; set; }
 
         [DisplayName("Broj telefona")]
         [SqlName("BrojTelefon")]
+        [NotRequired]
         public string BrojTelefona { get; set; }
 
         [DisplayName("Adresa")]
         [SqlName("Adresa")]
+        [NotRequired]
         public string Adresa { get; set; }
         #endregion
 

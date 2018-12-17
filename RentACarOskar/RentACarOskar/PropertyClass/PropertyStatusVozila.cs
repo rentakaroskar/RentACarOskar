@@ -24,11 +24,13 @@ namespace RentACarOskar.PropertyClass
 
         [DisplayName("Vozilo ID")]
         [SqlName("VoziloID")]
+        [NotRequired]
         [ForeignKey("Vozilo", "VoziloID", "RentACarOscar.PropertyClass.PropertyVozilo")]
         public int VoziloID { get; set; }
 
         [DisplayName("Datum statusa")]
         [SqlName("DatumStatusa")]
+        [NotRequired]
         public DateTime DatumStatusa { get; set; }
         #endregion
 

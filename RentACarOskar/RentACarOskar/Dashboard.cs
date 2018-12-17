@@ -20,10 +20,6 @@ namespace RentACarOskar
         DataTable dt;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
-
-
-
-
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
         DGV ispisivati procedure koje je marko sastavio a mi saljemo InputFormi pravu property klasu*/
         PropertyInterface myForm;
@@ -38,14 +34,14 @@ namespace RentACarOskar
             myForm = pomInput;
         }
 
+        //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
         private void PopulateGrid(PropertyInterface property)
         {
-
-
             myProperty = property;
             panelPanelZaGV.Controls.Clear();
             dt = new DataTable();
             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            dgv.BackgroundColor = Color.White;
             //pozadina hedera
             dgv.HeaderBgColor = Color.FromArgb(128, 185, 209);
             panelPanelZaGV.Controls.Add(dgv);
@@ -54,7 +50,6 @@ namespace RentACarOskar
             dgv.Dock = DockStyle.Fill;
 
             dgv.Size = panelPanelZaGV.Size;
-
 
             //logika za popunjavanje tabele
 
@@ -119,6 +114,7 @@ namespace RentACarOskar
             }
         }
 
+        #region MenuButtons
         private void btnVozilo_Click(object sender, EventArgs e)
         {
             VoziloIspis pom = new VoziloIspis();
@@ -131,6 +127,7 @@ namespace RentACarOskar
             btnInsert.Visible = true;
             btnDelete.Visible = true;
             btnUpdate.Visible = true;
+            Dobrodosli.Visible = false;
 
         }
 
@@ -146,6 +143,8 @@ namespace RentACarOskar
             btnInsert.Visible = true;
             btnDelete.Visible = true;
             btnUpdate.Visible = true;
+
+            Dobrodosli.Visible = false;
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
@@ -160,8 +159,10 @@ namespace RentACarOskar
             btnInsert.Visible = true;
             btnDelete.Visible = true;
             btnUpdate.Visible = true;
-        }
 
+            Dobrodosli.Visible = false;
+        }
+        #endregion
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -236,6 +237,8 @@ namespace RentACarOskar
             logoPic.Visible = false;
             loptica.Visible = true;
         }
+
+        #region CRUDButtons
         private void btnInsert_Click(object sender, EventArgs e)
         {
             Visible = false;
@@ -268,5 +271,26 @@ namespace RentACarOskar
             Visible = true;
             PopulateGrid(myProperty);
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var type = myForm.GetType();
+                var properties = type.GetProperties();
+
+                PropertyInfo property = properties.Where(x => x.IsDefined(typeof(PrimaryKeyAttribute))).FirstOrDefault();
+                property.SetValue(myForm, Convert.ChangeType(dgv.SelectedRows[0].Cells[0].Value, property.PropertyType));
+
+                SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, myForm.GetDeleteQuery(), myForm.GetDeleteParameters().ToArray());
+                PopulateGrid(myProperty);
+            }
+            catch(System.Data.SqlClient.SqlException sql)
+            {
+                MessageBox.Show("Nemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\nError code: " + sql.Message,
+                    "Greska pri brisanju", MessageBoxButtons.OK);
+            }
+        }
+        #endregion
     }
 }

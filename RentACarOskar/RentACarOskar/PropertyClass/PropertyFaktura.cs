@@ -35,6 +35,7 @@ namespace RentACarOskar.PropertyClass
 
         [DisplayName("Napomena")]
         [SqlName("Napomena")]
+        [NotRequired]
         public string Napomena { get; set; }
 
         [DisplayName("Datum fakture")]

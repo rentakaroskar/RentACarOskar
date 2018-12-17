@@ -40,14 +40,17 @@ namespace RentACarOskar.PropertyClass
 
         [DisplayName("Datum zaposlenja")]
         [SqlName("DatumZaposlenja")]
+        [NotRequired]
         public DateTime DatumZaposlenja { get; set; }
 
         [DisplayName("Lozinka")]
         [SqlName("Lozinka")]
+        [NotRequired]
         public string Lozinka { get; set; }
 
         [DisplayName("Email")]
         [SqlName("Email")]
+        [NotRequired]
         public string Email { get; set; }
         #endregion
 

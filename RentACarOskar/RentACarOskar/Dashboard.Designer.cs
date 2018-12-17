@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.Dobrodosli = new System.Windows.Forms.Label();
             this.btnDelete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -70,6 +71,7 @@
             // 
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.btnDelete);
             this.panelCentar.Controls.Add(this.btnUpdate);
             this.panelCentar.Controls.Add(this.btnInsert);
@@ -84,6 +86,17 @@
             this.panelCentar.Quality = 10;
             this.panelCentar.Size = new System.Drawing.Size(927, 650);
             this.panelCentar.TabIndex = 2;
+            // 
+            // Dobrodosli
+            // 
+            this.Dobrodosli.AutoSize = true;
+            this.Dobrodosli.Font = new System.Drawing.Font("Maiandra GD", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dobrodosli.ForeColor = System.Drawing.Color.CadetBlue;
+            this.Dobrodosli.Location = new System.Drawing.Point(339, 134);
+            this.Dobrodosli.Name = "Dobrodosli";
+            this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
+            this.Dobrodosli.TabIndex = 4;
+            this.Dobrodosli.Text = "Dobrodošli!";
             // 
             // btnDelete
             // 
@@ -119,6 +132,7 @@
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDelete.Textcolor = System.Drawing.Color.White;
             this.btnDelete.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -436,6 +450,7 @@
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panelCentar.ResumeLayout(false);
+            this.panelCentar.PerformLayout();
             this.PanelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -479,5 +494,6 @@
         private System.Windows.Forms.Panel panelFaktura;
         private System.Windows.Forms.Label lblFaktura;
         private Bunifu.Framework.UI.BunifuImageButton btnFaktura;
+        private System.Windows.Forms.Label Dobrodosli;
     }
 }

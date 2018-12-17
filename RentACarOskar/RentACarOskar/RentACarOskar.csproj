@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Attributes\ForeignKeyAttribute.cs" />
     <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
+    <Compile Include="Attributes\NotRequiredAttribute.cs" />
     <Compile Include="Attributes\SqlNameAttribute.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>

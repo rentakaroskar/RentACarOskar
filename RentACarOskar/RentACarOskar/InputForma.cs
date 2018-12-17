@@ -1,4 +1,5 @@
 ﻿using KonekcijaNaBazu;
+using RentACarOskar.Attributes;
 using RentACarOskar.UserControls;
 using System;
 using System.Collections.Generic;
@@ -60,7 +61,7 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
-                    else if(item.GetCustomAttributes<ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
+                    else if(item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
                     {
                         LookUpControl uc = new LookUpControl(myInterface);
                         uc.Name = item.Name;
@@ -103,17 +104,54 @@ namespace RentACarOskar
         private void btnOk_Click(object sender, EventArgs e)
         {
             var properties = myInterface.GetType().GetProperties();
-
+            bool i = true;
+            //String za dodavanje imena polja koja su obavezna a nisu popunjena
+            string imenaPolja = "";
             foreach (var item in flowPanel.Controls)
             {
-                if (item.GetType() == typeof(InputControl))
+                if (i == false)
                 {
-                    InputControl input = item as InputControl;
-                    string value = input.GetValueFromTextBox();
+                    string value = "";
 
-                    PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
-                    property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+                    if (item.GetType() == typeof(InputControl))
+                    {
+                        InputControl input = item as InputControl;
+                        value = input.GetValueFromTextBox();
+
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+                        //Provjera da li je obavezno polje prazno
+                        if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
+                            imenaPolja += input.Name + "\n";
+                    }
+                    else if (item.GetType() == typeof(InputDateControl))
+                    {
+                        InputDateControl input = item as InputDateControl;
+                        value = input.GetValueFromDateBox();
+
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+                        //Provjera da li je obavezno polje prazno
+                        if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
+                            imenaPolja += input.Name + "\n";
+                    }
+                    else if (item.GetType() == typeof(LookUpControl))
+                    {
+                        LookUpControl input = item as LookUpControl;
+                        value = input.GetKeyValue();
+
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+                        //Provjera da li je obavezno polje prazno
+                        if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
+                            imenaPolja += input.Name + "\n";
+                    }
+                    
                 }
+                i = false;
             }
             if (state == StateEnum.Create)
             {
@@ -125,6 +163,20 @@ namespace RentACarOskar
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
             }
+
+            //Izbacivanje MessageBox-a jer obavezna polja nisu popunjena
+            if(imenaPolja != "")
+            {
+                MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja, "Greska pri unosu", MessageBoxButtons.OK);
+                return;
+            }
+
+            DialogResult = DialogResult.OK;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }
