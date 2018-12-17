@@ -367,17 +367,17 @@ namespace RentACarOskar
             }
 
         }
-    }
+    
 
     #endregion
 
-    //private void btnUpdate_Click(object sender, EventArgs e)
-    //{
+        //private void btnUpdate_Click(object sender, EventArgs e)
+        //{
 
-    //    InputForma pom = new InputForma(, StateEnum.Update);
-    //    pom.ShowDialog();
-    //}
-}
+        //    InputForma pom = new InputForma(, StateEnum.Update);
+        //    pom.ShowDialog();
+        //}
+
 
         private void btnIzdaj_Click(object sender, EventArgs e)
         {
