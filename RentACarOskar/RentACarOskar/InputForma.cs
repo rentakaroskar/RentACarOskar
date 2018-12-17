@@ -4,7 +4,6 @@ using RentACarOskar.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RentACarOskar.Attributes;
 
 namespace RentACarOskar
 {
@@ -62,8 +62,13 @@ namespace RentACarOskar
                         flowPanel.Controls.Add(uc);
                     }
                     else if(item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
-                    {
-                        LookUpControl uc = new LookUpControl(myInterface);
+                    { 
+                        PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
+                         CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
+                         as PropertyInterface;
+                      
+                    
+                        LookUpControl uc = new LookUpControl(foreignKeyInterface);
                         uc.Name = item.Name;
                         uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
                         

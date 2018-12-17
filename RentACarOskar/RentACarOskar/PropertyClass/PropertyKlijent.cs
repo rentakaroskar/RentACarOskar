@@ -19,7 +19,7 @@ namespace RentACarOskar.PropertyClass
 
         [SqlName("OsobaID")]
         [DisplayName("Osoba ID")]
-        [ForeignKey("Osoba", "OsobaID", "RentACarOscar.PropertyClass.PropertyOsoba")]
+        [ForeignKey("Osoba", "OsobaID", "RentACarOskar.PropertyClass.PropertyOsoba")]
         public int OsobaID { get; set; }
 
         [SqlName("BrojVozacke")]

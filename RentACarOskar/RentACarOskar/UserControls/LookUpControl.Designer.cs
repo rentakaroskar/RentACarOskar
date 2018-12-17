@@ -48,7 +48,7 @@
             // 
             // 
             this.tbNaziv.CustomButton.Image = null;
-            this.tbNaziv.CustomButton.Location = new System.Drawing.Point(144, 1);
+            this.tbNaziv.CustomButton.Location = new System.Drawing.Point(127, 1);
             this.tbNaziv.CustomButton.Name = "";
             this.tbNaziv.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbNaziv.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -80,6 +80,7 @@
             this.btnLookup.TabIndex = 3;
             this.btnLookup.Text = "...";
             this.btnLookup.UseSelectable = true;
+            this.btnLookup.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // LookUpControl
             // 

@@ -17,11 +17,10 @@ namespace RentACarOskar.UserControls
         public string Key;
         public string Value;
 
-        public LookUpControl(PropertyInterface interf)
+        public LookUpControl(PropertyInterface interFace)
         {
             InitializeComponent();
-
-            myInterface = interf;
+            myInterface = interFace;
         }
 
         public void SetLabel(string text)
@@ -29,13 +28,19 @@ namespace RentACarOskar.UserControls
             lblNaziv.Text = text;
         }
 
+
         private void btnFind_Click(object sender, EventArgs e)
         {
-            //StandardForm sf = new StandardForm(myInterface);
-           //sf.ShowDialog();
+            LookUpForma sf = new LookUpForma(myInterface);
+            sf.ShowDialog();
             //Key = sf.Key;
             //Value = sf.Value;
-            tbNaziv.Text = Value;
+            //txtValue.Text = Value;
+        }
+
+        public void setInterface(PropertyInterface interf)
+        {
+            myInterface = interf;
         }
 
         public void SetValueTextBox(string value)
