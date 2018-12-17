@@ -11,7 +11,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RentACarOskar.Attributes;
 
 namespace RentACarOskar
 {
@@ -20,22 +19,16 @@ namespace RentACarOskar
 
         PropertyInterface myInterface;
         StateEnum state;
-        
-        public InputForma()
-        {
-            InitializeComponent();
-        }
 
         public InputForma(PropertyInterface myInterface, StateEnum state)
         {
             InitializeComponent();
-
+            Text = myInterface.ToString().Remove(0, 36) + " " + state.ToString();
             this.myInterface = myInterface;
             this.state = state;
             PopulateControls();
         }
-
-
+        
         // PopulateControls je gotov treba jos napraviti lookup funkciju
         private void PopulateControls()
         {
