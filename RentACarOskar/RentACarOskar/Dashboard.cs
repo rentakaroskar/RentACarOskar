@@ -32,6 +32,9 @@ namespace RentACarOskar
 
             PropertyVozilo pomInput = new PropertyVozilo();
             myForm = pomInput;
+            panelCentar.Visible = false;
+            btnIzdaj.Visible = false;
+
         }
 
         //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
@@ -132,6 +135,8 @@ namespace RentACarOskar
             btnDelete.Visible = true;
             btnUpdate.Visible = true;
             Dobrodosli.Visible = false;
+            panelCentar.Visible = true;
+            btnIzdaj.Visible = false;
 
         }
 
@@ -149,6 +154,9 @@ namespace RentACarOskar
             btnUpdate.Visible = true;
 
             Dobrodosli.Visible = false;
+            panelCentar.Visible = true;
+            btnIzdaj.Visible = false;
+
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
@@ -163,8 +171,11 @@ namespace RentACarOskar
             btnInsert.Visible = true;
             btnDelete.Visible = true;
             btnUpdate.Visible = true;
-
             Dobrodosli.Visible = false;
+
+            panelCentar.Visible = true;
+            btnIzdaj.Visible = true;
+
         }
         #endregion
 
@@ -238,5 +249,10 @@ namespace RentACarOskar
             }
         }
         #endregion
+
+        private void btnIzdaj_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
