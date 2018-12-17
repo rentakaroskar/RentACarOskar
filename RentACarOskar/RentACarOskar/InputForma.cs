@@ -108,10 +108,12 @@ namespace RentACarOskar
             {
                 if (i == false)
                 {
+                    string value;
+
                     if (item.GetType() == typeof(InputControl))
                     {
                         InputControl input = item as InputControl;
-                        string value = input.GetValueFromTextBox();
+                        value = input.GetValueFromTextBox();
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
@@ -119,7 +121,7 @@ namespace RentACarOskar
                     else if (item.GetType() == typeof(InputDateControl))
                     {
                         InputDateControl input = item as InputDateControl;
-                        string value = input.GetValueFromDateBox();
+                        value = input.GetValueFromDateBox();
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
@@ -127,7 +129,7 @@ namespace RentACarOskar
                     else if (item.GetType() == typeof(LookUpControl))
                     {
                         LookUpControl input = item as LookUpControl;
-                        string value = input.GetKeyValue();
+                        value = input.GetKeyValue();
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
