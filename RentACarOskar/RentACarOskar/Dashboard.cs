@@ -19,11 +19,7 @@ namespace RentACarOskar
         PropertyInterface myProperty;
         DataTable dt;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-
-
-
-
-
+        
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
         DGV ispisivati procedure koje je marko sastavio a mi saljemo InputFormi pravu property klasu*/
         PropertyInterface myForm;
@@ -38,10 +34,9 @@ namespace RentACarOskar
             myForm = pomInput;
         }
 
+        //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
         private void PopulateGrid(PropertyInterface property)
         {
-
-
             myProperty = property;
             panelPanelZaGV.Controls.Clear();
             dt = new DataTable();
@@ -55,8 +50,7 @@ namespace RentACarOskar
             dgv.Dock = DockStyle.Fill;
 
             dgv.Size = panelPanelZaGV.Size;
-
-
+            
             //logika za popunjavanje tabele
 
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
@@ -120,6 +114,7 @@ namespace RentACarOskar
             }
         }
 
+        #region MenuButtons
         private void btnVozilo_Click(object sender, EventArgs e)
         {
             VoziloIspis pom = new VoziloIspis();
@@ -132,7 +127,6 @@ namespace RentACarOskar
             btnInsert.Visible = true;
             btnDelete.Visible = true;
             btnUpdate.Visible = true;
-
         }
 
         private void btnKlijent_Click(object sender, EventArgs e)
@@ -162,7 +156,7 @@ namespace RentACarOskar
             btnDelete.Visible = true;
             btnUpdate.Visible = true;
         }
-
+        #endregion
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -237,6 +231,8 @@ namespace RentACarOskar
             logoPic.Visible = false;
             loptica.Visible = true;
         }
+
+        #region CRUDButtons
         private void btnInsert_Click(object sender, EventArgs e)
         {
             Visible = false;
@@ -269,5 +265,6 @@ namespace RentACarOskar
             Visible = true;
             PopulateGrid(myProperty);
         }
+        #endregion
     }
 }
