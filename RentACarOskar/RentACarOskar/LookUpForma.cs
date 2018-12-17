@@ -29,7 +29,7 @@ namespace RentACarOskar
             InitializeComponent();
             myProperty = property;
             PopulateGrid();
-        }
+        }        
         private void PopulateGrid()
         {
             DataTable dt = new DataTable();
