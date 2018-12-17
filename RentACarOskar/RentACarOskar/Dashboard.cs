@@ -245,7 +245,7 @@ namespace RentACarOskar
             //PropertyInterface pom = myForm;
             #endregion
 
-            int SelektovaniRed = dgv.SelectedRows[0].Index;
+            int SelektovaniRed = Convert.ToInt32(dgv.SelectedRows[0].Cells[0].Value);
             PropertyInterface pom = myProperty;
             PopulateGrid(myForm);
             myProperty = pom;
