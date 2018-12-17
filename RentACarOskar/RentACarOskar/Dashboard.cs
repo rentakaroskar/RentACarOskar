@@ -19,7 +19,7 @@ namespace RentACarOskar
         PropertyInterface myProperty;
         DataTable dt;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-        
+
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
         DGV ispisivati procedure koje je marko sastavio a mi saljemo InputFormi pravu property klasu*/
         PropertyInterface myForm;
@@ -50,7 +50,7 @@ namespace RentACarOskar
             dgv.Dock = DockStyle.Fill;
 
             dgv.Size = panelPanelZaGV.Size;
-            
+
             //logika za popunjavanje tabele
 
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
@@ -269,6 +269,18 @@ namespace RentACarOskar
             InputForma inputForma = new InputForma(myForm, StateEnum.Update);
             inputForma.ShowDialog();
             Visible = true;
+            PopulateGrid(myProperty);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var type = myForm.GetType();
+            var properties = type.GetProperties();
+
+            PropertyInfo property = properties.Where(x => x.IsDefined(typeof(PrimaryKeyAttribute))).FirstOrDefault();
+            property.SetValue(myForm, Convert.ChangeType(dgv.SelectedRows[0].Cells[0].Value, property.PropertyType));
+
+            SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, myForm.GetDeleteQuery(), myForm.GetDeleteParameters().ToArray());
             PopulateGrid(myProperty);
         }
         #endregion

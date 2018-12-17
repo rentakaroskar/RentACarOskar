@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.Dobrodosli = new System.Windows.Forms.Label();
             this.btnDelete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -50,7 +51,6 @@
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
-            this.Dobrodosli = new System.Windows.Forms.Label();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -87,9 +87,19 @@
             this.panelCentar.Size = new System.Drawing.Size(927, 650);
             this.panelCentar.TabIndex = 2;
             // 
+            // Dobrodosli
+            // 
+            this.Dobrodosli.AutoSize = true;
+            this.Dobrodosli.Font = new System.Drawing.Font("Maiandra GD", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dobrodosli.ForeColor = System.Drawing.Color.CadetBlue;
+            this.Dobrodosli.Location = new System.Drawing.Point(339, 134);
+            this.Dobrodosli.Name = "Dobrodosli";
+            this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
+            this.Dobrodosli.TabIndex = 4;
+            this.Dobrodosli.Text = "Dobrodošli!";
+            // 
             // btnDelete
             // 
-            //this.btnDelete.Active = false;
             this.btnDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -121,10 +131,10 @@
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDelete.Textcolor = System.Drawing.Color.White;
             this.btnDelete.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
-            //this.btnUpdate.Active = false;
             this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -160,7 +170,6 @@
             // 
             // btnInsert
             // 
-            //this.btnInsert.Active = false;
             this.btnInsert.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -423,17 +432,6 @@
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
-            // 
-            // Dobrodosli
-            // 
-            this.Dobrodosli.AutoSize = true;
-            this.Dobrodosli.Font = new System.Drawing.Font("Maiandra GD", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dobrodosli.ForeColor = System.Drawing.Color.CadetBlue;
-            this.Dobrodosli.Location = new System.Drawing.Point(339, 134);
-            this.Dobrodosli.Name = "Dobrodosli";
-            this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
-            this.Dobrodosli.TabIndex = 4;
-            this.Dobrodosli.Text = "Dobrodošli!";
             // 
             // Dashboard
             // 
