@@ -51,6 +51,7 @@
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,6 +72,7 @@
             // 
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentar.Controls.Add(this.button1);
             this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.btnDelete);
             this.panelCentar.Controls.Add(this.btnUpdate);
@@ -100,7 +102,6 @@
             // 
             // btnDelete
             // 
-            //this.btnDelete.Active = false;
             this.btnDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -136,7 +137,6 @@
             // 
             // btnUpdate
             // 
-           // this.btnUpdate.Active = false;
             this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -172,7 +172,6 @@
             // 
             // btnInsert
             // 
-            //this.btnInsert.Active = false;
             this.btnInsert.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -436,6 +435,18 @@
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(275, 590);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,5 +506,6 @@
         private System.Windows.Forms.Label lblFaktura;
         private Bunifu.Framework.UI.BunifuImageButton btnFaktura;
         private System.Windows.Forms.Label Dobrodosli;
+        private System.Windows.Forms.Button button1;
     }
 }
