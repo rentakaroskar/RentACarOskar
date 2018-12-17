@@ -169,8 +169,9 @@ namespace RentACarOskar
             myForm = pomInput;
             panelPanelZaGV.Visible = true;
             btnInsert.Visible = true;
-            btnDelete.Visible = true;
-            btnUpdate.Visible = true;
+            btnDelete.Visible = false;
+            btnUpdate.Visible = false;
+
             Dobrodosli.Visible = false;
 
             panelCentar.Visible = true;
@@ -244,7 +245,7 @@ namespace RentACarOskar
             }
             catch (System.Data.SqlClient.SqlException sql)
             {
-                MessageBox.Show("Nemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\nError code: " + sql.Message,
+                MessageBox.Show("Nemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!",
                     "Greska pri brisanju", MessageBoxButtons.OK);
             }
         }
