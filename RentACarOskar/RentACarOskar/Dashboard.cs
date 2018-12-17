@@ -238,5 +238,48 @@ namespace RentACarOskar
             }
         }
         #endregion
+
+        private void panelAutomobili_MouseHover(object sender, EventArgs e)
+        {
+            panelAutomobili.BackColor = Color.FromArgb(40, 42, 60);
+        }
+
+        private void panelAutomobili_MouseLeave(object sender, EventArgs e)
+        {
+            panelAutomobili.BackColor = Color.FromArgb(44, 46, 62);
+
+        }
+        private void panelKlijenti_MouseHover(object sender, EventArgs e)
+        {
+            panelKlijenti.BackColor = Color.FromArgb(40, 42, 60);
+        }
+
+        private void panelKlijenti_MouseLeave(object sender, EventArgs e)
+        {
+            panelKlijenti.BackColor = Color.FromArgb(44, 46, 62);
+
+        }
+
+        private void panelFaktura_MouseHover(object sender, EventArgs e)
+        {
+            panelFaktura.BackColor = Color.FromArgb(40, 42, 60);
+        }
+
+        private void panelFaktura_MouseLeave(object sender, EventArgs e)
+        {
+            panelFaktura.BackColor = Color.FromArgb(44, 46, 62);
+
+        }
+
+        private void panelLogOut_MouseHover(object sender, EventArgs e)
+        {
+            panelLogOut.BackColor = Color.FromArgb(40, 42, 60);
+        }
+
+        private void panelLogOut_MouseLeave(object sender, EventArgs e)
+        {
+            panelLogOut.BackColor = Color.FromArgb(44, 46, 62);
+
+        }
     }
 }
