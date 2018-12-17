@@ -164,7 +164,6 @@ namespace RentACarOskar
                         if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
                             imenaPolja += input.Name + "\n";
                     }
-                    
                 }
                 i = false;
             }
@@ -178,7 +177,6 @@ namespace RentACarOskar
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
             }
-
             //Izbacivanje MessageBox-a jer obavezna polja nisu popunjena
             if(imenaPolja != "")
             {
