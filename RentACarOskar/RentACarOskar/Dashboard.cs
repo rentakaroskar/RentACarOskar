@@ -13,15 +13,16 @@ using System.Windows.Forms;
 
 namespace RentACarOskar
 {
-
     public partial class Dashboard : Form
     {
         PropertyInterface myProperty;
+
+        //filter
+        PropertyInterface FilterProperty;
         DataTable dt;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
-
-
+        
 
 
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
@@ -34,34 +35,36 @@ namespace RentACarOskar
 
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
+            FilterProperty = new VoziloIspis();
         }
 
         private void PopulateGrid(PropertyInterface property)
         {
-          
-          
             myProperty = property;
-            panelPanelZaGV.Controls.Clear();
             dt = new DataTable();
+            //logika za popunjavanje tabele
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+            property.GetSelectQuery());
+            dt.Load(reader);
+            reader.Close();
+            PopuniDGV(dt, property);
+        }
+
+        private void PopuniDGV(DataTable dt, PropertyInterface property)
+        {
+            panelPanelZaGV.Controls.Clear();
+
             var dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+
             //pozadina hedera
-            dgv.HeaderBgColor = Color.FromArgb(128, 185, 209);    
+            dgv.HeaderBgColor = Color.FromArgb(128, 185, 209);
             panelPanelZaGV.Controls.Add(dgv);
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.MultiSelect = false;
             dgv.Dock = DockStyle.Fill;
 
             dgv.Size = panelPanelZaGV.Size;
-          
 
-            //logika za popunjavanje tabele
-
-            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
-            property.GetSelectQuery());
-
-            dt.Load(reader);
-            reader.Close();
-            
             dgv.DataSource = dt; //prikazi tabelu
 
             //Auto size kolona i redova u tabeli
@@ -91,17 +94,11 @@ namespace RentACarOskar
                 item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>().FirstOrDefault().Name == item.HeaderText
                 ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
-            
-            //sortiranje
-            if (property.GetType() == typeof(VoziloIspis))
-            {
-                dgv.Sort(dgv.Columns[0], ListSortDirection.Ascending);
-            }
         }
 
         private void refreshGrid()
         {
-            DataGridView dgv = new DataGridView();DataTable dataTable = new DataTable();
+            DataGridView dgv = new DataGridView(); DataTable dataTable = new DataTable();
             SqlDataReader dataReader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text, myProperty.GetSelectQuery());
 
             dataTable.Load(dataReader);
@@ -113,7 +110,7 @@ namespace RentACarOskar
         {
             if (PanelLeft.Width == 245)
             {
-                
+
                 PanelLeft.Width = 40;
                 logoPic.Visible = false;
                 slicica1.Visible = true;
@@ -129,7 +126,7 @@ namespace RentACarOskar
 
             }
             else
-            {               
+            {
                 PanelLeft.Width = 245;
                 logoPic.Visible = true;
                 slicica1.Visible = false;
@@ -150,10 +147,12 @@ namespace RentACarOskar
         {
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
-
             //Pom za Input formu
             PropertyVozilo pomInput = new PropertyVozilo();
             myForm = pomInput;
+
+            //Filter 
+            FilterProperty = new VoziloIspis();
         }
 
         private void btnRadnik_Click(object sender, EventArgs e)
@@ -164,6 +163,10 @@ namespace RentACarOskar
             //Pom za Input formu
             PropertyRadnik pomInput = new PropertyRadnik();
             myForm = pomInput;
+
+            //Filter 
+            FilterProperty = new FakturaIspis();
+
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
@@ -174,11 +177,14 @@ namespace RentACarOskar
             //Pom za Input formu
             PropertyFaktura pomInput = new PropertyFaktura();
             myForm = pomInput;
+
+            //Filter 
+            FilterProperty = new FakturaIspis();
         }
 
         private void slicica1_Click(object sender, EventArgs e)
         {
-            
+
             logoPic.Visible = true;
             slicica1.Visible = false;
             slicica2.Visible = false;
@@ -191,7 +197,7 @@ namespace RentACarOskar
 
         private void slicica2_Click(object sender, EventArgs e)
         {
-            
+
             logoPic.Visible = true;
             slicica1.Visible = false;
             slicica2.Visible = false;
@@ -204,7 +210,7 @@ namespace RentACarOskar
 
         private void slicica3_Click(object sender, EventArgs e)
         {
-            
+
             logoPic.Visible = true;
             slicica1.Visible = false;
             slicica2.Visible = false;
@@ -226,11 +232,82 @@ namespace RentACarOskar
             pom.ShowDialog();
         }
 
-        //private void btnUpdate_Click(object sender, EventArgs e)
-        //{
-            
-        //    InputForma pom = new InputForma(, StateEnum.Update);
-        //    pom.ShowDialog();
-        //}
+        #region Filter
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            PopuniFilterPanel();
+        }
+
+        private void PopuniFilterPanel()
+        {
+            panelFilter.Controls.Clear();
+            if (FilterProperty.GetType() == typeof(FakturaIspis))
+            {
+                Label lblOd = new Label();
+                lblOd.Text = "Od:";
+                lblOd.Location = new Point(1, 1);
+                lblOd.Width = 30;
+                panelFilter.Controls.Add(lblOd);
+                DateTimePicker dtpOd = new DateTimePicker();
+                dtpOd.Format = DateTimePickerFormat.Custom;
+                dtpOd.CustomFormat = "dd.MM.yyyy";
+                dtpOd.Location = new Point(35, 1);
+                dtpOd.Width = 190;
+                panelFilter.Controls.Add(dtpOd);
+
+                //filter
+
+                Label lblDo = new Label();
+                lblDo.Text = "Do:";
+                lblDo.Location = new Point(230, 1);
+                lblDo.Width = 30;
+                panelFilter.Controls.Add(lblDo);
+                DateTimePicker dtpDo = new DateTimePicker();
+                dtpDo.Format = DateTimePickerFormat.Custom;
+                dtpDo.CustomFormat = "dd.MM.yyyy";
+                dtpDo.Location = new Point(265, 1);
+                dtpDo.Width = 190;
+                panelFilter.Controls.Add(dtpDo);
+
+                dtpOd.ValueChanged += new EventHandler(f_ValueChanged);
+                dtpDo.ValueChanged += new EventHandler(f_ValueChanged);
+
+
+                void f_ValueChanged(object sender, EventArgs e)
+                {
+                    string QueryFilter = "exec [dbo].[spFilterFakutra] @PocetniDatum, @KrajniDatum";
+
+                    SqlConnection con = new SqlConnection(SqlHelper.GetConnectionString());
+
+                    SqlCommand Cmd = new SqlCommand(QueryFilter, con);
+
+                    Cmd.Parameters.Add(new SqlParameter("@PocetniDatum", SqlDbType.DateTime));
+                    Cmd.Parameters.Add(new SqlParameter("@KrajniDatum", SqlDbType.DateTime));
+
+                    Cmd.Parameters["@PocetniDatum"].Value = dtpOd.Value.ToLongDateString();
+                    Cmd.Parameters["@PocetniDatum"].IsNullable = true;
+                    Cmd.Parameters["@KrajniDatum"].Value = dtpDo.Value.ToLongDateString();
+                    Cmd.Parameters["@KrajniDatum"].IsNullable = true;
+                    
+                    dt = new DataTable();
+
+                    //logika za popunjavanje tabele
+                    SqlDataAdapter adapter = new SqlDataAdapter(Cmd);
+                    adapter.Fill(dt);
+                    PopuniDGV(dt, FilterProperty);
+                }
+            }
+
+        }
     }
+
+    #endregion
+
+    //private void btnUpdate_Click(object sender, EventArgs e)
+    //{
+
+    //    InputForma pom = new InputForma(, StateEnum.Update);
+    //    pom.ShowDialog();
+    //}
 }
+
