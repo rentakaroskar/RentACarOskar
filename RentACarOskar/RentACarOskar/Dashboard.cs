@@ -33,8 +33,8 @@ namespace RentACarOskar
             PropertyVozilo pomInput = new PropertyVozilo();
             myForm = pomInput;
             panelCentar.Visible = false;
-            btnIzdaj.Visible = false;
             Dobrodosli.Visible = true;
+            btnIzdaj.Visible = false;
 
         }
 
@@ -47,7 +47,7 @@ namespace RentACarOskar
             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             dgv.BackgroundColor = Color.White;
             //pozadina hedera
-            dgv.HeaderBgColor = Color.FromArgb(128, 185, 209);
+            dgv.HeaderBgColor = Color.FromArgb(44, 46, 62);
             panelPanelZaGV.Controls.Add(dgv);
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.MultiSelect = false;
@@ -72,7 +72,7 @@ namespace RentACarOskar
             //boja header teksta u tabeli
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
             //boja teksta i pozadina kada selektujemo item 
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(46, 139, 87);
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(44, 46, 62);
             dgv.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
 
             //This code allows the user to edit the information in the DataGrid.
@@ -132,12 +132,9 @@ namespace RentACarOskar
             PropertyVozilo pomInput = new PropertyVozilo();
             myForm = pomInput;
             panelPanelZaGV.Visible = true;
-            btnInsert.Visible = true;
-            btnDelete.Visible = true;
-            btnUpdate.Visible = true;
+            bDelete.Visible = true;
             Dobrodosli.Visible = false;
             panelCentar.Visible = true;
-            btnIzdaj.Visible = false;
 
         }
 
@@ -150,13 +147,10 @@ namespace RentACarOskar
             PropertyKlijent pomInput = new PropertyKlijent();
             myForm = pomInput;
             panelPanelZaGV.Visible = true;
-            btnInsert.Visible = true;
-            btnDelete.Visible = true;
-            btnUpdate.Visible = true;
+            bDelete.Visible = true;
 
             Dobrodosli.Visible = false;
             panelCentar.Visible = true;
-            btnIzdaj.Visible = false;
 
         }
 
@@ -169,13 +163,12 @@ namespace RentACarOskar
             PropertyFaktura pomInput = new PropertyFaktura();
             myForm = pomInput;
             panelPanelZaGV.Visible = true;
-            btnInsert.Visible = true;
-            btnDelete.Visible = false;
-            btnUpdate.Visible = false;
+            bDelete.Visible = false;
 
             Dobrodosli.Visible = false;
 
             panelCentar.Visible = true;
+
             btnIzdaj.Visible = true;
 
         }
@@ -183,7 +176,7 @@ namespace RentACarOskar
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult = DialogResult.Cancel;
         }
 
        
@@ -191,9 +184,7 @@ namespace RentACarOskar
         private void Dashboard_Load(object sender, EventArgs e)
         {
             panelPanelZaGV.Visible = false;
-            btnInsert.Visible = false;
-            btnDelete.Visible = false;
-            btnUpdate.Visible = false;
+            bDelete.Visible = false;
         }
 
         
@@ -313,5 +304,50 @@ namespace RentACarOskar
         {
             DialogResult = DialogResult.Cancel;
         }
+
+        private void btnInsert_MouseHover(object sender, EventArgs e)
+        {
+            btnInsert.ForeColor = Color.White;
+        }
+
+        private void btnInsert_MouseLeave(object sender, EventArgs e)
+        {
+            btnInsert.ForeColor = Color.FromArgb(44, 46, 62);
+            
+        }
+
+        private void btnUpdate_MouseHover(object sender, EventArgs e)
+        {
+            btnUpdate.ForeColor = Color.White;
+        }
+
+        private void btnUpdate_MouseLeave(object sender, EventArgs e)
+        {
+            btnUpdate.ForeColor = Color.FromArgb(44, 46, 62);
+
+        }
+
+        private void bDelete_MouseHover(object sender, EventArgs e)
+        {
+            bDelete.ForeColor = Color.White;
+        }
+        private void bDelete_MouseLeave(object sender, EventArgs e)
+        {
+            bDelete.ForeColor = Color.FromArgb(44, 46, 62);
+
+        }
+
+        private void btnIzdaj_MouseHover(object sender, EventArgs e)
+        {
+            btnIzdaj.ForeColor = Color.White;
+        }
+        private void btnIzdaj_MouseLeave(object sender, EventArgs e)
+        {
+            btnIzdaj.ForeColor = Color.FromArgb(44, 46, 62);
+
+        }
+
+        
+
     }
 }
