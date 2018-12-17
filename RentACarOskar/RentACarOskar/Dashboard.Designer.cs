@@ -51,6 +51,8 @@
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLogOut = new System.Windows.Forms.Label();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -65,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCentar
@@ -282,6 +285,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.panelFaktura);
             this.panelMenu.Controls.Add(this.panelKlijenti);
             this.panelMenu.Controls.Add(this.panelAutomobili);
@@ -330,7 +334,6 @@
             this.btnFaktura.TabStop = false;
             this.btnFaktura.Zoom = 10;
             this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
-            this.btnFaktura.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
             // panelKlijenti
             // 
@@ -342,8 +345,7 @@
             this.panelKlijenti.Name = "panelKlijenti";
             this.panelKlijenti.Size = new System.Drawing.Size(245, 45);
             this.panelKlijenti.TabIndex = 8;
-            this.panelKlijenti.MouseLeave += new System.EventHandler(this.panelKlijenti_MouseLeave);
-            this.panelKlijenti.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
+            this.panelKlijenti.Click += new System.EventHandler(this.btnKlijent_Click);
             // 
             // lblKlijenti
             // 
@@ -355,6 +357,7 @@
             this.lblKlijenti.Size = new System.Drawing.Size(64, 22);
             this.lblKlijenti.TabIndex = 7;
             this.lblKlijenti.Text = "Klijenti";
+            this.lblKlijenti.Click += new System.EventHandler(this.btnKlijent_Click);
             // 
             // slicicaPeople
             // 
@@ -370,7 +373,6 @@
             this.slicicaPeople.TabStop = false;
             this.slicicaPeople.Zoom = 10;
             this.slicicaPeople.Click += new System.EventHandler(this.btnKlijent_Click);
-            this.slicicaPeople.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
             // panelAutomobili
             // 
@@ -410,7 +412,6 @@
             this.slicicaAuto.TabStop = false;
             this.slicicaAuto.Zoom = 10;
             this.slicicaAuto.Click += new System.EventHandler(this.btnVozilo_Click);
-            this.slicicaAuto.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
             // loptica
             // 
@@ -435,6 +436,27 @@
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.panel1.Controls.Add(this.lblLogOut);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1.Location = new System.Drawing.Point(0, 578);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(245, 45);
+            this.panel1.TabIndex = 10;
+            // 
+            // lblLogOut
+            // 
+            this.lblLogOut.AutoSize = true;
+            this.lblLogOut.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogOut.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblLogOut.Location = new System.Drawing.Point(68, 13);
+            this.lblLogOut.Name = "lblLogOut";
+            this.lblLogOut.Size = new System.Drawing.Size(80, 22);
+            this.lblLogOut.TabIndex = 7;
+            this.lblLogOut.Text = "Log out";
             // 
             // Dashboard
             // 
@@ -467,6 +489,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -495,5 +519,7 @@
         private System.Windows.Forms.Label lblFaktura;
         private Bunifu.Framework.UI.BunifuImageButton btnFaktura;
         private System.Windows.Forms.Label Dobrodosli;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblLogOut;
     }
 }

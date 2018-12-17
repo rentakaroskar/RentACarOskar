@@ -65,9 +65,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.flowPanel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "InputForma";
             this.Text = "InputForma";
             this.ResumeLayout(false);
