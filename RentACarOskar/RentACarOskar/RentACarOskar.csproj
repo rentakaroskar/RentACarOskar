@@ -69,6 +69,7 @@
     <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
     <Compile Include="Attributes\NotRequiredAttribute.cs" />
     <Compile Include="Attributes\SqlNameAttribute.cs" />
+    <Compile Include="CRUD\CRUDfunkcije.cs" />
     <Compile Include="Attributes\TwoRadioButtonsAttribute.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>

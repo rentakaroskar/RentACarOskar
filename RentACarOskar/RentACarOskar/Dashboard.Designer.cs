@@ -128,7 +128,6 @@
             // 
             // btnDelete
             // 
-            //this.btnDelete.Active = false;
             this.btnDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

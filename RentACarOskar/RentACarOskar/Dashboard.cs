@@ -10,6 +10,8 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using RentACarOskar.CRUD;
+
 
 namespace RentACarOskar
 {
@@ -31,6 +33,8 @@ namespace RentACarOskar
 
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
+            //CRUDfunkcije crud = new CRUDfunkcije();
+            //crud.PopulateGrid(pom, panelPanelZaGV);
 
             PropertyVozilo pomInput = new PropertyVozilo();
             myForm = pomInput;
@@ -205,55 +209,77 @@ namespace RentACarOskar
         #region CRUDButtons
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            Visible = false;
-            InputForma pom = new InputForma(myForm, StateEnum.Create);
-            pom.ShowDialog();
-            Visible = true;
+            //Visible = false;
+            //InputForma pom = new InputForma(myForm, StateEnum.Create);
+            //pom.ShowDialog();
+            //Visible = true;
+            //PopulateGrid(myProperty);
+            CRUDfunkcije crud = new CRUDfunkcije();
+            crud.Insert(myForm);
             PopulateGrid(myProperty);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int red = dgv.SelectedRows[0].Index;
-            var type = myForm.GetType();
-            var properties = type.GetProperties();
+            #region staraF-ja    
+            //var type = myForm.GetType();
+            // int red = dgv.SelectedRows[0].Index;
+            //var properties = type.GetProperties();
+            //PropertyInterface pom = myProperty;
+            //PopulateGrid(myForm);
+            //myProperty = pom;
+            //Visible = false;
+            //int i = 0;
+            //foreach (DataGridViewCell cell in dgv.Rows[red].Cells)
+            //{
+            //    String value = cell.Value.ToString();
+
+            //    PropertyInfo property = properties.Where(x => dgv.Columns[i].HeaderText == x.GetCustomAttribute<DisplayNameAttribute>().DisplayName).FirstOrDefault();
+            //    property.SetValue(myForm, Convert.ChangeType(value, property.PropertyType));
+            //    i++;
+            //}
+            //InputForma inputForma = new InputForma(myForm, StateEnum.Update);
+            //inputForma.ShowDialog();
+            //var type = myForm.GetType();
+            //var properties = type.GetProperties();
+            //PropertyInterface pom = myForm;
+            #endregion
+
+            int SelektovaniRed = dgv.SelectedRows[0].Index;
             PropertyInterface pom = myProperty;
             PopulateGrid(myForm);
             myProperty = pom;
             Visible = false;
-            int i = 0;
-            foreach (DataGridViewCell cell in dgv.Rows[red].Cells)
-            {
-                String value = cell.Value.ToString();
-
-                PropertyInfo property = properties.Where(x => dgv.Columns[i].HeaderText == x.GetCustomAttribute<DisplayNameAttribute>().DisplayName).FirstOrDefault();
-                property.SetValue(myForm, Convert.ChangeType(value, property.PropertyType));
-                i++;
-            }
-            InputForma inputForma = new InputForma(myForm, StateEnum.Update);
-            inputForma.ShowDialog();
+            CRUDfunkcije crud = new CRUDfunkcije();
+            crud.Update(myForm, dgv,SelektovaniRed);
             Visible = true;
             PopulateGrid(myProperty);
+
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var type = myForm.GetType();
-                var properties = type.GetProperties();
+            //try
+            //{
+            //    var type = myForm.GetType();
+            //    var properties = type.GetProperties();
 
-                PropertyInfo property = properties.Where(x => x.IsDefined(typeof(PrimaryKeyAttribute))).FirstOrDefault();
-                property.SetValue(myForm, Convert.ChangeType(dgv.SelectedRows[0].Cells[0].Value, property.PropertyType));
+            //    PropertyInfo property = properties.Where(x => x.IsDefined(typeof(PrimaryKeyAttribute))).FirstOrDefault();
+            //    property.SetValue(myForm, Convert.ChangeType(dgv.SelectedRows[0].Cells[0].Value, property.PropertyType));
 
-                SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, myForm.GetDeleteQuery(), myForm.GetDeleteParameters().ToArray());
-                PopulateGrid(myProperty);
-            }
-            catch (System.Data.SqlClient.SqlException sql)
-            {
-                MessageBox.Show("Nemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!",
-                    "Greska pri brisanju", MessageBoxButtons.OK);
-            }
+            //    SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, myForm.GetDeleteQuery(), myForm.GetDeleteParameters().ToArray());
+            //    PopulateGrid(myProperty);
+            //}
+            //catch (System.Data.SqlClient.SqlException sql)
+            //{
+            //    MessageBox.Show("Nemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\nError code: " + sql.Message,
+            //        "Greska pri brisanju", MessageBoxButtons.OK);
+            //}
+            int SelektovaniRed = dgv.SelectedRows[0].Index;
+            CRUDfunkcije crud = new CRUDfunkcije();
+            crud.Delete(myForm,SelektovaniRed,dgv);
+
         }
         #endregion
 
