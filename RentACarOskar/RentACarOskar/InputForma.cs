@@ -76,6 +76,23 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
+                    else if(item.GetCustomAttribute<TwoRadioButtonsAttribute>() != null)
+                    {
+                        TwoRadioButtonsControl uc = new TwoRadioButtonsControl();
+                        uc.Name = item.Name;
+                        uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                        uc.SetRadioButtons(item.GetCustomAttribute<TwoRadioButtonsAttribute>().Value1, item.GetCustomAttribute<TwoRadioButtonsAttribute>().Value2);
+                        if (state == StateEnum.Update)
+                        {
+                            try
+                            {
+                                uc.SetChecked(item.GetValue(myInterface).ToString());
+                            }
+                            catch { }
+                        }
+
+                        flowPanel.Controls.Add(uc);
+                    }
                     else
                     {
                         InputControl uc = new InputControl();

@@ -36,5 +36,13 @@ namespace RentACarOskar.UserControls
             else
                 return rb2.Text;
         }
+
+        public void SetChecked(string value)
+        {
+            if (value == rb1.Text)
+                rb1.Checked = true;
+            else
+                rb2.Checked = true;
+        }
     }
 }
