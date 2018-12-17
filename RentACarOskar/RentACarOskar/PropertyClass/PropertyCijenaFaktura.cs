@@ -20,12 +20,12 @@ namespace RentACarOskar.PropertyClass
 
         [DisplayName("Cijena ID ")]
         [SqlName("CijenaID")]
-        [ForeignKey("Cijena", "CijenaID", "RentACarOscar.PropertyClass.PropertyCijena")]
+        [ForeignKey("Cijena", "CijenaID", "RentACarOskar.PropertyClass.PropertyCijena")]
         public int CijenaID { get; set; }
 
         [DisplayName("Faktura ID")]
         [SqlName("FakturaID")]
-        [ForeignKey("Faktura", "FakturaID", "RentACarOscar.PropertyClass.PropertyFaktura")]
+        [ForeignKey("Faktura", "FakturaID", "RentACarOskar.PropertyClass.PropertyFaktura")]
         public int FakturaID { get; set; }
 
         [DisplayName("Broj dana")]

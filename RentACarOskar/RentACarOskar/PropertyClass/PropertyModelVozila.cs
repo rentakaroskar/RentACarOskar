@@ -21,7 +21,7 @@ namespace RentACarOskar.PropertyClass
         public string Naziv { get; set; }
         [DisplayName("Proizvodjac ID")]
         [SqlName("ProizvodjacID")]
-        [ForeignKey("Proizvodjac", "ProizvodjacID", "RentACarOscar.PropertyClass.PropertyProizvodjac")]
+        [ForeignKey("Proizvodjac", "ProizvodjacID", "RentACarOskar.PropertyClass.PropertyProizvodjac")]
         public int ProizvodjacID { get; set; }
         #endregion
 
