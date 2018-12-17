@@ -34,6 +34,7 @@ namespace RentACarOskar
             myForm = pomInput;
             panelCentar.Visible = false;
             btnIzdaj.Visible = false;
+            Dobrodosli.Visible = true;
 
         }
 
@@ -254,49 +255,63 @@ namespace RentACarOskar
         private void panelAutomobili_MouseHover(object sender, EventArgs e)
         {
             panelAutomobili.BackColor = Color.FromArgb(40, 42, 60);
+            slicicaAuto.BackColor = Color.FromArgb(40, 42, 60);
         }
 
         private void panelAutomobili_MouseLeave(object sender, EventArgs e)
         {
             panelAutomobili.BackColor = Color.FromArgb(44, 46, 62);
+            slicicaAuto.BackColor = Color.FromArgb(44, 46, 62);
 
         }
         private void panelKlijenti_MouseHover(object sender, EventArgs e)
         {
             panelKlijenti.BackColor = Color.FromArgb(40, 42, 60);
+            slicicaPeople.BackColor = Color.FromArgb(40, 42, 60);
         }
 
         private void panelKlijenti_MouseLeave(object sender, EventArgs e)
         {
             panelKlijenti.BackColor = Color.FromArgb(44, 46, 62);
+            slicicaPeople.BackColor = Color.FromArgb(44, 46, 62);
+
 
         }
 
         private void panelFaktura_MouseHover(object sender, EventArgs e)
         {
             panelFaktura.BackColor = Color.FromArgb(40, 42, 60);
+            btnFaktura.BackColor = Color.FromArgb(40, 42, 60);
         }
 
         private void panelFaktura_MouseLeave(object sender, EventArgs e)
         {
             panelFaktura.BackColor = Color.FromArgb(44, 46, 62);
+            btnFaktura.BackColor = Color.FromArgb(44, 46, 62);
 
         }
 
         private void panelLogOut_MouseHover(object sender, EventArgs e)
         {
             panelLogOut.BackColor = Color.FromArgb(40, 42, 60);
+            btnLogOut.BackColor = Color.FromArgb(40, 42, 60);
         }
 
         private void panelLogOut_MouseLeave(object sender, EventArgs e)
         {
             panelLogOut.BackColor = Color.FromArgb(44, 46, 62);
+            btnLogOut.BackColor = Color.FromArgb(44, 46, 62);
 
         }
 
         private void btnIzdaj_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }
