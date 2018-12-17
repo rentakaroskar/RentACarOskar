@@ -105,6 +105,7 @@ namespace RentACarOskar
         {
             var properties = myInterface.GetType().GetProperties();
             bool i = true;
+            //String za dodavanje imena polja koja su obavezna a nisu popunjena
             string imenaPolja = "";
             foreach (var item in flowPanel.Controls)
             {
@@ -120,6 +121,7 @@ namespace RentACarOskar
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
 
+                        //Provjera da li je obavezno polje prazno
                         if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
                             imenaPolja += input.Name + "\n";
                     }
@@ -131,6 +133,7 @@ namespace RentACarOskar
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
 
+                        //Provjera da li je obavezno polje prazno
                         if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
                             imenaPolja += input.Name + "\n";
                     }
@@ -142,6 +145,7 @@ namespace RentACarOskar
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
 
+                        //Provjera da li je obavezno polje prazno
                         if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
                             imenaPolja += input.Name + "\n";
                     }
@@ -160,9 +164,10 @@ namespace RentACarOskar
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
             }
 
+            //Izbacivanje MessageBox-a jer obavezna polja nisu popunjena
             if(imenaPolja != "")
             {
-                MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja);
+                MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja, "Greska pri unosu", MessageBoxButtons.OK);
                 return;
             }
 
