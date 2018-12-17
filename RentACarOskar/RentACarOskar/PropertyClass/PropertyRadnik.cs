@@ -36,6 +36,7 @@ namespace RentACarOskar.PropertyClass
 
         [DisplayName("Bracni status")]
         [SqlName("BracniStatus")]
+        [TwoRadioButtons("Ozenjen/Udata", "Neozenjen/Neudata")]
         public char BracniStatus { get; set; }
 
         [DisplayName("Datum zaposlenja")]

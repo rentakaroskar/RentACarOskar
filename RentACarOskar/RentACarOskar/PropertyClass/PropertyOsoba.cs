@@ -36,6 +36,7 @@ namespace RentACarOskar.PropertyClass
         [DisplayName("Pol")]
         [SqlName("Pol")]
         [NotRequired]
+        [TwoRadioButtons("M", "F")]
         public char Pol { get; set; }
 
         [DisplayName("Broj telefona")]
