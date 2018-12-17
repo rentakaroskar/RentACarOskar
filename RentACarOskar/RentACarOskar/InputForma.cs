@@ -1,4 +1,5 @@
 ﻿using KonekcijaNaBazu;
+using RentACarOskar.Attributes;
 using RentACarOskar.UserControls;
 using System;
 using System.Collections.Generic;
@@ -60,7 +61,7 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
-                    else if(item.GetCustomAttributes<ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
+                    else if(item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
                     {
                         LookUpControl uc = new LookUpControl(myInterface);
                         uc.Name = item.Name;
@@ -104,11 +105,12 @@ namespace RentACarOskar
         {
             var properties = myInterface.GetType().GetProperties();
             bool i = true;
+            string imenaPolja = "";
             foreach (var item in flowPanel.Controls)
             {
                 if (i == false)
                 {
-                    string value;
+                    string value = "";
 
                     if (item.GetType() == typeof(InputControl))
                     {
@@ -117,6 +119,9 @@ namespace RentACarOskar
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+                        if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
+                            imenaPolja += input.Name + "\n";
                     }
                     else if (item.GetType() == typeof(InputDateControl))
                     {
@@ -125,6 +130,9 @@ namespace RentACarOskar
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+                        if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
+                            imenaPolja += input.Name + "\n";
                     }
                     else if (item.GetType() == typeof(LookUpControl))
                     {
@@ -133,7 +141,11 @@ namespace RentACarOskar
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+                        if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
+                            imenaPolja += input.Name + "\n";
                     }
+                    
                 }
                 i = false;
             }
@@ -146,6 +158,12 @@ namespace RentACarOskar
             {
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
+            }
+
+            if(imenaPolja != "")
+            {
+                MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja);
+                return;
             }
 
             DialogResult = DialogResult.OK;
