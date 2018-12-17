@@ -13,10 +13,12 @@ using System.Windows.Forms;
 
 namespace RentACarOskar
 {
-
     public partial class Dashboard : Form
     {
         PropertyInterface myProperty;
+
+        //filter
+        PropertyInterface FilterProperty;
         DataTable dt;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
@@ -35,17 +37,30 @@ namespace RentACarOskar
             panelCentar.Visible = false;
             btnIzdaj.Visible = false;
 
+            FilterProperty = new VoziloIspis();
         }
 
         //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
         private void PopulateGrid(PropertyInterface property)
         {
             myProperty = property;
-            panelPanelZaGV.Controls.Clear();
             dt = new DataTable();
-            dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            dgv.BackgroundColor = Color.White;
+            //logika za popunjavanje tabele
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+            property.GetSelectQuery());
+            dt.Load(reader);
+            reader.Close();
+            PopuniDGV(dt, property);
+        }
+
+        private void PopuniDGV(DataTable dt, PropertyInterface property)
+        {
+            panelPanelZaGV.Controls.Clear();
+
+            var dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+
             //pozadina hedera
+            dgv.BackgroundColor = Color.White;
             dgv.HeaderBgColor = Color.FromArgb(128, 185, 209);
             panelPanelZaGV.Controls.Add(dgv);
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -53,14 +68,6 @@ namespace RentACarOskar
             dgv.Dock = DockStyle.Fill;
 
             dgv.Size = panelPanelZaGV.Size;
-
-            //logika za popunjavanje tabele
-
-            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
-            property.GetSelectQuery());
-
-            dt.Load(reader);
-            reader.Close();
 
             dgv.DataSource = dt; //prikazi tabelu
 
@@ -91,12 +98,6 @@ namespace RentACarOskar
                 item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>().FirstOrDefault().Name == item.HeaderText
                 ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
-
-            //sortiranje
-            if (property.GetType() == typeof(VoziloIspis))
-            {
-                dgv.Sort(dgv.Columns[0], ListSortDirection.Ascending);
-            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -126,7 +127,6 @@ namespace RentACarOskar
         {
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
-
             //Pom za Input formu
             PropertyVozilo pomInput = new PropertyVozilo();
             myForm = pomInput;
@@ -137,7 +137,8 @@ namespace RentACarOskar
             Dobrodosli.Visible = false;
             panelCentar.Visible = true;
             btnIzdaj.Visible = false;
-
+            //Filter 
+            FilterProperty = new VoziloIspis();
         }
 
         private void btnKlijent_Click(object sender, EventArgs e)
@@ -156,6 +157,10 @@ namespace RentACarOskar
             Dobrodosli.Visible = false;
             panelCentar.Visible = true;
             btnIzdaj.Visible = false;
+
+
+            //Filter 
+            FilterProperty = new FakturaIspis();
 
         }
 
@@ -176,7 +181,8 @@ namespace RentACarOskar
 
             panelCentar.Visible = true;
             btnIzdaj.Visible = true;
-
+            //Filter 
+            FilterProperty = new FakturaIspis();
         }
         #endregion
 
@@ -293,6 +299,85 @@ namespace RentACarOskar
             panelLogOut.BackColor = Color.FromArgb(44, 46, 62);
 
         }
+
+        #region Filter
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            PopuniFilterPanel();
+        }
+
+        private void PopuniFilterPanel()
+        {
+            panelFilter.Controls.Clear();
+            if (FilterProperty.GetType() == typeof(FakturaIspis))
+            {
+                Label lblOd = new Label();
+                lblOd.Text = "Od:";
+                lblOd.Location = new Point(1, 1);
+                lblOd.Width = 30;
+                panelFilter.Controls.Add(lblOd);
+                DateTimePicker dtpOd = new DateTimePicker();
+                dtpOd.Format = DateTimePickerFormat.Custom;
+                dtpOd.CustomFormat = "dd.MM.yyyy";
+                dtpOd.Location = new Point(35, 1);
+                dtpOd.Width = 190;
+                panelFilter.Controls.Add(dtpOd);
+
+                //filter
+
+                Label lblDo = new Label();
+                lblDo.Text = "Do:";
+                lblDo.Location = new Point(230, 1);
+                lblDo.Width = 30;
+                panelFilter.Controls.Add(lblDo);
+                DateTimePicker dtpDo = new DateTimePicker();
+                dtpDo.Format = DateTimePickerFormat.Custom;
+                dtpDo.CustomFormat = "dd.MM.yyyy";
+                dtpDo.Location = new Point(265, 1);
+                dtpDo.Width = 190;
+                panelFilter.Controls.Add(dtpDo);
+
+                dtpOd.ValueChanged += new EventHandler(f_ValueChanged);
+                dtpDo.ValueChanged += new EventHandler(f_ValueChanged);
+
+
+                void f_ValueChanged(object sender, EventArgs e)
+                {
+                    string QueryFilter = "exec [dbo].[spFilterFakutra] @PocetniDatum, @KrajniDatum";
+
+                    SqlConnection con = new SqlConnection(SqlHelper.GetConnectionString());
+
+                    SqlCommand Cmd = new SqlCommand(QueryFilter, con);
+
+                    Cmd.Parameters.Add(new SqlParameter("@PocetniDatum", SqlDbType.DateTime));
+                    Cmd.Parameters.Add(new SqlParameter("@KrajniDatum", SqlDbType.DateTime));
+
+                    Cmd.Parameters["@PocetniDatum"].Value = dtpOd.Value.ToLongDateString();
+                    Cmd.Parameters["@PocetniDatum"].IsNullable = true;
+                    Cmd.Parameters["@KrajniDatum"].Value = dtpDo.Value.ToLongDateString();
+                    Cmd.Parameters["@KrajniDatum"].IsNullable = true;
+                    
+                    dt = new DataTable();
+
+                    //logika za popunjavanje tabele
+                    SqlDataAdapter adapter = new SqlDataAdapter(Cmd);
+                    adapter.Fill(dt);
+                    PopuniDGV(dt, FilterProperty);
+                }
+            }
+
+        }
+    }
+
+    #endregion
+
+    //private void btnUpdate_Click(object sender, EventArgs e)
+    //{
+
+    //    InputForma pom = new InputForma(, StateEnum.Update);
+    //    pom.ShowDialog();
+    //}
+}
 
         private void btnIzdaj_Click(object sender, EventArgs e)
         {

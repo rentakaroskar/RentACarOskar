@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.Dobrodosli = new System.Windows.Forms.Label();
+            this.panelFilter = new System.Windows.Forms.Panel();
+            this.btnFilter = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -79,6 +81,8 @@
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelCentar.Controls.Add(this.btnIzdaj);
             this.panelCentar.Controls.Add(this.Dobrodosli);
+            this.panelCentar.Controls.Add(this.panelFilter);
+            this.panelCentar.Controls.Add(this.btnFilter);
             this.panelCentar.Controls.Add(this.btnDelete);
             this.panelCentar.Controls.Add(this.btnUpdate);
             this.panelCentar.Controls.Add(this.btnInsert);
@@ -104,6 +108,23 @@
             this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
             this.Dobrodosli.TabIndex = 4;
             this.Dobrodosli.Text = "Dobrodošli!";
+            // 
+            // panelFilter
+            // 
+            this.panelFilter.Location = new System.Drawing.Point(9, 6);
+            this.panelFilter.Name = "panelFilter";
+            this.panelFilter.Size = new System.Drawing.Size(518, 181);
+            this.panelFilter.TabIndex = 5;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(534, 164);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.TabIndex = 4;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseSelectable = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnDelete
             // 
@@ -143,7 +164,6 @@
             // 
             // btnUpdate
             // 
-            //this.btnUpdate.Active = false;
             this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -179,7 +199,6 @@
             // 
             // btnInsert
             // 
-            //this.btnInsert.Active = false;
             this.btnInsert.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -599,5 +618,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLogOut;
         private System.Windows.Forms.Label lblLogOut;
+        private System.Windows.Forms.Panel panelFilter;
+        private MetroFramework.Controls.MetroButton btnFilter;
     }
 }
