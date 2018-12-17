@@ -100,6 +100,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Active = false;
             this.btnDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -135,6 +136,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Active = false;
             this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -170,6 +172,7 @@
             // 
             // btnInsert
             // 
+            this.btnInsert.Active = false;
             this.btnInsert.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -327,7 +330,6 @@
             this.btnFaktura.TabStop = false;
             this.btnFaktura.Zoom = 10;
             this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
-            this.btnFaktura.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
             // panelKlijenti
             // 
@@ -339,8 +341,7 @@
             this.panelKlijenti.Name = "panelKlijenti";
             this.panelKlijenti.Size = new System.Drawing.Size(245, 45);
             this.panelKlijenti.TabIndex = 8;
-            this.panelKlijenti.MouseLeave += new System.EventHandler(this.panelKlijenti_MouseLeave);
-            this.panelKlijenti.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
+            this.panelKlijenti.Click += new System.EventHandler(this.btnKlijent_Click);
             // 
             // lblKlijenti
             // 
@@ -352,6 +353,7 @@
             this.lblKlijenti.Size = new System.Drawing.Size(64, 22);
             this.lblKlijenti.TabIndex = 7;
             this.lblKlijenti.Text = "Klijenti";
+            this.lblKlijenti.Click += new System.EventHandler(this.btnKlijent_Click);
             // 
             // slicicaPeople
             // 
@@ -367,7 +369,6 @@
             this.slicicaPeople.TabStop = false;
             this.slicicaPeople.Zoom = 10;
             this.slicicaPeople.Click += new System.EventHandler(this.btnKlijent_Click);
-            this.slicicaPeople.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
             // panelAutomobili
             // 
@@ -407,7 +408,6 @@
             this.slicicaAuto.TabStop = false;
             this.slicicaAuto.Zoom = 10;
             this.slicicaAuto.Click += new System.EventHandler(this.btnVozilo_Click);
-            this.slicicaAuto.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
             // loptica
             // 
