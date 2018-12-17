@@ -40,6 +40,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelLogOut = new System.Windows.Forms.Panel();
+            this.lblLogOut = new System.Windows.Forms.Label();
             this.panelFaktura = new System.Windows.Forms.Panel();
             this.lblFaktura = new System.Windows.Forms.Label();
             this.btnFaktura = new Bunifu.Framework.UI.BunifuImageButton();
@@ -60,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelLeft.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.panelLogOut.SuspendLayout();
             this.panelFaktura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).BeginInit();
             this.panelKlijenti.SuspendLayout();
@@ -68,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCentar
@@ -105,6 +107,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Active = false;
             this.btnDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -140,6 +143,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Active = false;
             this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -175,6 +179,7 @@
             // 
             // btnInsert
             // 
+            this.btnInsert.Active = false;
             this.btnInsert.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -284,7 +289,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.panelMenu.Controls.Add(this.panel1);
+            this.panelMenu.Controls.Add(this.panelLogOut);
             this.panelMenu.Controls.Add(this.panelFaktura);
             this.panelMenu.Controls.Add(this.panelKlijenti);
             this.panelMenu.Controls.Add(this.panelAutomobili);
@@ -294,6 +299,31 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(245, 700);
             this.panelMenu.TabIndex = 0;
+            // 
+            // panelLogOut
+            // 
+            this.panelLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.panelLogOut.Controls.Add(this.lblLogOut);
+            this.panelLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelLogOut.Location = new System.Drawing.Point(0, 578);
+            this.panelLogOut.Name = "panelLogOut";
+            this.panelLogOut.Size = new System.Drawing.Size(245, 45);
+            this.panelLogOut.TabIndex = 10;
+            this.panelLogOut.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
+            this.panelLogOut.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
+            // 
+            // lblLogOut
+            // 
+            this.lblLogOut.AutoSize = true;
+            this.lblLogOut.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogOut.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblLogOut.Location = new System.Drawing.Point(68, 13);
+            this.lblLogOut.Name = "lblLogOut";
+            this.lblLogOut.Size = new System.Drawing.Size(80, 22);
+            this.lblLogOut.TabIndex = 7;
+            this.lblLogOut.Text = "Log out";
+            this.lblLogOut.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
+            this.lblLogOut.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
             // 
             // panelFaktura
             // 
@@ -306,6 +336,8 @@
             this.panelFaktura.Size = new System.Drawing.Size(245, 45);
             this.panelFaktura.TabIndex = 9;
             this.panelFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
+            this.panelFaktura.MouseLeave += new System.EventHandler(this.panelFaktura_MouseLeave);
+            this.panelFaktura.MouseHover += new System.EventHandler(this.panelFaktura_MouseHover);
             // 
             // lblFaktura
             // 
@@ -318,6 +350,8 @@
             this.lblFaktura.TabIndex = 7;
             this.lblFaktura.Text = "Faktura";
             this.lblFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
+            this.lblFaktura.MouseLeave += new System.EventHandler(this.panelFaktura_MouseLeave);
+            this.lblFaktura.MouseHover += new System.EventHandler(this.panelFaktura_MouseHover);
             // 
             // btnFaktura
             // 
@@ -345,6 +379,8 @@
             this.panelKlijenti.Size = new System.Drawing.Size(245, 45);
             this.panelKlijenti.TabIndex = 8;
             this.panelKlijenti.Click += new System.EventHandler(this.btnKlijent_Click);
+            this.panelKlijenti.MouseLeave += new System.EventHandler(this.panelKlijenti_MouseLeave);
+            this.panelKlijenti.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
             // lblKlijenti
             // 
@@ -357,6 +393,8 @@
             this.lblKlijenti.TabIndex = 7;
             this.lblKlijenti.Text = "Klijenti";
             this.lblKlijenti.Click += new System.EventHandler(this.btnKlijent_Click);
+            this.lblKlijenti.MouseLeave += new System.EventHandler(this.panelKlijenti_MouseLeave);
+            this.lblKlijenti.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
             // slicicaPeople
             // 
@@ -384,6 +422,8 @@
             this.panelAutomobili.Size = new System.Drawing.Size(245, 45);
             this.panelAutomobili.TabIndex = 4;
             this.panelAutomobili.Click += new System.EventHandler(this.btnVozilo_Click);
+            this.panelAutomobili.MouseLeave += new System.EventHandler(this.panelAutomobili_MouseLeave);
+            this.panelAutomobili.MouseHover += new System.EventHandler(this.panelAutomobili_MouseHover);
             // 
             // lblAutomobili
             // 
@@ -396,6 +436,8 @@
             this.lblAutomobili.TabIndex = 7;
             this.lblAutomobili.Text = "Automobili";
             this.lblAutomobili.Click += new System.EventHandler(this.btnVozilo_Click);
+            this.lblAutomobili.MouseLeave += new System.EventHandler(this.panelAutomobili_MouseLeave);
+            this.lblAutomobili.MouseHover += new System.EventHandler(this.panelAutomobili_MouseHover);
             // 
             // slicicaAuto
             // 
@@ -512,6 +554,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelLeft.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            this.panelLogOut.ResumeLayout(false);
+            this.panelLogOut.PerformLayout();
             this.panelFaktura.ResumeLayout(false);
             this.panelFaktura.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).EndInit();
@@ -523,8 +567,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -555,6 +597,7 @@
         private System.Windows.Forms.Label Dobrodosli;
         private Bunifu.Framework.UI.BunifuFlatButton btnIzdaj;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelLogOut;
         private System.Windows.Forms.Label lblLogOut;
     }
 }
