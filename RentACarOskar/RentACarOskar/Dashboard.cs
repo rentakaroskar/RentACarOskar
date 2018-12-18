@@ -18,6 +18,7 @@ namespace RentACarOskar
     public partial class Dashboard : Form
     {
         PropertyInterface myProperty;
+        string UserMail;
 
         //filter
         PropertyInterface FilterProperty;
@@ -27,10 +28,12 @@ namespace RentACarOskar
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
         DGV ispisivati procedure koje je marko sastavio a mi saljemo InputFormi pravu property klasu*/
         PropertyInterface myForm;
-        public Dashboard()
+        public Dashboard(string mail)
         {
+            
             InitializeComponent();
-
+            this.UserMail = mail;
+            userLabel.Text = UserMail;
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
             //CRUDfunkcije crud = new CRUDfunkcije();

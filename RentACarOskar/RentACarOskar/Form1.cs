@@ -48,8 +48,9 @@ namespace RentACarOskar
             {
                 if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                 {
+                    string mail = tbUserName.Text;
                     MessageBox.Show("Uspjesan Login");
-                    Dashboard pom = new Dashboard();
+                    Dashboard pom = new Dashboard(mail);
                     pom.ShowDialog();
                     break;
                 }

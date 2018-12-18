@@ -57,6 +57,7 @@
             this.logoPic = new System.Windows.Forms.PictureBox();
             this.lblLogOut = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.userLabel = new MetroFramework.Drawing.Html.HtmlLabel();
             this.panelCentar.SuspendLayout();
             this.panelFilter.SuspendLayout();
             this.PanelTop.SuspendLayout();
@@ -284,6 +285,7 @@
             // 
             this.PanelTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelTop.BackgroundImage")));
             this.PanelTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelTop.Controls.Add(this.userLabel);
             this.PanelTop.Controls.Add(this.pictureBox3);
             this.PanelTop.Controls.Add(this.pictureBox1);
             this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -541,6 +543,18 @@
             this.panel1.Size = new System.Drawing.Size(245, 45);
             this.panel1.TabIndex = 10;
             // 
+            // userLabel
+            // 
+            this.userLabel.AutoScroll = true;
+            this.userLabel.AutoScrollMinSize = new System.Drawing.Size(64, 23);
+            this.userLabel.AutoSize = false;
+            this.userLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.userLabel.Location = new System.Drawing.Point(114, 12);
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(75, 23);
+            this.userLabel.TabIndex = 2;
+            this.userLabel.Text = "htmlLabel1";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -609,5 +623,6 @@
         private System.Windows.Forms.Label lblLogOut;
         private System.Windows.Forms.Panel panelFilter;
         private MetroFramework.Controls.MetroButton btnFilter;
+        private MetroFramework.Drawing.Html.HtmlLabel userLabel;
     }
 }
