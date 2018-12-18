@@ -53,6 +53,8 @@ namespace RentACarOskar.CRUD
             }
             InputForma inputForma = new InputForma(myProperty, StateEnum.Update);
             inputForma.ShowDialog();
+            if (inputForma.DialogResult == DialogResult.Cancel)
+                return;
         }
         public void Delete(PropertyInterface myProperty, int SelektovaniRed, Bunifu.Framework.UI.BunifuCustomDataGrid dgv)
         {

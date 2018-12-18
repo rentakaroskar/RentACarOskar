@@ -27,7 +27,7 @@ namespace RentACarOskar.PropertyClass
 
         [DisplayName("Jmb")]
         [SqlName("JMB")]
-        public int JMB { get; set; }
+        public string JMB { get; set; }
 
         [DisplayName("Datum rodjenja")]
         [SqlName("DatumRodjenja")]
@@ -65,7 +65,7 @@ namespace RentACarOskar.PropertyClass
                 lista.Add(parameter);
             }
             {
-                SqlParameter parameter = new SqlParameter("@JMB", System.Data.SqlDbType.Int);
+                SqlParameter parameter = new SqlParameter("@JMB", System.Data.SqlDbType.NVarChar);
                 parameter.Value = JMB;
                 lista.Add(parameter);
             }
@@ -111,7 +111,7 @@ namespace RentACarOskar.PropertyClass
                 lista.Add(parameter);
             }
             {
-                SqlParameter parameter = new SqlParameter("@JMB", System.Data.SqlDbType.Int);
+                SqlParameter parameter = new SqlParameter("@JMB", System.Data.SqlDbType.NVarChar);
                 parameter.Value = JMB;
                 lista.Add(parameter);
             }
@@ -158,12 +158,9 @@ namespace RentACarOskar.PropertyClass
         
         public string GetInsertQuery()
         {
-
             return @"INSERT INTO[dbo].[Osoba] ([Ime], [Prezime], [JMB], [DatumRodjenja]
                       ,[Pol] ,[BrojTelefon] ,[Adresa])                  
                  VALUES(@Ime ,@Prezime  ,@JMB  ,@DatumRodjenja ,@Pol  ,@BrojTelefon ,@Adresa)";
-
-
         }
 
         public string GetSelectQuery()
@@ -174,11 +171,9 @@ namespace RentACarOskar.PropertyClass
 
         public string GetUpdateQuery()
         {
-
             return @" UPDATE[dbo].[Osoba] SET [Ime] = @Ime, [Prezime] = @Prezime
                  ,[JMB] = @JMB, [DatumRodjenja] = @DatumRodjenja, [Pol] = @Pol, [BrojTelefon] = @BrojTelefon
                  ,[Adresa] = @Adresa WHERE [OsobaID] = @OsobaID";
-
         }
     #endregion
     }
