@@ -24,7 +24,7 @@ namespace RentACarOskar
 
         private void KeyUp_Enter(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 if (tbUserName.Text == "" || tbPassword.Text == "")
                 {
@@ -46,26 +46,74 @@ namespace RentACarOskar
                 var type = myProperty.GetType();
                 var properties = type.GetProperties();
 
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    string mail = tbUserName.Text;
-                    MessageBox.Show("Uspjesan Login");
-                    Dashboard pom = new Dashboard(mail);
-                    pom.ShowDialog();
-                    break;
-                }
-                else if (i == dt.Rows.Count - 1)
-                {   //MessageBox.Show("Pogresan E-mail ili loznika!");
-                    DialogResult dr = MetroMessageBox.Show(this, "\n\nPogresan E-mail ili loznika!", "Pogresan E-mail ili loznika!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
+                    {
+                        string mail = tbUserName.Text;
+                        MessageBox.Show("Uspjesan Login");
+                        Dashboard pom = new Dashboard(mail);
+                        pom.ShowDialog();
+                        break;
+                    }
+                    else if (i == dt.Rows.Count - 1)
+                    {   //MessageBox.Show("Pogresan E-mail ili loznika!");
+                        DialogResult dr = MetroMessageBox.Show(this, "\n\nPogresan E-mail ili loznika!", "Pogresan E-mail ili loznika!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
+
+            //private void btnLogIn_Click(object sender, EventArgs e)
+            //{
+            //    if (tbUserName.Text == "" || tbPassword.Text == "")
+            //    {
+            //        //MessageBox.Show("Molim vas unesite sve potrebne podatke!");
+            //        DialogResult dr = MetroMessageBox.Show(this, "\n\nMolimo Vas unesite sve potrebne podatke!", "Molimo Vas unesite sve potrebne podatke!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //        return;
+            //    }
+            //    DataTable dt = new DataTable();
+
+            //    PropertyRadnik myProperty = new PropertyRadnik();
+
+            //    SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+            //        myProperty.GetSelectQuery());
+
+            //    dt.Load(reader);
+            //    reader.Close();
+
+            //    var type = myProperty.GetType();
+            //    var properties = type.GetProperties();
+
+            //    for (int i = 0; i < dt.Rows.Count; i++)
+            //    {
+            //        if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
+            //        {
+            //            MessageBox.Show("Uspjesan Login");
+            //            Dashboard pom = new Dashboard();
+            //            Visible = false;
+            //            pom.ShowDialog();
+            //            if (pom.DialogResult == DialogResult.Cancel)
+            //            {
+            //                pom.Close();
+            //                Visible = true;
+            //                tbUserName.Text = "";
+            //                tbPassword.Text = "";
+            //            }
+            //            break;
+            //        }
+            //        else if (i == dt.Rows.Count - 1)
+            //        {   //MessageBox.Show("Pogresan E-mail ili loznika!");
+            //            DialogResult dr = MetroMessageBox.Show(this, "\n\nPogresan E-mail ili loznika!", "Pogresan E-mail ili loznika!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //    }
+            //}
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            if(tbUserName.Text == "" || tbPassword.Text == "")
+            string mail = tbUserName.Text;
+            if (tbUserName.Text == "" || tbPassword.Text == "")
             {
                 //MessageBox.Show("Molim vas unesite sve potrebne podatke!");
                 DialogResult dr = MetroMessageBox.Show(this, "\n\nMolimo Vas unesite sve potrebne podatke!", "Molimo Vas unesite sve potrebne podatke!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -90,7 +138,7 @@ namespace RentACarOskar
                 if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                 {
                     MessageBox.Show("Uspjesan Login");
-                    Dashboard pom = new Dashboard();
+                    Dashboard pom = new Dashboard(mail);
                     Visible = false;
                     pom.ShowDialog();
                     if (pom.DialogResult == DialogResult.Cancel)

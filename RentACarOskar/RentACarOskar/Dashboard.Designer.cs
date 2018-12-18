@@ -32,14 +32,13 @@
             this.lblLogOut = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.Dobrodosli = new System.Windows.Forms.Label();
             this.btnIzdaj = new System.Windows.Forms.Button();
             this.panelFilter = new System.Windows.Forms.Panel();
-            this.Dobrodosli = new System.Windows.Forms.Label();
             this.btnFilter = new MetroFramework.Controls.MetroButton();
             this.bDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.Dobrodosli = new System.Windows.Forms.Label();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -60,9 +59,9 @@
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
+            this.labelUser = new MetroFramework.Drawing.Html.HtmlLabel();
             this.panel1.SuspendLayout();
             this.panelCentar.SuspendLayout();
-            this.panelFilter.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogOut
@@ -86,7 +84,7 @@
             this.lblLogOut.AutoSize = true;
             this.lblLogOut.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogOut.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblLogOut.Location = new System.Drawing.Point(0, 578);
+            this.lblLogOut.Location = new System.Drawing.Point(68, 13);
             this.lblLogOut.Name = "lblLogOut";
             this.lblLogOut.Size = new System.Drawing.Size(80, 22);
             this.lblLogOut.TabIndex = 7;
@@ -127,6 +125,17 @@
             this.panelCentar.Size = new System.Drawing.Size(927, 650);
             this.panelCentar.TabIndex = 2;
             // 
+            // Dobrodosli
+            // 
+            this.Dobrodosli.AutoSize = true;
+            this.Dobrodosli.Font = new System.Drawing.Font("Maiandra GD", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dobrodosli.ForeColor = System.Drawing.Color.CadetBlue;
+            this.Dobrodosli.Location = new System.Drawing.Point(339, 134);
+            this.Dobrodosli.Name = "Dobrodosli";
+            this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
+            this.Dobrodosli.TabIndex = 4;
+            this.Dobrodosli.Text = "Dobrodošli!";
+            // 
             // btnIzdaj
             // 
             this.btnIzdaj.BackColor = System.Drawing.Color.White;
@@ -145,6 +154,13 @@
             this.btnIzdaj.Click += new System.EventHandler(this.btnIzdaj_Click);
             this.btnIzdaj.MouseLeave += new System.EventHandler(this.btnIzdaj_MouseLeave);
             this.btnIzdaj.MouseHover += new System.EventHandler(this.btnIzdaj_MouseHover);
+            // 
+            // panelFilter
+            // 
+            this.panelFilter.Location = new System.Drawing.Point(0, 0);
+            this.panelFilter.Name = "panelFilter";
+            this.panelFilter.Size = new System.Drawing.Size(200, 100);
+            this.panelFilter.TabIndex = 7;
             // 
             // btnFilter
             // 
@@ -215,17 +231,6 @@
             this.btnInsert.MouseLeave += new System.EventHandler(this.btnInsert_MouseLeave);
             this.btnInsert.MouseHover += new System.EventHandler(this.btnInsert_MouseHover);
             // 
-            // Dobrodosli
-            // 
-            this.Dobrodosli.AutoSize = true;
-            this.Dobrodosli.Font = new System.Drawing.Font("Maiandra GD", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dobrodosli.ForeColor = System.Drawing.Color.CadetBlue;
-            this.Dobrodosli.Location = new System.Drawing.Point(339, 134);
-            this.Dobrodosli.Name = "Dobrodosli";
-            this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
-            this.Dobrodosli.TabIndex = 4;
-            this.Dobrodosli.Text = "Dobrodošli!";
-            // 
             // panelPanelZaGV
             // 
             this.panelPanelZaGV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPanelZaGV.BackgroundImage")));
@@ -244,7 +249,7 @@
             // 
             this.PanelTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelTop.BackgroundImage")));
             this.PanelTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelTop.Controls.Add(this.userLabel);
+            this.PanelTop.Controls.Add(this.labelUser);
             this.PanelTop.Controls.Add(this.pictureBox3);
             this.PanelTop.Controls.Add(this.pictureBox1);
             this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -511,40 +516,16 @@
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
             // 
-            // lblLogOut
+            // labelUser
             // 
-            this.lblLogOut.AutoSize = true;
-            this.lblLogOut.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOut.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblLogOut.Location = new System.Drawing.Point(68, 13);
-            this.lblLogOut.Name = "lblLogOut";
-            this.lblLogOut.Size = new System.Drawing.Size(80, 22);
-            this.lblLogOut.TabIndex = 7;
-            this.lblLogOut.Text = "Log out";
-            this.lblLogOut.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
-            this.lblLogOut.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.panel1.Controls.Add(this.lblLogOut);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(0, 578);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 45);
-            this.panel1.TabIndex = 10;
-            // 
-            // userLabel
-            // 
-            this.userLabel.AutoScroll = true;
-            this.userLabel.AutoScrollMinSize = new System.Drawing.Size(64, 23);
-            this.userLabel.AutoSize = false;
-            this.userLabel.BackColor = System.Drawing.SystemColors.Window;
-            this.userLabel.Location = new System.Drawing.Point(80, 12);
-            this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(295, 23);
-            this.userLabel.TabIndex = 2;
-            this.userLabel.Text = "htmlLabel1";
+            this.labelUser.AutoScroll = true;
+            this.labelUser.AutoScrollMinSize = new System.Drawing.Size(10, 10);
+            this.labelUser.AutoSize = false;
+            this.labelUser.BackColor = System.Drawing.SystemColors.Window;
+            this.labelUser.Location = new System.Drawing.Point(237, 13);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(75, 23);
+            this.labelUser.TabIndex = 2;
             // 
             // Dashboard
             // 
@@ -562,8 +543,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelCentar.ResumeLayout(false);
-            this.panelFilter.ResumeLayout(false);
-            this.panelFilter.PerformLayout();
+            this.panelCentar.PerformLayout();
             this.PanelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -583,8 +563,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -622,5 +600,6 @@
         private System.Windows.Forms.Panel panelFilter;
         private MetroFramework.Controls.MetroButton btnFilter;
         private MetroFramework.Drawing.Html.HtmlLabel userLabel;
+        private MetroFramework.Drawing.Html.HtmlLabel labelUser;
     }
 }

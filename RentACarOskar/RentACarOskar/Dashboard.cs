@@ -33,7 +33,7 @@ namespace RentACarOskar
             
             InitializeComponent();
             this.UserMail = mail;
-            userLabel.Text = UserMail;
+            labelUser.Text = mail;
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
             //CRUDfunkcije crud = new CRUDfunkcije();
