@@ -29,14 +29,16 @@ namespace RentACarOskar
             PopulateControls();
         }
 
-        // PopulateControls je gotov treba jos napraviti lookup funkciju
+        //Funkcija za popunjavanje kontrole u Input formi
         private void PopulateControls()
         {
             bool i = true;
             foreach (PropertyInfo item in myInterface.GetType().GetProperties())
             {
+                //Izbacivanje prikaza primarnog kljuca
                 if (i == false)
                 {
+                    //Dodavanje kontrole za datum
                     if (item.PropertyType.Name == "DateTime")
                     {
                         InputDateControl uc = new InputDateControl();
@@ -54,6 +56,8 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
+
+                    //Dodavanje kontrole za Lookup
                     else if (item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
                     {
                         PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
@@ -76,6 +80,8 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
+
+                    //Dodavanje kontrole za 2 radio dugmica
                     else if (item.GetCustomAttribute<TwoRadioButtonsAttribute>() != null)
                     {
                         TwoRadioButtonsControl uc = new TwoRadioButtonsControl();
@@ -93,6 +99,8 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
+
+                    //Dodavanje kontrole za TextBox
                     else
                     {
                         InputControl uc = new InputControl();
@@ -110,7 +118,6 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
-
                 }
                 i = false;
             }
@@ -163,6 +170,15 @@ namespace RentACarOskar
                         imenaPolja += input.Name + "\n";
                 }
             }
+
+            //Izbacivanje MessageBox-a jer obavezna polja nisu popunjena
+            if (imenaPolja != "")
+            {
+                MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja, "Greska pri unosu", MessageBoxButtons.OK);
+                return;
+            }
+
+            //Provjera poziva Input forme
             if (state == StateEnum.Create)
             {
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
@@ -172,12 +188,6 @@ namespace RentACarOskar
             {
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
-            }
-            //Izbacivanje MessageBox-a jer obavezna polja nisu popunjena
-            if (imenaPolja != "")
-            {
-                MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja, "Greska pri unosu", MessageBoxButtons.OK);
-                return;
             }
 
             DialogResult = DialogResult.OK;
