@@ -20,7 +20,6 @@ namespace RentACarOskar.CRUD
     {
         PropertyInterface myProperty;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-        DataGridView dgv2;
         int SelektovaniRed;
 
         //NA LOOKUP FORMI TREBA PROMIJENITTI IZGLED TABELE U 

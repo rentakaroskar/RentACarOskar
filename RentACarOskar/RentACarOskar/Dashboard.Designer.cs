@@ -41,12 +41,11 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblLogOut = new System.Windows.Forms.Label();
             this.panelFaktura = new System.Windows.Forms.Panel();
             this.lblFaktura = new System.Windows.Forms.Label();
             this.btnFaktura = new Bunifu.Framework.UI.BunifuImageButton();
@@ -61,14 +60,12 @@
             this.lblLogOut1 = new System.Windows.Forms.Label();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelLeft.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panelFaktura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).BeginInit();
             this.panelKlijenti.SuspendLayout();
@@ -127,19 +124,6 @@
             this.panelCentar.Size = new System.Drawing.Size(927, 650);
             this.panelCentar.TabIndex = 2;
             // 
-            // btnIzdaj
-            // 
-            this.btnIzdaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.btnIzdaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIzdaj.Location = new System.Drawing.Point(557, 590);
-            this.btnIzdaj.Name = "btnIzdaj";
-            this.btnIzdaj.Size = new System.Drawing.Size(108, 34);
-            this.btnIzdaj.TabIndex = 3;
-            this.btnIzdaj.Text = "IZDAJ";
-            this.btnIzdaj.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIzdaj.Click += new System.EventHandler(this.btnIzdaj_Click);
-            // 
             // Dobrodosli
             // 
             this.Dobrodosli.AutoSize = true;
@@ -154,6 +138,7 @@
             // btnIzdaj
             // 
             this.btnIzdaj.BackColor = System.Drawing.Color.White;
+            this.btnIzdaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIzdaj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.btnIzdaj.FlatAppearance.BorderSize = 2;
@@ -278,6 +263,15 @@
             this.PanelTop.Size = new System.Drawing.Size(927, 50);
             this.PanelTop.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(733, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "User:";
+            // 
             // labelUser
             // 
             this.labelUser.AutoSize = true;
@@ -333,27 +327,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(245, 700);
             this.panelMenu.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.panel1.Controls.Add(this.lblLogOut);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(0, 578);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 45);
-            this.panel1.TabIndex = 10;
-            // 
-            // lblLogOut
-            // 
-            this.lblLogOut.AutoSize = true;
-            this.lblLogOut.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOut.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblLogOut.Location = new System.Drawing.Point(68, 13);
-            this.lblLogOut.Name = "lblLogOut";
-            this.lblLogOut.Size = new System.Drawing.Size(80, 22);
-            this.lblLogOut.TabIndex = 7;
-            this.lblLogOut.Text = "Log out";
             // 
             // panelFaktura
             // 
@@ -553,15 +526,6 @@
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(733, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "User:";
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,8 +548,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelLeft.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panelFaktura.ResumeLayout(false);
             this.panelFaktura.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).EndInit();

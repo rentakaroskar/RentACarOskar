@@ -159,10 +159,9 @@ namespace RentACarOskar
 
             Dobrodosli.Visible = false;
             panelCentar.Visible = true;
+            btnIzdaj.Visible = false;
 
             FilterProperty = new PropertyKlijent();
-
-
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
