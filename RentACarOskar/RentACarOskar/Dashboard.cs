@@ -62,7 +62,7 @@ namespace RentACarOskar
         {
             panelPanelZaGV.Controls.Clear();
 
-            var dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
             //pozadina hedera
             dgv.HeaderBgColor = Color.FromArgb(44, 46, 62);
@@ -91,7 +91,6 @@ namespace RentACarOskar
             dt.DefaultView.AllowEdit = false;
             dt.DefaultView.AllowDelete = false;
             dt.DefaultView.AllowNew = false;
-            //*
 
             //izvuci display name
             var type = property.GetType();
@@ -115,7 +114,6 @@ namespace RentACarOskar
                 loptica.Visible = true;
                 panelPanelZaGV.Width = 1090;
                 dgv.Size = panelPanelZaGV.Size;
-
             }
             else
             {
@@ -158,10 +156,8 @@ namespace RentACarOskar
             Dobrodosli.Visible = false;
             panelCentar.Visible = true;
 
-
             //Filter 
             FilterProperty = new PropertyKlijent();
-
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
@@ -190,23 +186,15 @@ namespace RentACarOskar
             DialogResult = DialogResult.Cancel;
         }
 
-       
-        
         private void Dashboard_Load(object sender, EventArgs e)
         {
             panelPanelZaGV.Visible = false;
             bDelete.Visible = false;
         }
 
-        
         #region CRUDButtons
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            //Visible = false;
-            //InputForma pom = new InputForma(myForm, StateEnum.Create);
-            //pom.ShowDialog();
-            //Visible = true;
-            //PopulateGrid(myProperty);
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.Insert(myForm);
             PopulateGrid(myProperty);
@@ -214,30 +202,6 @@ namespace RentACarOskar
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            #region staraF-ja    
-            //var type = myForm.GetType();
-            // int red = dgv.SelectedRows[0].Index;
-            //var properties = type.GetProperties();
-            //PropertyInterface pom = myProperty;
-            //PopulateGrid(myForm);
-            //myProperty = pom;
-            //Visible = false;
-            //int i = 0;
-            //foreach (DataGridViewCell cell in dgv.Rows[red].Cells)
-            //{
-            //    String value = cell.Value.ToString();
-
-            //    PropertyInfo property = properties.Where(x => dgv.Columns[i].HeaderText == x.GetCustomAttribute<DisplayNameAttribute>().DisplayName).FirstOrDefault();
-            //    property.SetValue(myForm, Convert.ChangeType(value, property.PropertyType));
-            //    i++;
-            //}
-            //InputForma inputForma = new InputForma(myForm, StateEnum.Update);
-            //inputForma.ShowDialog();
-            //var type = myForm.GetType();
-            //var properties = type.GetProperties();
-            //PropertyInterface pom = myForm;
-            #endregion
-
             int SelektovaniRed = dgv.SelectedRows[0].Index;
             PropertyInterface pom = myProperty;
             PopulateGrid(myForm);
@@ -247,86 +211,16 @@ namespace RentACarOskar
             crud.Update(myForm, dgv,SelektovaniRed);
             Visible = true;
             PopulateGrid(myProperty);
-
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    var type = myForm.GetType();
-            //    var properties = type.GetProperties();
-
-            //    PropertyInfo property = properties.Where(x => x.IsDefined(typeof(PrimaryKeyAttribute))).FirstOrDefault();
-            //    property.SetValue(myForm, Convert.ChangeType(dgv.SelectedRows[0].Cells[0].Value, property.PropertyType));
-
-            //    SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, myForm.GetDeleteQuery(), myForm.GetDeleteParameters().ToArray());
-            //    PopulateGrid(myProperty);
-            //}
-            //catch (System.Data.SqlClient.SqlException sql)
-            //{
-            //    MessageBox.Show("Nemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\nError code: " + sql.Message,
-            //        "Greska pri brisanju", MessageBoxButtons.OK);
-            //}
             int SelektovaniRed = dgv.SelectedRows[0].Index;
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.Delete(myForm,SelektovaniRed,dgv);
-
+            PopulateGrid(myProperty);
         }
         #endregion
-
-        private void panelAutomobili_MouseHover(object sender, EventArgs e)
-        {
-            panelAutomobili.BackColor = Color.FromArgb(40, 42, 60);
-            slicicaAuto.BackColor = Color.FromArgb(40, 42, 60);
-        }
-
-        private void panelAutomobili_MouseLeave(object sender, EventArgs e)
-        {
-            panelAutomobili.BackColor = Color.FromArgb(44, 46, 62);
-            slicicaAuto.BackColor = Color.FromArgb(44, 46, 62);
-
-        }
-        private void panelKlijenti_MouseHover(object sender, EventArgs e)
-        {
-            panelKlijenti.BackColor = Color.FromArgb(40, 42, 60);
-            slicicaPeople.BackColor = Color.FromArgb(40, 42, 60);
-        }
-
-        private void panelKlijenti_MouseLeave(object sender, EventArgs e)
-        {
-            panelKlijenti.BackColor = Color.FromArgb(44, 46, 62);
-            slicicaPeople.BackColor = Color.FromArgb(44, 46, 62);
-
-
-        }
-
-        private void panelFaktura_MouseHover(object sender, EventArgs e)
-        {
-            panelFaktura.BackColor = Color.FromArgb(40, 42, 60);
-            btnFaktura.BackColor = Color.FromArgb(40, 42, 60);
-        }
-
-        private void panelFaktura_MouseLeave(object sender, EventArgs e)
-        {
-            panelFaktura.BackColor = Color.FromArgb(44, 46, 62);
-            btnFaktura.BackColor = Color.FromArgb(44, 46, 62);
-
-        }
-
-        private void panelLogOut_MouseHover(object sender, EventArgs e)
-        {
-            panelLogOut.BackColor = Color.FromArgb(40, 42, 60);
-            btnLogOut.BackColor = Color.FromArgb(40, 42, 60);
-        }
-
-        private void panelLogOut_MouseLeave(object sender, EventArgs e)
-        {
-            panelLogOut.BackColor = Color.FromArgb(44, 46, 62);
-            btnLogOut.BackColor = Color.FromArgb(44, 46, 62);
-
-        }
 
         #region Filter
         private void btnFilter_Click(object sender, EventArgs e)
@@ -398,15 +292,7 @@ namespace RentACarOskar
     
 
     #endregion
-
-        //private void btnUpdate_Click(object sender, EventArgs e)
-        //{
-
-        //    InputForma pom = new InputForma(, StateEnum.Update);
-        //    pom.ShowDialog();
-        //}
-
-
+        
         private void btnIzdaj_Click(object sender, EventArgs e)
         {
 
@@ -417,6 +303,8 @@ namespace RentACarOskar
             DialogResult = DialogResult.Cancel;
         }
 
+        #region Animacije
+        //ButtonInsert animacija
         private void btnInsert_MouseHover(object sender, EventArgs e)
         {
             btnInsert.ForeColor = Color.White;
@@ -425,41 +313,94 @@ namespace RentACarOskar
         private void btnInsert_MouseLeave(object sender, EventArgs e)
         {
             btnInsert.ForeColor = Color.FromArgb(44, 46, 62);
-            
         }
 
+        //ButtonUpdate animacija
         private void btnUpdate_MouseHover(object sender, EventArgs e)
         {
             btnUpdate.ForeColor = Color.White;
+            return;
         }
 
         private void btnUpdate_MouseLeave(object sender, EventArgs e)
         {
             btnUpdate.ForeColor = Color.FromArgb(44, 46, 62);
-
+            return;
         }
 
+        //ButtonDelete animacija
         private void bDelete_MouseHover(object sender, EventArgs e)
         {
             bDelete.ForeColor = Color.White;
         }
+
         private void bDelete_MouseLeave(object sender, EventArgs e)
         {
             bDelete.ForeColor = Color.FromArgb(44, 46, 62);
-
         }
 
+        //ButtonIzdaj animacija
         private void btnIzdaj_MouseHover(object sender, EventArgs e)
         {
             btnIzdaj.ForeColor = Color.White;
         }
+
         private void btnIzdaj_MouseLeave(object sender, EventArgs e)
         {
             btnIzdaj.ForeColor = Color.FromArgb(44, 46, 62);
-
         }
 
-        
+        //PanelAutomobili animacija
+        private void panelAutomobili_MouseHover(object sender, EventArgs e)
+        {
+            panelAutomobili.BackColor = Color.FromArgb(40, 42, 60);
+            slicicaAuto.BackColor = Color.FromArgb(40, 42, 60);
+        }
 
+        private void panelAutomobili_MouseLeave(object sender, EventArgs e)
+        {
+            panelAutomobili.BackColor = Color.FromArgb(44, 46, 62);
+            slicicaAuto.BackColor = Color.FromArgb(44, 46, 62);
+        }
+
+        //PanelKlijenti animacija
+        private void panelKlijenti_MouseHover(object sender, EventArgs e)
+        {
+            panelKlijenti.BackColor = Color.FromArgb(40, 42, 60);
+            slicicaPeople.BackColor = Color.FromArgb(40, 42, 60);
+        }
+
+        private void panelKlijenti_MouseLeave(object sender, EventArgs e)
+        {
+            panelKlijenti.BackColor = Color.FromArgb(44, 46, 62);
+            slicicaPeople.BackColor = Color.FromArgb(44, 46, 62);
+        }
+
+        //PanelFaktura animacija
+        private void panelFaktura_MouseHover(object sender, EventArgs e)
+        {
+            panelFaktura.BackColor = Color.FromArgb(40, 42, 60);
+            btnFaktura.BackColor = Color.FromArgb(40, 42, 60);
+        }
+
+        private void panelFaktura_MouseLeave(object sender, EventArgs e)
+        {
+            panelFaktura.BackColor = Color.FromArgb(44, 46, 62);
+            btnFaktura.BackColor = Color.FromArgb(44, 46, 62);
+        }
+
+        //PanelLogOut animacija
+        private void panelLogOut_MouseHover(object sender, EventArgs e)
+        {
+            panelLogOut.BackColor = Color.FromArgb(40, 42, 60);
+            btnLogOut.BackColor = Color.FromArgb(40, 42, 60);
+        }
+
+        private void panelLogOut_MouseLeave(object sender, EventArgs e)
+        {
+            panelLogOut.BackColor = Color.FromArgb(44, 46, 62);
+            btnLogOut.BackColor = Color.FromArgb(44, 46, 62);
+        }
+        #endregion
     }
 }

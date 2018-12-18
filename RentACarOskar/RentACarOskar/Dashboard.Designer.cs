@@ -32,9 +32,13 @@
             this.lblLogOut = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bDelete = new System.Windows.Forms.Button();
+            this.btnIzdaj = new System.Windows.Forms.Button();
             this.Dobrodosli = new System.Windows.Forms.Label();
             this.panelFilter = new System.Windows.Forms.Panel();
             this.btnFilter = new MetroFramework.Controls.MetroButton();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -55,10 +59,6 @@
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnIzdaj = new System.Windows.Forms.Button();
-            this.bDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
@@ -105,9 +105,7 @@
             // 
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelCentar.Controls.Add(this.bDelete);
             this.panelCentar.Controls.Add(this.btnIzdaj);
-            this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.panelFilter);
             this.panelCentar.Controls.Add(this.btnFilter);
             this.panelCentar.Controls.Add(this.bDelete);
@@ -125,6 +123,42 @@
             this.panelCentar.Quality = 10;
             this.panelCentar.Size = new System.Drawing.Size(927, 650);
             this.panelCentar.TabIndex = 2;
+            // 
+            // bDelete
+            // 
+            this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.bDelete.FlatAppearance.BorderSize = 2;
+            this.bDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.bDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDelete.Location = new System.Drawing.Point(665, 579);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(111, 34);
+            this.bDelete.TabIndex = 7;
+            this.bDelete.Text = "DELETE";
+            this.bDelete.UseVisualStyleBackColor = true;
+            this.bDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.bDelete.MouseLeave += new System.EventHandler(this.bDelete_MouseLeave);
+            this.bDelete.MouseHover += new System.EventHandler(this.bDelete_MouseHover);
+            // 
+            // btnIzdaj
+            // 
+            this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIzdaj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnIzdaj.FlatAppearance.BorderSize = 2;
+            this.btnIzdaj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnIzdaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIzdaj.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIzdaj.Location = new System.Drawing.Point(665, 579);
+            this.btnIzdaj.Name = "btnIzdaj";
+            this.btnIzdaj.Size = new System.Drawing.Size(111, 34);
+            this.btnIzdaj.TabIndex = 6;
+            this.btnIzdaj.Text = "IZDAJ";
+            this.btnIzdaj.UseVisualStyleBackColor = true;
+            this.btnIzdaj.Click += new System.EventHandler(this.btnIzdaj_Click);
+            this.btnIzdaj.MouseLeave += new System.EventHandler(this.btnIzdaj_MouseLeave);
+            this.btnIzdaj.MouseHover += new System.EventHandler(this.btnIzdaj_MouseHover);
             // 
             // Dobrodosli
             // 
@@ -159,26 +193,42 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Location = new System.Drawing.Point(396, 590);
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnUpdate.FlatAppearance.BorderSize = 2;
+            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(416, 579);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(108, 34);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Size = new System.Drawing.Size(111, 34);
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
+            this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
             // 
             // btnInsert
             // 
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInsert.Location = new System.Drawing.Point(132, 590);
+            this.btnInsert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnInsert.FlatAppearance.BorderSize = 2;
+            this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Location = new System.Drawing.Point(165, 579);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(108, 34);
-            this.btnInsert.TabIndex = 1;
+            this.btnInsert.Size = new System.Drawing.Size(111, 34);
+            this.btnInsert.TabIndex = 0;
             this.btnInsert.Text = "INSERT";
             this.btnInsert.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            this.btnInsert.MouseLeave += new System.EventHandler(this.btnInsert_MouseLeave);
+            this.btnInsert.MouseHover += new System.EventHandler(this.btnInsert_MouseHover);
             // 
             // panelPanelZaGV
             // 
@@ -462,78 +512,6 @@
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInsert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnInsert.FlatAppearance.BorderSize = 2;
-            this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(165, 579);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(111, 34);
-            this.btnInsert.TabIndex = 0;
-            this.btnInsert.Text = "INSERT";
-            this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            this.btnInsert.MouseLeave += new System.EventHandler(this.btnInsert_MouseLeave);
-            this.btnInsert.MouseHover += new System.EventHandler(this.btnInsert_MouseHover);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnUpdate.FlatAppearance.BorderSize = 2;
-            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(416, 579);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(111, 34);
-            this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
-            this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
-            // 
-            // btnIzdaj
-            // 
-            this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIzdaj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnIzdaj.FlatAppearance.BorderSize = 2;
-            this.btnIzdaj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnIzdaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIzdaj.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIzdaj.Location = new System.Drawing.Point(665, 579);
-            this.btnIzdaj.Name = "btnIzdaj";
-            this.btnIzdaj.Size = new System.Drawing.Size(111, 34);
-            this.btnIzdaj.TabIndex = 6;
-            this.btnIzdaj.Text = "IZDAJ";
-            this.btnIzdaj.UseVisualStyleBackColor = true;
-            this.btnIzdaj.Click += new System.EventHandler(this.btnIzdaj_Click);
-            this.btnIzdaj.MouseLeave += new System.EventHandler(this.btnIzdaj_MouseLeave);
-            this.btnIzdaj.MouseHover += new System.EventHandler(this.btnIzdaj_MouseHover);
-            // 
-            // bDelete
-            // 
-            this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.bDelete.FlatAppearance.BorderSize = 2;
-            this.bDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.bDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDelete.Location = new System.Drawing.Point(665, 579);
-            this.bDelete.Name = "bDelete";
-            this.bDelete.Size = new System.Drawing.Size(111, 34);
-            this.bDelete.TabIndex = 7;
-            this.bDelete.Text = "DELETE";
-            this.bDelete.UseVisualStyleBackColor = true;
-            this.bDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            this.bDelete.MouseLeave += new System.EventHandler(this.bDelete_MouseLeave);
-            this.bDelete.MouseHover += new System.EventHandler(this.bDelete_MouseHover);
             // 
             // Dashboard
             // 

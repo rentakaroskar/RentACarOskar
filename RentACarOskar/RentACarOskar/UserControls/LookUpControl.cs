@@ -28,7 +28,6 @@ namespace RentACarOskar.UserControls
             lblNaziv.Text = text;
         }
 
-
         private void btnFind_Click(object sender, EventArgs e)
         {
             LookUpForma sf = new LookUpForma(myInterface);
