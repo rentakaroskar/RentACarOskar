@@ -46,7 +46,7 @@ namespace RentACarOskar
 
         //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
         private void PopulateGrid(PropertyInterface property)
-        {
+        {//MARKO PREBACI U CRUD FOLDER
             myProperty = property;
             dt = new DataTable();
             //logika za popunjavanje tabele
@@ -58,10 +58,11 @@ namespace RentACarOskar
         }
 
         private void PopuniDGV(DataTable dt, PropertyInterface property)
-        {
+        {//MARKO PREBACI U CRUD FOLDER
+
             panelPanelZaGV.Controls.Clear();
 
-            var dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
             //pozadina hedera
             dgv.BackgroundColor = Color.White;
@@ -245,7 +246,7 @@ namespace RentACarOskar
             //PropertyInterface pom = myForm;
             #endregion
 
-            int SelektovaniRed = Convert.ToInt32(dgv.SelectedRows[0].Cells[0].Value);
+            int SelektovaniRed = Convert.ToInt32(dgv.SelectedRows[0].Index);
             PropertyInterface pom = myProperty;
             PopulateGrid(myForm);
             myProperty = pom;
