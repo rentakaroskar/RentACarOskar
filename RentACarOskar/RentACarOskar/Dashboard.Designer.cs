@@ -471,7 +471,7 @@
             this.lblAutomobili.AutoSize = true;
             this.lblAutomobili.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAutomobili.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblAutomobili.Location = new System.Drawing.Point(95, 9);
+            this.lblAutomobili.Location = new System.Drawing.Point(95, 14);
             this.lblAutomobili.Name = "lblAutomobili";
             this.lblAutomobili.Size = new System.Drawing.Size(107, 22);
             this.lblAutomobili.TabIndex = 7;
@@ -549,9 +549,9 @@
             this.userLabel.AutoScrollMinSize = new System.Drawing.Size(64, 23);
             this.userLabel.AutoSize = false;
             this.userLabel.BackColor = System.Drawing.SystemColors.Window;
-            this.userLabel.Location = new System.Drawing.Point(114, 12);
+            this.userLabel.Location = new System.Drawing.Point(80, 12);
             this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(75, 23);
+            this.userLabel.Size = new System.Drawing.Size(295, 23);
             this.userLabel.TabIndex = 2;
             this.userLabel.Text = "htmlLabel1";
             // 
