@@ -158,9 +158,8 @@ namespace RentACarOskar
             panelCentar.Visible = true;
             btnIzdaj.Visible = false;
 
+            FilterProperty = new PropertyKlijent();
 
-            //Filter 
-            FilterProperty = new FakturaIspis();
 
         }
 
