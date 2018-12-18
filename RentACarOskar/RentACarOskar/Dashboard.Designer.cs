@@ -32,7 +32,6 @@
             this.lblLogOut = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.btnIzdaj = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Dobrodosli = new System.Windows.Forms.Label();
             this.btnIzdaj = new System.Windows.Forms.Button();
             this.panelFilter = new System.Windows.Forms.Panel();
@@ -130,37 +129,15 @@
             // 
             // btnIzdaj
             // 
-            this.btnIzdaj.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
             this.btnIzdaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnIzdaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIzdaj.BorderRadius = 6;
-            this.btnIzdaj.ButtonText = "IZDAJ";
             this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIzdaj.DisabledColor = System.Drawing.Color.Gray;
-            this.btnIzdaj.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnIzdaj.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnIzdaj.Iconimage")));
-            this.btnIzdaj.Iconimage_right = null;
-            this.btnIzdaj.Iconimage_right_Selected = null;
-            this.btnIzdaj.Iconimage_Selected = null;
-            this.btnIzdaj.IconMarginLeft = 0;
-            this.btnIzdaj.IconMarginRight = 0;
-            this.btnIzdaj.IconRightVisible = true;
-            this.btnIzdaj.IconRightZoom = 0D;
-            this.btnIzdaj.IconVisible = true;
-            this.btnIzdaj.IconZoom = 90D;
-            this.btnIzdaj.IsTab = false;
             this.btnIzdaj.Location = new System.Drawing.Point(557, 590);
             this.btnIzdaj.Name = "btnIzdaj";
-            this.btnIzdaj.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.btnIzdaj.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.btnIzdaj.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnIzdaj.selected = false;
             this.btnIzdaj.Size = new System.Drawing.Size(108, 34);
             this.btnIzdaj.TabIndex = 3;
             this.btnIzdaj.Text = "IZDAJ";
             this.btnIzdaj.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIzdaj.Textcolor = System.Drawing.Color.White;
-            this.btnIzdaj.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIzdaj.Click += new System.EventHandler(this.btnIzdaj_Click);
             // 
             // Dobrodosli
