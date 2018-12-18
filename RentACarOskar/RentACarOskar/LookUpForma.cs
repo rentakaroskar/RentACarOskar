@@ -48,21 +48,13 @@ namespace RentACarOskar
             var type = myProperty.GetType();
             var properties = type.GetProperties();
 
-
             //promjeniti nazive kolona
             foreach (DataGridViewColumn item in dgv.Columns)
             {
-                item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>().FirstOrDefault().Name == item.HeaderText
-                                      ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
-
-                /*foreach (PropertyInfo prop in properties)
-                {
-                    if(item.HeaderText.Equals(prop.GetCustomAttributes<SqlName>().FirstOrDefault().name))
-                        item.HeaderText = prop.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
-                }*/
+                item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>()
+                .FirstOrDefault().Name == item.HeaderText).FirstOrDefault()
+                .GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
-
-
         }
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -84,14 +76,10 @@ namespace RentACarOskar
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            //Visible = false;
-            //InputForma pom = new InputForma(myProperty, StateEnum.Create);
-            //pom.ShowDialog();
-            //Visible = true;
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.Insert(myProperty);
-
-
+            dgv = new DataGridView();
+            PopulateGrid();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
