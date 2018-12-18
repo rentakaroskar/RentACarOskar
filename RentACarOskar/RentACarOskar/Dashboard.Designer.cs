@@ -105,13 +105,13 @@
             // 
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.btnIzdaj);
             this.panelCentar.Controls.Add(this.panelFilter);
             this.panelCentar.Controls.Add(this.btnFilter);
             this.panelCentar.Controls.Add(this.bDelete);
             this.panelCentar.Controls.Add(this.btnUpdate);
             this.panelCentar.Controls.Add(this.btnInsert);
-            this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.panelPanelZaGV);
             this.panelCentar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentar.GradientBottomLeft = System.Drawing.Color.White;
