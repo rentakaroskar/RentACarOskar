@@ -66,6 +66,7 @@ namespace RentACarOskar
 
             //pozadina hedera
             dgv.HeaderBgColor = Color.FromArgb(44, 46, 62);
+            dgv.BackgroundColor = Color.White;
             panelPanelZaGV.Controls.Add(dgv);
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.MultiSelect = false;
