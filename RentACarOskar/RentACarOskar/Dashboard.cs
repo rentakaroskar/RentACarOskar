@@ -65,8 +65,8 @@ namespace RentACarOskar
             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
             //pozadina hedera
-            dgv.HeaderBgColor = Color.FromArgb(44, 46, 62);
             dgv.BackgroundColor = Color.White;
+            dgv.HeaderBgColor = Color.CadetBlue;
             panelPanelZaGV.Controls.Add(dgv);
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.MultiSelect = false;
