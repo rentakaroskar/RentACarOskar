@@ -71,6 +71,7 @@
     <Compile Include="Attributes\SqlNameAttribute.cs" />
     <Compile Include="CRUD\CRUDfunkcije.cs" />
     <Compile Include="Attributes\TwoRadioButtonsAttribute.cs" />
+    <Compile Include="CRUD\IstorijaCRUD.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +106,7 @@
     <Compile Include="PropertyClass\PropertyCijenaFaktura.cs" />
     <Compile Include="PropertyClass\PropertyCijena.cs" />
     <Compile Include="PropertyClass\PropertyFaktura.cs" />
+    <Compile Include="PropertyClass\PropertyIstorijaCRUD.cs" />
     <Compile Include="PropertyClass\PropertyKlijent.cs" />
     <Compile Include="PropertyClass\PropertyModelVozila.cs" />
     <Compile Include="PropertyClass\PropertyOsoba.cs" />

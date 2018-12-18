@@ -22,16 +22,20 @@ namespace RentACarOskar.CRUD
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
         DataGridView dgv2;
         int SelektovaniRed;
+        string UserEmail;
 
         //NA LOOKUP FORMI TREBA PROMIJENITTI IZGLED TABELE U 
         //Bunifu.Framework.UI.BunifuCustomDataGrid dgv DA BI RADILE CRUD OPERACIJE
 
-
+        public void UserMail(string mail)
+        {
+            UserEmail = mail;
+        }
 
         public void Insert(PropertyInterface myProperty)
         {
             this.myProperty = myProperty;
-            InputForma pom = new InputForma(myProperty, StateEnum.Create);
+            InputForma pom = new InputForma(myProperty, StateEnum.Create,UserEmail);
             pom.ShowDialog();
         }
 
@@ -51,7 +55,7 @@ namespace RentACarOskar.CRUD
                 property.SetValue(myProperty, Convert.ChangeType(value, property.PropertyType));
                 i++;
             }
-            InputForma inputForma = new InputForma(myProperty, StateEnum.Update);
+            InputForma inputForma = new InputForma(myProperty, StateEnum.Update, UserEmail);
             inputForma.ShowDialog();
             if (inputForma.DialogResult == DialogResult.Cancel)
                 return;

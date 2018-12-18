@@ -19,10 +19,12 @@ namespace RentACarOskar
 
         PropertyInterface myInterface;
         StateEnum state;
+        string userEmail;
 
-        public InputForma(PropertyInterface myInterface, StateEnum state)
+        public InputForma(PropertyInterface myInterface, StateEnum state,string email)
         {
             InitializeComponent();
+            userEmail = email;
             Text = myInterface.ToString().Remove(0, 36) + " " + state.ToString();
             this.myInterface = myInterface;
             this.state = state;
@@ -183,11 +185,15 @@ namespace RentACarOskar
             {
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                     myInterface.GetInsertQuery(), myInterface.GetInsertParameters().ToArray());
+
+                CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create,myInterface);
             }
             else if (state == StateEnum.Update)
             {
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
+
+                CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
             }
 
             DialogResult = DialogResult.OK;
