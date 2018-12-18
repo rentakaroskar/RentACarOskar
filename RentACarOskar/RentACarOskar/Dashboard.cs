@@ -353,53 +353,62 @@ namespace RentACarOskar
         //PanelAutomobili animacija
         private void panelAutomobili_MouseHover(object sender, EventArgs e)
         {
-            panelAutomobili.BackColor = Color.FromArgb(40, 42, 60);
-            slicicaAuto.BackColor = Color.FromArgb(40, 42, 60);
+            panelAutomobili.BackColor = Color.FromArgb(20, 255, 255, 255);
+            slicicaAuto.BackColor = Color.Transparent;
+            lblAutomobili.BackColor = Color.Transparent;
         }
 
         private void panelAutomobili_MouseLeave(object sender, EventArgs e)
         {
-            panelAutomobili.BackColor = Color.FromArgb(44, 46, 62);
-            slicicaAuto.BackColor = Color.FromArgb(44, 46, 62);
+            panelAutomobili.BackColor = Color.Transparent;
+            slicicaAuto.BackColor = Color.Transparent;
+            lblAutomobili.BackColor = Color.Transparent;
         }
 
         //PanelKlijenti animacija
         private void panelKlijenti_MouseHover(object sender, EventArgs e)
         {
-            panelKlijenti.BackColor = Color.FromArgb(40, 42, 60);
-            slicicaPeople.BackColor = Color.FromArgb(40, 42, 60);
+            panelKlijenti.BackColor = Color.FromArgb(20, 255, 255, 255);
+            slicicaPeople.BackColor = Color.Transparent;
+            lblKlijenti.BackColor = Color.Transparent;
         }
 
         private void panelKlijenti_MouseLeave(object sender, EventArgs e)
         {
-            panelKlijenti.BackColor = Color.FromArgb(44, 46, 62);
-            slicicaPeople.BackColor = Color.FromArgb(44, 46, 62);
+            panelKlijenti.BackColor = Color.Transparent;
+            slicicaPeople.BackColor = Color.Transparent;
+            lblKlijenti.BackColor = Color.Transparent;
+
         }
 
         //PanelFaktura animacija
         private void panelFaktura_MouseHover(object sender, EventArgs e)
         {
-            panelFaktura.BackColor = Color.FromArgb(40, 42, 60);
-            btnFaktura.BackColor = Color.FromArgb(40, 42, 60);
+            panelFaktura.BackColor = Color.FromArgb(20, 255, 255, 255);
+            btnFaktura.BackColor = Color.Transparent;
+            lblFaktura.BackColor= Color.Transparent;
         }
 
         private void panelFaktura_MouseLeave(object sender, EventArgs e)
         {
-            panelFaktura.BackColor = Color.FromArgb(44, 46, 62);
-            btnFaktura.BackColor = Color.FromArgb(44, 46, 62);
+            panelFaktura.BackColor = Color.Transparent;
+            btnFaktura.BackColor = Color.Transparent;
+            lblFaktura.BackColor= Color.Transparent;
         }
 
         //PanelLogOut animacija
         private void panelLogOut_MouseHover(object sender, EventArgs e)
         {
-            panelLogOut.BackColor = Color.FromArgb(40, 42, 60);
-            btnLogOut.BackColor = Color.FromArgb(40, 42, 60);
+            panelLogOut.BackColor = Color.FromArgb(20, 255, 255, 255);
+            btnLogOut.BackColor = Color.Transparent;
+            lblLogOut1.BackColor = Color.Transparent;
         }
 
         private void panelLogOut_MouseLeave(object sender, EventArgs e)
         {
-            panelLogOut.BackColor = Color.FromArgb(44, 46, 62);
-            btnLogOut.BackColor = Color.FromArgb(44, 46, 62);
+            panelLogOut.BackColor = Color.Transparent;
+            btnLogOut.BackColor = Color.Transparent;
+            lblLogOut1.BackColor= Color.Transparent;
         }
         #endregion
     }

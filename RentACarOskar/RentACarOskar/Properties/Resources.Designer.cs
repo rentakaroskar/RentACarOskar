@@ -63,6 +63,26 @@ namespace RentACarOskar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blur {
+            get {
+                object obj = ResourceManager.GetObject("blur", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blur2 {
+            get {
+                object obj = ResourceManager.GetObject("blur2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap car {
             get {
                 object obj = ResourceManager.GetObject("car", resourceCulture);
@@ -286,6 +306,26 @@ namespace RentACarOskar.Properties {
         internal static System.Drawing.Bitmap oskarilnes {
             get {
                 object obj = ResourceManager.GetObject("oskarilnes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap oskarName {
+            get {
+                object obj = ResourceManager.GetObject("oskarName", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap oskarName1 {
+            get {
+                object obj = ResourceManager.GetObject("oskarName1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
