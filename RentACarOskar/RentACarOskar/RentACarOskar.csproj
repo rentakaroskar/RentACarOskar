@@ -83,6 +83,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaIzdavanje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaIzdavanje.Designer.cs">
+      <DependentUpon>FormaIzdavanje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\DataReaderToDataSource.cs" />
     <Compile Include="Helper\ReflectionClass.cs" />
     <Compile Include="Helper\SqlHelper.cs" />
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaIzdavanje.resx">
+      <DependentUpon>FormaIzdavanje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputForma.resx">
       <DependentUpon>InputForma.cs</DependentUpon>

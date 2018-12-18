@@ -300,7 +300,11 @@ namespace RentACarOskar
         
         private void btnIzdaj_Click(object sender, EventArgs e)
         {
+             int idFakture= Convert.ToInt32(dgv.SelectedRows[0].Cells[0].Value.ToString());
+            string tipFakture = dgv.SelectedRows[0].Cells[4].Value.ToString();
 
+            FormaIzdavanje formaIzdavanje = new FormaIzdavanje(idFakture, tipFakture);
+            formaIzdavanje.ShowDialog();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
