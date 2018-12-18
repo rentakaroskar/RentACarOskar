@@ -269,5 +269,17 @@
   <ItemGroup>
     <None Include="Resources\logout.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oskarName.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blur2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oskarName1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

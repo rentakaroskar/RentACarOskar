@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.btnLogIn = new System.Windows.Forms.Button();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.label2 = new System.Windows.Forms.Label();
             this.tbPassword = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbUserName = new MetroFramework.Controls.MetroTextBox();
-            this.btnLogIn = new MetroFramework.Controls.MetroButton();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblMemberLogin = new System.Windows.Forms.Label();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroPanel1.SuspendLayout();
             this.metroPanel4.SuspendLayout();
@@ -49,45 +49,70 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.metroPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.metroPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.metroPanel1.Controls.Add(this.btnLogIn);
             this.metroPanel1.Controls.Add(this.metroPanel4);
             this.metroPanel1.Controls.Add(this.metroPanel3);
-            this.metroPanel1.Controls.Add(this.btnLogIn);
+            this.metroPanel1.ForeColor = System.Drawing.Color.DarkGray;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(23, 79);
+            this.metroPanel1.Location = new System.Drawing.Point(13, 121);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(581, 187);
+            this.metroPanel1.Size = new System.Drawing.Size(309, 325);
             this.metroPanel1.TabIndex = 0;
-            this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // btnLogIn
+            // 
+            this.btnLogIn.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogIn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnLogIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogIn.Location = new System.Drawing.Point(95, 233);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(98, 42);
+            this.btnLogIn.TabIndex = 8;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = false;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
+            this.btnLogIn.MouseLeave += new System.EventHandler(this.btnLogIn_MouseLeave);
+            this.btnLogIn.MouseHover += new System.EventHandler(this.btnLogIn_MouseHover);
+            // 
             // metroPanel4
             // 
-            this.metroPanel4.Controls.Add(this.metroLabel3);
+            this.metroPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.metroPanel4.Controls.Add(this.label2);
             this.metroPanel4.Controls.Add(this.tbPassword);
             this.metroPanel4.HorizontalScrollbarBarColor = true;
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(96, 62);
+            this.metroPanel4.Location = new System.Drawing.Point(12, 96);
             this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(379, 63);
+            this.metroPanel4.Size = new System.Drawing.Size(283, 87);
             this.metroPanel4.TabIndex = 7;
+            this.metroPanel4.UseCustomBackColor = true;
             this.metroPanel4.VerticalScrollbarBarColor = true;
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel4.VerticalScrollbarSize = 10;
             // 
-            // metroLabel3
+            // label2
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(77, 7);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(64, 19);
-            this.metroLabel3.TabIndex = 9;
-            this.metroLabel3.Text = "Password";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(3, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Password";
             // 
             // tbPassword
             // 
@@ -104,7 +129,7 @@
             this.tbPassword.CustomButton.UseSelectable = true;
             this.tbPassword.CustomButton.Visible = false;
             this.tbPassword.Lines = new string[0];
-            this.tbPassword.Location = new System.Drawing.Point(79, 32);
+            this.tbPassword.Location = new System.Drawing.Point(3, 49);
             this.tbPassword.MaxLength = 32767;
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '\0';
@@ -122,27 +147,31 @@
             // 
             // metroPanel3
             // 
-            this.metroPanel3.Controls.Add(this.metroLabel2);
+            this.metroPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.metroPanel3.Controls.Add(this.label1);
             this.metroPanel3.Controls.Add(this.tbUserName);
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(58, 9);
+            this.metroPanel3.Location = new System.Drawing.Point(12, 15);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(459, 53);
+            this.metroPanel3.Size = new System.Drawing.Size(283, 75);
             this.metroPanel3.TabIndex = 5;
+            this.metroPanel3.UseCustomBackColor = true;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
-            // metroLabel2
+            // label1
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(114, 5);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(71, 19);
-            this.metroLabel2.TabIndex = 8;
-            this.metroLabel2.Text = "User Email";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 21);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "User name";
             // 
             // tbUserName
             // 
@@ -159,7 +188,7 @@
             this.tbUserName.CustomButton.UseSelectable = true;
             this.tbUserName.CustomButton.Visible = false;
             this.tbUserName.Lines = new string[0];
-            this.tbUserName.Location = new System.Drawing.Point(117, 26);
+            this.tbUserName.Location = new System.Drawing.Point(3, 34);
             this.tbUserName.MaxLength = 32767;
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.PasswordChar = '\0';
@@ -175,40 +204,33 @@
             this.tbUserName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.tbUserName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyUp_Enter);
             // 
-            // btnLogIn
-            // 
-            this.btnLogIn.Location = new System.Drawing.Point(175, 134);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(268, 23);
-            this.btnLogIn.TabIndex = 4;
-            this.btnLogIn.Text = "Log In";
-            this.btnLogIn.UseSelectable = true;
-            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
-            // 
             // metroPanel2
             // 
-            this.metroPanel2.Controls.Add(this.metroLabel1);
+            this.metroPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.metroPanel2.Controls.Add(this.lblMemberLogin);
             this.metroPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(23, 28);
+            this.metroPanel2.Location = new System.Drawing.Point(52, 63);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(608, 45);
+            this.metroPanel2.Size = new System.Drawing.Size(222, 36);
             this.metroPanel2.TabIndex = 1;
+            this.metroPanel2.UseCustomBackColor = true;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // metroLabel1
+            // lblMemberLogin
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(238, 13);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(136, 25);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "MEMBER LOGIN";
+            this.lblMemberLogin.AutoSize = true;
+            this.lblMemberLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.lblMemberLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblMemberLogin.Location = new System.Drawing.Point(31, 10);
+            this.lblMemberLogin.Name = "lblMemberLogin";
+            this.lblMemberLogin.Size = new System.Drawing.Size(159, 22);
+            this.lblMemberLogin.TabIndex = 2;
+            this.lblMemberLogin.Text = "MEMBER LOGIN ";
             // 
             // metroStyleManager1
             // 
@@ -218,7 +240,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 280);
+            this.BackgroundImage = global::RentACarOskar.Properties.Resources.blur2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BackImage = global::RentACarOskar.Properties.Resources.blur2;
+            this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
+            this.BackMaxSize = 550;
+            this.ClientSize = new System.Drawing.Size(337, 493);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.MaximizeBox = false;
@@ -243,15 +270,15 @@
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         public MetroFramework.Components.MetroStyleManager metroStyleManager1;
-        private MetroFramework.Controls.MetroButton btnLogIn;
         private MetroFramework.Controls.MetroTextBox tbPassword;
         private MetroFramework.Controls.MetroPanel metroPanel4;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroPanel metroPanel3;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox tbUserName;
+        private System.Windows.Forms.Label lblMemberLogin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnLogIn;
     }
 }
 

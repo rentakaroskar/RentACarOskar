@@ -20,6 +20,7 @@ namespace RentACarOskar
         {
             InitializeComponent();
             tbPassword.PasswordChar = '*';
+            metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);
         }
 
         private void KeyUp_Enter(object sender, KeyEventArgs e)
@@ -155,6 +156,17 @@ namespace RentACarOskar
                     DialogResult dr = MetroMessageBox.Show(this, "\n\nPogresan E-mail ili loznika!", "Pogresan E-mail ili loznika!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnLogIn_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnLogIn_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogIn.BackColor = Color.FromArgb(20, 255, 255, 255);
+
         }
     }
 }

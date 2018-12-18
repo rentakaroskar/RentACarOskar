@@ -47,7 +47,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelLogOut = new System.Windows.Forms.Panel();
             this.btnLogOut = new Bunifu.Framework.UI.BunifuImageButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblLogOut1 = new System.Windows.Forms.Label();
             this.panelFaktura = new System.Windows.Forms.Panel();
             this.lblFaktura = new System.Windows.Forms.Label();
             this.btnFaktura = new Bunifu.Framework.UI.BunifuImageButton();
@@ -307,11 +307,15 @@
             // 
             // panelMenu
             // 
+            this.panelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.panelMenu.Controls.Add(this.panelLogOut);
+            this.panelMenu.BackgroundImage = global::RentACarOskar.Properties.Resources.blur2;
+            this.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMenu.Controls.Add(this.panelFaktura);
             this.panelMenu.Controls.Add(this.panelKlijenti);
             this.panelMenu.Controls.Add(this.panelAutomobili);
+            this.panelMenu.Controls.Add(this.panelLogOut);
             this.panelMenu.Controls.Add(this.loptica);
             this.panelMenu.Controls.Add(this.logoPic);
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -321,9 +325,9 @@
             // 
             // panelLogOut
             // 
-            this.panelLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.panelLogOut.BackColor = System.Drawing.Color.Transparent;
             this.panelLogOut.Controls.Add(this.btnLogOut);
-            this.panelLogOut.Controls.Add(this.label2);
+            this.panelLogOut.Controls.Add(this.lblLogOut1);
             this.panelLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelLogOut.Location = new System.Drawing.Point(0, 652);
             this.panelLogOut.Name = "panelLogOut";
@@ -335,7 +339,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
             this.btnLogOut.Image = global::RentACarOskar.Properties.Resources.logout;
             this.btnLogOut.ImageActive = null;
             this.btnLogOut.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
@@ -348,23 +352,23 @@
             this.btnLogOut.Zoom = 10;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // label2
+            // lblLogOut1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(95, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 22);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Log Out";
-            this.label2.Click += new System.EventHandler(this.btnLogOut_Click);
-            this.label2.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
-            this.label2.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
+            this.lblLogOut1.AutoSize = true;
+            this.lblLogOut1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogOut1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblLogOut1.Location = new System.Drawing.Point(95, 10);
+            this.lblLogOut1.Name = "lblLogOut1";
+            this.lblLogOut1.Size = new System.Drawing.Size(85, 22);
+            this.lblLogOut1.TabIndex = 8;
+            this.lblLogOut1.Text = "Log Out";
+            this.lblLogOut1.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.lblLogOut1.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
+            this.lblLogOut1.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
             // 
             // panelFaktura
             // 
-            this.panelFaktura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.panelFaktura.BackColor = System.Drawing.Color.Transparent;
             this.panelFaktura.Controls.Add(this.lblFaktura);
             this.panelFaktura.Controls.Add(this.btnFaktura);
             this.panelFaktura.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -392,7 +396,7 @@
             // 
             // btnFaktura
             // 
-            this.btnFaktura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnFaktura.BackColor = System.Drawing.Color.Transparent;
             this.btnFaktura.Image = global::RentACarOskar.Properties.Resources.icons8_invoice_80;
             this.btnFaktura.ImageActive = null;
             this.btnFaktura.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
@@ -407,7 +411,7 @@
             // 
             // panelKlijenti
             // 
-            this.panelKlijenti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.panelKlijenti.BackColor = System.Drawing.Color.Transparent;
             this.panelKlijenti.Controls.Add(this.lblKlijenti);
             this.panelKlijenti.Controls.Add(this.slicicaPeople);
             this.panelKlijenti.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -435,7 +439,7 @@
             // 
             // slicicaPeople
             // 
-            this.slicicaPeople.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.slicicaPeople.BackColor = System.Drawing.Color.Transparent;
             this.slicicaPeople.Image = global::RentACarOskar.Properties.Resources.icons8_people_96__1_;
             this.slicicaPeople.ImageActive = null;
             this.slicicaPeople.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
@@ -450,7 +454,7 @@
             // 
             // panelAutomobili
             // 
-            this.panelAutomobili.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.panelAutomobili.BackColor = System.Drawing.Color.Transparent;
             this.panelAutomobili.Controls.Add(this.lblAutomobili);
             this.panelAutomobili.Controls.Add(this.slicicaAuto);
             this.panelAutomobili.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -478,7 +482,7 @@
             // 
             // slicicaAuto
             // 
-            this.slicicaAuto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.slicicaAuto.BackColor = System.Drawing.Color.Transparent;
             this.slicicaAuto.Image = global::RentACarOskar.Properties.Resources.car__2_;
             this.slicicaAuto.ImageActive = null;
             this.slicicaAuto.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
@@ -493,6 +497,7 @@
             // 
             // loptica
             // 
+            this.loptica.BackColor = System.Drawing.Color.Transparent;
             this.loptica.Image = global::RentACarOskar.Properties.Resources.icons8_mesh_filled_100__2_;
             this.loptica.Location = new System.Drawing.Point(11, 29);
             this.loptica.Name = "loptica";
@@ -591,7 +596,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLogOut;
         private System.Windows.Forms.Label lblLogOut;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblLogOut1;
         private Bunifu.Framework.UI.BunifuImageButton btnLogOut;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnUpdate;
