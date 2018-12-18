@@ -28,15 +28,17 @@ namespace RentACarOskar
             this.state = state;
             PopulateControls();
         }
-        
-        // PopulateControls je gotov treba jos napraviti lookup funkciju
+
+        //Funkcija za popunjavanje kontrole u Input formi
         private void PopulateControls()
         {
             bool i = true;
             foreach (PropertyInfo item in myInterface.GetType().GetProperties())
             {
+                //Izbacivanje prikaza primarnog kljuca
                 if (i == false)
                 {
+                    //Dodavanje kontrole za datum
                     if (item.PropertyType.Name == "DateTime")
                     {
                         InputDateControl uc = new InputDateControl();
@@ -54,17 +56,19 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
-                    else if(item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
-                    { 
+
+                    //Dodavanje kontrole za Lookup
+                    else if (item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
+                    {
                         PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
                          CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
                          as PropertyInterface;
-                      
-                    
+
+
                         LookUpControl uc = new LookUpControl(foreignKeyInterface);
                         uc.Name = item.Name;
                         uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                        
+
                         if (state == StateEnum.Update)
                         {
                             try
@@ -76,7 +80,9 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
-                    else if(item.GetCustomAttribute<TwoRadioButtonsAttribute>() != null)
+
+                    //Dodavanje kontrole za 2 radio dugmica
+                    else if (item.GetCustomAttribute<TwoRadioButtonsAttribute>() != null)
                     {
                         TwoRadioButtonsControl uc = new TwoRadioButtonsControl();
                         uc.Name = item.Name;
@@ -93,12 +99,14 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
+
+                    //Dodavanje kontrole za TextBox
                     else
                     {
                         InputControl uc = new InputControl();
                         uc.Name = item.Name;
                         uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                        
+
                         if (state == StateEnum.Update)
                         {
                             try
@@ -110,7 +118,6 @@ namespace RentACarOskar
 
                         flowPanel.Controls.Add(uc);
                     }
-                    
                 }
                 i = false;
             }
@@ -124,49 +131,54 @@ namespace RentACarOskar
             string imenaPolja = "";
             foreach (var item in flowPanel.Controls)
             {
-                if (i == false)
+                string value = "";
+
+                if (item.GetType() == typeof(InputControl))
                 {
-                    string value = "";
+                    InputControl input = item as InputControl;
+                    value = input.GetValueFromTextBox();
 
-                    if (item.GetType() == typeof(InputControl))
-                    {
-                        InputControl input = item as InputControl;
-                        value = input.GetValueFromTextBox();
+                    PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                    property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
 
-                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
-                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
-
-                        //Provjera da li je obavezno polje prazno
-                        if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
-                            imenaPolja += input.Name + "\n";
-                    }
-                    else if (item.GetType() == typeof(InputDateControl))
-                    {
-                        InputDateControl input = item as InputDateControl;
-                        value = input.GetValueFromDateBox();
-
-                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
-                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
-
-                        //Provjera da li je obavezno polje prazno
-                        if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
-                            imenaPolja += input.Name + "\n";
-                    }
-                    else if (item.GetType() == typeof(LookUpControl))
-                    {
-                        LookUpControl input = item as LookUpControl;
-                        value = input.GetKeyValue();
-
-                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
-                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
-
-                        //Provjera da li je obavezno polje prazno
-                        if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
-                            imenaPolja += input.Name + "\n";
-                    }
+                    //Provjera da li je obavezno polje prazno
+                    if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
+                        imenaPolja += input.Name + "\n";
                 }
-                i = false;
+                else if (item.GetType() == typeof(InputDateControl))
+                {
+                    InputDateControl input = item as InputDateControl;
+                    value = input.GetValueFromDateBox();
+
+                    PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                    property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+                    //Provjera da li je obavezno polje prazno
+                    if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
+                        imenaPolja += input.Name + "\n";
+                }
+                else if (item.GetType() == typeof(LookUpControl))
+                {
+                    LookUpControl input = item as LookUpControl;
+                    value = input.GetKeyValue();
+
+                    PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                    property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+                    //Provjera da li je obavezno polje prazno
+                    if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
+                        imenaPolja += input.Name + "\n";
+                }
             }
+
+            //Izbacivanje MessageBox-a jer obavezna polja nisu popunjena
+            if (imenaPolja != "")
+            {
+                MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja, "Greska pri unosu", MessageBoxButtons.OK);
+                return;
+            }
+
+            //Provjera poziva Input forme
             if (state == StateEnum.Create)
             {
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
@@ -176,12 +188,6 @@ namespace RentACarOskar
             {
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
-            }
-            //Izbacivanje MessageBox-a jer obavezna polja nisu popunjena
-            if(imenaPolja != "")
-            {
-                MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja, "Greska pri unosu", MessageBoxButtons.OK);
-                return;
             }
 
             DialogResult = DialogResult.OK;

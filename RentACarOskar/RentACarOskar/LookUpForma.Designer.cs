@@ -28,48 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgStandardGrid = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgStandardGrid)).BeginInit();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.btnInsert = new MetroFramework.Controls.MetroButton();
+            this.btnUpdate = new MetroFramework.Controls.MetroButton();
+            this.btnDelete = new MetroFramework.Controls.MetroButton();
+            this.btnReturn = new MetroFramework.Controls.MetroButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgStandardGrid
+            // dgv
             // 
-            this.dgStandardGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgStandardGrid.Location = new System.Drawing.Point(43, 88);
-            this.dgStandardGrid.Name = "dgStandardGrid";
-            this.dgStandardGrid.Size = new System.Drawing.Size(579, 303);
-            this.dgStandardGrid.TabIndex = 0;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(23, 86);
+            this.dgv.Name = "dgv";
+            this.dgv.Size = new System.Drawing.Size(579, 303);
+            this.dgv.TabIndex = 0;
             // 
-            // button1
+            // btnInsert
             // 
-            this.button1.Location = new System.Drawing.Point(505, 404);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnReturn_Click);
+            this.btnInsert.Location = new System.Drawing.Point(23, 404);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnInsert.TabIndex = 2;
+            this.btnInsert.Text = "Add New";
+            this.btnInsert.UseSelectable = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(104, 404);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseSelectable = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(185, 404);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseSelectable = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(527, 404);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.TabIndex = 5;
+            this.btnReturn.Text = "Return";
+            this.btnReturn.UseSelectable = true;
             // 
             // LookUpForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dgStandardGrid);
+            this.ClientSize = new System.Drawing.Size(636, 440);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.dgv);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LookUpForma";
             this.Text = "LookUpForma";
-            ((System.ComponentModel.ISupportInitialize)(this.dgStandardGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgStandardGrid;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgv;
+        private MetroFramework.Controls.MetroButton btnInsert;
+        private MetroFramework.Controls.MetroButton btnUpdate;
+        private MetroFramework.Controls.MetroButton btnDelete;
+        private MetroFramework.Controls.MetroButton btnReturn;
     }
 }
