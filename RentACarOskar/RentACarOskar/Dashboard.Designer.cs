@@ -32,13 +32,13 @@
             this.lblLogOut = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bDelete = new System.Windows.Forms.Button();
             this.btnIzdaj = new System.Windows.Forms.Button();
-            this.Dobrodosli = new System.Windows.Forms.Label();
             this.panelFilter = new System.Windows.Forms.Panel();
             this.btnFilter = new MetroFramework.Controls.MetroButton();
+            this.bDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.Dobrodosli = new System.Windows.Forms.Label();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -124,26 +124,9 @@
             this.panelCentar.Size = new System.Drawing.Size(927, 650);
             this.panelCentar.TabIndex = 2;
             // 
-            // bDelete
-            // 
-            this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.bDelete.FlatAppearance.BorderSize = 2;
-            this.bDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.bDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDelete.Location = new System.Drawing.Point(665, 579);
-            this.bDelete.Name = "bDelete";
-            this.bDelete.Size = new System.Drawing.Size(111, 34);
-            this.bDelete.TabIndex = 7;
-            this.bDelete.Text = "DELETE";
-            this.bDelete.UseVisualStyleBackColor = true;
-            this.bDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            this.bDelete.MouseLeave += new System.EventHandler(this.bDelete_MouseLeave);
-            this.bDelete.MouseHover += new System.EventHandler(this.bDelete_MouseHover);
-            // 
             // btnIzdaj
             // 
+            this.btnIzdaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
             this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIzdaj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.btnIzdaj.FlatAppearance.BorderSize = 2;
@@ -155,21 +138,10 @@
             this.btnIzdaj.Size = new System.Drawing.Size(111, 34);
             this.btnIzdaj.TabIndex = 6;
             this.btnIzdaj.Text = "IZDAJ";
-            this.btnIzdaj.UseVisualStyleBackColor = true;
+            this.btnIzdaj.UseVisualStyleBackColor = false;
             this.btnIzdaj.Click += new System.EventHandler(this.btnIzdaj_Click);
             this.btnIzdaj.MouseLeave += new System.EventHandler(this.btnIzdaj_MouseLeave);
             this.btnIzdaj.MouseHover += new System.EventHandler(this.btnIzdaj_MouseHover);
-            // 
-            // Dobrodosli
-            // 
-            this.Dobrodosli.AutoSize = true;
-            this.Dobrodosli.Font = new System.Drawing.Font("Maiandra GD", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dobrodosli.ForeColor = System.Drawing.Color.CadetBlue;
-            this.Dobrodosli.Location = new System.Drawing.Point(339, 134);
-            this.Dobrodosli.Name = "Dobrodosli";
-            this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
-            this.Dobrodosli.TabIndex = 4;
-            this.Dobrodosli.Text = "Dobrodošli!";
             // 
             // panelFilter
             // 
@@ -187,6 +159,25 @@
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseSelectable = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // bDelete
+            // 
+            this.bDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.bDelete.FlatAppearance.BorderSize = 2;
+            this.bDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.bDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDelete.Location = new System.Drawing.Point(665, 579);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(111, 34);
+            this.bDelete.TabIndex = 7;
+            this.bDelete.Text = "DELETE";
+            this.bDelete.UseVisualStyleBackColor = false;
+            this.bDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.bDelete.MouseLeave += new System.EventHandler(this.bDelete_MouseLeave);
+            this.bDelete.MouseHover += new System.EventHandler(this.bDelete_MouseHover);
             // 
             // btnUpdate
             // 
@@ -229,6 +220,17 @@
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             this.btnInsert.MouseLeave += new System.EventHandler(this.btnInsert_MouseLeave);
             this.btnInsert.MouseHover += new System.EventHandler(this.btnInsert_MouseHover);
+            // 
+            // Dobrodosli
+            // 
+            this.Dobrodosli.AutoSize = true;
+            this.Dobrodosli.Font = new System.Drawing.Font("Maiandra GD", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dobrodosli.ForeColor = System.Drawing.Color.CadetBlue;
+            this.Dobrodosli.Location = new System.Drawing.Point(339, 134);
+            this.Dobrodosli.Name = "Dobrodosli";
+            this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
+            this.Dobrodosli.TabIndex = 4;
+            this.Dobrodosli.Text = "Dobrodošli!";
             // 
             // panelPanelZaGV
             // 
