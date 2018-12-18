@@ -126,7 +126,7 @@
             // 
             // btnIzdaj
             // 
-            this.btnIzdaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnIzdaj.BackColor = System.Drawing.Color.White;
             this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIzdaj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.btnIzdaj.FlatAppearance.BorderSize = 2;
@@ -162,7 +162,7 @@
             // 
             // bDelete
             // 
-            this.bDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.bDelete.BackColor = System.Drawing.Color.White;
             this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.bDelete.FlatAppearance.BorderSize = 2;
@@ -181,7 +181,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnUpdate.BackColor = System.Drawing.Color.White;
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
@@ -194,15 +194,14 @@
             this.btnUpdate.Size = new System.Drawing.Size(111, 34);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
             this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
             // 
             // btnInsert
             // 
-            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
+            this.btnInsert.BackColor = System.Drawing.Color.White;
             this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
@@ -215,8 +214,7 @@
             this.btnInsert.Size = new System.Drawing.Size(111, 34);
             this.btnInsert.TabIndex = 0;
             this.btnInsert.Text = "INSERT";
-            this.btnInsert.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             this.btnInsert.MouseLeave += new System.EventHandler(this.btnInsert_MouseLeave);
             this.btnInsert.MouseHover += new System.EventHandler(this.btnInsert_MouseHover);
