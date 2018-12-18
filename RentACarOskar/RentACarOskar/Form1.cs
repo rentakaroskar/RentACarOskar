@@ -46,27 +46,19 @@ namespace RentACarOskar
                 var type = myProperty.GetType();
                 var properties = type.GetProperties();
 
-                for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                 {
-                    if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
-                    {
-                        MessageBox.Show("Uspjesan Login");
-                        Dashboard pom = new Dashboard();
-                        Visible = false;
-                        pom.ShowDialog();
-                        if (pom.DialogResult == DialogResult.Cancel)
-                        {
-                            pom.Close();
-                            Visible = true;
-                            tbUserName.Text = "";
-                            tbPassword.Text = "";
-                        }
-                        break;
-                    }
-                    else if (i == dt.Rows.Count - 1)
-                    {   //MessageBox.Show("Pogresan E-mail ili loznika!");
-                        DialogResult dr = MetroMessageBox.Show(this, "\n\nPogresan E-mail ili loznika!", "Pogresan E-mail ili loznika!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    string mail = tbUserName.Text;
+                    MessageBox.Show("Uspjesan Login");
+                    Dashboard pom = new Dashboard(mail);
+                    pom.ShowDialog();
+                    break;
+                }
+                else if (i == dt.Rows.Count - 1)
+                {   //MessageBox.Show("Pogresan E-mail ili loznika!");
+                    DialogResult dr = MetroMessageBox.Show(this, "\n\nPogresan E-mail ili loznika!", "Pogresan E-mail ili loznika!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -18,6 +18,7 @@ namespace RentACarOskar
     public partial class Dashboard : Form
     {
         PropertyInterface myProperty;
+        string UserMail;
 
         //filter
         PropertyInterface FilterProperty;
@@ -27,10 +28,12 @@ namespace RentACarOskar
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
         DGV ispisivati procedure koje je marko sastavio a mi saljemo InputFormi pravu property klasu*/
         PropertyInterface myForm;
-        public Dashboard()
+        public Dashboard(string mail)
         {
+            
             InitializeComponent();
-
+            this.UserMail = mail;
+            userLabel.Text = UserMail;
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
             //CRUDfunkcije crud = new CRUDfunkcije();
@@ -47,7 +50,7 @@ namespace RentACarOskar
 
         //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
         private void PopulateGrid(PropertyInterface property)
-        {
+        {//MARKO PREBACI U CRUD FOLDER
             myProperty = property;
             dt = new DataTable();
             //logika za popunjavanje tabele
@@ -59,10 +62,11 @@ namespace RentACarOskar
         }
 
         private void PopuniDGV(DataTable dt, PropertyInterface property)
-        {
+        {//MARKO PREBACI U CRUD FOLDER
+
             panelPanelZaGV.Controls.Clear();
 
-            dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
             //pozadina hedera
             dgv.BackgroundColor = Color.White;
