@@ -76,7 +76,7 @@
             this.btnLogIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogIn.Location = new System.Drawing.Point(95, 233);
+            this.btnLogIn.Location = new System.Drawing.Point(107, 233);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(98, 42);
             this.btnLogIn.TabIndex = 8;
@@ -94,7 +94,7 @@
             this.metroPanel4.HorizontalScrollbarBarColor = true;
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(12, 96);
+            this.metroPanel4.Location = new System.Drawing.Point(17, 96);
             this.metroPanel4.Name = "metroPanel4";
             this.metroPanel4.Size = new System.Drawing.Size(283, 87);
             this.metroPanel4.TabIndex = 7;
@@ -153,7 +153,7 @@
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(12, 15);
+            this.metroPanel3.Location = new System.Drawing.Point(17, 15);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(283, 75);
             this.metroPanel3.TabIndex = 5;
@@ -197,7 +197,7 @@
             this.tbUserName.SelectionLength = 0;
             this.tbUserName.SelectionStart = 0;
             this.tbUserName.ShortcutsEnabled = true;
-            this.tbUserName.Size = new System.Drawing.Size(266, 23);
+            this.tbUserName.Size = new System.Drawing.Size(268, 23);
             this.tbUserName.TabIndex = 2;
             this.tbUserName.UseSelectable = true;
             this.tbUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -212,7 +212,7 @@
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(52, 63);
+            this.metroPanel2.Location = new System.Drawing.Point(63, 63);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(222, 36);
             this.metroPanel2.TabIndex = 1;
