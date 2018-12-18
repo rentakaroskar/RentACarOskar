@@ -41,13 +41,10 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.labelUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelLogOut = new System.Windows.Forms.Panel();
-            this.btnLogOut = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lblLogOut1 = new System.Windows.Forms.Label();
             this.panelFaktura = new System.Windows.Forms.Panel();
             this.lblFaktura = new System.Windows.Forms.Label();
             this.btnFaktura = new Bunifu.Framework.UI.BunifuImageButton();
@@ -57,24 +54,26 @@
             this.panelAutomobili = new System.Windows.Forms.Panel();
             this.lblAutomobili = new System.Windows.Forms.Label();
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panelLogOut = new System.Windows.Forms.Panel();
+            this.btnLogOut = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lblLogOut1 = new System.Windows.Forms.Label();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
-            this.labelUser = new MetroFramework.Drawing.Html.HtmlLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelLeft.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            this.panelLogOut.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
             this.panelFaktura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).BeginInit();
             this.panelKlijenti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaPeople)).BeginInit();
             this.panelAutomobili.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
+            this.panelLogOut.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
             this.SuspendLayout();
@@ -159,7 +158,7 @@
             // 
             this.panelFilter.Location = new System.Drawing.Point(0, 0);
             this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(200, 100);
+            this.panelFilter.Size = new System.Drawing.Size(399, 100);
             this.panelFilter.TabIndex = 7;
             // 
             // btnFilter
@@ -249,8 +248,8 @@
             // 
             this.PanelTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelTop.BackgroundImage")));
             this.PanelTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelTop.Controls.Add(this.label1);
             this.PanelTop.Controls.Add(this.labelUser);
-            this.PanelTop.Controls.Add(this.pictureBox3);
             this.PanelTop.Controls.Add(this.pictureBox1);
             this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTop.GradientBottomLeft = System.Drawing.Color.White;
@@ -263,18 +262,14 @@
             this.PanelTop.Size = new System.Drawing.Size(927, 50);
             this.PanelTop.TabIndex = 1;
             // 
-            // pictureBox3
+            // labelUser
             // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox3.Image = global::RentACarOskar.Properties.Resources.cross;
-            this.pictureBox3.Location = new System.Drawing.Point(887, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(771, 9);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(35, 13);
+            this.labelUser.TabIndex = 3;
+            this.labelUser.Text = "label1";
             // 
             // pictureBox1
             // 
@@ -322,49 +317,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(245, 700);
             this.panelMenu.TabIndex = 0;
-            // 
-            // panelLogOut
-            // 
-            this.panelLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.panelLogOut.Controls.Add(this.btnLogOut);
-            this.panelLogOut.Controls.Add(this.lblLogOut1);
-            this.panelLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelLogOut.Location = new System.Drawing.Point(0, 652);
-            this.panelLogOut.Name = "panelLogOut";
-            this.panelLogOut.Size = new System.Drawing.Size(245, 45);
-            this.panelLogOut.TabIndex = 10;
-            this.panelLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            this.panelLogOut.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
-            this.panelLogOut.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.Image = global::RentACarOskar.Properties.Resources.logout;
-            this.btnLogOut.ImageActive = null;
-            this.btnLogOut.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.btnLogOut.Location = new System.Drawing.Point(11, 9);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(40, 31);
-            this.btnLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnLogOut.TabIndex = 9;
-            this.btnLogOut.TabStop = false;
-            this.btnLogOut.Zoom = 10;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // lblLogOut1
-            // 
-            this.lblLogOut1.AutoSize = true;
-            this.lblLogOut1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOut1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblLogOut1.Location = new System.Drawing.Point(95, 10);
-            this.lblLogOut1.Name = "lblLogOut1";
-            this.lblLogOut1.Size = new System.Drawing.Size(85, 22);
-            this.lblLogOut1.TabIndex = 8;
-            this.lblLogOut1.Text = "Log Out";
-            this.lblLogOut1.Click += new System.EventHandler(this.btnLogOut_Click);
-            this.lblLogOut1.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
-            this.lblLogOut1.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
             // 
             // panelFaktura
             // 
@@ -495,6 +447,49 @@
             this.slicicaAuto.Zoom = 10;
             this.slicicaAuto.Click += new System.EventHandler(this.btnVozilo_Click);
             // 
+            // panelLogOut
+            // 
+            this.panelLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.panelLogOut.Controls.Add(this.btnLogOut);
+            this.panelLogOut.Controls.Add(this.lblLogOut1);
+            this.panelLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelLogOut.Location = new System.Drawing.Point(0, 652);
+            this.panelLogOut.Name = "panelLogOut";
+            this.panelLogOut.Size = new System.Drawing.Size(245, 45);
+            this.panelLogOut.TabIndex = 10;
+            this.panelLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.panelLogOut.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
+            this.panelLogOut.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.Image = global::RentACarOskar.Properties.Resources.logout;
+            this.btnLogOut.ImageActive = null;
+            this.btnLogOut.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
+            this.btnLogOut.Location = new System.Drawing.Point(11, 9);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(40, 31);
+            this.btnLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLogOut.TabIndex = 9;
+            this.btnLogOut.TabStop = false;
+            this.btnLogOut.Zoom = 10;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // lblLogOut1
+            // 
+            this.lblLogOut1.AutoSize = true;
+            this.lblLogOut1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogOut1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblLogOut1.Location = new System.Drawing.Point(95, 10);
+            this.lblLogOut1.Name = "lblLogOut1";
+            this.lblLogOut1.Size = new System.Drawing.Size(85, 22);
+            this.lblLogOut1.TabIndex = 8;
+            this.lblLogOut1.Text = "Log Out";
+            this.lblLogOut1.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.lblLogOut1.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
+            this.lblLogOut1.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
+            // 
             // loptica
             // 
             this.loptica.BackColor = System.Drawing.Color.Transparent;
@@ -521,16 +516,14 @@
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
             // 
-            // labelUser
+            // label1
             // 
-            this.labelUser.AutoScroll = true;
-            this.labelUser.AutoScrollMinSize = new System.Drawing.Size(10, 10);
-            this.labelUser.AutoSize = false;
-            this.labelUser.BackColor = System.Drawing.SystemColors.Window;
-            this.labelUser.Location = new System.Drawing.Point(237, 13);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(75, 23);
-            this.labelUser.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(733, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "User:";
             // 
             // Dashboard
             // 
@@ -550,13 +543,10 @@
             this.panelCentar.ResumeLayout(false);
             this.panelCentar.PerformLayout();
             this.PanelTop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.PanelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelLeft.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
-            this.panelLogOut.ResumeLayout(false);
-            this.panelLogOut.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
             this.panelFaktura.ResumeLayout(false);
             this.panelFaktura.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).EndInit();
@@ -566,6 +556,9 @@
             this.panelAutomobili.ResumeLayout(false);
             this.panelAutomobili.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).EndInit();
+            this.panelLogOut.ResumeLayout(false);
+            this.panelLogOut.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
             this.ResumeLayout(false);
@@ -579,7 +572,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuGradientPanel panelCentar;
         private System.Windows.Forms.PictureBox logoPic;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private Bunifu.Framework.UI.BunifuGradientPanel panelPanelZaGV;
         private System.Windows.Forms.Panel panelMenu;
         private Bunifu.Framework.UI.BunifuImageButton slicicaAuto;
@@ -604,7 +596,7 @@
         private System.Windows.Forms.Button bDelete;
         private System.Windows.Forms.Panel panelFilter;
         private MetroFramework.Controls.MetroButton btnFilter;
-        private MetroFramework.Drawing.Html.HtmlLabel userLabel;
-        private MetroFramework.Drawing.Html.HtmlLabel labelUser;
+        private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.Label label1;
     }
 }

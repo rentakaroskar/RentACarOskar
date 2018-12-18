@@ -126,7 +126,6 @@ namespace RentACarOskar
         private void btnOk_Click(object sender, EventArgs e)
         {
             var properties = myInterface.GetType().GetProperties();
-            bool i = true;
             //String za dodavanje imena polja koja su obavezna a nisu popunjena
             string imenaPolja = "";
             foreach (var item in flowPanel.Controls)
