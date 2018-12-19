@@ -82,6 +82,7 @@
             this.btnReturn.TabIndex = 5;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseSelectable = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // LookUpForma
             // 

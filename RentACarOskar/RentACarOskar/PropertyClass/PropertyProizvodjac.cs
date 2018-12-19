@@ -14,11 +14,13 @@ namespace RentACarOskar.PropertyClass
         #region Atributi
         [DisplayName("Proizvodjac ID")]
         [SqlName("ProizvodjacID")]
+        [LookupKey]
         [PrimaryKey]
         public int ProizvodjacID { get; set; }
 
         [DisplayName("Naziv")]
         [SqlName("Naziv")]
+        [LookupValue]
         public string Naziv { get; set; }
 
         #endregion

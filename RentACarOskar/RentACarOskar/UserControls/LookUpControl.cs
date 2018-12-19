@@ -32,9 +32,8 @@ namespace RentACarOskar.UserControls
         {
             LookUpForma sf = new LookUpForma(myInterface);
             sf.ShowDialog();
-            //Key = sf.Key;
-            //Value = sf.Value;
-            //txtValue.Text = Value;
+            tbKey.Text = sf.Key;
+            tbNaziv.Text = sf.Value;
         }
 
         public void setInterface(PropertyInterface interf)
@@ -44,12 +43,12 @@ namespace RentACarOskar.UserControls
 
         public void SetValueTextBox(string value)
         {
-            tbNaziv.Text = value;
+            tbKey.Text = value;
         }
 
         public string GetKeyValue()
         {
-            return tbNaziv.Text;
+            return tbKey.Text;
         }
     }
 }
