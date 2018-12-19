@@ -1,4 +1,5 @@
 ﻿using KonekcijaNaBazu;
+using MetroFramework;
 using RentACarOskar.Attributes;
 using RentACarOskar.UserControls;
 using System;
@@ -19,10 +20,12 @@ namespace RentACarOskar
 
         PropertyInterface myInterface;
         StateEnum state;
+        string userEmail;
 
-        public InputForma(PropertyInterface myInterface, StateEnum state)
+        public InputForma(PropertyInterface myInterface, StateEnum state, string email)
         {
             InitializeComponent();
+            userEmail = email;
             Text = myInterface.ToString().Remove(0, 36) + " " + state.ToString();
             this.myInterface = myInterface;
             this.state = state;
@@ -125,68 +128,74 @@ namespace RentACarOskar
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+
             var properties = myInterface.GetType().GetProperties();
             //String za dodavanje imena polja koja su obavezna a nisu popunjena
-            string imenaPolja = "";
+
             foreach (var item in flowPanel.Controls)
             {
-                string value = "";
-
-                if (item.GetType() == typeof(InputControl))
+                try
                 {
-                    InputControl input = item as InputControl;
-                    value = input.GetValueFromTextBox();
 
-                    PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
-                    property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
 
-                    //Provjera da li je obavezno polje prazno
-                    if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
-                        imenaPolja += input.Name + "\n";
+                    string value = "";
+
+                    if (item.GetType() == typeof(InputControl))
+                    {
+                        InputControl input = item as InputControl;
+                        value = input.GetValueFromTextBox();
+
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+
+                    }
+                    else if (item.GetType() == typeof(InputDateControl))
+                    {
+                        InputDateControl input = item as InputDateControl;
+                        value = input.GetValueFromDateBox();
+
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+                    }
+                    else if (item.GetType() == typeof(LookUpControl))
+                    {
+                        LookUpControl input = item as LookUpControl;
+                        value = input.GetKeyValue();
+
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+                    }
                 }
-                else if (item.GetType() == typeof(InputDateControl))
+                catch (Exception)
                 {
-                    InputDateControl input = item as InputDateControl;
-                    value = input.GetValueFromDateBox();
-
-                    PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
-                    property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
-
-                    //Provjera da li je obavezno polje prazno
-                    if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
-                        imenaPolja += input.Name + "\n";
-                }
-                else if (item.GetType() == typeof(LookUpControl))
-                {
-                    LookUpControl input = item as LookUpControl;
-                    value = input.GetKeyValue();
-
-                    PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
-                    property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
-
-                    //Provjera da li je obavezno polje prazno
-                    if (value == "" && property.GetCustomAttribute<NotRequiredAttribute>() == null)
-                        imenaPolja += input.Name + "\n";
+                    //MessageBox.Show(ex.GetType().ToString());
+                    DialogResult dr = MetroMessageBox.Show(this, $"\n\nError! Sva polja moraju biti popunjena!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
 
             //Izbacivanje MessageBox-a jer obavezna polja nisu popunjena
-            if (imenaPolja != "")
-            {
-                MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja, "Greska pri unosu", MessageBoxButtons.OK);
-                return;
-            }
+            //if (imenaPolja != "")
+            //{
+            //    MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja, "Greska pri unosu", MessageBoxButtons.OK);
+            //    return;
+            //}
 
             //Provjera poziva Input forme
             if (state == StateEnum.Create)
             {
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                     myInterface.GetInsertQuery(), myInterface.GetInsertParameters().ToArray());
+
+                CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create, myInterface);
             }
             else if (state == StateEnum.Update)
             {
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
+
+                CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
             }
 
             DialogResult = DialogResult.OK;

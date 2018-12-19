@@ -203,6 +203,7 @@ namespace RentACarOskar
         {
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.Insert(myForm);
+            crud.UserMail(UserMail);
             PopulateGrid(myProperty);
         }
 
@@ -214,6 +215,7 @@ namespace RentACarOskar
             myProperty = pom;
             Visible = false;
             CRUDfunkcije crud = new CRUDfunkcije();
+            crud.UserMail(UserMail);
             crud.Update(myForm, dgv,SelektovaniRed);
             Visible = true;
             PopulateGrid(myProperty);

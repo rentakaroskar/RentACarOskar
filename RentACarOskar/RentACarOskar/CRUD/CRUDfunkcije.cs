@@ -21,17 +21,22 @@ namespace RentACarOskar.CRUD
         PropertyInterface myProperty;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
         int SelektovaniRed;
+        string UserEmail;
 
         //NA LOOKUP FORMI TREBA PROMIJENITTI IZGLED TABELE U 
         //Bunifu.Framework.UI.BunifuCustomDataGrid dgv DA BI RADILE CRUD OPERACIJE
 
-
+        public void UserMail(string mail)
+        {
+            UserEmail = mail;
+        }
 
         public void Insert(PropertyInterface myProperty)
         {
             this.myProperty = myProperty;
-            InputForma pom = new InputForma(myProperty, StateEnum.Create);
+            InputForma pom = new InputForma(myProperty, StateEnum.Create,UserEmail);
             pom.ShowDialog();
+
         }
 
         public void Update(PropertyInterface myProperty, Bunifu.Framework.UI.BunifuCustomDataGrid dgv, int SelektovaniRed)
@@ -50,7 +55,7 @@ namespace RentACarOskar.CRUD
                 property.SetValue(myProperty, Convert.ChangeType(value, property.PropertyType));
                 i++;
             }
-            InputForma inputForma = new InputForma(myProperty, StateEnum.Update);
+            InputForma inputForma = new InputForma(myProperty, StateEnum.Update, UserEmail);
             inputForma.ShowDialog();
             if (inputForma.DialogResult == DialogResult.Cancel)
                 return;
@@ -71,6 +76,7 @@ namespace RentACarOskar.CRUD
 
 
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, this.myProperty.GetDeleteQuery(), this.myProperty.GetDeleteParameters().ToArray());
+                CRUD.IstorijaCRUD.Istorija(UserEmail, StateEnum.Delete, myProperty);
                 //PopulateGrid(myProperty);
             }
             catch (System.Data.SqlClient.SqlException sql)

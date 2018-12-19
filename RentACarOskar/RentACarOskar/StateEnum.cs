@@ -9,6 +9,7 @@ namespace RentACarOskar
     public enum StateEnum
     {
         Create = 1,
-        Update = 2
+        Update = 2,
+        Delete = 3
     }
 }
