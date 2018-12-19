@@ -74,9 +74,9 @@ namespace RentACarOskar.CRUD
                 //PopulateGrid(myProperty);
             }
             catch (System.Data.SqlClient.SqlException sql)
-            {
+            { 
                 MessageBox.Show("Nemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\nError code: " + sql.Message,
-                    "Greska pri brisanju", MessageBoxButtons.OK);
+                  "Greska pri brisanju", MessageBoxButtons.OK);
             }
         }
     }
