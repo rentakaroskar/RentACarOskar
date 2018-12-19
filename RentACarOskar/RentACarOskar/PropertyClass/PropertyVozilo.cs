@@ -231,6 +231,16 @@ namespace RentACarOskar.PropertyClass
                     ,[Kilometraza] = @Kilometraza
                     WHERE [VoziloID] = @VoziloID";
         }
+
+        public string GetLookupQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

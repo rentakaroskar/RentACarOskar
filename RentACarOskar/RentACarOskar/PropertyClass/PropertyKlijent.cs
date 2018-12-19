@@ -15,11 +15,13 @@ namespace RentACarOskar.PropertyClass
         [SqlName("KlijentID")]
         [DisplayName("Klijent ID")]
         [PrimaryKey]
+        [LookupKey]
         public int KlijentID { get; set; }
 
         [SqlName("OsobaID")]
         [DisplayName("Osoba ID")]
         [ForeignKey("Osoba", "OsobaID", "RentACarOskar.PropertyClass.PropertyOsoba")]
+        [LookupValue]
         public int OsobaID { get; set; }
 
         [SqlName("BrojVozacke")]
@@ -108,6 +110,16 @@ namespace RentACarOskar.PropertyClass
         {
             return @"DELETE FROM [dbo].[Klijent]
                     WHERE [KlijentID] = @KlijentID";
+        }
+
+        public string GetLookupQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

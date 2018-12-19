@@ -94,6 +94,13 @@ namespace RentACarOskar.PropertyClass
                      SET [Naziv] = @Naziv
                      WHERE [ProizvodjacID] = @ProizvodjacID";
         }
+
+        public string GetLookupQuery(string ID)
+        {
+            return @"SELECT [Naziv]
+                     FROM [dbo].[Proizvodjac]
+                     WHERE [ProizvodjacID] = " + ID;
+        }
         #endregion
     }
 }

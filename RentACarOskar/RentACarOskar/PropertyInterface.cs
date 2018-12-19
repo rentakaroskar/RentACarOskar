@@ -13,6 +13,7 @@ namespace RentACarOskar
         string GetInsertQuery();
         string GetUpdateQuery();
         string GetDeleteQuery();
+        string GetLookupQuery(string ID);
 
         List<SqlParameter> GetInsertParameters();
         List<SqlParameter> GetUpdateParameters();

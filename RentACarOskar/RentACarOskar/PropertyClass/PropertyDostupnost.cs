@@ -90,6 +90,16 @@ namespace RentACarOskar.PropertyClass
             return @"DELETE FROM dbo.Dostupnost
                     WHERE DostupnostID = @DostupnostID";
         }
+
+        public string GetLookupQuery()
+        {
+            return "";
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

@@ -122,6 +122,16 @@ namespace RentACarOskar.PropertyClass
                     SET [DostupnostID] = @DostupnostID, [VoziloID]=@VoziloID, [DatumStatusa]=@DatumStatusa
                      WHERE [StatusID] = @StatusID";
         }
+
+        public string GetLookupQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

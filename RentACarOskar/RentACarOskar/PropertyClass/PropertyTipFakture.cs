@@ -14,11 +14,13 @@ namespace RentACarOskar.PropertyClass
         #region Attributes
         [DisplayName("Tip fakture ID")]
         [SqlName("TipFaktureID")]
+        [LookupKey]
         [PrimaryKey]
         public int TipFaktureID { get; set; }
 
         [DisplayName("Naziv tipa")]
         [SqlName("NazivTipa")]
+        [LookupValue]
         public string NazivTipa { get; set; }
         #endregion
 
@@ -88,6 +90,16 @@ namespace RentACarOskar.PropertyClass
         {
             return @" DELETE FROM dbo.TipFakture
                     WHERE TipFaktureID = @TipFaktureID";
+        }
+
+        public string GetLookupQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

@@ -56,6 +56,16 @@ namespace RentACarOskar.IspisDGV
             throw new NotImplementedException();
         }
 
+        public string GetLookupQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetSelectQuery()
         {
             return @"EXEC dbo.IspisFakturaProc";

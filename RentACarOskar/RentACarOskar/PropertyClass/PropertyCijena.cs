@@ -128,8 +128,6 @@ namespace RentACarOskar.PropertyClass
                      FROM [dbo].[Cijena]";
         }
 
-        
-
         public string GetUpdateQuery()
         {
             return @"UPDATE [dbo].[Cijena]
@@ -137,6 +135,11 @@ namespace RentACarOskar.PropertyClass
                      ,[CijenaPoDanu] = @CijenaPoDanu
                      ,[DatumCijene] = @DatumCijene
                      WHERE [CijenaID] = @CijenaID";
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            return "";
         }
         #endregion
     }

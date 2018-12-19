@@ -149,6 +149,16 @@ namespace RentACarOskar.PropertyClass
                     ,[TipFaktureID] = @TipFaktureID, [DatumFakture] = @DatumFakture
                     WHERE[FakturaID] = @FakturaID";
         }
+
+        public string GetLookupQuery()
+        {
+            return "";
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }
