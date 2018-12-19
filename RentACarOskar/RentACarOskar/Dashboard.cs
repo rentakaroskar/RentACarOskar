@@ -202,8 +202,9 @@ namespace RentACarOskar
         private void btnInsert_Click(object sender, EventArgs e)
         {
             CRUDfunkcije crud = new CRUDfunkcije();
-            crud.Insert(myForm);
             crud.UserMail(UserMail);
+            crud.Insert(myForm);
+            
             PopulateGrid(myProperty);
         }
 
@@ -213,11 +214,11 @@ namespace RentACarOskar
             PropertyInterface pom = myProperty;
             PopulateGrid(myForm);
             myProperty = pom;
-            Visible = false;
+            //Visible = false;
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.UserMail(UserMail);
             crud.Update(myForm, dgv,SelektovaniRed);
-            Visible = true;
+            //Visible = true;
             PopulateGrid(myProperty);
         }
 
@@ -225,6 +226,7 @@ namespace RentACarOskar
         {
             int SelektovaniRed = dgv.SelectedRows[0].Index;
             CRUDfunkcije crud = new CRUDfunkcije();
+            crud.UserMail(UserMail);
             crud.Delete(myForm,SelektovaniRed,dgv);
             PopulateGrid(myProperty);
         }
