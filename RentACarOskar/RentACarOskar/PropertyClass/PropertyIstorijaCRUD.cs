@@ -11,8 +11,6 @@ namespace RentACarOskar.PropertyClass
 {
     public class PropertyIstorijaCRUD : PropertyInterface
     {
-
-
         #region Attributes
 
         [DisplayName("ID ackije")]
@@ -120,6 +118,11 @@ namespace RentACarOskar.PropertyClass
         {
             return @" UPDATE[dbo].[IstorijaCRUD] SET [KorisnickiMail] = @KorisnickiMail, [Datum] = @Datum
                     ,[Opis] = @Opis ";
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
