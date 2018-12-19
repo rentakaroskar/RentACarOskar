@@ -20,6 +20,7 @@ namespace RentACarOskar
         PropertyInterface myProperty;
         public string Key;
         public string Value;
+        public string Value2;
 
         public LookUpForma()
         {
@@ -61,7 +62,15 @@ namespace RentACarOskar
             DataGridViewRow row = dgv.SelectedRows[0];
             var properties = myProperty.GetType().GetProperties();
 
-            string columnName = properties.Where(x => x.GetCustomAttribute <LookupKeyAttribute> () != null)
+            LookUpKupljenje(properties, row);
+
+            this.Close();
+        }
+
+        //Najbolja metoda koju je iko ikad napravio
+        public void LookUpKupljenje(PropertyInfo[] properties, DataGridViewRow row)
+        {
+            string columnName = properties.Where(x => x.GetCustomAttribute<LookupKeyAttribute>() != null)
                 .FirstOrDefault().GetCustomAttribute<SqlNameAttribute>().Name;
 
             Key = row.Cells[columnName].Value.ToString();
@@ -69,9 +78,66 @@ namespace RentACarOskar
             columnName = properties.Where(x => x.GetCustomAttribute<LookupValueAttribute>() != null)
                 .FirstOrDefault().GetCustomAttribute<SqlNameAttribute>().Name;
 
-            Value = row.Cells[columnName].Value.ToString();
+            if (columnName.Contains("ID"))
+            {
+                PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
+                        CreateInstance(properties.Where(x => x.GetCustomAttribute<ForeignKeyAttribute>() != null)
+                    .FirstOrDefault().GetCustomAttribute<ForeignKeyAttribute>().ClassName)
+                        as PropertyInterface;
 
-            this.Close();
+                SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                    foreignKeyInterface.GetLookupQuery(row.Cells[1].Value.ToString()));
+
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                reader.Close();
+
+                dgv.DataSource = dt;
+
+                row = dgv.Rows[0];
+
+                Value = row.Cells[0].Value.ToString();
+
+                Value2 = row.Cells[1].Value.ToString();
+            }
+            else
+            {
+                Value = row.Cells[columnName].Value.ToString();
+
+                try
+                {
+                    columnName = properties.Where(x => x.GetCustomAttribute<LookupValueAttribute>() != null)
+                        .LastOrDefault().GetCustomAttribute<SqlNameAttribute>().Name;
+
+                    if (columnName.Contains("ID"))
+                    {
+                        PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
+                                CreateInstance(properties.Where(x => x.GetCustomAttribute<ForeignKeyAttribute>() != null)
+                            .FirstOrDefault().GetCustomAttribute<ForeignKeyAttribute>().ClassName)
+                                as PropertyInterface;
+
+                        SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                            foreignKeyInterface.GetLookupQuery(row.Cells[2].Value.ToString()));
+
+                        DataTable dt = new DataTable();
+                        dt.Load(reader);
+                        reader.Close();
+
+                        dgv.DataSource = dt;
+
+                        row = dgv.Rows[0];
+
+                        Value2 = row.Cells[0].Value.ToString();
+
+                    }
+                    else
+                        Value2 = row.Cells[columnName].Value.ToString();
+                }
+                catch
+                {
+
+                }
+            }
         }
 
         private void btnOk_Click(object sender, EventArgs e)

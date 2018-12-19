@@ -15,11 +15,13 @@ namespace RentACarOskar.PropertyClass
         [DisplayName("Radnik ID")]
         [SqlName("RadnikID")]
         [PrimaryKey]
+        [LookupKey]
         public int RadnikID { get; set; }
 
         [DisplayName("Osoba ID")]
         [SqlName("OsobaID")]
         [ForeignKey("Osoba", "OsobaID", "RentACarOskar.PropertyClass.PropertyOsoba")]
+        [LookupValue]
         public int OsobaID { get; set; }
 
         [DisplayName("Pozicija")]
@@ -224,6 +226,16 @@ namespace RentACarOskar.PropertyClass
                       ,[Lozinka] = @Lozinka
                       ,[Email] = @Email
                   WHERE [RadnikID] = @RadnikID";
+        }
+
+        public string GetLookupQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Attributes\ForeignKeyAttribute.cs" />
     <Compile Include="Attributes\LookupKeyAttribute.cs" />
+    <Compile Include="Attributes\LookupValue2Attribute.cs" />
     <Compile Include="Attributes\LookupValueAttribute.cs" />
     <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
     <Compile Include="Attributes\NotRequiredAttribute.cs" />

@@ -24,6 +24,7 @@ namespace RentACarOskar.PropertyClass
         [DisplayName("Proizvodjac ID")]
         [SqlName("ProizvodjacID")]
         [ForeignKey("Proizvodjac", "ProizvodjacID", "RentACarOskar.PropertyClass.PropertyProizvodjac")]
+        [LookupValue]
         public int ProizvodjacID { get; set; }
         #endregion
 
@@ -100,6 +101,16 @@ namespace RentACarOskar.PropertyClass
         {
             return @" DELETE FROM[dbo].[ModelVozila]
                     WHERE[ModelID] = @ModelID";
+        }
+
+        public string GetLookupQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

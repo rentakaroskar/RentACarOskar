@@ -140,6 +140,16 @@ namespace RentACarOskar.PropertyClass
                     ,[BrojDana] = @BrojDana
                 WHERE [CijenaFakturaID] = @CijenaFakturaID";
         }
+
+        public string GetLookupQuery()
+        {
+            return "";
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

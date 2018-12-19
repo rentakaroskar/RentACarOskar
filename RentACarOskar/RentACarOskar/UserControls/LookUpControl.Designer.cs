@@ -49,7 +49,7 @@
             // 
             // 
             this.tbKey.CustomButton.Image = null;
-            this.tbKey.CustomButton.Location = new System.Drawing.Point(49, 1);
+            this.tbKey.CustomButton.Location = new System.Drawing.Point(14, 1);
             this.tbKey.CustomButton.Name = "";
             this.tbKey.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbKey.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -67,7 +67,7 @@
             this.tbKey.SelectionLength = 0;
             this.tbKey.SelectionStart = 0;
             this.tbKey.ShortcutsEnabled = true;
-            this.tbKey.Size = new System.Drawing.Size(71, 23);
+            this.tbKey.Size = new System.Drawing.Size(36, 23);
             this.tbKey.TabIndex = 2;
             this.tbKey.UseSelectable = true;
             this.tbKey.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -75,9 +75,9 @@
             // 
             // btnLookup
             // 
-            this.btnLookup.Location = new System.Drawing.Point(230, 9);
+            this.btnLookup.Location = new System.Drawing.Point(191, 9);
             this.btnLookup.Name = "btnLookup";
-            this.btnLookup.Size = new System.Drawing.Size(48, 23);
+            this.btnLookup.Size = new System.Drawing.Size(29, 23);
             this.btnLookup.TabIndex = 3;
             this.btnLookup.Text = "...";
             this.btnLookup.UseSelectable = true;
@@ -89,7 +89,7 @@
             // 
             // 
             this.tbNaziv.CustomButton.Image = null;
-            this.tbNaziv.CustomButton.Location = new System.Drawing.Point(49, 1);
+            this.tbNaziv.CustomButton.Location = new System.Drawing.Point(111, 1);
             this.tbNaziv.CustomButton.Name = "";
             this.tbNaziv.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbNaziv.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -98,7 +98,7 @@
             this.tbNaziv.CustomButton.UseSelectable = true;
             this.tbNaziv.CustomButton.Visible = false;
             this.tbNaziv.Lines = new string[0];
-            this.tbNaziv.Location = new System.Drawing.Point(288, 9);
+            this.tbNaziv.Location = new System.Drawing.Point(226, 9);
             this.tbNaziv.MaxLength = 32767;
             this.tbNaziv.Name = "tbNaziv";
             this.tbNaziv.PasswordChar = '\0';
@@ -107,7 +107,7 @@
             this.tbNaziv.SelectionLength = 0;
             this.tbNaziv.SelectionStart = 0;
             this.tbNaziv.ShortcutsEnabled = true;
-            this.tbNaziv.Size = new System.Drawing.Size(71, 23);
+            this.tbNaziv.Size = new System.Drawing.Size(133, 23);
             this.tbNaziv.TabIndex = 4;
             this.tbNaziv.UseSelectable = true;
             this.tbNaziv.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));

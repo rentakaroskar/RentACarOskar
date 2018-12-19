@@ -15,14 +15,17 @@ namespace RentACarOskar.PropertyClass
         [DisplayName("Osoba ID")]
         [SqlName("OsobaID")]
         [PrimaryKey]
+        [LookupKey]
         public int OsobaID { get; set; }
 
         [DisplayName("Ime")]
         [SqlName("Ime")]
+        [LookupValue]
         public string Ime { get; set; }
 
         [DisplayName("Prezime")]
         [SqlName("Prezime")]
+        [LookupValue]
         public string Prezime { get; set; }
 
         [DisplayName("Jmb")]
@@ -171,9 +174,17 @@ namespace RentACarOskar.PropertyClass
 
         public string GetUpdateQuery()
         {
-            return @" UPDATE[dbo].[Osoba] SET [Ime] = @Ime, [Prezime] = @Prezime
+            return @"UPDATE[dbo].[Osoba] SET [Ime] = @Ime, [Prezime] = @Prezime
                  ,[JMB] = @JMB, [DatumRodjenja] = @DatumRodjenja, [Pol] = @Pol, [BrojTelefon] = @BrojTelefon
                  ,[Adresa] = @Adresa WHERE [OsobaID] = @OsobaID";
+        }
+
+        public string GetLookupQuery(string ID)
+        {
+            return @"SELECT [Ime], 
+                        [Prezime]
+                     FROM dbo.Osoba
+                     WHERE [OsobaID] = " + ID;
         }
     #endregion
     }
