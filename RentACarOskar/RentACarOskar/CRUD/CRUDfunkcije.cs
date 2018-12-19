@@ -59,18 +59,23 @@ namespace RentACarOskar.CRUD
         {
 
             try
-            {
-                this.SelektovaniRed = SelektovaniRed;
-                this.myProperty = myProperty;
-                var type = myProperty.GetType();
-                var properties = type.GetProperties();
+            {                            
+                DataGridViewRow row = dgv.SelectedRows[0];
+                var properties = myProperty.GetType().GetProperties();
 
-                PropertyInfo property = properties.Where(x => x.IsDefined(typeof(PrimaryKeyAttribute))).FirstOrDefault();
-                property.SetValue(myProperty, Convert.ChangeType(dgv.SelectedRows[0].Cells[0].Value, property.PropertyType));
+                foreach (PropertyInfo item in properties)
+                {
+                    if (item.GetCustomAttribute<PrimaryKeyAttribute>() != null)
+                    {
+                        string value = row.Cells[item.GetCustomAttribute<SqlNameAttribute>().Name]
+                            .Value.ToString();
 
+                        item.SetValue(myProperty, Convert.ChangeType(value, item.PropertyType));
+                    }
+                }
 
-
-                SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, this.myProperty.GetDeleteQuery(), this.myProperty.GetDeleteParameters().ToArray());
+                SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
+                      myProperty.GetDeleteQuery(), myProperty.GetDeleteParameters().ToArray());
                 //PopulateGrid(myProperty);
             }
             catch (System.Data.SqlClient.SqlException sql)

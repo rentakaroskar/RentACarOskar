@@ -65,6 +65,7 @@ namespace RentACarOskar.PropertyClass
                 parameter.Value = VoziloID;
                 parameters.Add(parameter);
             }
+            
             return parameters;
         }
 
@@ -172,7 +173,7 @@ namespace RentACarOskar.PropertyClass
         public string GetDeleteQuery()
         {
             return @"UPDATE [dbo].[Vozilo]
-                    SET [IsDeleted] = true
+                    SET [IsDeleted] = 'true'
                     WHERE [VoziloID] = @VoziloID";
         }
         
