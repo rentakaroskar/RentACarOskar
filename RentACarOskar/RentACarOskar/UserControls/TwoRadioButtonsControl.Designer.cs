@@ -56,7 +56,7 @@
             // rb2
             // 
             this.rb2.AutoSize = true;
-            this.rb2.Location = new System.Drawing.Point(257, 10);
+            this.rb2.Location = new System.Drawing.Point(247, 10);
             this.rb2.Name = "rb2";
             this.rb2.Size = new System.Drawing.Size(85, 17);
             this.rb2.TabIndex = 3;
