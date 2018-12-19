@@ -16,7 +16,7 @@ namespace RentACarOskar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard("test"));
+            Application.Run(new Form1());
         }
     }
 }

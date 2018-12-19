@@ -312,7 +312,7 @@ namespace RentACarOskar
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+             DialogResult = DialogResult.Cancel;
         }
 
         #region Animacije
