@@ -50,6 +50,10 @@ namespace RentACarOskar.PropertyClass
         [SqlName("Kilometraza")]
         [DisplayName("Kilometraza")]
         public decimal Kilometraza { get; set; }
+
+        [SqlName("IsDeleted")]
+        [DisplayName("Obrisano")]
+        public bool IsDeleted { get; set; }
         #endregion
 
         #region Parameters
@@ -167,7 +171,8 @@ namespace RentACarOskar.PropertyClass
         #region Queries
         public string GetDeleteQuery()
         {
-            return @"DELETE FROM [dbo].[Vozilo]
+            return @"UPDATE [dbo].[Vozilo]
+                    SET [IsDeleted] = true
                     WHERE [VoziloID] = @VoziloID";
         }
         

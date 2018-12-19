@@ -43,7 +43,7 @@
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.PanelLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelFaktura = new System.Windows.Forms.Panel();
@@ -63,7 +63,7 @@
             this.panel1.SuspendLayout();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.PanelLeft.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelFaktura.SuspendLayout();
@@ -157,14 +157,14 @@
             // 
             // panelFilter
             // 
-            this.panelFilter.Location = new System.Drawing.Point(0, 0);
+            this.panelFilter.Location = new System.Drawing.Point(9, 6);
             this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(399, 100);
+            this.panelFilter.Size = new System.Drawing.Size(495, 31);
             this.panelFilter.TabIndex = 7;
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(534, 164);
+            this.btnFilter.Location = new System.Drawing.Point(9, 164);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(75, 23);
             this.btnFilter.TabIndex = 4;
@@ -251,7 +251,7 @@
             this.PanelTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PanelTop.Controls.Add(this.label1);
             this.PanelTop.Controls.Add(this.labelUser);
-            this.PanelTop.Controls.Add(this.pictureBox1);
+            this.PanelTop.Controls.Add(this.btnMenu);
             this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTop.GradientBottomLeft = System.Drawing.Color.White;
             this.PanelTop.GradientBottomRight = System.Drawing.Color.White;
@@ -281,17 +281,17 @@
             this.labelUser.TabIndex = 3;
             this.labelUser.Text = "label1";
             // 
-            // pictureBox1
+            // btnMenu
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.menu1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = global::RentACarOskar.Properties.Resources.menu1;
+            this.btnMenu.Location = new System.Drawing.Point(0, 3);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(40, 44);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMenu.TabIndex = 0;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // PanelLeft
             // 
@@ -511,7 +511,7 @@
             this.loptica.TabIndex = 4;
             this.loptica.TabStop = false;
             this.loptica.Visible = false;
-            this.loptica.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.loptica.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // logoPic
             // 
@@ -545,7 +545,7 @@
             this.panelCentar.PerformLayout();
             this.PanelTop.ResumeLayout(false);
             this.PanelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.PanelLeft.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelFaktura.ResumeLayout(false);
@@ -570,7 +570,7 @@
 
         private Bunifu.Framework.UI.BunifuGradientPanel PanelLeft;
         private Bunifu.Framework.UI.BunifuGradientPanel PanelTop;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnMenu;
         private Bunifu.Framework.UI.BunifuGradientPanel panelCentar;
         private System.Windows.Forms.PictureBox logoPic;
         private Bunifu.Framework.UI.BunifuGradientPanel panelPanelZaGV;

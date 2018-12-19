@@ -108,7 +108,7 @@ namespace RentACarOskar
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
             if (PanelLeft.Width == 245)
             {
@@ -142,6 +142,8 @@ namespace RentACarOskar
             Dobrodosli.Visible = false;
             panelCentar.Visible = true;
             btnIzdaj.Visible = false;
+            btnFilter.Visible = false;
+
             //Filter 
             FilterProperty = new VoziloIspis();
         }
@@ -154,12 +156,13 @@ namespace RentACarOskar
             //Pom za Input formu
             PropertyKlijent pomInput = new PropertyKlijent();
             myForm = pomInput;
+
             panelPanelZaGV.Visible = true;
             bDelete.Visible = true;
-
             Dobrodosli.Visible = false;
             panelCentar.Visible = true;
             btnIzdaj.Visible = false;
+            btnFilter.Visible = false;
 
             FilterProperty = new PropertyKlijent();
         }
@@ -174,12 +177,11 @@ namespace RentACarOskar
             myForm = pomInput;
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
-
+            btnFilter.Visible = true;
             Dobrodosli.Visible = false;
-
             panelCentar.Visible = true;
-
             btnIzdaj.Visible = true;
+
             //Filter 
             FilterProperty = new FakturaIspis();
         }
