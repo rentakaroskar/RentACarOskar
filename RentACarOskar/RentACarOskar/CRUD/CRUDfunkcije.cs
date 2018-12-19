@@ -37,6 +37,7 @@ namespace RentACarOskar.CRUD
             this.myProperty = myProperty;
             InputForma pom = new InputForma(myProperty, StateEnum.Create,UserEmail);
             pom.ShowDialog();
+
         }
 
         public void Update(PropertyInterface myProperty, Bunifu.Framework.UI.BunifuCustomDataGrid dgv, int SelektovaniRed)
@@ -76,6 +77,7 @@ namespace RentACarOskar.CRUD
 
 
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, this.myProperty.GetDeleteQuery(), this.myProperty.GetDeleteParameters().ToArray());
+                CRUD.IstorijaCRUD.Istorija(UserEmail, StateEnum.Delete, myProperty);
                 //PopulateGrid(myProperty);
             }
             catch (System.Data.SqlClient.SqlException sql)
