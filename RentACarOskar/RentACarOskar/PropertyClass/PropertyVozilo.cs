@@ -191,7 +191,8 @@ namespace RentACarOskar.PropertyClass
            ,[Boja]
            ,[BrojVrata]
            ,[ZadnjiServis]
-           ,[Kilometraza])
+           ,[Kilometraza]
+           ,[IsDeleted])
            VALUES
            (
            @ModelID
@@ -201,7 +202,9 @@ namespace RentACarOskar.PropertyClass
            ,@Boja
            ,@BrojVrata
            ,@ZadnjiServis
-           ,@Kilometraza)";
+           ,@Kilometraza
+           ,0)";
+            
         }
 
         public string GetSelectQuery()
