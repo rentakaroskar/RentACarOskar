@@ -37,6 +37,11 @@ namespace RentACarOskar
         //Funkcija za popunjavanje kontrole u Input formi
         private void PopunjavanjeKontrola(PropertyInfo item)
         {
+            if (item.GetCustomAttributes<BrowsableAttribute>().Count()>0 )
+            {
+                //f-ja koja provjerava da li ima  BrowsableAttribute ako ima da se ne prikazuje na input formi
+                return;
+            }
             //Dodavanje kontrole za datum
             if (item.PropertyType.Name == "DateTime")
             {
