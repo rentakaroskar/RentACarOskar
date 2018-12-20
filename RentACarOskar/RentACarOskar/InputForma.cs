@@ -48,7 +48,7 @@ namespace RentACarOskar
                 InputDateControl uc = new InputDateControl();
                 uc.Name = item.Name;
                 uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-
+                
                 if (state == StateEnum.Update)
                 {
                     try
@@ -212,6 +212,7 @@ namespace RentACarOskar
                     SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
 
+                    
                     //CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
                 }
                 else

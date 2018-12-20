@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using RentACarOskar.Attributes;
 using RentACarOskar.CRUD;
+using MetroFramework;
 
 
 namespace RentACarOskar.CRUD
@@ -100,8 +101,8 @@ namespace RentACarOskar.CRUD
             }
             catch (System.Data.SqlClient.SqlException sql)
             { 
-                MessageBox.Show("Nemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\nError code: " + sql.Message,
-                  "Greska pri brisanju", MessageBoxButtons.OK);
+                  MessageBox.Show("\n\nNemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\n", "Greska pri brisanju!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

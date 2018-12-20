@@ -93,7 +93,6 @@ namespace RentACarOskar
             dgv.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             //boja header teksta u tabeli
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
-
         }
         #endregion
 
@@ -205,8 +204,10 @@ namespace RentACarOskar
             crud.UserMail(UserMail, UserID);
             crud.Update(myProperty, ID, dgv);
             Visible = true;
-            PopulateGrid();
-
+            try {
+                PopulateGrid();
+            }
+            catch { }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -218,7 +219,13 @@ namespace RentACarOskar
                 CRUDfunkcije crud = new CRUDfunkcije();
                 crud.UserMail(UserMail, UserID);
                 crud.Delete(myProperty, SelektovaniRed, dgv);
-                PopulateGrid();
+                try
+                {
+                    PopulateGrid();
+                }
+                catch {
+                    DialogResult dr = MetroMessageBox.Show(this, "\n\nNemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\n", "Greska pri brisanju!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
