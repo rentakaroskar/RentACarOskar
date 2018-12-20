@@ -11,7 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using RentACarOskar.CRUD;
-
+using MetroFramework;
 
 namespace RentACarOskar
 {
@@ -224,11 +224,19 @@ namespace RentACarOskar
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int SelektovaniRed = dgv.SelectedRows[0].Index;
-            CRUDfunkcije crud = new CRUDfunkcije();
-            crud.UserMail(UserMail);
-            crud.Delete(myForm,SelektovaniRed,dgv);
-            PopulateGrid(myProperty);
+            DialogResult myResult = MetroMessageBox.Show(this, "Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (myResult == DialogResult.OK)
+            {
+                int SelektovaniRed = dgv.SelectedRows[0].Index;
+                CRUDfunkcije crud = new CRUDfunkcije();
+                crud.UserMail(UserMail);
+                crud.Delete(myForm, SelektovaniRed, dgv);
+                PopulateGrid(myProperty);
+            }
+            else
+            {
+                //No delete
+            }
         }
         #endregion
 
