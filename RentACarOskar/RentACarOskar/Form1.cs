@@ -38,6 +38,7 @@ namespace RentACarOskar
         }
         #endregion
 
+        #region Login
         private void Login()
         {
             if (tbUserName.Text == "" || tbPassword.Text == "")
