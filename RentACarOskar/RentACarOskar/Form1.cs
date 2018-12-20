@@ -52,6 +52,9 @@ namespace RentACarOskar
                     if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                     {
                         string mail = tbUserName.Text;
+                        //MessageBox.Show("Uspjesan Login");
+                        AutoClosingMessageBox.Show("Uspjesan Login", "LogIn", 1000);
+                        
                         string ID = dt.Rows[i][0].ToString();
                         Dashboard pom = new Dashboard(mail, ID);
                         pom.ShowDialog();
@@ -99,6 +102,8 @@ namespace RentACarOskar
             {
                 if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                 {
+                    //MessageBox.Show("Uspjesan Login");
+                    AutoClosingMessageBox.Show("Uspjesan Login", "LogIn", 1000);
                     string ID = dt.Rows[i][0].ToString();
                     Dashboard pom = new Dashboard(mail, ID);
                     Visible = false;
@@ -128,5 +133,9 @@ namespace RentACarOskar
         {
             btnLogIn.BackColor = Color.Transparent;
         }
+
+
+
+        
     }
 }

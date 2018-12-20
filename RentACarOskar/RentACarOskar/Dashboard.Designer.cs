@@ -41,7 +41,7 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.PanelLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -53,8 +53,8 @@
             this.lblKlijenti = new System.Windows.Forms.Label();
             this.slicicaPeople = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelAutomobili = new System.Windows.Forms.Panel();
-            this.lblAutomobili = new System.Windows.Forms.Label();
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lblAutomobili = new System.Windows.Forms.Label();
             this.panelLogOut = new System.Windows.Forms.Panel();
             this.btnLogOut = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblLogOut1 = new System.Windows.Forms.Label();
@@ -129,7 +129,7 @@
             this.Dobrodosli.AutoSize = true;
             this.Dobrodosli.Font = new System.Drawing.Font("Maiandra GD", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dobrodosli.ForeColor = System.Drawing.Color.CadetBlue;
-            this.Dobrodosli.Location = new System.Drawing.Point(339, 134);
+            this.Dobrodosli.Location = new System.Drawing.Point(341, 120);
             this.Dobrodosli.Name = "Dobrodosli";
             this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
             this.Dobrodosli.TabIndex = 4;
@@ -249,7 +249,7 @@
             // 
             this.PanelTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelTop.BackgroundImage")));
             this.PanelTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelTop.Controls.Add(this.label1);
+            this.PanelTop.Controls.Add(this.label2);
             this.PanelTop.Controls.Add(this.labelUser);
             this.PanelTop.Controls.Add(this.btnMenu);
             this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -263,21 +263,25 @@
             this.PanelTop.Size = new System.Drawing.Size(927, 50);
             this.PanelTop.TabIndex = 1;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(733, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "User:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(671, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 22);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "User:";
             // 
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(771, 9);
+            this.labelUser.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.labelUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelUser.Location = new System.Drawing.Point(729, 9);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(35, 13);
+            this.labelUser.Size = new System.Drawing.Size(65, 22);
             this.labelUser.TabIndex = 3;
             this.labelUser.Text = "label1";
             // 
@@ -417,8 +421,8 @@
             // panelAutomobili
             // 
             this.panelAutomobili.BackColor = System.Drawing.Color.Transparent;
-            this.panelAutomobili.Controls.Add(this.lblAutomobili);
             this.panelAutomobili.Controls.Add(this.slicicaAuto);
+            this.panelAutomobili.Controls.Add(this.lblAutomobili);
             this.panelAutomobili.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAutomobili.Location = new System.Drawing.Point(0, 243);
             this.panelAutomobili.Name = "panelAutomobili";
@@ -427,20 +431,6 @@
             this.panelAutomobili.Click += new System.EventHandler(this.btnVozilo_Click);
             this.panelAutomobili.MouseLeave += new System.EventHandler(this.panelAutomobili_MouseLeave);
             this.panelAutomobili.MouseHover += new System.EventHandler(this.panelAutomobili_MouseHover);
-            // 
-            // lblAutomobili
-            // 
-            this.lblAutomobili.AutoSize = true;
-            this.lblAutomobili.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAutomobili.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblAutomobili.Location = new System.Drawing.Point(95, 14);
-            this.lblAutomobili.Name = "lblAutomobili";
-            this.lblAutomobili.Size = new System.Drawing.Size(107, 22);
-            this.lblAutomobili.TabIndex = 7;
-            this.lblAutomobili.Text = "Automobili";
-            this.lblAutomobili.Click += new System.EventHandler(this.btnVozilo_Click);
-            this.lblAutomobili.MouseLeave += new System.EventHandler(this.panelAutomobili_MouseLeave);
-            this.lblAutomobili.MouseHover += new System.EventHandler(this.panelAutomobili_MouseHover);
             // 
             // slicicaAuto
             // 
@@ -456,6 +446,20 @@
             this.slicicaAuto.TabStop = false;
             this.slicicaAuto.Zoom = 10;
             this.slicicaAuto.Click += new System.EventHandler(this.btnVozilo_Click);
+            // 
+            // lblAutomobili
+            // 
+            this.lblAutomobili.AutoSize = true;
+            this.lblAutomobili.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAutomobili.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblAutomobili.Location = new System.Drawing.Point(95, 16);
+            this.lblAutomobili.Name = "lblAutomobili";
+            this.lblAutomobili.Size = new System.Drawing.Size(107, 22);
+            this.lblAutomobili.TabIndex = 7;
+            this.lblAutomobili.Text = "Automobili";
+            this.lblAutomobili.Click += new System.EventHandler(this.btnVozilo_Click);
+            this.lblAutomobili.MouseLeave += new System.EventHandler(this.panelAutomobili_MouseLeave);
+            this.lblAutomobili.MouseHover += new System.EventHandler(this.panelAutomobili_MouseHover);
             // 
             // panelLogOut
             // 
@@ -598,6 +602,6 @@
         private System.Windows.Forms.Panel panelFilter;
         private MetroFramework.Controls.MetroButton btnFilter;
         private System.Windows.Forms.Label labelUser;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

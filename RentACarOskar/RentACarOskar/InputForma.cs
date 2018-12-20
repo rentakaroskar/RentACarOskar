@@ -172,17 +172,34 @@ namespace RentACarOskar
             //Provjera poziva Input forme
             if (state == StateEnum.Create)
             {
-                SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
-                    myInterface.GetInsertQuery(), myInterface.GetInsertParameters().ToArray());
+                DialogResult myResult = MetroMessageBox.Show(this, "Uspjesno ste dodali novi item", "Uspjesno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (myResult == DialogResult.OK)
+                {
+                    SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
+                   myInterface.GetInsertQuery(), myInterface.GetInsertParameters().ToArray());
 
-                //CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create, myInterface);
+                    CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create, myInterface);
+                }
+                else
+                {
+                    //No delete
+                }
+               
             }
             else if (state == StateEnum.Update)
-            {
-                SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
+            {               
+                DialogResult myResult = MetroMessageBox.Show(this, "Da li zelite izvrsiti azuriranje ?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (myResult == DialogResult.Yes)
+                {
+                    SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
 
-                //CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
+                    CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
+                }
+                else
+                {
+                    //No delete
+                }
             }
 
             DialogResult = DialogResult.OK;
