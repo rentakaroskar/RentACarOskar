@@ -37,14 +37,15 @@
             // 
             this.flowPanel.Location = new System.Drawing.Point(23, 63);
             this.flowPanel.Name = "flowPanel";
-            this.flowPanel.Size = new System.Drawing.Size(754, 306);
+            this.flowPanel.Size = new System.Drawing.Size(754, 325);
             this.flowPanel.TabIndex = 0;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(23, 394);
+            this.btnOk.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnOk.Location = new System.Drawing.Point(24, 412);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.Size = new System.Drawing.Size(107, 23);
             this.btnOk.TabIndex = 1;
             this.btnOk.Text = "OK";
             this.btnOk.UseSelectable = true;
@@ -52,9 +53,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(133, 394);
+            this.btnCancel.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnCancel.Location = new System.Drawing.Point(155, 412);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(107, 23);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseSelectable = true;
@@ -64,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(815, 459);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -72,6 +74,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InputForma";
+            this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "InputForma";
             this.ResumeLayout(false);
 

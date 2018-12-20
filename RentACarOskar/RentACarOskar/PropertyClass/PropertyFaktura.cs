@@ -150,14 +150,17 @@ namespace RentACarOskar.PropertyClass
                     WHERE[FakturaID] = @FakturaID";
         }
 
-        public string GetLookupQuery()
-        {
-            return "";
-        }
-
         public string GetLookupQuery(string ID)
         {
-            throw new NotImplementedException();
+            return @"SELECT 
+                        FakturaID,
+                        RadnikID,
+                        KlijentID,
+                        TipFaktureID,
+                        Napomena,
+                        DatumFakture
+                     FROM dbo.Faktura
+                    WHERE FakturaID = " + ID;
         }
         #endregion
     }

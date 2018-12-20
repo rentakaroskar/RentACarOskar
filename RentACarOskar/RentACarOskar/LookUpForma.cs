@@ -18,23 +18,25 @@ namespace RentACarOskar
     public partial class LookUpForma : MetroFramework.Forms.MetroForm
     {
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+
         PropertyInterface myProperty;
+
         public string Key;
         public string Value;
         public string Value2;
 
-        public LookUpForma()
-        {
-            InitializeComponent();
-        }
         public LookUpForma(PropertyInterface property)
         {
             InitializeComponent();
             myProperty = property;
             PopulateGrid();
-        }        
+        }
+
+        //Popunjavanje Data Table
+        #region PopunjavanjeDataTable
         private void PopulateGrid()
         {
+            panelPanelZaGV.Controls.Clear();
             DataTable dt = new DataTable();
 
             //logika za popunjavanje datatable
@@ -65,18 +67,19 @@ namespace RentACarOskar
                 .FirstOrDefault().Name == item.HeaderText).FirstOrDefault()
                 .GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
-        }
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow row = dgv.SelectedRows[0];
-            var properties = myProperty.GetType().GetProperties();
 
-            LookUpKupljenje(properties, row);
+            //design
+            //boja teksta i pozadina kada selektujemo item 
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(44, 46, 62);
+            dgv.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            //boja header teksta u tabeli
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
 
-            this.Close();
         }
+        #endregion
 
         //Najbolja metoda koju je iko ikad napravio
+        #region MetodaZaKupljenjePodatakaZaLookUp
         public void LookUpKupljenje(PropertyInfo[] properties, DataGridViewRow row)
         {
             string columnName = properties.Where(x => x.GetCustomAttribute<LookupKeyAttribute>() != null)
@@ -148,7 +151,18 @@ namespace RentACarOskar
                 }
             }
         }
+        #endregion
 
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgv.SelectedRows[0];
+            var properties = myProperty.GetType().GetProperties();
+
+            LookUpKupljenje(properties, row);
+
+            this.Close();
+        }
+        
         private void btnOk_Click(object sender, EventArgs e)
         {
             CRUDfunkcije crud = new CRUDfunkcije();

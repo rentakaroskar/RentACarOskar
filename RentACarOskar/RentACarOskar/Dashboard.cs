@@ -17,43 +17,57 @@ namespace RentACarOskar
 {
     public partial class Dashboard : Form
     {
-        PropertyInterface myProperty;
-        string UserMail;
-        string UserID;
-
-        //filter
-        PropertyInterface FilterProperty;
-        DataTable dt;
-        Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
         DGV ispisivati procedure koje je marko sastavio a mi saljemo InputFormi pravu property klasu*/
         PropertyInterface myForm;
+
+        //Property interface za procedure
+        PropertyInterface myProperty;
+        
+        //fProperty interface za filter
+        PropertyInterface FilterProperty;
+
+        DataTable dt;
+        Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+
+        string UserMail;
+        string UserID;
+        
         public Dashboard(string mail, string ID)
         {
-            UserID = ID;
             InitializeComponent();
-            this.UserMail = mail;
+
+            UserID = ID;
+            UserMail = mail;
             labelUser.Text = mail;
+
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
-            //CRUDfunkcije crud = new CRUDfunkcije();
-            //crud.PopulateGrid(pom, panelPanelZaGV);
+
+            FilterProperty = new VoziloIspis();
 
             PropertyVozilo pomInput = new PropertyVozilo();
             myForm = pomInput;
+            
+            panelPanelZaGV.Visible = true;
             panelCentar.Visible = false;
             Dobrodosli.Visible = true;
             btnIzdaj.Visible = false;
-
-            FilterProperty = new VoziloIspis();
         }
 
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            panelPanelZaGV.Visible = false;
+            bDelete.Visible = false;
+        }
+
+        #region PopunjavanjeDGV-a
         //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
         private void PopulateGrid(PropertyInterface property)
-        {//MARKO PREBACI U CRUD FOLDER
+        {
             myProperty = property;
             dt = new DataTable();
+
             //logika za popunjavanje tabele
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
             property.GetSelectQuery());
@@ -63,39 +77,20 @@ namespace RentACarOskar
         }
 
         private void PopuniDGV(DataTable dt, PropertyInterface property)
-        {//MARKO PREBACI U CRUD FOLDER
-
+        {
+            //Ciscenje panela za refresh
             panelPanelZaGV.Controls.Clear();
 
-             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            //Restart DGV-a
+            dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
             //pozadina hedera
-            dgv.BackgroundColor = Color.White;
-            dgv.HeaderBgColor = Color.CadetBlue;
             panelPanelZaGV.Controls.Add(dgv);
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.MultiSelect = false;
-            dgv.Dock = DockStyle.Fill;
 
-            dgv.Size = panelPanelZaGV.Size;
+            //Popunjavanje tabele sa vrijednostima
+            dgv.DataSource = dt;
 
-            dgv.DataSource = dt; //prikazi tabelu
-
-            //Auto size kolona i redova u tabeli
-            dgv.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //boja header teksta u tabeli
-            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
-            //boja teksta i pozadina kada selektujemo item 
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(44, 46, 62);
-            dgv.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-
-            //This code allows the user to edit the information in the DataGrid.
-            //***********************************************
-            dt.DefaultView.AllowEdit = false;
-            dt.DefaultView.AllowDelete = false;
-            dt.DefaultView.AllowNew = false;
+            DGVDizajn();
 
             //izvuci display name
             var type = property.GetType();
@@ -108,28 +103,8 @@ namespace RentACarOskar
                 ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
         }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            if (PanelLeft.Width == 245)
-            {
-                PanelLeft.Width = 63;
-                logoPic.Visible = false;
-                slicicaAuto.Visible = true;
-                loptica.Visible = true;
-                panelPanelZaGV.Width = 1090;
-                dgv.Size = panelPanelZaGV.Size;
-            }
-            else
-            {
-                PanelLeft.Width = 245;
-                logoPic.Visible = true;
-                loptica.Visible = false;
-                panelPanelZaGV.Width = 906;
-                dgv.Size = panelPanelZaGV.Size;
-            }
-        }
-
+        #endregion
+        
         #region MenuButtons
         private void btnVozilo_Click(object sender, EventArgs e)
         {
@@ -187,13 +162,7 @@ namespace RentACarOskar
             FilterProperty = new FakturaIspis();
         }
         #endregion
-
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-            panelPanelZaGV.Visible = false;
-            bDelete.Visible = false;
-        }
-
+        
         #region CRUDButtons
         private void btnInsert_Click(object sender, EventArgs e)
         {
@@ -205,15 +174,15 @@ namespace RentACarOskar
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int SelektovaniRed = dgv.SelectedRows[0].Index;
             PropertyInterface pom = myProperty;
+            string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
             PopulateGrid(myForm);
             myProperty = pom;
-            //Visible = false;
+            Visible = false;
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.UserMail(UserMail, UserID);
-            crud.Update(myForm, dgv,SelektovaniRed);
-            //Visible = true;
+            crud.Update(myForm, ID, dgv);
+            Visible = true;
             PopulateGrid(myProperty);
         }
 
@@ -224,7 +193,7 @@ namespace RentACarOskar
             {
                 int SelektovaniRed = dgv.SelectedRows[0].Index;
                 CRUDfunkcije crud = new CRUDfunkcije();
-                crud.UserMail(UserMail,UserID);
+                crud.UserMail(UserMail, UserID);
                 crud.Delete(myForm, SelektovaniRed, dgv);
                 PopulateGrid(myProperty);
             }
@@ -291,7 +260,7 @@ namespace RentACarOskar
                     Cmd.Parameters["@PocetniDatum"].IsNullable = true;
                     Cmd.Parameters["@KrajniDatum"].Value = dtpDo.Value.ToLongDateString();
                     Cmd.Parameters["@KrajniDatum"].IsNullable = true;
-                    
+
                     dt = new DataTable();
 
                     //logika za popunjavanje tabele
@@ -301,9 +270,7 @@ namespace RentACarOskar
                 }
             }
         }
-    
-
-    #endregion
+        #endregion
         
         private void btnIzdaj_Click(object sender, EventArgs e)
         {
@@ -436,6 +403,57 @@ namespace RentACarOskar
             panelLogOut.BackColor = Color.Transparent;
             btnLogOut.BackColor = Color.Transparent;
             lblLogOut1.BackColor= Color.Transparent;
+        }
+        #endregion
+
+        #region Dizajn
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if (PanelLeft.Width == 245)
+            {
+                PanelLeft.Width = 63;
+                logoPic.Visible = false;
+                slicicaAuto.Visible = true;
+                loptica.Visible = true;
+                panelPanelZaGV.Width = 1090;
+                dgv.Size = panelPanelZaGV.Size;
+            }
+            else
+            {
+                PanelLeft.Width = 245;
+                logoPic.Visible = true;
+                loptica.Visible = false;
+                panelPanelZaGV.Width = 906;
+                dgv.Size = panelPanelZaGV.Size;
+            }
+        }
+
+        private void DGVDizajn()
+        {
+            dgv.BackgroundColor = Color.White;
+            dgv.HeaderBgColor = Color.CadetBlue;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.MultiSelect = false;
+            dgv.Dock = DockStyle.Fill;
+            dgv.Size = panelPanelZaGV.Size;
+
+            //Auto size kolona i redova u tabeli
+            dgv.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            //Boja header teksta u tabeli
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+
+            //Boja teksta i pozadina kada selektujemo item 
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(44, 46, 62);
+            dgv.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+
+            //This code allows the user to edit the information in the DataGrid.
+            //***********************************************
+            dt.DefaultView.AllowEdit = false;
+            dt.DefaultView.AllowDelete = false;
+            dt.DefaultView.AllowNew = false;
         }
         #endregion
     }

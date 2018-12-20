@@ -35,50 +35,46 @@ namespace RentACarOskar.IspisDGV
 
         #endregion
 
-
+        #region Parameters
         public List<SqlParameter> GetDeleteParameters()
         {
             throw new NotImplementedException();
         }
-
-        public string GetDeleteQuery()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<SqlParameter> GetInsertParameters()
         {
             throw new NotImplementedException();
         }
-
-        public string GetInsertQuery()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetLookupQuery()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetLookupQuery(string ID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetSelectQuery()
-        {
-            return @"EXEC dbo.IspisFakturaProc";
-        }
-
         public List<SqlParameter> GetUpdateParameters()
         {
             throw new NotImplementedException();
         }
+        #endregion
 
+        #region Queries
+        public string GetDeleteQuery()
+        {
+            throw new NotImplementedException();
+        }
+        public string GetInsertQuery()
+        {
+            throw new NotImplementedException();
+        }
+        public string GetLookupQuery()
+        {
+            throw new NotImplementedException();
+        }
+        public string GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
+        }
+        public string GetSelectQuery()
+        {
+            return @"EXEC dbo.IspisFakturaProc";
+        }
         public string GetUpdateQuery()
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }
