@@ -224,7 +224,7 @@ namespace RentACarOskar
             {
                 int SelektovaniRed = dgv.SelectedRows[0].Index;
                 CRUDfunkcije crud = new CRUDfunkcije();
-                crud.UserMail(UserMail);
+                crud.UserMail(UserMail,UserID);
                 crud.Delete(myForm, SelektovaniRed, dgv);
                 PopulateGrid(myProperty);
             }
