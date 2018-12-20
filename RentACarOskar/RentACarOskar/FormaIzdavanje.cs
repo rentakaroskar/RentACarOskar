@@ -18,6 +18,8 @@ namespace RentACarOskar
     {
         public FormaIzdavanje(int fakturaID, string tipFakture)
         {
+            Font font = new Font("Arial", 9);
+
             InitializeComponent();
             Text = "";
             Size = new Size(600, 600);
@@ -37,30 +39,29 @@ namespace RentACarOskar
             adresa.Text = "Veljka Mladjenovica bb";
             adresa.Size = new Size(170, 20);
             adresa.Location = new Point(50, 75);
-            adresa.Font = new Font("Arial", 9);
+            adresa.Font = font;
             Controls.Add(adresa);
 
             Label adresa2 = new Label();
             adresa2.Text = "78000, Banja Luka, BiH";
             adresa2.Size = new Size(170, 20);
             adresa2.Location = new Point(50, 95);
-            adresa2.Font = new Font("Arial", 9);
+            adresa2.Font = font;
             Controls.Add(adresa2);
 
             Label jib = new Label();
             jib.Text = "JIB: 4002358629267";
             jib.Size = new Size(150, 20);
             jib.Location = new Point(50, 115);
-            jib.Font = new Font("Arial", 9);
+            jib.Font = font;
             Controls.Add(jib);
 
             Label pib = new Label();
             pib.Text = "PIB: 44002358629267";
             pib.Size = new Size(150, 20);
             pib.Location = new Point(50, 135);
-            pib.Font = new Font("Arial", 9);
+            pib.Font = font;
             Controls.Add(pib);
-
             
             Label brRacuna = new Label();
             if (tipFakture == "Predracun")
@@ -87,21 +88,21 @@ namespace RentACarOskar
             imePrezime.Text = "Ime i prezime: "+klijent[0] + " " + klijent[1];
             imePrezime.Size = new Size(190, 20);
             imePrezime.Location = new Point(370, 75);
-            imePrezime.Font = new Font("Arial", 9);
+            imePrezime.Font = font;
             Controls.Add(imePrezime);
 
             Label jmb = new Label();
             jmb.Text = "JMB: "+klijent[2];
             imePrezime.Size = new Size(180, 20);
             jmb.Location = new Point(370, 95);
-            jmb.Font = new Font("Arial", 9);
+            jmb.Font = font;
             Controls.Add(jmb);
 
             Label adresaKlijent = new Label();
             adresaKlijent.Text ="Adresa: "+klijent[3];
             adresaKlijent.Size = new Size(190, 20);
             adresaKlijent.Location = new Point(370, 115);
-            adresaKlijent.Font = new Font("Arial", 9);
+            adresaKlijent.Font = font;
             Controls.Add(adresaKlijent);
             #endregion
 
@@ -176,7 +177,6 @@ namespace RentACarOskar
                     klijent.Add(dt.Rows[i].ItemArray[j].ToString());
                 }
             }
-
             return klijent;
         }
         #endregion

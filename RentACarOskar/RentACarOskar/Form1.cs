@@ -28,59 +28,18 @@ namespace RentACarOskar
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (tbUserName.Text == "" || tbPassword.Text == "")
-                {
-                    //MessageBox.Show("Molim vas unesite sve potrebne podatke!");
-                    DialogResult dr = MetroMessageBox.Show(this, "\n\nMolimo Vas unesite sve potrebne podatke!", "Molimo Vas unesite sve potrebne podatke!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    return;
-                }
-                DataTable dt = new DataTable();
-
-                PropertyRadnik myProperty = new PropertyRadnik();
-
-                SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
-                    myProperty.GetSelectQuery());
-
-                dt.Load(reader);
-                reader.Close();
-
-                var type = myProperty.GetType();
-                var properties = type.GetProperties();
-
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
-                    {
-                        string mail = tbUserName.Text;
-                        //MessageBox.Show("Uspjesan Login");
-                        AutoClosingMessageBox.Show("Uspjesan Login", "LogIn", 1000);
-                        
-                        string ID = dt.Rows[i][0].ToString();
-                        Dashboard pom = new Dashboard(mail, ID);
-                        pom.ShowDialog();
-                        if (pom.DialogResult == DialogResult.Cancel)
-                        {
-                            pom.Close();
-                            Visible = true;
-                            tbUserName.Text = "";
-                            tbPassword.Text = "";
-                        }
-                        break;
-                    }
-                    else if (i == dt.Rows.Count - 1)
-                    {   //MessageBox.Show("Pogresan E-mail ili loznika!");
-                        DialogResult dr = MetroMessageBox.Show(this, "\n\nPogresan E-mail ili loznika!", "Pogresan E-mail ili loznika!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                Login();
             }
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            Login();
         }
         #endregion
 
-        #region Prijavljivanje_Click
-        private void btnLogIn_Click(object sender, EventArgs e)
+        private void Login()
         {
-            string mail = tbUserName.Text;
             if (tbUserName.Text == "" || tbPassword.Text == "")
             {
                 //MessageBox.Show("Molim vas unesite sve potrebne podatke!");
@@ -107,10 +66,11 @@ namespace RentACarOskar
                 {
                     //MessageBox.Show("Uspjesan Login");
                     AutoClosingMessageBox.Show("Uspjesan Login", "LogIn", 1000);
+                    string mail = tbUserName.Text;
                     string ID = dt.Rows[i][0].ToString();
                     Dashboard pom = new Dashboard(mail, ID);
-                    Visible = false;
                     pom.ShowDialog();
+                    Visible = false;
                     if (pom.DialogResult == DialogResult.Cancel)
                     {
                         pom.Close();
@@ -128,7 +88,7 @@ namespace RentACarOskar
         }
         #endregion
 
-        #region MouseAnimation
+        #region Dugme
         private void btnLogIn_MouseHover(object sender, EventArgs e)
         {
             btnLogIn.BackColor = Color.FromArgb(20, 255, 255, 255);
@@ -139,9 +99,5 @@ namespace RentACarOskar
             btnLogIn.BackColor = Color.Transparent;
         }
         #endregion
-
-
-
-
     }
 }

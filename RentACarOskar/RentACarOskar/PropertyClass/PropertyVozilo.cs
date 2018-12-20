@@ -239,7 +239,18 @@ namespace RentACarOskar.PropertyClass
 
         public string GetLookupQuery(string ID)
         {
-            throw new NotImplementedException();
+            return @"SELECT 
+                 [VoziloID]
+                ,[ModelID]
+                ,[GodinaProizvodnje]
+                ,[BrojRegistracije]
+                ,[VrstaGoriva]
+                ,[Boja]
+                ,[BrojVrata]
+                ,[ZadnjiServis]
+                ,[Kilometraza]
+                FROM [dbo].[Vozilo]
+                WHERE [VoziloID] = " + ID;
         }
         #endregion
     }

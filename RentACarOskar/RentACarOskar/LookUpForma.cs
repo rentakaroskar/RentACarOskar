@@ -18,15 +18,13 @@ namespace RentACarOskar
     public partial class LookUpForma : MetroFramework.Forms.MetroForm
     {
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+
         PropertyInterface myProperty;
+
         public string Key;
         public string Value;
         public string Value2;
 
-        public LookUpForma()
-        {
-            InitializeComponent();
-        }
         public LookUpForma(PropertyInterface property)
         {
             InitializeComponent();
