@@ -159,7 +159,7 @@
             // 
             this.panelFilter.Location = new System.Drawing.Point(9, 6);
             this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(495, 31);
+            this.panelFilter.Size = new System.Drawing.Size(445, 125);
             this.panelFilter.TabIndex = 7;
             // 
             // btnFilter

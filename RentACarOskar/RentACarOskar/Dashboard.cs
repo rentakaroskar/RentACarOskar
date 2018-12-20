@@ -101,14 +101,18 @@ namespace RentACarOskar
             var properties = type.GetProperties();
 
             //promijeniti nazive kolona
-            foreach (DataGridViewColumn item in dgv.Columns)
+            if (property.GetType() != typeof(PropertyKlijent))
             {
-                item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>().FirstOrDefault().Name == item.HeaderText
-                ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
+                foreach (DataGridViewColumn item in dgv.Columns)
+                {
+                    item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>().FirstOrDefault().Name == item.HeaderText
+                    ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
+                }
             }
 
             //sakrij ID
-            if (property.GetType() == typeof(VoziloIspis))
+            if (property.GetType() == typeof(VoziloIspis)
+                || property.GetType() == typeof(PropertyKlijent))
             {
                 dgv.Columns[0].Visible = false;
             }
@@ -148,7 +152,7 @@ namespace RentACarOskar
             Dobrodosli.Visible = false;
             panelCentar.Visible = true;
             btnIzdaj.Visible = false;
-            btnFilter.Visible = false;
+            btnFilter.Visible = true;
 
             //Filter 
             FilterProperty = new VoziloIspis();
@@ -156,8 +160,19 @@ namespace RentACarOskar
 
         private void btnKlijent_Click(object sender, EventArgs e)
         {
+            //Za popunjavanje DT-Klijent
             PropertyKlijent pom = new PropertyKlijent();
-            PopulateGrid(pom);
+            string QueryFilter = @"SELECT [KlijentID]
+                                  ,[Ime]
+                                  ,[Prezime]
+                                  ,[Tip]
+                                   FROM [RentACarTim5].[dbo].[vIspisKlijenata] ";
+            SqlConnection con = new SqlConnection(SqlHelper.GetConnectionString());
+            SqlCommand Cmd = new SqlCommand(QueryFilter, con);
+            dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(Cmd);
+            da.Fill(dt);
+            PopuniDGV(dt, pom);
 
             //Pom za Input formu
             PropertyKlijent pomInput = new PropertyKlijent();
@@ -168,7 +183,7 @@ namespace RentACarOskar
             Dobrodosli.Visible = false;
             panelCentar.Visible = true;
             btnIzdaj.Visible = false;
-            btnFilter.Visible = false;
+            btnFilter.Visible = true;
 
             FilterProperty = new PropertyKlijent();
         }
@@ -296,6 +311,77 @@ namespace RentACarOskar
                     Cmd.Parameters["@KrajniDatum"].Value = dtpDo.Value.ToLongDateString();
                     Cmd.Parameters["@KrajniDatum"].IsNullable = true;
                     
+                    dt = new DataTable();
+
+                    //logika za popunjavanje tabele
+                    SqlDataAdapter adapter = new SqlDataAdapter(Cmd);
+                    adapter.Fill(dt);
+                    PopuniDGV(dt, FilterProperty);
+                }
+            }
+
+            else if(FilterProperty.GetType() == typeof(PropertyKlijent))
+            {
+                Label lblIme = new Label();
+                lblIme.Text = "Ime:";
+                lblIme.Location = new Point(1, 1);
+                lblIme.Width = 30;
+                panelFilter.Controls.Add(lblIme);
+                TextBox txtIme = new TextBox();
+                txtIme.Location = new Point(35, 1);
+                panelFilter.Controls.Add(txtIme);
+
+                Label lblPrezime = new Label();
+                lblPrezime.Text = "Prezime:";
+                lblPrezime.Location = new Point(1, 31);
+                lblPrezime.Width = 30;
+                panelFilter.Controls.Add(lblPrezime);
+                TextBox txtPrezime = new TextBox();
+                txtPrezime.Location = new Point(35, 31);
+                panelFilter.Controls.Add(txtPrezime);
+
+                Label lblTip = new Label();
+                lblTip.Text = "Tip:";
+                lblTip.Location = new Point(1, 61);
+                lblTip.Width = 30;
+                panelFilter.Controls.Add(lblTip);
+                ComboBox cbxTip = new ComboBox();
+                cbxTip.Items.Add("Vratio");
+                cbxTip.Items.Add("Preuzeo");
+                cbxTip.Items.Add("Rezervisao");
+                cbxTip.Items.Add("Sve");
+                cbxTip.Location = new Point(35, 61);
+                panelFilter.Controls.Add(cbxTip);
+
+
+
+                txtIme.TextChanged += new EventHandler(v_ValueChanged);
+                txtPrezime.TextChanged += new EventHandler(v_ValueChanged);
+                cbxTip.SelectedIndexChanged += new EventHandler(v_ValueChanged);
+
+                void v_ValueChanged(object sender, EventArgs e)
+                {
+                    string QueryFilter = @"exec dbo.spFilterKlijenata
+                                          @Ime,
+                                          @Prezime,
+                                          @TipFaktureID";
+                    SqlConnection con = new SqlConnection(SqlHelper.GetConnectionString());
+                    SqlCommand Cmd = new SqlCommand(QueryFilter, con);
+
+                    Cmd.Parameters.Add(new SqlParameter("@Ime", SqlDbType.NVarChar));
+                    Cmd.Parameters.Add(new SqlParameter("@Prezime", SqlDbType.NVarChar));
+                    Cmd.Parameters.Add(new SqlParameter("@TipFaktureID", SqlDbType.Int));
+
+                    Cmd.Parameters["@Ime"].Value = txtIme.Text;
+                    Cmd.Parameters["@Ime"].IsNullable = true;
+                    Cmd.Parameters["@Prezime"].Value = txtPrezime.Text;
+                    Cmd.Parameters["@Prezime"].IsNullable = true;
+                    if (cbxTip.SelectedIndex != 0 && cbxTip.SelectedIndex != 1 && cbxTip.SelectedIndex != 2)
+                        Cmd.Parameters["@TipFaktureID"].Value = DBNull.Value;
+                    else
+                    Cmd.Parameters["@TipFaktureID"].Value = cbxTip.SelectedIndex + 1;
+                    Cmd.Parameters["@TipFaktureID"].IsNullable = true;
+
                     dt = new DataTable();
 
                     //logika za popunjavanje tabele
