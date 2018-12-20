@@ -36,8 +36,8 @@ namespace RentACarOskar
             UserMail = mail;
             UserID = ID;
             myProperty = property;
-            PopulateGrid();
-            if (property.GetType() == typeof(PropertyFaktura))
+            PopulateGrid();           
+            if (property.GetType() != typeof(PropertyTipFakture))
             {
                 btnDelete.Visible = true;
                 btnInsert.Visible = true;

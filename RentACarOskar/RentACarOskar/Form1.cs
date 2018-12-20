@@ -65,11 +65,12 @@ namespace RentACarOskar
             {
                 if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                 {
+                    string rola = dt.Rows[i][9].ToString();
                     //MessageBox.Show("Uspjesan Login");
                     AutoClosingMessageBox.Show("Uspjesan Login", "LogIn", 1000);
                     string mail = tbUserName.Text;
                     string ID = dt.Rows[i][0].ToString();
-                    Dashboard pom = new Dashboard(mail, ID);
+                    Dashboard pom = new Dashboard(mail, ID,rola);
                     pom.ShowDialog();
                     Visible = false;
                     if (pom.DialogResult == DialogResult.Cancel)

@@ -35,13 +35,25 @@ namespace RentACarOskar
 
         string UserMail;
         string UserID;
+        //Role Admin/User
+        string Rola;
         
-        public Dashboard(string mail, string ID)
+        public Dashboard(string mail, string ID,string rola)
         {
             InitializeComponent();
             UserID = ID;
             UserMail = mail;
             labelUser.Text = mail;
+            Rola = rola;
+
+            if (Rola == "Admin")
+            {
+                panelZaposleni.Visible = true;
+            }
+            else
+            {
+                panelZaposleni.Visible = false;
+            }
 
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
