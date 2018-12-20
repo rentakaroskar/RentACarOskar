@@ -23,6 +23,7 @@ namespace RentACarOskar
             metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);
         }
 
+        #region Prijavljivanje_Enter
         private void KeyUp_Enter(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -74,7 +75,9 @@ namespace RentACarOskar
                 }
             }
         }
+        #endregion
 
+        #region Prijavljivanje_Click
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             string mail = tbUserName.Text;
@@ -123,7 +126,9 @@ namespace RentACarOskar
                 }
             }
         }
+        #endregion
 
+        #region MouseAnimation
         private void btnLogIn_MouseHover(object sender, EventArgs e)
         {
             btnLogIn.BackColor = Color.FromArgb(20, 255, 255, 255);
@@ -133,9 +138,10 @@ namespace RentACarOskar
         {
             btnLogIn.BackColor = Color.Transparent;
         }
+        #endregion
 
 
 
-        
+
     }
 }

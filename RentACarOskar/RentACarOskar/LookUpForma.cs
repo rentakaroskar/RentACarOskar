@@ -32,7 +32,10 @@ namespace RentACarOskar
             InitializeComponent();
             myProperty = property;
             PopulateGrid();
-        }        
+        }
+
+        //Popunjavanje Data Table
+        #region PopunjavanjeDataTable
         private void PopulateGrid()
         {
             DataTable dt = new DataTable();
@@ -75,17 +78,10 @@ namespace RentACarOskar
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
 
         }
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow row = dgv.SelectedRows[0];
-            var properties = myProperty.GetType().GetProperties();
-
-            LookUpKupljenje(properties, row);
-
-            this.Close();
-        }
+        #endregion
 
         //Najbolja metoda koju je iko ikad napravio
+        #region MetodaZaKupljenjePodatakaZaLookUp
         public void LookUpKupljenje(PropertyInfo[] properties, DataGridViewRow row)
         {
             string columnName = properties.Where(x => x.GetCustomAttribute<LookupKeyAttribute>() != null)
@@ -157,7 +153,18 @@ namespace RentACarOskar
                 }
             }
         }
+        #endregion
 
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgv.SelectedRows[0];
+            var properties = myProperty.GetType().GetProperties();
+
+            LookUpKupljenje(properties, row);
+
+            this.Close();
+        }
+        
         private void btnOk_Click(object sender, EventArgs e)
         {
             CRUDfunkcije crud = new CRUDfunkcije();

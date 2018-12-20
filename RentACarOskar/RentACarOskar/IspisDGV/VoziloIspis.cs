@@ -12,6 +12,7 @@ namespace RentACarOskar.IspisDGV
     class VoziloIspis : PropertyInterface
     {
 
+        #region Attributes
         [SqlName("VoziloID")]
         [DisplayName("Vozilo ID")]
         [PrimaryKey]
@@ -40,22 +41,28 @@ namespace RentACarOskar.IspisDGV
         [DisplayName("Datum Rezervacije")]
         [SqlName("DatumRezervacije")]
         public DateTime DatumRezervacije { get; set; }
+        #endregion
 
+        #region Parameters
         public List<SqlParameter> GetDeleteParameters()
         {
             throw new NotImplementedException();
         }
-
-        public string GetDeleteQuery()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<SqlParameter> GetInsertParameters()
         {
             throw new NotImplementedException();
         }
+        public List<SqlParameter> GetUpdateParameters()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
 
+        #region Queries
+        public string GetDeleteQuery()
+        {
+            throw new NotImplementedException();
+        }
         public string GetInsertQuery()
         {
             throw new NotImplementedException();
@@ -75,15 +82,10 @@ namespace RentACarOskar.IspisDGV
         {
             return @"EXEC dbo.spIspisVozila";
         }
-
-        public List<SqlParameter> GetUpdateParameters()
-        {
-            throw new NotImplementedException();
-        }
-
         public string GetUpdateQuery()
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

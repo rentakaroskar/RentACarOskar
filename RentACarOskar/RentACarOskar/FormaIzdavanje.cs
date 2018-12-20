@@ -23,6 +23,8 @@ namespace RentACarOskar
             Size = new Size(600, 600);
             btnStampaj.Location = new Point(480, 550);
 
+            //Kreiranje labela 
+            #region Label
             Label naziv = new Label();
             naziv.Text = "Rent A Car Oskar";
             naziv.Size = new Size(150, 20);
@@ -75,9 +77,10 @@ namespace RentACarOskar
             brRacuna.Location = new Point(210, 170);
             brRacuna.Font = new Font("Arial", 12);
             Controls.Add(brRacuna);
-
+            #endregion
 
             //ispis klijenta
+            #region IspisKlijentaLabel
             List<string> klijent = PronadjiKlijenta(fakturaID);
 
             Label imePrezime = new Label();
@@ -100,8 +103,11 @@ namespace RentACarOskar
             adresaKlijent.Location = new Point(370, 115);
             adresaKlijent.Font = new Font("Arial", 9);
             Controls.Add(adresaKlijent);
+            #endregion
+
 
             //ispis artikala
+            #region IspisArtiklaLabel
             string QueryKlijent = "EXEC dbo.spVozilaNafakturi @FakturaID";
 
             SqlConnection conn = new SqlConnection(SqlHelper.GetConnectionString());
@@ -142,9 +148,11 @@ namespace RentACarOskar
             ukupno.Location = new Point(390, 515);
             ukupno.Size = new Size(220, 20);
             Controls.Add(ukupno);
-           
+            #endregion
 
         }
+         
+        #region PronadjiKlijenta
         private List<string> PronadjiKlijenta(int fakturaID)
         {
             string QueryKlijent = "EXEC spKlijentRacun @FakturaID";
@@ -171,5 +179,6 @@ namespace RentACarOskar
 
             return klijent;
         }
+        #endregion
     }
 }
