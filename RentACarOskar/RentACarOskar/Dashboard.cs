@@ -113,27 +113,7 @@ namespace RentACarOskar
                 dgv.Columns[0].Visible = false;
             }
         }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            if (PanelLeft.Width == 245)
-            {
-                PanelLeft.Width = 63;
-                logoPic.Visible = false;
-                slicicaAuto.Visible = true;
-                loptica.Visible = true;
-                panelPanelZaGV.Width = 1090;
-                dgv.Size = panelPanelZaGV.Size;
-            }
-            else
-            {
-                PanelLeft.Width = 245;
-                logoPic.Visible = true;
-                loptica.Visible = false;
-                panelPanelZaGV.Width = 906;
-                dgv.Size = panelPanelZaGV.Size;
-            }
-        }
+        #endregion
 
         #region MenuButtons
         private void btnVozilo_Click(object sender, EventArgs e)
