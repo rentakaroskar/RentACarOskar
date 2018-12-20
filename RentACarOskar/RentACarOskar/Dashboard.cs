@@ -53,14 +53,15 @@ namespace RentACarOskar
             
             panelPanelZaGV.Visible = true;
             panelCentar.Visible = false;
-            Dobrodosli.Visible = true;
+            Dobrodosli.Visible = false;
             btnIzdaj.Visible = false;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            panelPanelZaGV.Visible = false;
+            panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
+            VoziloIspis pom = new VoziloIspis();
 
         }
 
@@ -90,7 +91,7 @@ namespace RentACarOskar
             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
             //pozadina hedera
-            panelPanelZaGV.Controls.Add(dgv);
+        panelPanelZaGV.Controls.Add(dgv);
 
             //Popunjavanje tabele sa vrijednostima
             dgv.DataSource = dt;
@@ -107,6 +108,7 @@ namespace RentACarOskar
                 item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>().FirstOrDefault().Name == item.HeaderText
                 ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
+            
         }
         #endregion
         
