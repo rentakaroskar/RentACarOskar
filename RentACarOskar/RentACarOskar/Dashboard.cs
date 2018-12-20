@@ -106,6 +106,12 @@ namespace RentACarOskar
                 item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>().FirstOrDefault().Name == item.HeaderText
                 ).FirstOrDefault().GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
+
+            //sakrij ID
+            if (property.GetType() == typeof(VoziloIspis))
+            {
+                dgv.Columns[0].Visible = false;
+            }
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -250,9 +256,10 @@ namespace RentACarOskar
                 panelFilter.Controls.Add(lblOd);
                 DateTimePicker dtpOd = new DateTimePicker();
                 dtpOd.Format = DateTimePickerFormat.Custom;
+                dtpOd.Value = new DateTime(2018, 01, 01);
                 dtpOd.CustomFormat = "dd.MM.yyyy";
                 dtpOd.Location = new Point(35, 1);
-                dtpOd.Width = 190;
+                dtpOd.Width = 170;
                 panelFilter.Controls.Add(dtpOd);
 
                 //filter
@@ -266,7 +273,7 @@ namespace RentACarOskar
                 dtpDo.Format = DateTimePickerFormat.Custom;
                 dtpDo.CustomFormat = "dd.MM.yyyy";
                 dtpDo.Location = new Point(265, 1);
-                dtpDo.Width = 190;
+                dtpDo.Width = 170;
                 panelFilter.Controls.Add(dtpDo);
 
                 dtpOd.ValueChanged += new EventHandler(f_ValueChanged);
