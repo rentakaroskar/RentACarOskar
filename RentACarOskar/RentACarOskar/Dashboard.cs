@@ -324,8 +324,8 @@ namespace RentACarOskar
         {
            
             DialogResult myResult;
-            myResult = MetroMessageBox.Show(this, "Da li zelite napustiti App?", "Question Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (myResult == DialogResult.OK)
+            myResult = MetroMessageBox.Show(this, "Da li zelite napustiti App?", "Question Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (myResult == DialogResult.Yes)
             {
                 DialogResult = DialogResult.Cancel;
             }
