@@ -112,14 +112,13 @@ namespace RentACarOskar.PropertyClass
                     WHERE [KlijentID] = @KlijentID";
         }
 
-        public string GetLookupQuery()
-        {
-            throw new NotImplementedException();
-        }
-
         public string GetLookupQuery(string ID)
         {
-            throw new NotImplementedException();
+            return @"SELECT [KlijentID]
+                            ,[OsobaID]
+                            ,[BrojVozacke]
+                    FROM [dbo].[Klijent]
+                    WHERE [KlijentID] = " + ID;
         }
         #endregion
     }
