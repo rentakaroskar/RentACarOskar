@@ -37,9 +37,11 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(23, 404);
+            this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsert.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnInsert.Location = new System.Drawing.Point(430, 107);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnInsert.Size = new System.Drawing.Size(107, 23);
             this.btnInsert.TabIndex = 2;
             this.btnInsert.Text = "Add New";
             this.btnInsert.UseSelectable = true;
@@ -47,9 +49,11 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(104, 404);
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnUpdate.Location = new System.Drawing.Point(430, 159);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(107, 23);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseSelectable = true;
@@ -57,9 +61,12 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(185, 404);
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.DisplayFocus = true;
+            this.btnDelete.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnDelete.Location = new System.Drawing.Point(430, 213);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(107, 23);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseSelectable = true;
@@ -67,9 +74,11 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(527, 404);
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReturn.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnReturn.Location = new System.Drawing.Point(430, 535);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.Size = new System.Drawing.Size(107, 23);
             this.btnReturn.TabIndex = 5;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseSelectable = true;
@@ -79,14 +88,14 @@
             // 
             this.panelPanelZaGV.Location = new System.Drawing.Point(23, 68);
             this.panelPanelZaGV.Name = "panelPanelZaGV";
-            this.panelPanelZaGV.Size = new System.Drawing.Size(578, 323);
+            this.panelPanelZaGV.Size = new System.Drawing.Size(377, 516);
             this.panelPanelZaGV.TabIndex = 6;
             // 
             // LookUpForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 440);
+            this.ClientSize = new System.Drawing.Size(563, 599);
             this.Controls.Add(this.panelPanelZaGV);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnDelete);
@@ -95,6 +104,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LookUpForma";
+            this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "LookUpForma";
             this.ResumeLayout(false);
 
