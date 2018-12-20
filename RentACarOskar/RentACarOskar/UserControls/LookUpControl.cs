@@ -65,7 +65,7 @@ namespace RentACarOskar.UserControls
 
         public string GetKeyValue()
         {
-            return Key;
+            return tbKey.Text;
         }
     }
 }

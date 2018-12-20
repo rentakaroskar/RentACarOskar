@@ -28,21 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv = new System.Windows.Forms.DataGridView();
             this.btnInsert = new MetroFramework.Controls.MetroButton();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.btnReturn = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.panelPanelZaGV = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // dgv
-            // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(23, 86);
-            this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(579, 303);
-            this.dgv.TabIndex = 0;
             // 
             // btnInsert
             // 
@@ -84,31 +75,36 @@
             this.btnReturn.UseSelectable = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // panelPanelZaGV
+            // 
+            this.panelPanelZaGV.Location = new System.Drawing.Point(23, 68);
+            this.panelPanelZaGV.Name = "panelPanelZaGV";
+            this.panelPanelZaGV.Size = new System.Drawing.Size(578, 323);
+            this.panelPanelZaGV.TabIndex = 6;
+            // 
             // LookUpForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 440);
+            this.ClientSize = new System.Drawing.Size(625, 440);
+            this.Controls.Add(this.panelPanelZaGV);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
-            this.Controls.Add(this.dgv);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LookUpForma";
             this.Text = "LookUpForma";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgv;
         private MetroFramework.Controls.MetroButton btnInsert;
         private MetroFramework.Controls.MetroButton btnUpdate;
         private MetroFramework.Controls.MetroButton btnDelete;
         private MetroFramework.Controls.MetroButton btnReturn;
+        private System.Windows.Forms.Panel panelPanelZaGV;
     }
 }

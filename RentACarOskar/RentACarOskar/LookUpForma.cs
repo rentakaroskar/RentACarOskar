@@ -17,6 +17,7 @@ namespace RentACarOskar
 {
     public partial class LookUpForma : MetroFramework.Forms.MetroForm
     {
+        Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
         PropertyInterface myProperty;
         public string Key;
         public string Value;
@@ -44,6 +45,14 @@ namespace RentACarOskar
             reader.Close();
 
             dgv.DataSource = dt;
+            dgv.BackgroundColor = Color.White;
+            dgv.HeaderBgColor = Color.CadetBlue;
+            panelPanelZaGV.Controls.Add(dgv);
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.MultiSelect = false;
+            dgv.Dock = DockStyle.Fill;
+
+            dgv.Size = panelPanelZaGV.Size;
 
             //izvuci display name
             var type = myProperty.GetType();
@@ -144,7 +153,7 @@ namespace RentACarOskar
         {
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.Insert(myProperty);
-            dgv = new DataGridView();
+            dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             PopulateGrid();
         }
 

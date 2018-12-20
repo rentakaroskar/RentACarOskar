@@ -58,7 +58,6 @@ namespace RentACarOskar
                             }
                             catch { }
                         }
-
                         flowPanel.Controls.Add(uc);
                     }
 
@@ -68,8 +67,7 @@ namespace RentACarOskar
                         PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
                          CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
                          as PropertyInterface;
-
-
+                        
                         LookUpControl uc = new LookUpControl(foreignKeyInterface);
                         uc.Name = item.Name;
                         uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
@@ -166,18 +164,10 @@ namespace RentACarOskar
                 }
                 catch (Exception)
                 {
-                    //MessageBox.Show(ex.GetType().ToString());
                     DialogResult dr = MetroMessageBox.Show(this, $"\n\nError! Sva polja moraju biti popunjena!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
-
-            //Izbacivanje MessageBox-a jer obavezna polja nisu popunjena
-            //if (imenaPolja != "")
-            //{
-            //    MessageBox.Show("POPUNITE OBAVEZNA POLJA\n" + imenaPolja, "Greska pri unosu", MessageBoxButtons.OK);
-            //    return;
-            //}
 
             //Provjera poziva Input forme
             if (state == StateEnum.Create)
@@ -185,14 +175,14 @@ namespace RentACarOskar
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                     myInterface.GetInsertQuery(), myInterface.GetInsertParameters().ToArray());
 
-                CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create, myInterface);
+                //CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create, myInterface);
             }
             else if (state == StateEnum.Update)
             {
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
 
-                CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
+                //CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
             }
 
             DialogResult = DialogResult.OK;

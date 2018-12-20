@@ -188,11 +188,6 @@ namespace RentACarOskar
         }
         #endregion
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-        }
-
         private void Dashboard_Load(object sender, EventArgs e)
         {
             panelPanelZaGV.Visible = false;
@@ -226,7 +221,7 @@ namespace RentACarOskar
         {
             int SelektovaniRed = dgv.SelectedRows[0].Index;
             CRUDfunkcije crud = new CRUDfunkcije();
-            crud.UserMail(UserMail);
+            crud.UserMail(UserMail, UserID);
             crud.Delete(myForm,SelektovaniRed,dgv);
             PopulateGrid(myProperty);
         }
@@ -297,7 +292,6 @@ namespace RentACarOskar
                     PopuniDGV(dt, FilterProperty);
                 }
             }
-
         }
     
 

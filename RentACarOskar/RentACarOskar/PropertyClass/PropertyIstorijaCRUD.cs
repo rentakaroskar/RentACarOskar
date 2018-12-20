@@ -33,11 +33,6 @@ namespace RentACarOskar.PropertyClass
         #endregion
 
         #region Parameters
-
-
-
-       
-
         public List<SqlParameter> GetDeleteParameters()
         {
             List<SqlParameter> lista = new List<SqlParameter>();
@@ -48,9 +43,7 @@ namespace RentACarOskar.PropertyClass
             }
             return lista;
         }
-
-       
-
+        
         public List<SqlParameter> GetInsertParameters()
         {
             List<SqlParameter> lista = new List<SqlParameter>();
@@ -70,9 +63,9 @@ namespace RentACarOskar.PropertyClass
                 parameter.Value = Opis;
                 lista.Add(parameter);
             }
-
             return lista;
         }
+
         public List<SqlParameter> GetUpdateParameters()
         {
             List<SqlParameter> lista = new List<SqlParameter>();

@@ -13,8 +13,8 @@ namespace RentACarOskar.CRUD
     public class IstorijaCRUD
     {
         
-        StateEnum state;
-        PropertyInterface PropertyIstorijaCRUD;
+        //StateEnum state;
+        //PropertyInterface PropertyIstorijaCRUD;
 
         public static void Istorija(string UserMail, StateEnum state, PropertyInterface myInterface)
         {
