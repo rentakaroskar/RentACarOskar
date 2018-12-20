@@ -40,7 +40,7 @@ namespace RentACarOskar.CRUD
             pom.Close();
         }
 
-        public void Update(PropertyInterface myProperty, string ID, DataGridView dgv)
+        public void Update(PropertyInterface myProperty, string ID, Bunifu.Framework.UI.BunifuCustomDataGrid dgv)
         {
             //Pretraga
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,

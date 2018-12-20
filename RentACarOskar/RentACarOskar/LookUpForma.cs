@@ -182,19 +182,17 @@ namespace RentACarOskar
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            int SelektovaniRed = dgv.SelectedRows[0].Index;
+        {      
             PropertyInterface pom = myProperty;
+            string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
             PopulateGrid();
-            //PopulateGrid(myForm);
             myProperty = pom;
-            //Visible = false;
+            Visible = false;
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.UserMail(UserMail, UserID);
-            crud.Update(myProperty, dgv, SelektovaniRed);
+            crud.Update(myProperty, ID, dgv);
+            Visible = true;
             PopulateGrid();
-            //Visible = true;
-            //PopulateGrid(myProperty);
 
         }
 
