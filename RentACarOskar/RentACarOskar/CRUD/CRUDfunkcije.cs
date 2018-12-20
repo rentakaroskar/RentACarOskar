@@ -37,6 +37,7 @@ namespace RentACarOskar.CRUD
             this.myProperty = myProperty;
             InputForma pom = new InputForma(myProperty, StateEnum.Create, UserEmail, UserID);
             pom.ShowDialog();
+            pom.Close();
         }
 
         public void Update(PropertyInterface myProperty, string ID, DataGridView dgv)

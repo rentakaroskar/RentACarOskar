@@ -36,6 +36,7 @@ namespace RentACarOskar
         #region PopunjavanjeDataTable
         private void PopulateGrid()
         {
+            panelPanelZaGV.Controls.Clear();
             DataTable dt = new DataTable();
 
             //logika za popunjavanje datatable
@@ -66,7 +67,6 @@ namespace RentACarOskar
                 .FirstOrDefault().Name == item.HeaderText).FirstOrDefault()
                 .GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
-
 
             //design
             //boja teksta i pozadina kada selektujemo item 
