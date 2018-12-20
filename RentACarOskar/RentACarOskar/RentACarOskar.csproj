@@ -102,6 +102,7 @@
       <DependentUpon>InputForma.cs</DependentUpon>
     </Compile>
     <Compile Include="IspisDGV\FakturaIspis.cs" />
+    <Compile Include="IspisDGV\KlijentIspis.cs" />
     <Compile Include="LookUpForma.cs">
       <SubType>Form</SubType>
     </Compile>

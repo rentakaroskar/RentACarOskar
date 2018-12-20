@@ -97,7 +97,7 @@ namespace RentACarOskar
             var properties = type.GetProperties();
 
             //promijeniti nazive kolona
-            if (property.GetType() != typeof(PropertyKlijent))
+            if (property.GetType() != typeof(VoziloIspis))
             {
                 foreach (DataGridViewColumn item in dgv.Columns)
                 {
@@ -137,18 +137,8 @@ namespace RentACarOskar
         private void btnKlijent_Click(object sender, EventArgs e)
         {
             //Za popunjavanje DT-Klijent
-            PropertyKlijent pom = new PropertyKlijent();
-            string QueryFilter = @"SELECT [KlijentID]
-                                  ,[Ime]
-                                  ,[Prezime]
-                                  ,[Tip]
-                                   FROM [RentACarTim5].[dbo].[vIspisKlijenata] ";
-            SqlConnection con = new SqlConnection(SqlHelper.GetConnectionString());
-            SqlCommand Cmd = new SqlCommand(QueryFilter, con);
-            dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(Cmd);
-            da.Fill(dt);
-            PopuniDGV(dt, pom);
+            KlijentIspis pom = new KlijentIspis();
+            PopulateGrid(pom);
 
             //Pom za Input formu
             PropertyKlijent pomInput = new PropertyKlijent();
@@ -161,7 +151,7 @@ namespace RentACarOskar
             btnIzdaj.Visible = false;
             btnFilter.Visible = true;
 
-            FilterProperty = new PropertyKlijent();
+            FilterProperty = new KlijentIspis();
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
@@ -292,7 +282,7 @@ namespace RentACarOskar
                 }
             }
 
-            else if(FilterProperty.GetType() == typeof(PropertyKlijent))
+            else if(FilterProperty.GetType() == typeof(KlijentIspis))
             {
                 Label lblIme = new Label();
                 lblIme.Text = "Ime:";
