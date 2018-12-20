@@ -17,9 +17,15 @@ namespace RentACarOskar.UserControls
         public string Key;
         public string Value;
 
-        public LookUpControl(PropertyInterface interFace)
+        public string UserMail;
+        public string UserID;
+
+
+        public LookUpControl(PropertyInterface interFace,string mail,string userId)
         {
             InitializeComponent();
+            UserMail = mail;
+            UserID = userId;
             myInterface = interFace;
             tbKey.ReadOnly = true;
             tbNaziv.ReadOnly = true;
@@ -34,7 +40,7 @@ namespace RentACarOskar.UserControls
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            LookUpForma sf = new LookUpForma(myInterface);
+            LookUpForma sf = new LookUpForma(myInterface,UserMail,UserID);
             sf.ShowDialog();
 
             //TextBox za ID

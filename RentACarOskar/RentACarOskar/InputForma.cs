@@ -55,18 +55,18 @@ namespace RentACarOskar
                 flowPanel.Controls.Add(uc);
             }
 
-            //Dodavanje kontrole za Lookup
-            else if (item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
-            {
-                PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
-                 CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
-                 as PropertyInterface;
-
-                LookUpControl uc = new LookUpControl(foreignKeyInterface);
-                uc.Name = item.Name;
-                uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                if (uc.GetLabelValue() == "Radnik ID")
-                    uc.SetValueTextBox(Id, userEmail);
+                    //Dodavanje kontrole za Lookup
+                    else if (item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
+                    {
+                        PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
+                         CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
+                         as PropertyInterface;
+                        
+                        LookUpControl uc = new LookUpControl(foreignKeyInterface, userEmail,Id);
+                        uc.Name = item.Name;
+                        uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                        if(uc.GetLabelValue() == "Radnik ID")
+                            uc.SetValueTextBox(Id, userEmail);
 
                 if (state == StateEnum.Update)
                 {

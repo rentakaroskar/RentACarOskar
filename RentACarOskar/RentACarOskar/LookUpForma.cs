@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using RentACarOskar.Attributes;
 using RentACarOskar.CRUD;
+using MetroFramework;
 
 namespace RentACarOskar
 {
@@ -25,9 +26,14 @@ namespace RentACarOskar
         public string Value;
         public string Value2;
 
-        public LookUpForma(PropertyInterface property)
+        public string UserMail;
+        public string UserID;
+        
+        public LookUpForma(PropertyInterface property, string mail, string ID)
         {
             InitializeComponent();
+            UserMail = mail;
+            UserID = ID;
             myProperty = property;
             PopulateGrid();
         }
@@ -165,57 +171,47 @@ namespace RentACarOskar
         
         private void btnOk_Click(object sender, EventArgs e)
         {
-            CRUDfunkcije crud = new CRUDfunkcije();
-            crud.Insert(myProperty);
+            //add new 
+
             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            CRUDfunkcije crud = new CRUDfunkcije();
+            crud.UserMail(UserMail, UserID);
+            crud.Insert(myProperty);
             PopulateGrid();
+            //PopulateGrid(myProperty);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            CRUDfunkcije crud = new CRUDfunkcije();
-            //crud.Update(myProperty,dgv);
-            //treba dodati f-ju koja refresuje data grid view
-            //int red = dgv.SelectedRows[0].Index;
-            //var type = myProperty.GetType();
-            //var properties = type.GetProperties();
-            //PropertyInterface pom = myProperty;
-            //PopulateGrid(myProperty);
-            //myProperty = pom;
+            int SelektovaniRed = dgv.SelectedRows[0].Index;
+            PropertyInterface pom = myProperty;
+            PopulateGrid();
+            //PopulateGrid(myForm);
+            myProperty = pom;
             //Visible = false;
-            //int i = 0;
-            //foreach (DataGridViewCell cell in dgv.Rows[red].Cells)
-            //{
-            //   String value = cell.Value.ToString();
-
-            //    PropertyInfo property = properties.Where(x => dgv.Columns[i].HeaderText == x.GetCustomAttribute<DisplayNameAttribute>().DisplayName).FirstOrDefault();
-            //    property.SetValue(myProperty, Convert.ChangeType(value, property.PropertyType));
-            //    i++;
-            //}
-            //InputForma inputForma = new InputForma(myProperty, StateEnum.Update);
-            //inputForma.ShowDialog();
+            CRUDfunkcije crud = new CRUDfunkcije();
+            crud.UserMail(UserMail, UserID);
+            crud.Update(myProperty, dgv, SelektovaniRed);
+            PopulateGrid();
             //Visible = true;
             //PopulateGrid(myProperty);
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {
-            //treba dodati f-ju koja refresuje data grid view
-            try
+        {          
+            DialogResult myResult = MetroMessageBox.Show(this, "Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            if (myResult == DialogResult.Yes)
             {
-                var type = myProperty.GetType();
-                var properties = type.GetProperties();
-
-                PropertyInfo property = properties.Where(x => x.IsDefined(typeof(PrimaryKeyAttribute))).FirstOrDefault();
-                property.SetValue(myProperty, Convert.ChangeType(dgv.SelectedRows[0].Cells[0].Value, property.PropertyType));
-
-                SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, myProperty.GetDeleteQuery(), myProperty.GetDeleteParameters().ToArray());
-                //PopulateGrid(myProperty);
+                int SelektovaniRed = dgv.SelectedRows[0].Index;
+                CRUDfunkcije crud = new CRUDfunkcije();
+                crud.UserMail(UserMail, UserID);
+                crud.Delete(myProperty, SelektovaniRed, dgv);
+                PopulateGrid();
             }
-            catch (System.Data.SqlClient.SqlException sql)
+            else
             {
-                MessageBox.Show("Nemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\nError code: " + sql.Message,
-                    "Greska pri brisanju", MessageBoxButtons.OK);
+                //No delete
             }
         }
     }
