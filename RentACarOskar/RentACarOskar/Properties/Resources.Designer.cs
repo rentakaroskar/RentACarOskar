@@ -153,6 +153,26 @@ namespace RentACarOskar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Group_13_Copy_2 {
+            get {
+                object obj = ResourceManager.GetObject("Group 13 Copy 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Group_13_Copy_21 {
+            get {
+                object obj = ResourceManager.GetObject("Group 13 Copy 21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cancel_200 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cancel-200", resourceCulture);
@@ -356,6 +376,16 @@ namespace RentACarOskar.Properties {
         internal static System.Drawing.Bitmap password {
             get {
                 object obj = ResourceManager.GetObject("password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Team_Employees_Group_Members_Workers_Common_512 {
+            get {
+                object obj = ResourceManager.GetObject("Team-Employees-Group-Members-Workers-Common-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

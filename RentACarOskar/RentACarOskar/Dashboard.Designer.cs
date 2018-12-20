@@ -46,6 +46,9 @@
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.PanelLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelZaposleni = new System.Windows.Forms.Panel();
+            this.lblZaposleni = new System.Windows.Forms.Label();
+            this.imgZaposleni = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelFaktura = new System.Windows.Forms.Panel();
             this.lblFaktura = new System.Windows.Forms.Label();
             this.btnFaktura = new Bunifu.Framework.UI.BunifuImageButton();
@@ -66,6 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.PanelLeft.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.panelZaposleni.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgZaposleni)).BeginInit();
             this.panelFaktura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).BeginInit();
             this.panelKlijenti.SuspendLayout();
@@ -321,6 +326,7 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.panelMenu.BackgroundImage = global::RentACarOskar.Properties.Resources.blur2;
             this.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMenu.Controls.Add(this.panelZaposleni);
             this.panelMenu.Controls.Add(this.panelFaktura);
             this.panelMenu.Controls.Add(this.panelKlijenti);
             this.panelMenu.Controls.Add(this.panelAutomobili);
@@ -331,6 +337,42 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(245, 700);
             this.panelMenu.TabIndex = 0;
+            // 
+            // panelZaposleni
+            // 
+            this.panelZaposleni.BackColor = System.Drawing.Color.Transparent;
+            this.panelZaposleni.Controls.Add(this.lblZaposleni);
+            this.panelZaposleni.Controls.Add(this.imgZaposleni);
+            this.panelZaposleni.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelZaposleni.Location = new System.Drawing.Point(3, 406);
+            this.panelZaposleni.Name = "panelZaposleni";
+            this.panelZaposleni.Size = new System.Drawing.Size(245, 57);
+            this.panelZaposleni.TabIndex = 10;
+            // 
+            // lblZaposleni
+            // 
+            this.lblZaposleni.AutoSize = true;
+            this.lblZaposleni.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZaposleni.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblZaposleni.Location = new System.Drawing.Point(95, 17);
+            this.lblZaposleni.Name = "lblZaposleni";
+            this.lblZaposleni.Size = new System.Drawing.Size(94, 22);
+            this.lblZaposleni.TabIndex = 7;
+            this.lblZaposleni.Text = "Zaposleni";
+            // 
+            // imgZaposleni
+            // 
+            this.imgZaposleni.BackColor = System.Drawing.Color.Transparent;
+            this.imgZaposleni.Image = global::RentACarOskar.Properties.Resources.Group_13_Copy_21;
+            this.imgZaposleni.ImageActive = null;
+            this.imgZaposleni.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
+            this.imgZaposleni.Location = new System.Drawing.Point(12, 13);
+            this.imgZaposleni.Name = "imgZaposleni";
+            this.imgZaposleni.Size = new System.Drawing.Size(40, 31);
+            this.imgZaposleni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgZaposleni.TabIndex = 6;
+            this.imgZaposleni.TabStop = false;
+            this.imgZaposleni.Zoom = 10;
             // 
             // panelFaktura
             // 
@@ -552,6 +594,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.PanelLeft.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            this.panelZaposleni.ResumeLayout(false);
+            this.panelZaposleni.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgZaposleni)).EndInit();
             this.panelFaktura.ResumeLayout(false);
             this.panelFaktura.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).EndInit();
@@ -603,5 +648,8 @@
         private MetroFramework.Controls.MetroButton btnFilter;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelZaposleni;
+        private System.Windows.Forms.Label lblZaposleni;
+        private Bunifu.Framework.UI.BunifuImageButton imgZaposleni;
     }
 }
