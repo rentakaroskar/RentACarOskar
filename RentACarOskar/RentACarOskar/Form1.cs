@@ -52,7 +52,8 @@ namespace RentACarOskar
                     if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                     {
                         string mail = tbUserName.Text;
-                        Dashboard pom = new Dashboard(mail);
+                        string ID = dt.Rows[i][0].ToString();
+                        Dashboard pom = new Dashboard(mail, ID);
                         pom.ShowDialog();
                         if (pom.DialogResult == DialogResult.Cancel)
                         {
@@ -98,7 +99,8 @@ namespace RentACarOskar
             {
                 if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                 {
-                    Dashboard pom = new Dashboard(mail);
+                    string ID = dt.Rows[i][0].ToString();
+                    Dashboard pom = new Dashboard(mail, ID);
                     Visible = false;
                     pom.ShowDialog();
                     if (pom.DialogResult == DialogResult.Cancel)

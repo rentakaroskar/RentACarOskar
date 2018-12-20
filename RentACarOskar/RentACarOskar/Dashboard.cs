@@ -19,6 +19,7 @@ namespace RentACarOskar
     {
         PropertyInterface myProperty;
         string UserMail;
+        string UserID;
 
         //filter
         PropertyInterface FilterProperty;
@@ -28,9 +29,9 @@ namespace RentACarOskar
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
         DGV ispisivati procedure koje je marko sastavio a mi saljemo InputFormi pravu property klasu*/
         PropertyInterface myForm;
-        public Dashboard(string mail)
+        public Dashboard(string mail, string ID)
         {
-            
+            UserID = ID;
             InitializeComponent();
             this.UserMail = mail;
             labelUser.Text = mail;
@@ -202,8 +203,8 @@ namespace RentACarOskar
         private void btnInsert_Click(object sender, EventArgs e)
         {
             CRUDfunkcije crud = new CRUDfunkcije();
+            crud.UserMail(UserMail, UserID);
             crud.Insert(myForm);
-            crud.UserMail(UserMail);
             PopulateGrid(myProperty);
         }
 
@@ -215,7 +216,7 @@ namespace RentACarOskar
             myProperty = pom;
             Visible = false;
             CRUDfunkcije crud = new CRUDfunkcije();
-            crud.UserMail(UserMail);
+            crud.UserMail(UserMail, UserID);
             crud.Update(myForm, dgv,SelektovaniRed);
             Visible = true;
             PopulateGrid(myProperty);
