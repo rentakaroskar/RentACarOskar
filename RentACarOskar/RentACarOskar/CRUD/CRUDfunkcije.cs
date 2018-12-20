@@ -20,7 +20,6 @@ namespace RentACarOskar.CRUD
     {
         PropertyInterface myProperty;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-        int SelektovaniRed;
         string UserEmail;
         string UserID;
 
@@ -40,15 +39,24 @@ namespace RentACarOskar.CRUD
             pom.ShowDialog();
         }
 
-        public void Update(PropertyInterface myProperty, Bunifu.Framework.UI.BunifuCustomDataGrid dgv, int SelektovaniRed)
+        public void Update(PropertyInterface myProperty, string ID, DataGridView dgv)
         {
+            //Pretraga
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                    myProperty.GetLookupQuery(ID));
 
-            this.SelektovaniRed = SelektovaniRed;
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            reader.Close();
+
+            dgv.DataSource = dt;
+
             var type = myProperty.GetType();
             var properties = type.GetProperties();
             PropertyInterface pom = myProperty;
             int i = 0;
-            foreach (DataGridViewCell cell in dgv.Rows[SelektovaniRed].Cells)
+
+            foreach (DataGridViewCell cell in dgv.Rows[0].Cells)
             {
                 String value = cell.Value.ToString();
 
@@ -56,14 +64,17 @@ namespace RentACarOskar.CRUD
                 property.SetValue(myProperty, Convert.ChangeType(value, property.PropertyType));
                 i++;
             }
+
             InputForma inputForma = new InputForma(myProperty, StateEnum.Update, UserEmail, UserID);
+
             inputForma.ShowDialog();
+
             if (inputForma.DialogResult == DialogResult.Cancel)
                 return;
         }
+
         public void Delete(PropertyInterface myProperty, int SelektovaniRed, Bunifu.Framework.UI.BunifuCustomDataGrid dgv)
         {
-
             try
             {                            
                 DataGridViewRow row = dgv.SelectedRows[0];

@@ -35,6 +35,87 @@ namespace RentACarOskar
         }
 
         //Funkcija za popunjavanje kontrole u Input formi
+        private void PopunjavanjeKontrola(PropertyInfo item)
+        {
+            //Dodavanje kontrole za datum
+            if (item.PropertyType.Name == "DateTime")
+            {
+                InputDateControl uc = new InputDateControl();
+                uc.Name = item.Name;
+                uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+
+                if (state == StateEnum.Update)
+                {
+                    try
+                    {
+                        uc.SetValueInDateBox(item.GetValue(myInterface).ToString());
+                    }
+                    catch { }
+                }
+                flowPanel.Controls.Add(uc);
+            }
+
+            //Dodavanje kontrole za Lookup
+            else if (item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
+            {
+                PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
+                 CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
+                 as PropertyInterface;
+
+                LookUpControl uc = new LookUpControl(foreignKeyInterface);
+                uc.Name = item.Name;
+                uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                if (uc.GetLabelValue() == "Radnik ID")
+                    uc.SetValueTextBox(Id, userEmail);
+
+                if (state == StateEnum.Update)
+                {
+                    try
+                    {
+                        uc.SetValueTextBox(item.GetValue(myInterface).ToString(), userEmail);
+                    }
+                    catch { }
+                }
+                flowPanel.Controls.Add(uc);
+            }
+
+            //Dodavanje kontrole za 2 radio dugmica
+            else if (item.GetCustomAttribute<TwoRadioButtonsAttribute>() != null)
+            {
+                TwoRadioButtonsControl uc = new TwoRadioButtonsControl();
+                uc.Name = item.Name;
+                uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                uc.SetRadioButtons(item.GetCustomAttribute<TwoRadioButtonsAttribute>().Value1, item.GetCustomAttribute<TwoRadioButtonsAttribute>().Value2);
+                if (state == StateEnum.Update)
+                {
+                    try
+                    {
+                        uc.SetChecked(item.GetValue(myInterface).ToString());
+                    }
+                    catch { }
+                }
+                flowPanel.Controls.Add(uc);
+            }
+
+            //Dodavanje kontrole za TextBox
+            else
+            {
+                InputControl uc = new InputControl();
+                uc.Name = item.Name;
+                uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+
+                if (state == StateEnum.Update)
+                {
+                    try
+                    {
+                        uc.SetValueInTextBox(item.GetValue(myInterface).ToString());
+                    }
+                    catch { }
+                }
+                flowPanel.Controls.Add(uc);
+            }
+        }
+        
         private void PopulateControls()
         {
             bool i = true;
@@ -43,91 +124,15 @@ namespace RentACarOskar
                 //Izbacivanje prikaza primarnog kljuca
                 if (i == false)
                 {
-                    //Dodavanje kontrole za datum
-                    if (item.PropertyType.Name == "DateTime")
-                    {
-                        InputDateControl uc = new InputDateControl();
-                        uc.Name = item.Name;
-                        uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-
-                        if (state == StateEnum.Update)
-                        {
-                            try
-                            {
-                                uc.SetValueInDateBox(item.GetValue(myInterface).ToString());
-                            }
-                            catch { }
-                        }
-                        flowPanel.Controls.Add(uc);
-                    }
-
-                    //Dodavanje kontrole za Lookup
-                    else if (item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
-                    {
-                        PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
-                         CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
-                         as PropertyInterface;
-                        
-                        LookUpControl uc = new LookUpControl(foreignKeyInterface);
-                        uc.Name = item.Name;
-                        uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                        if(uc.GetLabelValue() == "Radnik ID")
-                            uc.SetValueTextBox(Id, userEmail);
-
-                        if (state == StateEnum.Update)
-                        {
-                            try
-                            {
-                                uc.SetValueTextBox(item.GetValue(myInterface).ToString(), userEmail);
-                            }
-                            catch { }
-                        }
-                        flowPanel.Controls.Add(uc);
-                    }
-
-                    //Dodavanje kontrole za 2 radio dugmica
-                    else if (item.GetCustomAttribute<TwoRadioButtonsAttribute>() != null)
-                    {
-                        TwoRadioButtonsControl uc = new TwoRadioButtonsControl();
-                        uc.Name = item.Name;
-                        uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                        uc.SetRadioButtons(item.GetCustomAttribute<TwoRadioButtonsAttribute>().Value1, item.GetCustomAttribute<TwoRadioButtonsAttribute>().Value2);
-                        if (state == StateEnum.Update)
-                        {
-                            try
-                            {
-                                uc.SetChecked(item.GetValue(myInterface).ToString());
-                            }
-                            catch { }
-                        }
-                        flowPanel.Controls.Add(uc);
-                    }
-
-                    //Dodavanje kontrole za TextBox
-                    else
-                    {
-                        InputControl uc = new InputControl();
-                        uc.Name = item.Name;
-                        uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-
-                        if (state == StateEnum.Update)
-                        {
-                            try
-                            {
-                                uc.SetValueInTextBox(item.GetValue(myInterface).ToString());
-                            }
-                            catch { }
-                        }
-                        flowPanel.Controls.Add(uc);
-                    }
+                    PopunjavanjeKontrola(item);
                 }
                 i = false;
             }
         }
 
+        #region Buttons
         private void btnOk_Click(object sender, EventArgs e)
         {
-
             var properties = myInterface.GetType().GetProperties();
             //String za dodavanje imena polja koja su obavezna a nisu popunjena
 
@@ -192,5 +197,6 @@ namespace RentACarOskar
         {
             DialogResult = DialogResult.Cancel;
         }
+        #endregion
     }
 }
