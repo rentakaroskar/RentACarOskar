@@ -201,7 +201,7 @@ namespace RentACarOskar
             }
             else if (state == StateEnum.Update)
             {               
-                DialogResult myResult = MetroMessageBox.Show(this, "Da li zelite azurirati item ?", "Azuriranje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult myResult = MetroMessageBox.Show(this, "Da li zelite izvrsiti azuriranje ?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (myResult == DialogResult.Yes)
                 {
                     SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
