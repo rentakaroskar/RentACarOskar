@@ -322,7 +322,18 @@ namespace RentACarOskar
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-             DialogResult = DialogResult.Cancel;
+           
+            DialogResult myResult;
+            myResult = MetroMessageBox.Show(this, "Da li zelite napustiti App?", "Question Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (myResult == DialogResult.OK)
+            {
+                DialogResult = DialogResult.Cancel;
+            }
+            else
+            {
+                //No delete
+            }
+           
         }
 
         #region Animacije
