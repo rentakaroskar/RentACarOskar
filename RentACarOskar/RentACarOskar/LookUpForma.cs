@@ -80,7 +80,6 @@ namespace RentACarOskar
             dgv.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             //boja header teksta u tabeli
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
-
         }
         #endregion
 
@@ -183,19 +182,19 @@ namespace RentACarOskar
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int SelektovaniRed = dgv.SelectedRows[0].Index;
             PropertyInterface pom = myProperty;
+            string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
             PopulateGrid();
-            //PopulateGrid(myForm);
             myProperty = pom;
-            //Visible = false;
+            Visible = false;
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.UserMail(UserMail, UserID);
-            crud.Update(myProperty, dgv, SelektovaniRed);
-            PopulateGrid();
-            //Visible = true;
-            //PopulateGrid(myProperty);
-
+            crud.Update(myProperty, ID, dgv);
+            Visible = true;
+            try {
+                PopulateGrid();
+            }
+            catch { }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -207,7 +206,13 @@ namespace RentACarOskar
                 CRUDfunkcije crud = new CRUDfunkcije();
                 crud.UserMail(UserMail, UserID);
                 crud.Delete(myProperty, SelektovaniRed, dgv);
-                PopulateGrid();
+                try
+                {
+                    PopulateGrid();
+                }
+                catch {
+                    DialogResult dr = MetroMessageBox.Show(this, "\n\nNemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\n", "Greska pri brisanju!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
