@@ -272,13 +272,43 @@ namespace RentACarOskar
                 dtpDo.Width = 170;
                 panelFilter.Controls.Add(dtpDo);
 
+                Label lblTip = new Label();
+                lblTip.Text = "Tip Fakture:";
+                lblTip.Location = new Point(1, 61);
+                lblTip.Width = 50;
+                panelFilter.Controls.Add(lblTip);
+                ComboBox cbxTip = new ComboBox();
+                cbxTip.Items.Add("Racun");
+                cbxTip.Items.Add("Predracun");
+                cbxTip.Items.Add("Rezervacija");
+                cbxTip.Items.Add("Sve");
+                cbxTip.Location = new Point(60, 61);
+                panelFilter.Controls.Add(cbxTip);
+
+                Label lblKlijent = new Label();
+                lblKlijent.Text = "Klijent:";
+                lblKlijent.Location = new Point(1, 31);
+                lblKlijent.Width = 50;
+                panelFilter.Controls.Add(lblKlijent);
+                TextBox txtKlijent = new TextBox();
+                txtKlijent.Location = new Point(60, 31);
+                panelFilter.Controls.Add(txtKlijent);
+
+
+                cbxTip.SelectedIndexChanged += new EventHandler(f_ValueChanged);
+                txtKlijent.TextChanged += new EventHandler(f_ValueChanged);
                 dtpOd.ValueChanged += new EventHandler(f_ValueChanged);
                 dtpDo.ValueChanged += new EventHandler(f_ValueChanged);
 
+                dtpOd.MaxDate = dtpDo.Value;
+                dtpDo.MinDate = dtpOd.Value;
 
                 void f_ValueChanged(object sender, EventArgs e)
                 {
-                    string QueryFilter = "exec [dbo].[spFilterFakutra] @PocetniDatum, @KrajniDatum";
+                    dtpOd.MaxDate = dtpDo.Value;
+                    dtpDo.MinDate = dtpOd.Value;
+
+                    string QueryFilter = "exec [dbo].[spFilterFakutra] @PocetniDatum, @KrajniDatum, @Klijent, @TipFakture";
 
                     SqlConnection con = new SqlConnection(SqlHelper.GetConnectionString());
 
@@ -286,11 +316,20 @@ namespace RentACarOskar
 
                     Cmd.Parameters.Add(new SqlParameter("@PocetniDatum", SqlDbType.DateTime));
                     Cmd.Parameters.Add(new SqlParameter("@KrajniDatum", SqlDbType.DateTime));
+                    Cmd.Parameters.Add(new SqlParameter("@Klijent", SqlDbType.NVarChar));
+                    Cmd.Parameters.Add(new SqlParameter("@TipFakture", SqlDbType.NVarChar));
 
                     Cmd.Parameters["@PocetniDatum"].Value = dtpOd.Value.ToLongDateString();
                     Cmd.Parameters["@PocetniDatum"].IsNullable = true;
                     Cmd.Parameters["@KrajniDatum"].Value = dtpDo.Value.ToLongDateString();
                     Cmd.Parameters["@KrajniDatum"].IsNullable = true;
+                    Cmd.Parameters["@Klijent"].Value = txtKlijent.Text;
+                    Cmd.Parameters["@Klijent"].IsNullable = true;
+                    if (cbxTip.SelectedIndex >= 0)
+                        Cmd.Parameters["@TipFakture"].Value = cbxTip.Items[cbxTip.SelectedIndex].ToString();
+                    else
+                        Cmd.Parameters["@TipFakture"].Value = "Sve";
+                    Cmd.Parameters["@TipFakture"].IsNullable = true;
 
                     dt = new DataTable();
 
@@ -306,32 +345,32 @@ namespace RentACarOskar
                 Label lblIme = new Label();
                 lblIme.Text = "Ime:";
                 lblIme.Location = new Point(1, 1);
-                lblIme.Width = 30;
+                lblIme.Width = 50;
                 panelFilter.Controls.Add(lblIme);
                 TextBox txtIme = new TextBox();
-                txtIme.Location = new Point(35, 1);
+                txtIme.Location = new Point(60, 1);
                 panelFilter.Controls.Add(txtIme);
 
                 Label lblPrezime = new Label();
                 lblPrezime.Text = "Prezime:";
                 lblPrezime.Location = new Point(1, 31);
-                lblPrezime.Width = 30;
+                lblPrezime.Width = 50;
                 panelFilter.Controls.Add(lblPrezime);
                 TextBox txtPrezime = new TextBox();
-                txtPrezime.Location = new Point(35, 31);
+                txtPrezime.Location = new Point(60, 31);
                 panelFilter.Controls.Add(txtPrezime);
 
                 Label lblTip = new Label();
                 lblTip.Text = "Tip:";
                 lblTip.Location = new Point(1, 61);
-                lblTip.Width = 30;
+                lblTip.Width = 50;
                 panelFilter.Controls.Add(lblTip);
                 ComboBox cbxTip = new ComboBox();
                 cbxTip.Items.Add("Vratio");
                 cbxTip.Items.Add("Preuzeo");
                 cbxTip.Items.Add("Rezervisao");
                 cbxTip.Items.Add("Sve");
-                cbxTip.Location = new Point(35, 61);
+                cbxTip.Location = new Point(60, 61);
                 panelFilter.Controls.Add(cbxTip);
 
 
@@ -370,6 +409,10 @@ namespace RentACarOskar
                     adapter.Fill(dt);
                     PopuniDGV(dt, FilterProperty);
                 }
+            }
+            else if (FilterProperty.GetType() == typeof(VoziloIspis))
+            {
+
             }
 
         }
