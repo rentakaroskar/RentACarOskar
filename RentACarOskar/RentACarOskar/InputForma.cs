@@ -166,6 +166,14 @@ namespace RentACarOskar
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
                     }
+                    else if (item.GetType() == typeof(TwoRadioButtonsControl))
+                    {
+                        TwoRadioButtonsControl input = item as TwoRadioButtonsControl;
+                        value = input.GetChecked();
+
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+                    }
                 }
                 catch (Exception)
                 {

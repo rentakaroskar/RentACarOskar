@@ -13,6 +13,7 @@ using System.Reflection;
 using RentACarOskar.Attributes;
 using RentACarOskar.CRUD;
 using MetroFramework;
+using RentACarOskar.PropertyClass;
 
 namespace RentACarOskar
 {
@@ -35,7 +36,19 @@ namespace RentACarOskar
             UserMail = mail;
             UserID = ID;
             myProperty = property;
-            PopulateGrid();
+            PopulateGrid();           
+            if (property.GetType() != typeof(PropertyTipFakture))
+            {
+                btnDelete.Visible = true;
+                btnInsert.Visible = true;
+                btnUpdate.Visible = true;
+            }
+            else
+            {
+                btnDelete.Visible = false;
+                btnInsert.Visible = false;
+                btnUpdate.Visible = false;
+            }
         }
 
         //Popunjavanje Data Table

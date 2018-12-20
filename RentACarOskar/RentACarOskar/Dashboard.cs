@@ -12,9 +12,12 @@ using System.Reflection;
 using System.Windows.Forms;
 using RentACarOskar.CRUD;
 using MetroFramework;
+using System.Collections.Generic;
+
 
 namespace RentACarOskar
 {
+
     public partial class Dashboard : Form
     {
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
@@ -32,14 +35,25 @@ namespace RentACarOskar
 
         string UserMail;
         string UserID;
+        //Role Admin/User
+        string Rola;
         
-        public Dashboard(string mail, string ID)
+        public Dashboard(string mail, string ID,string rola)
         {
             InitializeComponent();
-
             UserID = ID;
             UserMail = mail;
             labelUser.Text = mail;
+            Rola = rola;
+
+            if (Rola == "Admin")
+            {
+                panelZaposleni.Visible = true;
+            }
+            else
+            {
+                panelZaposleni.Visible = false;
+            }
 
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
@@ -51,15 +65,19 @@ namespace RentACarOskar
             
             panelPanelZaGV.Visible = true;
             panelCentar.Visible = false;
-            Dobrodosli.Visible = true;
+            Dobrodosli.Visible = false;
             btnIzdaj.Visible = false;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            panelPanelZaGV.Visible = false;
+            panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
+            VoziloIspis pom = new VoziloIspis();
+
         }
+
+       
 
         #region PopunjavanjeDGV-a
         //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
@@ -85,7 +103,7 @@ namespace RentACarOskar
             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
             //pozadina hedera
-            panelPanelZaGV.Controls.Add(dgv);
+        panelPanelZaGV.Controls.Add(dgv);
 
             //Popunjavanje tabele sa vrijednostima
             dgv.DataSource = dt;
@@ -112,6 +130,7 @@ namespace RentACarOskar
             {
                 dgv.Columns[0].Visible = false;
             }
+            
         }
         #endregion
 
@@ -540,5 +559,7 @@ namespace RentACarOskar
             dt.DefaultView.AllowNew = false;
         }
         #endregion
+
     }
+
 }

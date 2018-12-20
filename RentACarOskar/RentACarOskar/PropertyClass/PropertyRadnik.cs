@@ -55,6 +55,11 @@ namespace RentACarOskar.PropertyClass
         [SqlName("Email")]
         [NotRequired]
         public string Email { get; set; }
+
+        [DisplayName("Rola")]
+        [SqlName("Rola")]
+        [NotRequired]
+        public string Rola { get; set; }
         #endregion
 
         #region Parameters
@@ -72,6 +77,7 @@ namespace RentACarOskar.PropertyClass
 
         public List<SqlParameter> GetInsertParameters()
         {
+            //dodati jos polje ROLE u parametre
             List<SqlParameter> parametri = new List<SqlParameter>();
             {
                 SqlParameter novi = new SqlParameter("@OsobaID", System.Data.SqlDbType.Int);
@@ -118,6 +124,7 @@ namespace RentACarOskar.PropertyClass
 
         public List<SqlParameter> GetUpdateParameters()
         {
+            //dodati jos polje ROLE u parametre
             List<SqlParameter> parametri = new List<SqlParameter>();
             {
                 SqlParameter novi = new SqlParameter("@RadnikID", System.Data.SqlDbType.Int);
@@ -174,7 +181,7 @@ namespace RentACarOskar.PropertyClass
             return @"DELETE FROM[dbo].[Radnik]
               WHERE[RadnikID] = @RadnikID";
         }
-
+        //dodati jos polje ROLE u query
         public string GetInsertQuery()
         {
           return
@@ -211,11 +218,13 @@ namespace RentACarOskar.PropertyClass
                    ,[DatumZaposlenja]
                    ,[Lozinka]
                    ,[Email]
+                   ,[Rola]
                FROM [dbo].[Radnik]";
         }       
 
         public string GetUpdateQuery()
         {
+            //dodati jos polje ROLE u parametre
             return @"UPDATE [dbo].[Radnik]
                    SET [OsobaID] = @OsobaID
                       ,[Pozicija] = @Pozicija
