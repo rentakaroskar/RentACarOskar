@@ -224,8 +224,8 @@ namespace RentACarOskar
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult myResult = MetroMessageBox.Show(this, "Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (myResult == DialogResult.OK)
+            DialogResult myResult = MetroMessageBox.Show(this, "Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            if (myResult == DialogResult.Yes)
             {
                 int SelektovaniRed = dgv.SelectedRows[0].Index;
                 CRUDfunkcije crud = new CRUDfunkcije();
