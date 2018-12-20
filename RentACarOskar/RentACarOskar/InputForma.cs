@@ -21,11 +21,13 @@ namespace RentACarOskar
         PropertyInterface myInterface;
         StateEnum state;
         string userEmail;
+        string Id;
 
-        public InputForma(PropertyInterface myInterface, StateEnum state, string email)
+        public InputForma(PropertyInterface myInterface, StateEnum state, string email, string ID)
         {
             InitializeComponent();
             userEmail = email;
+            Id = ID;
             Text = myInterface.ToString().Remove(0, 36) + " " + state.ToString();
             this.myInterface = myInterface;
             this.state = state;
@@ -71,16 +73,17 @@ namespace RentACarOskar
                         LookUpControl uc = new LookUpControl(foreignKeyInterface);
                         uc.Name = item.Name;
                         uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                        if(uc.GetLabelValue() == "Radnik ID")
+                            uc.SetValueTextBox(Id, userEmail);
 
                         if (state == StateEnum.Update)
                         {
                             try
                             {
-                                uc.SetValueTextBox(item.GetValue(myInterface).ToString());
+                                uc.SetValueTextBox(item.GetValue(myInterface).ToString(), userEmail);
                             }
                             catch { }
                         }
-
                         flowPanel.Controls.Add(uc);
                     }
 
@@ -99,7 +102,6 @@ namespace RentACarOskar
                             }
                             catch { }
                         }
-
                         flowPanel.Controls.Add(uc);
                     }
 
@@ -118,7 +120,6 @@ namespace RentACarOskar
                             }
                             catch { }
                         }
-
                         flowPanel.Controls.Add(uc);
                     }
                 }
@@ -136,8 +137,6 @@ namespace RentACarOskar
             {
                 try
                 {
-
-
                     string value = "";
 
                     if (item.GetType() == typeof(InputControl))
@@ -147,8 +146,6 @@ namespace RentACarOskar
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
-
-
                     }
                     else if (item.GetType() == typeof(InputDateControl))
                     {

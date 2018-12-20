@@ -21,11 +21,15 @@ namespace RentACarOskar.UserControls
         {
             InitializeComponent();
             myInterface = interFace;
+            tbKey.ReadOnly = true;
+            tbNaziv.ReadOnly = true;
         }
 
         public void SetLabel(string text)
         {
             lblNaziv.Text = text;
+            if (text == "Radnik ID")
+                btnLookup.Enabled = false;
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -48,14 +52,20 @@ namespace RentACarOskar.UserControls
             myInterface = interf;
         }
 
-        public void SetValueTextBox(string value)
+        public void SetValueTextBox(string key, string naziv)
         {
-            tbKey.Text = value;
+            tbKey.Text = key;
+            tbNaziv.Text = naziv;
+        }
+
+        public string GetLabelValue()
+        {
+            return lblNaziv.Text;
         }
 
         public string GetKeyValue()
         {
-            return tbKey.Text;
+            return Key;
         }
     }
 }
