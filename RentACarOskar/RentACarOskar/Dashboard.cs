@@ -12,9 +12,12 @@ using System.Reflection;
 using System.Windows.Forms;
 using RentACarOskar.CRUD;
 using MetroFramework;
+using System.Collections.Generic;
+
 
 namespace RentACarOskar
 {
+
     public partial class Dashboard : Form
     {
         /*Objekat koji ce sluziti za popunjavanje user kontrola u input formi zato sto ce se u 
@@ -36,7 +39,6 @@ namespace RentACarOskar
         public Dashboard(string mail, string ID)
         {
             InitializeComponent();
-
             UserID = ID;
             UserMail = mail;
             labelUser.Text = mail;
@@ -59,7 +61,10 @@ namespace RentACarOskar
         {
             panelPanelZaGV.Visible = false;
             bDelete.Visible = false;
+
         }
+
+       
 
         #region PopunjavanjeDGV-a
         //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
@@ -456,5 +461,7 @@ namespace RentACarOskar
             dt.DefaultView.AllowNew = false;
         }
         #endregion
+
     }
+
 }
