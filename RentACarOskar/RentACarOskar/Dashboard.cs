@@ -61,20 +61,6 @@ namespace RentACarOskar
             bDelete.Visible = false;
         }
 
-        private void btnIzdaj_Click(object sender, EventArgs e)
-        {
-             int idFakture= Convert.ToInt32(dgv.SelectedRows[0].Cells[0].Value.ToString());
-            string tipFakture = dgv.SelectedRows[0].Cells[4].Value.ToString();
-
-            FormaIzdavanje formaIzdavanje = new FormaIzdavanje(idFakture, tipFakture);
-            formaIzdavanje.ShowDialog();
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-             DialogResult = DialogResult.Cancel;
-        }
-
         #region PopunjavanjeDGV-a
         //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
         private void PopulateGrid(PropertyInterface property)
@@ -207,7 +193,7 @@ namespace RentACarOskar
             {
                 int SelektovaniRed = dgv.SelectedRows[0].Index;
                 CRUDfunkcije crud = new CRUDfunkcije();
-                crud.UserMail(UserMail);
+                crud.UserMail(UserMail, UserID);
                 crud.Delete(myForm, SelektovaniRed, dgv);
                 PopulateGrid(myProperty);
             }
