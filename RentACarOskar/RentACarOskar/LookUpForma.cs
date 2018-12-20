@@ -65,6 +65,15 @@ namespace RentACarOskar
                 .FirstOrDefault().Name == item.HeaderText).FirstOrDefault()
                 .GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
             }
+
+
+            //design
+            //boja teksta i pozadina kada selektujemo item 
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(44, 46, 62);
+            dgv.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            //boja header teksta u tabeli
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+
         }
         private void btnReturn_Click(object sender, EventArgs e)
         {

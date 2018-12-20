@@ -28,42 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnStampaj = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnStampaj = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // btnStampaj
             // 
-            this.btnStampaj.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.btnStampaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.btnStampaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStampaj.BorderRadius = 6;
-            this.btnStampaj.ButtonText = "STAMPAJ";
             this.btnStampaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStampaj.DisabledColor = System.Drawing.Color.Gray;
-            this.btnStampaj.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnStampaj.Iconimage = null;
-            this.btnStampaj.Iconimage_right = null;
-            this.btnStampaj.Iconimage_right_Selected = null;
-            this.btnStampaj.Iconimage_Selected = null;
-            this.btnStampaj.IconMarginLeft = 0;
-            this.btnStampaj.IconMarginRight = 0;
-            this.btnStampaj.IconRightVisible = true;
-            this.btnStampaj.IconRightZoom = 0D;
-            this.btnStampaj.IconVisible = true;
-            this.btnStampaj.IconZoom = 90D;
-            this.btnStampaj.IsTab = false;
-            this.btnStampaj.Location = new System.Drawing.Point(660, 393);
+            this.btnStampaj.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnStampaj.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnStampaj.Location = new System.Drawing.Point(670, 399);
             this.btnStampaj.Name = "btnStampaj";
-            this.btnStampaj.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(135)))), ((int)(((byte)(150)))));
-            this.btnStampaj.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(181)))), ((int)(((byte)(88)))));
-            this.btnStampaj.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnStampaj.selected = false;
-            this.btnStampaj.Size = new System.Drawing.Size(108, 34);
-            this.btnStampaj.TabIndex = 4;
+            this.btnStampaj.Size = new System.Drawing.Size(107, 28);
+            this.btnStampaj.TabIndex = 5;
             this.btnStampaj.Text = "STAMPAJ";
-            this.btnStampaj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnStampaj.Textcolor = System.Drawing.Color.White;
-            this.btnStampaj.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStampaj.UseSelectable = true;
             // 
             // FormaIzdavanje
             // 
@@ -76,13 +54,13 @@
             this.Movable = false;
             this.Name = "FormaIzdavanje";
             this.Resizable = false;
+            this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "FormaIzdavanje";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuFlatButton btnStampaj;
+        private MetroFramework.Controls.MetroButton btnStampaj;
     }
 }
