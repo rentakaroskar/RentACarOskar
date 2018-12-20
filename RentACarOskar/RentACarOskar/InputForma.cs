@@ -68,7 +68,7 @@ namespace RentACarOskar
                          CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
                          as PropertyInterface;
                         
-                        LookUpControl uc = new LookUpControl(foreignKeyInterface);
+                        LookUpControl uc = new LookUpControl(foreignKeyInterface, userEmail,Id);
                         uc.Name = item.Name;
                         uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
                         if(uc.GetLabelValue() == "Radnik ID")

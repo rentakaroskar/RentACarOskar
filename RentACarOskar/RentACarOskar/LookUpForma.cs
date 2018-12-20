@@ -23,13 +23,18 @@ namespace RentACarOskar
         public string Value;
         public string Value2;
 
+        public string UserMail;
+        public string UserID;
+
         public LookUpForma()
         {
             InitializeComponent();
         }
-        public LookUpForma(PropertyInterface property)
+        public LookUpForma(PropertyInterface property, string mail, string ID)
         {
             InitializeComponent();
+            UserMail = mail;
+            UserID = ID;
             myProperty = property;
             PopulateGrid();
         }        
@@ -151,10 +156,13 @@ namespace RentACarOskar
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            CRUDfunkcije crud = new CRUDfunkcije();
-            crud.Insert(myProperty);
+            //add new 
+
             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            PopulateGrid();
+            CRUDfunkcije crud = new CRUDfunkcije();
+            crud.UserMail(UserMail, UserID);
+            crud.Insert(myProperty);
+            //PopulateGrid(myProperty);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
