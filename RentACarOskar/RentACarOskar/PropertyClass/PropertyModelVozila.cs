@@ -109,6 +109,11 @@ namespace RentACarOskar.PropertyClass
                         [ModelID], [Naziv], [ProizvodjacID] FROM[dbo].[ModelVozila]
                     WHERE [ModelID] = " + ID;
         }
+
+        public string GetSelectQueryZaJedanItem(string broj)
+        {
+            return $@"SELECT [ModelID], [Naziv], [ProizvodjacID]  FROM [dbo].[ModelVozila] WHERE [ModelID] = {broj}";
+        }
         #endregion
     }
 }

@@ -162,6 +162,51 @@ namespace RentACarOskar.PropertyClass
                      FROM dbo.Faktura
                     WHERE FakturaID = " + ID;
         }
+
+        string PropertyInterface.GetSelectQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        string PropertyInterface.GetInsertQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        string PropertyInterface.GetUpdateQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        string PropertyInterface.GetDeleteQuery()
+        {
+            throw new NotImplementedException();
+        }
+
+        string PropertyInterface.GetLookupQuery(string ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        string PropertyInterface.GetSelectQueryZaJedanItem(string broj)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<SqlParameter> PropertyInterface.GetInsertParameters()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<SqlParameter> PropertyInterface.GetUpdateParameters()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<SqlParameter> PropertyInterface.GetDeleteParameters()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }
