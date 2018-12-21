@@ -29,14 +29,15 @@ namespace RentACarOskar
 
         public string UserMail;
         public string UserID;
-        
+
         public LookUpForma(PropertyInterface property, string mail, string ID)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             UserMail = mail;
             UserID = ID;
             myProperty = property;
-            PopulateGrid();           
+            PopulateGrid();
             if (property.GetType() != typeof(PropertyTipFakture))
             {
                 btnDelete.Visible = true;
@@ -180,7 +181,7 @@ namespace RentACarOskar
 
             this.Close();
         }
-        
+
         private void btnOk_Click(object sender, EventArgs e)
         {
             //add new 
@@ -194,7 +195,7 @@ namespace RentACarOskar
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
-        {      
+        {
             PropertyInterface pom = myProperty;
             string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
             PopulateGrid();
@@ -204,14 +205,15 @@ namespace RentACarOskar
             crud.UserMail(UserMail, UserID);
             crud.Update(myProperty, ID, dgv);
             Visible = true;
-            try {
+            try
+            {
                 PopulateGrid();
             }
             catch { }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {          
+        {
             DialogResult myResult = MetroMessageBox.Show(this, "Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             if (myResult == DialogResult.Yes)
             {
@@ -223,7 +225,8 @@ namespace RentACarOskar
                 {
                     PopulateGrid();
                 }
-                catch {
+                catch
+                {
                     DialogResult dr = MetroMessageBox.Show(this, "\n\nNemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\n", "Greska pri brisanju!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

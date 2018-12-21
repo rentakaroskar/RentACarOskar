@@ -26,6 +26,7 @@ namespace RentACarOskar
         public InputForma(PropertyInterface myInterface, StateEnum state, string email, string ID)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             userEmail = email;
             Id = ID;
             Text = myInterface.ToString().Remove(0, 36) + " " + state.ToString();

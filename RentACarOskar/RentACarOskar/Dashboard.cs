@@ -41,6 +41,8 @@ namespace RentACarOskar
         public Dashboard(string mail, string ID,string rola)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterParent;
+            
             UserID = ID;
             UserMail = mail;
             labelUser.Text = mail;
@@ -71,9 +73,11 @@ namespace RentACarOskar
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
             VoziloIspis pom = new VoziloIspis();
+          
 
         }
 
@@ -208,11 +212,11 @@ namespace RentACarOskar
             string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
             PopulateGrid(myForm);
             myProperty = pom;
-            Visible = false;
+            //Visible = false;
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.UserMail(UserMail, UserID);
             crud.Update(myForm, ID, dgv);
-            Visible = true;
+           // Visible = true;
             PopulateGrid(myProperty);
         }
 

@@ -31,6 +31,8 @@ namespace RentACarOskar
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label5;
             this.btnLogIn = new System.Windows.Forms.Button();
             this.tbPassword = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,6 +42,8 @@ namespace RentACarOskar
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -163,11 +167,11 @@ namespace RentACarOskar
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(72, 108);
+            this.label3.Location = new System.Drawing.Point(82, 108);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(188, 22);
+            this.label3.Size = new System.Drawing.Size(154, 22);
             this.label3.TabIndex = 3;
-            this.label3.Text = "-- MEMBER LOGIN --";
+            this.label3.Text = "MEMBER LOGIN";
             // 
             // label2
             // 
@@ -185,11 +189,33 @@ namespace RentACarOskar
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 108);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(312, 406);
+            this.pictureBox1.Size = new System.Drawing.Size(323, 406);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = System.Drawing.Color.Transparent;
+            label4.ForeColor = System.Drawing.Color.White;
+            label4.Location = new System.Drawing.Point(233, 108);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(31, 13);
+            label4.TabIndex = 10;
+            label4.Text = "____";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = System.Drawing.Color.Transparent;
+            label5.ForeColor = System.Drawing.Color.White;
+            label5.Location = new System.Drawing.Point(52, 108);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(31, 13);
+            label5.TabIndex = 11;
+            label5.Text = "____";
             // 
             // Form1
             // 
@@ -201,6 +227,8 @@ namespace RentACarOskar
             this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
             this.BackMaxSize = 550;
             this.ClientSize = new System.Drawing.Size(321, 493);
+            this.Controls.Add(label5);
+            this.Controls.Add(label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbUserName);
