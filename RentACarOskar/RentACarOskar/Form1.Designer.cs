@@ -40,11 +40,13 @@
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.lblMemberLogin = new System.Windows.Forms.Label();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
             this.metroPanel1.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -54,11 +56,11 @@
             this.metroPanel1.Controls.Add(this.btnLogIn);
             this.metroPanel1.Controls.Add(this.metroPanel4);
             this.metroPanel1.Controls.Add(this.metroPanel3);
-            this.metroPanel1.ForeColor = System.Drawing.Color.DarkGray;
+            this.metroPanel1.ForeColor = System.Drawing.Color.Transparent;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(13, 121);
+            this.metroPanel1.Location = new System.Drawing.Point(5, 157);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(309, 325);
             this.metroPanel1.TabIndex = 0;
@@ -179,7 +181,7 @@
             // 
             // 
             this.tbUserName.CustomButton.Image = null;
-            this.tbUserName.CustomButton.Location = new System.Drawing.Point(244, 1);
+            this.tbUserName.CustomButton.Location = new System.Drawing.Point(246, 1);
             this.tbUserName.CustomButton.Name = "";
             this.tbUserName.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -212,7 +214,7 @@
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(63, 63);
+            this.metroPanel2.Location = new System.Drawing.Point(53, 97);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(222, 36);
             this.metroPanel2.TabIndex = 1;
@@ -226,7 +228,7 @@
             this.lblMemberLogin.AutoSize = true;
             this.lblMemberLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.lblMemberLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMemberLogin.Location = new System.Drawing.Point(31, 10);
+            this.lblMemberLogin.Location = new System.Drawing.Point(31, 7);
             this.lblMemberLogin.Name = "lblMemberLogin";
             this.lblMemberLogin.Size = new System.Drawing.Size(159, 22);
             this.lblMemberLogin.TabIndex = 2;
@@ -235,6 +237,20 @@
             // metroStyleManager1
             // 
             this.metroStyleManager1.Owner = this;
+            // 
+            // slicicaAuto
+            // 
+            this.slicicaAuto.BackColor = System.Drawing.Color.Transparent;
+            this.slicicaAuto.Image = global::RentACarOskar.Properties.Resources.car2;
+            this.slicicaAuto.ImageActive = null;
+            this.slicicaAuto.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
+            this.slicicaAuto.Location = new System.Drawing.Point(130, 22);
+            this.slicicaAuto.Name = "slicicaAuto";
+            this.slicicaAuto.Size = new System.Drawing.Size(65, 65);
+            this.slicicaAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.slicicaAuto.TabIndex = 7;
+            this.slicicaAuto.TabStop = false;
+            this.slicicaAuto.Zoom = 10;
             // 
             // Form1
             // 
@@ -245,7 +261,8 @@
             this.BackImage = global::RentACarOskar.Properties.Resources.blur2;
             this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
             this.BackMaxSize = 550;
-            this.ClientSize = new System.Drawing.Size(337, 493);
+            this.ClientSize = new System.Drawing.Size(322, 493);
+            this.Controls.Add(this.slicicaAuto);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.MaximizeBox = false;
@@ -262,6 +279,7 @@
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,6 +297,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogIn;
+        private Bunifu.Framework.UI.BunifuImageButton slicicaAuto;
     }
 }
 

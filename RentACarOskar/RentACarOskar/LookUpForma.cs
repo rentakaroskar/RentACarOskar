@@ -94,7 +94,7 @@ namespace RentACarOskar
             //boja header teksta u tabeli
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
 
-        }
+        }   
         #endregion
 
         //Najbolja metoda koju je iko ikad napravio
