@@ -1,4 +1,6 @@
-﻿namespace RentACarOskar
+﻿using System.Drawing;
+
+namespace RentACarOskar
 {
     partial class Form1
     {
@@ -29,45 +31,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.btnLogIn = new System.Windows.Forms.Button();
-            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.tbPassword = new MetroFramework.Controls.MetroTextBox();
-            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tbUserName = new MetroFramework.Controls.MetroTextBox();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.lblMemberLogin = new System.Windows.Forms.Label();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
-            this.metroPanel1.SuspendLayout();
-            this.metroPanel4.SuspendLayout();
-            this.metroPanel3.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.metroPanel1.Controls.Add(this.btnLogIn);
-            this.metroPanel1.Controls.Add(this.metroPanel4);
-            this.metroPanel1.Controls.Add(this.metroPanel3);
-            this.metroPanel1.ForeColor = System.Drawing.Color.Transparent;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(5, 157);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(309, 325);
-            this.metroPanel1.TabIndex = 0;
-            this.metroPanel1.UseCustomBackColor = true;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
             // btnLogIn
             // 
@@ -78,7 +54,8 @@
             this.btnLogIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogIn.Location = new System.Drawing.Point(107, 233);
+            this.btnLogIn.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnLogIn.Location = new System.Drawing.Point(103, 404);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(98, 42);
             this.btnLogIn.TabIndex = 8;
@@ -87,34 +64,6 @@
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             this.btnLogIn.MouseLeave += new System.EventHandler(this.btnLogIn_MouseLeave);
             this.btnLogIn.MouseHover += new System.EventHandler(this.btnLogIn_MouseHover);
-            // 
-            // metroPanel4
-            // 
-            this.metroPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.metroPanel4.Controls.Add(this.label2);
-            this.metroPanel4.Controls.Add(this.tbPassword);
-            this.metroPanel4.HorizontalScrollbarBarColor = true;
-            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(17, 96);
-            this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(283, 87);
-            this.metroPanel4.TabIndex = 7;
-            this.metroPanel4.UseCustomBackColor = true;
-            this.metroPanel4.VerticalScrollbarBarColor = true;
-            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.VerticalScrollbarSize = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(3, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Password";
             // 
             // tbPassword
             // 
@@ -131,7 +80,7 @@
             this.tbPassword.CustomButton.UseSelectable = true;
             this.tbPassword.CustomButton.Visible = false;
             this.tbPassword.Lines = new string[0];
-            this.tbPassword.Location = new System.Drawing.Point(3, 49);
+            this.tbPassword.Location = new System.Drawing.Point(27, 307);
             this.tbPassword.MaxLength = 32767;
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '\0';
@@ -147,29 +96,13 @@
             this.tbPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.tbPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyUp_Enter);
             // 
-            // metroPanel3
-            // 
-            this.metroPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.metroPanel3.Controls.Add(this.label1);
-            this.metroPanel3.Controls.Add(this.tbUserName);
-            this.metroPanel3.HorizontalScrollbarBarColor = true;
-            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(17, 15);
-            this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(283, 75);
-            this.metroPanel3.TabIndex = 5;
-            this.metroPanel3.UseCustomBackColor = true;
-            this.metroPanel3.VerticalScrollbarBarColor = true;
-            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.VerticalScrollbarSize = 10;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Location = new System.Drawing.Point(23, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 21);
             this.label1.TabIndex = 3;
@@ -190,7 +123,7 @@
             this.tbUserName.CustomButton.UseSelectable = true;
             this.tbUserName.CustomButton.Visible = false;
             this.tbUserName.Lines = new string[0];
-            this.tbUserName.Location = new System.Drawing.Point(3, 34);
+            this.tbUserName.Location = new System.Drawing.Point(27, 223);
             this.tbUserName.MaxLength = 32767;
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.PasswordChar = '\0';
@@ -205,34 +138,6 @@
             this.tbUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbUserName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.tbUserName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyUp_Enter);
-            // 
-            // metroPanel2
-            // 
-            this.metroPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.metroPanel2.Controls.Add(this.lblMemberLogin);
-            this.metroPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(53, 97);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(222, 36);
-            this.metroPanel2.TabIndex = 1;
-            this.metroPanel2.UseCustomBackColor = true;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
-            // 
-            // lblMemberLogin
-            // 
-            this.lblMemberLogin.AutoSize = true;
-            this.lblMemberLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.lblMemberLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMemberLogin.Location = new System.Drawing.Point(31, 7);
-            this.lblMemberLogin.Name = "lblMemberLogin";
-            this.lblMemberLogin.Size = new System.Drawing.Size(159, 22);
-            this.lblMemberLogin.TabIndex = 2;
-            this.lblMemberLogin.Text = "MEMBER LOGIN ";
             // 
             // metroStyleManager1
             // 
@@ -252,6 +157,40 @@
             this.slicicaAuto.TabStop = false;
             this.slicicaAuto.Zoom = 10;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(72, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(188, 22);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "-- MEMBER LOGIN --";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(23, 281);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Password";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 108);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(312, 406);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,43 +200,39 @@
             this.BackImage = global::RentACarOskar.Properties.Resources.blur2;
             this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
             this.BackMaxSize = 550;
-            this.ClientSize = new System.Drawing.Size(322, 493);
+            this.ClientSize = new System.Drawing.Size(321, 493);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.slicicaAuto);
-            this.Controls.Add(this.metroPanel2);
-            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnLogIn);
+            this.Controls.Add(this.tbPassword);
+            this.Controls.Add(this.pictureBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyUp_Enter);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel4.ResumeLayout(false);
-            this.metroPanel4.PerformLayout();
-            this.metroPanel3.ResumeLayout(false);
-            this.metroPanel3.PerformLayout();
-            this.metroPanel2.ResumeLayout(false);
-            this.metroPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroPanel metroPanel2;
         public MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private MetroFramework.Controls.MetroTextBox tbPassword;
-        private MetroFramework.Controls.MetroPanel metroPanel4;
-        private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroTextBox tbUserName;
-        private System.Windows.Forms.Label lblMemberLogin;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogIn;
         private Bunifu.Framework.UI.BunifuImageButton slicicaAuto;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

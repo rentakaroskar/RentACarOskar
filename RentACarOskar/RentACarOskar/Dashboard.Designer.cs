@@ -350,7 +350,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.bunifuImageButton1);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Location = new System.Drawing.Point(0, 197);
+            this.panel2.Location = new System.Drawing.Point(0, 201);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(245, 57);
             this.panel2.TabIndex = 11;
@@ -372,7 +372,7 @@
             this.bunifuImageButton1.Image = global::RentACarOskar.Properties.Resources.home1;
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(12, 13);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(12, 9);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(40, 40);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -386,7 +386,7 @@
             this.panelZaposleni.Controls.Add(this.lblZaposleni);
             this.panelZaposleni.Controls.Add(this.imgZaposleni);
             this.panelZaposleni.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelZaposleni.Location = new System.Drawing.Point(2, 419);
+            this.panelZaposleni.Location = new System.Drawing.Point(2, 434);
             this.panelZaposleni.Name = "panelZaposleni";
             this.panelZaposleni.Size = new System.Drawing.Size(245, 57);
             this.panelZaposleni.TabIndex = 10;
@@ -408,7 +408,7 @@
             this.imgZaposleni.Image = global::RentACarOskar.Properties.Resources.RADNICI;
             this.imgZaposleni.ImageActive = null;
             this.imgZaposleni.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.imgZaposleni.Location = new System.Drawing.Point(12, 13);
+            this.imgZaposleni.Location = new System.Drawing.Point(12, 9);
             this.imgZaposleni.Name = "imgZaposleni";
             this.imgZaposleni.Size = new System.Drawing.Size(40, 40);
             this.imgZaposleni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -422,7 +422,7 @@
             this.panelFaktura.Controls.Add(this.lblFaktura);
             this.panelFaktura.Controls.Add(this.btnFaktura);
             this.panelFaktura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelFaktura.Location = new System.Drawing.Point(-1, 359);
+            this.panelFaktura.Location = new System.Drawing.Point(-1, 373);
             this.panelFaktura.Name = "panelFaktura";
             this.panelFaktura.Size = new System.Drawing.Size(245, 57);
             this.panelFaktura.TabIndex = 9;
@@ -435,7 +435,7 @@
             this.lblFaktura.AutoSize = true;
             this.lblFaktura.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFaktura.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblFaktura.Location = new System.Drawing.Point(95, 17);
+            this.lblFaktura.Location = new System.Drawing.Point(95, 19);
             this.lblFaktura.Name = "lblFaktura";
             this.lblFaktura.Size = new System.Drawing.Size(80, 22);
             this.lblFaktura.TabIndex = 7;
@@ -450,7 +450,7 @@
             this.btnFaktura.Image = global::RentACarOskar.Properties.Resources.invoice;
             this.btnFaktura.ImageActive = null;
             this.btnFaktura.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.btnFaktura.Location = new System.Drawing.Point(12, 13);
+            this.btnFaktura.Location = new System.Drawing.Point(12, 10);
             this.btnFaktura.Name = "btnFaktura";
             this.btnFaktura.Size = new System.Drawing.Size(40, 40);
             this.btnFaktura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -465,7 +465,7 @@
             this.panelKlijenti.Controls.Add(this.lblKlijenti);
             this.panelKlijenti.Controls.Add(this.slicicaPeople);
             this.panelKlijenti.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelKlijenti.Location = new System.Drawing.Point(-1, 308);
+            this.panelKlijenti.Location = new System.Drawing.Point(-1, 315);
             this.panelKlijenti.Name = "panelKlijenti";
             this.panelKlijenti.Size = new System.Drawing.Size(245, 55);
             this.panelKlijenti.TabIndex = 8;
@@ -493,7 +493,7 @@
             this.slicicaPeople.Image = global::RentACarOskar.Properties.Resources.musterije;
             this.slicicaPeople.ImageActive = null;
             this.slicicaPeople.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.slicicaPeople.Location = new System.Drawing.Point(12, 9);
+            this.slicicaPeople.Location = new System.Drawing.Point(12, 7);
             this.slicicaPeople.Name = "slicicaPeople";
             this.slicicaPeople.Size = new System.Drawing.Size(40, 40);
             this.slicicaPeople.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -508,7 +508,7 @@
             this.panelAutomobili.Controls.Add(this.slicicaAuto);
             this.panelAutomobili.Controls.Add(this.lblAutomobili);
             this.panelAutomobili.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelAutomobili.Location = new System.Drawing.Point(-1, 256);
+            this.panelAutomobili.Location = new System.Drawing.Point(-1, 261);
             this.panelAutomobili.Name = "panelAutomobili";
             this.panelAutomobili.Size = new System.Drawing.Size(245, 51);
             this.panelAutomobili.TabIndex = 4;
@@ -522,7 +522,7 @@
             this.slicicaAuto.Image = global::RentACarOskar.Properties.Resources.car2;
             this.slicicaAuto.ImageActive = null;
             this.slicicaAuto.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.slicicaAuto.Location = new System.Drawing.Point(11, 7);
+            this.slicicaAuto.Location = new System.Drawing.Point(11, 5);
             this.slicicaAuto.Name = "slicicaAuto";
             this.slicicaAuto.Size = new System.Drawing.Size(40, 40);
             this.slicicaAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

@@ -328,5 +328,20 @@
   <ItemGroup>
     <None Include="Resources\car3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\displaying-13-images-for--smoke-cloud-png-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\displaying-13-images-for--smoke-cloud-png-81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smoke-PNG-Image-72462.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
