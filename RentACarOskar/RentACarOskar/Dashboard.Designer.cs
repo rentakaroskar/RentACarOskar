@@ -66,6 +66,7 @@
             this.lblLogOut1 = new System.Windows.Forms.Label();
             this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
+            this.btnDodajVozilo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelCentar.SuspendLayout();
             this.PanelTop.SuspendLayout();
@@ -115,6 +116,7 @@
             // 
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentar.Controls.Add(this.btnDodajVozilo);
             this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.btnIzdaj);
             this.panelCentar.Controls.Add(this.panelFilter);
@@ -614,6 +616,23 @@
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
             // 
+            // btnDodajVozilo
+            // 
+            this.btnDodajVozilo.BackColor = System.Drawing.Color.White;
+            this.btnDodajVozilo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDodajVozilo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDodajVozilo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnDodajVozilo.FlatAppearance.BorderSize = 2;
+            this.btnDodajVozilo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnDodajVozilo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDodajVozilo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajVozilo.Location = new System.Drawing.Point(142, 133);
+            this.btnDodajVozilo.Name = "btnDodajVozilo";
+            this.btnDodajVozilo.Size = new System.Drawing.Size(134, 42);
+            this.btnDodajVozilo.TabIndex = 8;
+            this.btnDodajVozilo.Text = "Dodaj vozilo";
+            this.btnDodajVozilo.UseVisualStyleBackColor = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -699,5 +718,6 @@
         private System.Windows.Forms.Panel panelZaposleni;
         private System.Windows.Forms.Label lblZaposleni;
         private Bunifu.Framework.UI.BunifuImageButton imgZaposleni;
+        private System.Windows.Forms.Button btnDodajVozilo;
     }
 }

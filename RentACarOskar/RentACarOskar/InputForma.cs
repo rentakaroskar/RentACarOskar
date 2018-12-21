@@ -154,6 +154,9 @@ namespace RentACarOskar
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+                        if (value == "")
+                            throw new Exception();
                     }
                     else if (item.GetType() == typeof(InputDateControl))
                     {
