@@ -53,6 +53,8 @@ namespace RentACarOskar.PropertyClass
 
         [SqlName("IsDeleted")]
         [DisplayName("Obrisano")]
+        //provjera da li se prikazuje u input formi da li je Visible
+        [Browsable(false)]
         public bool IsDeleted { get; set; }
         #endregion
 
@@ -189,7 +191,8 @@ namespace RentACarOskar.PropertyClass
            ,[Boja]
            ,[BrojVrata]
            ,[ZadnjiServis]
-           ,[Kilometraza])
+           ,[Kilometraza]
+           ,[IsDeleted])
            VALUES
            (
            @ModelID
@@ -199,7 +202,9 @@ namespace RentACarOskar.PropertyClass
            ,@Boja
            ,@BrojVrata
            ,@ZadnjiServis
-           ,@Kilometraza)";
+           ,@Kilometraza
+           ,0)";
+            
         }
 
         public string GetSelectQuery()

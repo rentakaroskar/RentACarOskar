@@ -20,7 +20,8 @@ namespace RentACarOskar.UserControls
         public void SetLabel(string name)
         {
             lblNaziv.Text = name;
-
+            if (name == "Datum fakture")
+                dtNaziv.Enabled = false;
         }
         //GetValue
         public string GetValueFromDateBox()

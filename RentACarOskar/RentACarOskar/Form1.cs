@@ -18,9 +18,14 @@ namespace RentACarOskar
     {
         public Form1()
         {
+           
             InitializeComponent();
+            Color panelColor = Color.FromArgb(102, 0, 0, 0);
+            //panel3.BackColor = panelColor;
             tbPassword.PasswordChar = '*';
-            metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);
+            // panel3.BackColor = Color.FromArgb(102, 0, 0, 0);
+            //metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);            
+
         }
 
         #region Prijavljivanje_Enter
@@ -65,11 +70,12 @@ namespace RentACarOskar
             {
                 if (dt.Rows[i][7].ToString() == tbPassword.Text && dt.Rows[i][8].ToString() == tbUserName.Text)
                 {
+                    string rola = dt.Rows[i][9].ToString();
                     //MessageBox.Show("Uspjesan Login");
                     AutoClosingMessageBox.Show("Uspjesan Login", "LogIn", 1000);
                     string mail = tbUserName.Text;
                     string ID = dt.Rows[i][0].ToString();
-                    Dashboard pom = new Dashboard(mail, ID);
+                    Dashboard pom = new Dashboard(mail, ID,rola);
                     pom.ShowDialog();
                     Visible = false;
                     if (pom.DialogResult == DialogResult.Cancel)
@@ -92,13 +98,15 @@ namespace RentACarOskar
         #region Dugme
         private void btnLogIn_MouseHover(object sender, EventArgs e)
         {
-            btnLogIn.BackColor = Color.FromArgb(20, 255, 255, 255);
+            btnLogIn.ForeColor = Color.White;
         }
 
         private void btnLogIn_MouseLeave(object sender, EventArgs e)
         {
-            btnLogIn.BackColor = Color.Transparent;
+            btnLogIn.ForeColor = Color.Gray;
         }
         #endregion
+
+
     }
 }

@@ -295,5 +295,53 @@
   <ItemGroup>
     <None Include="Resources\oskarName1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Team-Employees-Group-Members-Workers-Common-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 13 Copy 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 13 Copy 21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musterije.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RADNICI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\displaying-13-images-for--smoke-cloud-png-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\displaying-13-images-for--smoke-cloud-png-81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smoke-PNG-Image-72462.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
