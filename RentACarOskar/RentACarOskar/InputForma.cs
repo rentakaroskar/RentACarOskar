@@ -37,7 +37,7 @@ namespace RentACarOskar
         //Funkcija za popunjavanje kontrole u Input formi
         private void PopunjavanjeKontrola(PropertyInfo item)
         {
-            if (item.GetCustomAttributes<BrowsableAttribute>().Count()>0 )
+            if (item.GetCustomAttributes<BrowsableAttribute>().Count() > 0)
             {
                 //f-ja koja provjerava da li ima  BrowsableAttribute ako ima da se ne prikazuje na input formi
                 return;
@@ -48,7 +48,7 @@ namespace RentACarOskar
                 InputDateControl uc = new InputDateControl();
                 uc.Name = item.Name;
                 uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                
+
                 if (state == StateEnum.Update)
                 {
                     try
@@ -60,18 +60,18 @@ namespace RentACarOskar
                 flowPanel.Controls.Add(uc);
             }
 
-                    //Dodavanje kontrole za Lookup
-                    else if (item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
-                    {
-                        PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
-                         CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
-                         as PropertyInterface;
-                        
-                        LookUpControl uc = new LookUpControl(foreignKeyInterface, userEmail,Id);
-                        uc.Name = item.Name;
-                        uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-                        if(uc.GetLabelValue() == "Radnik ID")
-                            uc.SetValueTextBox(Id, userEmail);
+            //Dodavanje kontrole za Lookup
+            else if (item.GetCustomAttributes<Attributes.ForeignKeyAttribute>() != null && item.Name.Contains("ID"))
+            {
+                PropertyInterface foreignKeyInterface = Assembly.GetExecutingAssembly().
+                 CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
+                 as PropertyInterface;
+
+                LookUpControl uc = new LookUpControl(foreignKeyInterface, userEmail, Id);
+                uc.Name = item.Name;
+                uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                if (uc.GetLabelValue() == "Radnik ID")
+                    uc.SetValueTextBox(Id, userEmail);
 
                 if (state == StateEnum.Update)
                 {
@@ -120,7 +120,7 @@ namespace RentACarOskar
                 flowPanel.Controls.Add(uc);
             }
         }
-        
+
         private void PopulateControls()
         {
             bool i = true;
@@ -202,17 +202,17 @@ namespace RentACarOskar
                 {
                     //No delete
                 }
-               
+
             }
             else if (state == StateEnum.Update)
-            {               
+            {
                 DialogResult myResult = MetroMessageBox.Show(this, "Da li zelite izvrsiti azuriranje ?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (myResult == DialogResult.Yes)
                 {
                     SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
 
-                    
+
                     //CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
                 }
                 else
