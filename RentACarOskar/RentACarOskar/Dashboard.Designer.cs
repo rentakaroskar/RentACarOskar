@@ -350,7 +350,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.bunifuImageButton1);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Location = new System.Drawing.Point(0, 197);
+            this.panel2.Location = new System.Drawing.Point(0, 201);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(245, 57);
             this.panel2.TabIndex = 11;
@@ -369,12 +369,12 @@
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = global::RentACarOskar.Properties.Resources.home;
+            this.bunifuImageButton1.Image = global::RentACarOskar.Properties.Resources.home1;
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(12, 13);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(12, 9);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(40, 31);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(40, 40);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 6;
             this.bunifuImageButton1.TabStop = false;
@@ -386,7 +386,7 @@
             this.panelZaposleni.Controls.Add(this.lblZaposleni);
             this.panelZaposleni.Controls.Add(this.imgZaposleni);
             this.panelZaposleni.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelZaposleni.Location = new System.Drawing.Point(2, 419);
+            this.panelZaposleni.Location = new System.Drawing.Point(2, 434);
             this.panelZaposleni.Name = "panelZaposleni";
             this.panelZaposleni.Size = new System.Drawing.Size(245, 57);
             this.panelZaposleni.TabIndex = 10;
@@ -405,12 +405,12 @@
             // imgZaposleni
             // 
             this.imgZaposleni.BackColor = System.Drawing.Color.Transparent;
-            this.imgZaposleni.Image = global::RentACarOskar.Properties.Resources.Group_13_Copy_21;
+            this.imgZaposleni.Image = global::RentACarOskar.Properties.Resources.RADNICI;
             this.imgZaposleni.ImageActive = null;
             this.imgZaposleni.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.imgZaposleni.Location = new System.Drawing.Point(12, 13);
+            this.imgZaposleni.Location = new System.Drawing.Point(12, 9);
             this.imgZaposleni.Name = "imgZaposleni";
-            this.imgZaposleni.Size = new System.Drawing.Size(40, 31);
+            this.imgZaposleni.Size = new System.Drawing.Size(40, 40);
             this.imgZaposleni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgZaposleni.TabIndex = 6;
             this.imgZaposleni.TabStop = false;
@@ -422,7 +422,7 @@
             this.panelFaktura.Controls.Add(this.lblFaktura);
             this.panelFaktura.Controls.Add(this.btnFaktura);
             this.panelFaktura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelFaktura.Location = new System.Drawing.Point(-1, 359);
+            this.panelFaktura.Location = new System.Drawing.Point(-1, 373);
             this.panelFaktura.Name = "panelFaktura";
             this.panelFaktura.Size = new System.Drawing.Size(245, 57);
             this.panelFaktura.TabIndex = 9;
@@ -435,7 +435,7 @@
             this.lblFaktura.AutoSize = true;
             this.lblFaktura.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFaktura.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblFaktura.Location = new System.Drawing.Point(95, 17);
+            this.lblFaktura.Location = new System.Drawing.Point(95, 19);
             this.lblFaktura.Name = "lblFaktura";
             this.lblFaktura.Size = new System.Drawing.Size(80, 22);
             this.lblFaktura.TabIndex = 7;
@@ -447,12 +447,12 @@
             // btnFaktura
             // 
             this.btnFaktura.BackColor = System.Drawing.Color.Transparent;
-            this.btnFaktura.Image = global::RentACarOskar.Properties.Resources.icons8_invoice_80;
+            this.btnFaktura.Image = global::RentACarOskar.Properties.Resources.invoice;
             this.btnFaktura.ImageActive = null;
             this.btnFaktura.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.btnFaktura.Location = new System.Drawing.Point(12, 13);
+            this.btnFaktura.Location = new System.Drawing.Point(12, 10);
             this.btnFaktura.Name = "btnFaktura";
-            this.btnFaktura.Size = new System.Drawing.Size(40, 31);
+            this.btnFaktura.Size = new System.Drawing.Size(40, 40);
             this.btnFaktura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnFaktura.TabIndex = 6;
             this.btnFaktura.TabStop = false;
@@ -465,7 +465,7 @@
             this.panelKlijenti.Controls.Add(this.lblKlijenti);
             this.panelKlijenti.Controls.Add(this.slicicaPeople);
             this.panelKlijenti.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelKlijenti.Location = new System.Drawing.Point(-1, 308);
+            this.panelKlijenti.Location = new System.Drawing.Point(-1, 315);
             this.panelKlijenti.Name = "panelKlijenti";
             this.panelKlijenti.Size = new System.Drawing.Size(245, 55);
             this.panelKlijenti.TabIndex = 8;
@@ -490,12 +490,12 @@
             // slicicaPeople
             // 
             this.slicicaPeople.BackColor = System.Drawing.Color.Transparent;
-            this.slicicaPeople.Image = global::RentACarOskar.Properties.Resources.icons8_people_96__1_;
+            this.slicicaPeople.Image = global::RentACarOskar.Properties.Resources.musterije;
             this.slicicaPeople.ImageActive = null;
             this.slicicaPeople.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.slicicaPeople.Location = new System.Drawing.Point(12, 9);
+            this.slicicaPeople.Location = new System.Drawing.Point(12, 7);
             this.slicicaPeople.Name = "slicicaPeople";
-            this.slicicaPeople.Size = new System.Drawing.Size(40, 36);
+            this.slicicaPeople.Size = new System.Drawing.Size(40, 40);
             this.slicicaPeople.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.slicicaPeople.TabIndex = 6;
             this.slicicaPeople.TabStop = false;
@@ -508,7 +508,7 @@
             this.panelAutomobili.Controls.Add(this.slicicaAuto);
             this.panelAutomobili.Controls.Add(this.lblAutomobili);
             this.panelAutomobili.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelAutomobili.Location = new System.Drawing.Point(-1, 256);
+            this.panelAutomobili.Location = new System.Drawing.Point(-1, 261);
             this.panelAutomobili.Name = "panelAutomobili";
             this.panelAutomobili.Size = new System.Drawing.Size(245, 51);
             this.panelAutomobili.TabIndex = 4;
@@ -519,12 +519,12 @@
             // slicicaAuto
             // 
             this.slicicaAuto.BackColor = System.Drawing.Color.Transparent;
-            this.slicicaAuto.Image = global::RentACarOskar.Properties.Resources.car__2_;
+            this.slicicaAuto.Image = global::RentACarOskar.Properties.Resources.car2;
             this.slicicaAuto.ImageActive = null;
             this.slicicaAuto.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.slicicaAuto.Location = new System.Drawing.Point(11, 7);
+            this.slicicaAuto.Location = new System.Drawing.Point(11, 5);
             this.slicicaAuto.Name = "slicicaAuto";
-            this.slicicaAuto.Size = new System.Drawing.Size(40, 36);
+            this.slicicaAuto.Size = new System.Drawing.Size(40, 40);
             this.slicicaAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.slicicaAuto.TabIndex = 6;
             this.slicicaAuto.TabStop = false;
@@ -551,9 +551,9 @@
             this.panelLogOut.Controls.Add(this.btnLogOut);
             this.panelLogOut.Controls.Add(this.lblLogOut1);
             this.panelLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelLogOut.Location = new System.Drawing.Point(0, 652);
+            this.panelLogOut.Location = new System.Drawing.Point(0, 645);
             this.panelLogOut.Name = "panelLogOut";
-            this.panelLogOut.Size = new System.Drawing.Size(245, 45);
+            this.panelLogOut.Size = new System.Drawing.Size(245, 52);
             this.panelLogOut.TabIndex = 10;
             this.panelLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             this.panelLogOut.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
@@ -562,12 +562,12 @@
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.Image = global::RentACarOskar.Properties.Resources.logout;
+            this.btnLogOut.Image = global::RentACarOskar.Properties.Resources.logout1;
             this.btnLogOut.ImageActive = null;
             this.btnLogOut.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.btnLogOut.Location = new System.Drawing.Point(11, 9);
+            this.btnLogOut.Location = new System.Drawing.Point(14, 7);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(40, 31);
+            this.btnLogOut.Size = new System.Drawing.Size(40, 40);
             this.btnLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnLogOut.TabIndex = 9;
             this.btnLogOut.TabStop = false;
@@ -579,7 +579,7 @@
             this.lblLogOut1.AutoSize = true;
             this.lblLogOut1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogOut1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblLogOut1.Location = new System.Drawing.Point(95, 10);
+            this.lblLogOut1.Location = new System.Drawing.Point(97, 15);
             this.lblLogOut1.Name = "lblLogOut1";
             this.lblLogOut1.Size = new System.Drawing.Size(85, 22);
             this.lblLogOut1.TabIndex = 8;

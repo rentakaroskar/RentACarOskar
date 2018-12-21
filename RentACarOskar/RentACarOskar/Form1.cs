@@ -18,9 +18,14 @@ namespace RentACarOskar
     {
         public Form1()
         {
+           
             InitializeComponent();
+            Color panelColor = Color.FromArgb(102, 0, 0, 0);
+            //panel3.BackColor = panelColor;
             tbPassword.PasswordChar = '*';
-            metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);
+            // panel3.BackColor = Color.FromArgb(102, 0, 0, 0);
+            //metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);            
+
         }
 
         #region Prijavljivanje_Enter
@@ -93,13 +98,15 @@ namespace RentACarOskar
         #region Dugme
         private void btnLogIn_MouseHover(object sender, EventArgs e)
         {
-            btnLogIn.BackColor = Color.FromArgb(20, 255, 255, 255);
+            btnLogIn.ForeColor = Color.White;
         }
 
         private void btnLogIn_MouseLeave(object sender, EventArgs e)
         {
-            btnLogIn.BackColor = Color.Transparent;
+            btnLogIn.ForeColor = Color.Gray;
         }
         #endregion
+
+
     }
 }
