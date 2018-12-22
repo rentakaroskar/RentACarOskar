@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnOk = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.SuspendLayout();
             // 
             // flowPanel
@@ -62,6 +64,11 @@
             this.btnCancel.UseSelectable = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // InputForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -74,6 +81,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InputForma";
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "InputForma";
             this.ResumeLayout(false);
@@ -85,5 +93,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowPanel;
         private MetroFramework.Controls.MetroButton btnOk;
         private MetroFramework.Controls.MetroButton btnCancel;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

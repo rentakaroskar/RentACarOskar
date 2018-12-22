@@ -37,17 +37,41 @@ namespace RentACarOskar
             this.tbPassword = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbUserName = new MetroFramework.Controls.MetroTextBox();
-            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = System.Drawing.Color.Transparent;
+            label4.ForeColor = System.Drawing.Color.White;
+            label4.Location = new System.Drawing.Point(242, 149);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(31, 13);
+            label4.TabIndex = 10;
+            label4.Text = "____";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = System.Drawing.Color.Transparent;
+            label5.ForeColor = System.Drawing.Color.White;
+            label5.Location = new System.Drawing.Point(40, 149);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(31, 13);
+            label5.TabIndex = 11;
+            label5.Text = "____";
             // 
             // btnLogIn
             // 
@@ -59,7 +83,7 @@ namespace RentACarOskar
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnLogIn.Location = new System.Drawing.Point(103, 404);
+            this.btnLogIn.Location = new System.Drawing.Point(116, 404);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(98, 42);
             this.btnLogIn.TabIndex = 8;
@@ -143,19 +167,15 @@ namespace RentACarOskar
             this.tbUserName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.tbUserName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyUp_Enter);
             // 
-            // metroStyleManager1
-            // 
-            this.metroStyleManager1.Owner = this;
-            // 
             // slicicaAuto
             // 
             this.slicicaAuto.BackColor = System.Drawing.Color.Transparent;
-            this.slicicaAuto.Image = global::RentACarOskar.Properties.Resources.car2;
+            this.slicicaAuto.Image = global::RentACarOskar.Properties.Resources.logooS;
             this.slicicaAuto.ImageActive = null;
             this.slicicaAuto.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
-            this.slicicaAuto.Location = new System.Drawing.Point(130, 22);
+            this.slicicaAuto.Location = new System.Drawing.Point(91, 5);
             this.slicicaAuto.Name = "slicicaAuto";
-            this.slicicaAuto.Size = new System.Drawing.Size(65, 65);
+            this.slicicaAuto.Size = new System.Drawing.Size(145, 142);
             this.slicicaAuto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.slicicaAuto.TabIndex = 7;
             this.slicicaAuto.TabStop = false;
@@ -165,11 +185,11 @@ namespace RentACarOskar
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(82, 108);
+            this.label3.Location = new System.Drawing.Point(77, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 22);
+            this.label3.Size = new System.Drawing.Size(168, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "MEMBER LOGIN";
             // 
@@ -195,27 +215,32 @@ namespace RentACarOskar
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // label4
+            // bunifuElipse1
             // 
-            label4.AutoSize = true;
-            label4.BackColor = System.Drawing.Color.Transparent;
-            label4.ForeColor = System.Drawing.Color.White;
-            label4.Location = new System.Drawing.Point(233, 108);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(31, 13);
-            label4.TabIndex = 10;
-            label4.Text = "____";
+            this.bunifuElipse1.ElipseRadius = 15;
+            this.bunifuElipse1.TargetControl = this;
             // 
-            // label5
+            // bunifuImageButton1
             // 
-            label5.AutoSize = true;
-            label5.BackColor = System.Drawing.Color.Transparent;
-            label5.ForeColor = System.Drawing.Color.White;
-            label5.Location = new System.Drawing.Point(52, 108);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(31, 13);
-            label5.TabIndex = 11;
-            label5.Text = "____";
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = global::RentACarOskar.Properties.Resources.tanchuang_btn_close_13863211;
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.InitialImage = global::RentACarOskar.Properties.Resources.car__2_;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(290, 5);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(25, 25);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 12;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.slicicaAuto;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // Form1
             // 
@@ -227,6 +252,7 @@ namespace RentACarOskar
             this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
             this.BackMaxSize = 550;
             this.ClientSize = new System.Drawing.Size(321, 493);
+            this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(label5);
             this.Controls.Add(label4);
             this.Controls.Add(this.label2);
@@ -239,20 +265,22 @@ namespace RentACarOskar
             this.Controls.Add(this.pictureBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "Form1";
             this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Silver;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.Style = MetroFramework.MetroColorStyle.Default;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyUp_Enter);
-            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        public MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private MetroFramework.Controls.MetroTextBox tbPassword;
         private MetroFramework.Controls.MetroTextBox tbUserName;
         private System.Windows.Forms.Label label1;
@@ -261,6 +289,9 @@ namespace RentACarOskar
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
 

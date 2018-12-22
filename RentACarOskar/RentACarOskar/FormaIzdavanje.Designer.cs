@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnStampaj = new MetroFramework.Controls.MetroButton();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.SuspendLayout();
             // 
             // btnStampaj
@@ -43,6 +45,11 @@
             this.btnStampaj.Text = "STAMPAJ";
             this.btnStampaj.UseSelectable = true;
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // FormaIzdavanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -54,6 +61,7 @@
             this.Movable = false;
             this.Name = "FormaIzdavanje";
             this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "FormaIzdavanje";
             this.ResumeLayout(false);
@@ -62,5 +70,6 @@
 
         #endregion
         private MetroFramework.Controls.MetroButton btnStampaj;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

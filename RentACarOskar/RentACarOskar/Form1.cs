@@ -24,7 +24,8 @@ namespace RentACarOskar
             //panel3.BackColor = panelColor;
             tbPassword.PasswordChar = '*';
             // panel3.BackColor = Color.FromArgb(102, 0, 0, 0);
-            //metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);            
+            //metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);  
+            this.ControlBox = false;
 
         }
 
@@ -105,8 +106,17 @@ namespace RentACarOskar
         {
             btnLogIn.ForeColor = Color.Gray;
         }
+
         #endregion
 
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CenterToScreen();
+        }
     }
 }

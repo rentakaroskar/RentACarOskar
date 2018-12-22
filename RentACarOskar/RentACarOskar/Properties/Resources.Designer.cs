@@ -393,6 +393,36 @@ namespace RentACarOskar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logoo {
+            get {
+                object obj = ResourceManager.GetObject("logoo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoo1 {
+            get {
+                object obj = ResourceManager.GetObject("logoo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logooS {
+            get {
+                object obj = ResourceManager.GetObject("logooS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout {
             get {
                 object obj = ResourceManager.GetObject("logout", resourceCulture);
@@ -536,6 +566,26 @@ namespace RentACarOskar.Properties {
         internal static System.Drawing.Bitmap Smoke_PNG_Image_72462 {
             get {
                 object obj = ResourceManager.GetObject("Smoke-PNG-Image-72462", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tanchuang_btn_close_1386321 {
+            get {
+                object obj = ResourceManager.GetObject("tanchuang_btn_close_1386321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tanchuang_btn_close_13863211 {
+            get {
+                object obj = ResourceManager.GetObject("tanchuang_btn_close_13863211", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

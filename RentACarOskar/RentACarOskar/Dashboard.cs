@@ -40,7 +40,7 @@ namespace RentACarOskar
         
         public Dashboard(string mail, string ID,string rola)
         {
-            InitializeComponent();
+            InitializeComponent();            
             this.StartPosition = FormStartPosition.CenterParent;
             
             UserID = ID;

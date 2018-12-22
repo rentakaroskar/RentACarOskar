@@ -352,5 +352,20 @@
   <ItemGroup>
     <None Include="Resources\logo-black1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tanchuang_btn_close_1386321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tanchuang_btn_close_13863211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logooS.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
