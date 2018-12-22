@@ -33,6 +33,7 @@
             this.btnOk = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.SuspendLayout();
             // 
             // flowPanel
@@ -69,6 +70,11 @@
             this.bunifuElipse1.ElipseRadius = 10;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 5;
+            this.bunifuElipse2.TargetControl = this.flowPanel;
+            // 
             // InputForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -81,7 +87,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InputForma";
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "InputForma";
             this.ResumeLayout(false);
@@ -94,5 +100,6 @@
         private MetroFramework.Controls.MetroButton btnOk;
         private MetroFramework.Controls.MetroButton btnCancel;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
     }
 }
