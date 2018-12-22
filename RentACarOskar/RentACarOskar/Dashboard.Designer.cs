@@ -40,6 +40,7 @@
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelFilter = new System.Windows.Forms.Panel();
+            this.detaljiVozila = new MetroFramework.Controls.MetroButton();
             this.btnFilter = new MetroFramework.Controls.MetroButton();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -73,7 +74,7 @@
             this.btnLogOut = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblLogOut1 = new System.Windows.Forms.Label();
             this.logoPic = new System.Windows.Forms.PictureBox();
-            this.detaljiVozila = new MetroFramework.Controls.MetroButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             this.panelCentar.SuspendLayout();
@@ -96,6 +97,7 @@
             this.panelLogOut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogOut
@@ -171,7 +173,7 @@
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelCentar.Controls.Add(this.panelPanelZaGV);
-            this.panelCentar.Controls.Add(this.panelFilter);
+            this.panelCentar.Controls.Add(this.panel4);
             this.panelCentar.Controls.Add(this.btnInsert);
             this.panelCentar.Controls.Add(this.btnUpdate);
             this.panelCentar.Controls.Add(this.btnIzdaj);
@@ -207,14 +209,23 @@
             this.panelFilter.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFilter.Controls.Add(this.detaljiVozila);
             this.panelFilter.Controls.Add(this.btnFilter);
-            this.panelFilter.Location = new System.Drawing.Point(0, -18);
+            this.panelFilter.Location = new System.Drawing.Point(9, 23);
             this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(927, 205);
+            this.panelFilter.Size = new System.Drawing.Size(321, 164);
             this.panelFilter.TabIndex = 7;
+            // 
+            // detaljiVozila
+            // 
+            this.detaljiVozila.Location = new System.Drawing.Point(222, 98);
+            this.detaljiVozila.Name = "detaljiVozila";
+            this.detaljiVozila.Size = new System.Drawing.Size(75, 23);
+            this.detaljiVozila.TabIndex = 5;
+            this.detaljiVozila.Text = "Detalji vozila";
+            this.detaljiVozila.UseSelectable = true;
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(9, 168);
+            this.btnFilter.Location = new System.Drawing.Point(222, 129);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(75, 23);
             this.btnFilter.TabIndex = 4;
@@ -305,9 +316,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
-            this.pictureBox1.Location = new System.Drawing.Point(-51, 413);
+            this.pictureBox1.Location = new System.Drawing.Point(-123, 428);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1145, 234);
+            this.pictureBox1.Size = new System.Drawing.Size(1676, 234);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -372,7 +383,7 @@
             this.bgPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.bgPanel.Location = new System.Drawing.Point(0, 0);
             this.bgPanel.Name = "bgPanel";
-            this.bgPanel.Size = new System.Drawing.Size(927, 50);
+            this.bgPanel.Size = new System.Drawing.Size(1270, 50);
             this.bgPanel.TabIndex = 0;
             // 
             // PanelLeft
@@ -679,14 +690,14 @@
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
             // 
-            // detaljiVozila
+            // panel4
             // 
-            this.detaljiVozila.Location = new System.Drawing.Point(840, 168);
-            this.detaljiVozila.Name = "detaljiVozila";
-            this.detaljiVozila.Size = new System.Drawing.Size(75, 23);
-            this.detaljiVozila.TabIndex = 5;
-            this.detaljiVozila.Text = "Detalji vozila";
-            this.detaljiVozila.UseSelectable = true;
+            this.panel4.BackColor = System.Drawing.Color.Yellow;
+            this.panel4.Controls.Add(this.panelFilter);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1208, 573);
+            this.panel4.TabIndex = 13;
             // 
             // Dashboard
             // 
@@ -731,6 +742,7 @@
             this.panelLogOut.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -781,5 +793,6 @@
         private System.Windows.Forms.Panel bgPanel;
         private System.Windows.Forms.Panel panel3;
         private MetroFramework.Controls.MetroButton detaljiVozila;
+        private System.Windows.Forms.Panel panel4;
     }
 }

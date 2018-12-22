@@ -42,7 +42,7 @@ namespace RentACarOskar
         {
             InitializeComponent();            
             this.StartPosition = FormStartPosition.CenterParent;
-            
+            panel4.Visible = true;
             UserID = ID;
             UserMail = mail;
             labelUser.Text = mail;
@@ -66,7 +66,7 @@ namespace RentACarOskar
             myForm = pomInput;
             
             panelPanelZaGV.Visible = true;
-            panelCentar.Visible = false;
+            panelCentar.Visible = true;
             
             btnIzdaj.Visible = false;
         }
