@@ -99,7 +99,7 @@ namespace RentACarOskar.CRUD
                 CRUD.IstorijaCRUD.Istorija(UserEmail, StateEnum.Delete, myProperty);
                 //PopulateGrid(myProperty);
             }
-            catch (System.Data.SqlClient.SqlException sql)
+            catch (System.Data.SqlClient.SqlException)
             { 
                   MessageBox.Show("\n\nNemoguce je obrisati ovaj red zbog povezanosti sa drugim tabelama!!!\n\n", "Greska pri brisanju!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

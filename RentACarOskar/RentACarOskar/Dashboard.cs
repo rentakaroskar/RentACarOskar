@@ -67,7 +67,7 @@ namespace RentACarOskar
             
             panelPanelZaGV.Visible = true;
             panelCentar.Visible = false;
-            Dobrodosli.Visible = false;
+            
             btnIzdaj.Visible = false;
         }
 
@@ -148,7 +148,7 @@ namespace RentACarOskar
             myForm = pomInput;
             panelPanelZaGV.Visible = true;
             bDelete.Visible = true;
-            Dobrodosli.Visible = false;
+            
             panelCentar.Visible = true;
             btnIzdaj.Visible = false;
             btnFilter.Visible = true;
@@ -169,7 +169,7 @@ namespace RentACarOskar
 
             panelPanelZaGV.Visible = true;
             bDelete.Visible = true;
-            Dobrodosli.Visible = false;
+            
             panelCentar.Visible = true;
             btnIzdaj.Visible = false;
             btnFilter.Visible = true;
@@ -188,7 +188,7 @@ namespace RentACarOskar
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
             btnFilter.Visible = true;
-            Dobrodosli.Visible = false;
+            
             panelCentar.Visible = true;
             btnIzdaj.Visible = true;
 

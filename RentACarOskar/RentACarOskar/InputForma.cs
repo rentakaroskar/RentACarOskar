@@ -1,6 +1,7 @@
 ﻿using KonekcijaNaBazu;
 using MetroFramework;
 using RentACarOskar.Attributes;
+using RentACarOskar.PropertyClass;
 using RentACarOskar.UserControls;
 using System;
 using System.Collections.Generic;
@@ -88,13 +89,22 @@ namespace RentACarOskar
                     {
                         
                         string broj = item.GetValue(myInterface).ToString();
-                        //logika za popunjavanje datatable
+                        string red = "";
                         SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
                             foreignKeyInterface.GetSelectQueryZaJedanItem(broj));
-                       
+                      
                         DataTable dt = new DataTable();
                         dt.Load(reader);
-                        string red = dt.Rows[0].ItemArray[1].ToString();
+                        //treba dodati i za ostale property-e sta treba da se prikaze u lookup polju 
+                        if (myInterface.GetType() == typeof(PropertyKlijent))
+                        {
+                            red = dt.Rows[0].ItemArray[1].ToString() + " " + dt.Rows[0].ItemArray[2].ToString();
+                        }
+                        else
+                        {
+                            red = dt.Rows[0].ItemArray[1].ToString();
+                        }
+                        
                         reader.Close();
                         uc.SetValueTextBox(item.GetValue(myInterface).ToString(), red);
                     }
@@ -139,7 +149,6 @@ namespace RentACarOskar
                 flowPanel.Controls.Add(uc);
             }
         }
-
         private void PopulateControls()
         {
             bool i = true;

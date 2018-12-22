@@ -61,7 +61,6 @@
             this.bDelete = new System.Windows.Forms.Button();
             this.btnFilter = new MetroFramework.Controls.MetroButton();
             this.panelFilter = new System.Windows.Forms.Panel();
-            this.Dobrodosli = new System.Windows.Forms.Label();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnIzdaj = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -514,21 +513,10 @@
             // 
             // panelFilter
             // 
-            this.panelFilter.Location = new System.Drawing.Point(9, 6);
+            this.panelFilter.Location = new System.Drawing.Point(9, -21);
             this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(445, 125);
+            this.panelFilter.Size = new System.Drawing.Size(906, 218);
             this.panelFilter.TabIndex = 7;
-            // 
-            // Dobrodosli
-            // 
-            this.Dobrodosli.AutoSize = true;
-            this.Dobrodosli.Font = new System.Drawing.Font("Maiandra GD", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dobrodosli.ForeColor = System.Drawing.Color.CadetBlue;
-            this.Dobrodosli.Location = new System.Drawing.Point(341, 120);
-            this.Dobrodosli.Name = "Dobrodosli";
-            this.Dobrodosli.Size = new System.Drawing.Size(211, 45);
-            this.Dobrodosli.TabIndex = 4;
-            this.Dobrodosli.Text = "Dobrodošli!";
             // 
             // panelPanelZaGV
             // 
@@ -612,7 +600,6 @@
             this.panelCentar.Controls.Add(this.btnUpdate);
             this.panelCentar.Controls.Add(this.btnIzdaj);
             this.panelCentar.Controls.Add(this.panelPanelZaGV);
-            this.panelCentar.Controls.Add(this.Dobrodosli);
             this.panelCentar.Controls.Add(this.panelFilter);
             this.panelCentar.Controls.Add(this.btnFilter);
             this.panelCentar.Controls.Add(this.bDelete);
@@ -670,7 +657,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelCentar.ResumeLayout(false);
-            this.panelCentar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -709,7 +695,6 @@
         private System.Windows.Forms.Button bDelete;
         private MetroFramework.Controls.MetroButton btnFilter;
         private System.Windows.Forms.Panel panelFilter;
-        private System.Windows.Forms.Label Dobrodosli;
         private Bunifu.Framework.UI.BunifuGradientPanel panelPanelZaGV;
         private System.Windows.Forms.Button btnIzdaj;
         private System.Windows.Forms.Button btnUpdate;
