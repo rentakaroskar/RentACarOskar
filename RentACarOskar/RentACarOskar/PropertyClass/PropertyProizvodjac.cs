@@ -98,7 +98,6 @@ namespace RentACarOskar.PropertyClass
         public string GetLookupQuery(string ID)
         {
             return @"SELECT
-                        [ProizvodjacID],
                         [Naziv]
                      FROM [dbo].[Proizvodjac]
                      WHERE [ProizvodjacID] = " + ID;
