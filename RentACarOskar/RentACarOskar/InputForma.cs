@@ -94,6 +94,7 @@ namespace RentACarOskar
                             foreignKeyInterface.GetSelectQueryZaJedanItem(broj));
                       
                         DataTable dt = new DataTable();
+                       
                         dt.Load(reader);
                         //treba dodati i za ostale property-e sta treba da se prikaze u lookup polju 
                         if (myInterface.GetType() == typeof(PropertyKlijent))

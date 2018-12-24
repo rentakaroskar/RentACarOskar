@@ -111,7 +111,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LookUpForma";
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "LookUpForma";
             this.ResumeLayout(false);

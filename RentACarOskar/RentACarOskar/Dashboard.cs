@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using RentACarOskar.CRUD;
 using MetroFramework;
 using System.Collections.Generic;
+using RentACarOskar.UserControls;
+
 
 
 namespace RentACarOskar
@@ -40,8 +42,18 @@ namespace RentACarOskar
         
         public Dashboard(string mail, string ID,string rola)
         {
-            InitializeComponent();            
+            InitializeComponent();
+            timer1.Start();
+            loader.Start();
+
+            labelTime.Text = DateTime.Now.ToLongTimeString();
+            labelDate.Text = DateTime.Now.ToLongDateString();
+            //MeniZaDashboard meni = new MeniZaDashboard();
+            //panelMeni.Controls.Add(meni);
+            panelMeni.Visible = false;
             this.StartPosition = FormStartPosition.CenterParent;
+           
+
             panel4.Visible = true;
             UserID = ID;
             UserMail = mail;
@@ -66,8 +78,10 @@ namespace RentACarOskar
             myForm = pomInput;
             
             panelPanelZaGV.Visible = true;
-            panelCentar.Visible = true;
-            
+            //panelCentar.Visible = false;
+            panelSaTabelom.Visible = false;
+
+
             btnIzdaj.Visible = false;
         }
 
@@ -81,7 +95,12 @@ namespace RentACarOskar
 
         }
 
-       
+        //f-ja za datum i vrijeme
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelTime.Text = DateTime.Now.ToLongTimeString();
+            timer1.Start();
+        }
 
         #region PopunjavanjeDGV-a
         //Popunjavanje DataGridView-a sa procedurom koju je Marko sastavio
@@ -148,8 +167,9 @@ namespace RentACarOskar
             myForm = pomInput;
             panelPanelZaGV.Visible = true;
             bDelete.Visible = true;
-            
-            panelCentar.Visible = true;
+
+            //panelCentar.Visible = true;
+            panelSaTabelom.Visible = true;
             btnIzdaj.Visible = false;
             btnFilter.Visible = true;
 
@@ -169,8 +189,9 @@ namespace RentACarOskar
 
             panelPanelZaGV.Visible = true;
             bDelete.Visible = true;
-            
-            panelCentar.Visible = true;
+
+            //panelCentar.Visible = true;
+            panelSaTabelom.Visible = true;
             btnIzdaj.Visible = false;
             btnFilter.Visible = true;
 
@@ -188,8 +209,9 @@ namespace RentACarOskar
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
             btnFilter.Visible = true;
-            
-            panelCentar.Visible = true;
+
+            //panelCentar.Visible = true;
+            panelSaTabelom.Visible = true;
             btnIzdaj.Visible = true;
 
             //Filter 
@@ -567,14 +589,17 @@ namespace RentACarOskar
                 loptica.Visible = true;
                 panelPanelZaGV.Width = 1090;
                 dgv.Size = panelPanelZaGV.Size;
+                panelSaTabelom.Width = panelPanelZaGV.Width;
             }
             else
             {
                 PanelLeft.Width = 245;
                 logoPic.Visible = true;
                 loptica.Visible = false;
+
                 panelPanelZaGV.Width = 906;
                 dgv.Size = panelPanelZaGV.Size;
+                panelSaTabelom.Width = panelPanelZaGV.Width;
             }
         }
 
@@ -607,6 +632,38 @@ namespace RentACarOskar
         }
         #endregion
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            panelSaTabelom.Visible = false;
+        }
+
+        private void detaljiVozila_Click(object sender, EventArgs e)
+        {
+            PropertyInterface pom = myProperty;
+            string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
+            PopulateGrid(myForm);
+            myProperty = pom;
+            //Visible = false;
+            CRUDfunkcije crud = new CRUDfunkcije();
+            crud.UserMail(UserMail, UserID);
+            crud.Update(myForm, ID, dgv);
+            // Visible = true;
+            PopulateGrid(myProperty);
+        }
+
+        private void loader_Tick(object sender, EventArgs e)
+        {
+            loader.Start();
+            if (bunifuCircleProgressbar1.Value < 100)
+            {
+                bunifuCircleProgressbar1.Value++;
+            }
+            else
+            {
+                splash.Visible = false;
+            }
+           
+        }
     }
 
 }
