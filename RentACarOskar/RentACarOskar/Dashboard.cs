@@ -656,7 +656,7 @@ namespace RentACarOskar
             loader.Start();
             if (bunifuCircleProgressbar1.Value < 100)
             {
-                bunifuCircleProgressbar1.Value++;
+                bunifuCircleProgressbar1.Value+=5;
             }
             else
             {
