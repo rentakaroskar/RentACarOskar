@@ -428,7 +428,73 @@ namespace RentACarOskar
             }
             else if (FilterProperty.GetType() == typeof(VoziloIspis))
             {
+                Label lblProizvodjac = new Label();
+                lblProizvodjac.Text = "Proizvodjac";
+                pnlFilter1.Controls.Add(lblProizvodjac);
+                TextBox txtProizvodjac = new TextBox();
+                pnlFilter1.Controls.Add(txtProizvodjac);
+                pnlFilter1.SetFlowBreak(txtProizvodjac, true);
+              
+                Label lblModel = new Label();
+                lblModel.Text = "Model";
+                pnlFilter1.Controls.Add(lblModel);
+                TextBox txtModel = new TextBox();
+                pnlFilter1.Controls.Add(txtModel);
+                pnlFilter1.SetFlowBreak(txtModel, true);
 
+                Label lblBoja = new Label();
+                lblBoja.Text = "Boja";
+                pnlFilter1.Controls.Add(lblBoja);
+                TextBox txtBoja = new TextBox();
+                pnlFilter1.Controls.Add(txtBoja);
+                pnlFilter1.SetFlowBreak(txtBoja, true);
+
+                Label lblDostupnost = new Label();
+                lblDostupnost.Text = "Dostupnost";
+                pnlFilter1.Controls.Add(lblDostupnost);
+                ComboBox cmbDostupnost = new ComboBox();
+                cmbDostupnost.Items.Add("Zauzet");
+                cmbDostupnost.Items.Add("Slobodan");
+                cmbDostupnost.Items.Add("Rezervisano");
+                pnlFilter1.Controls.Add(cmbDostupnost);
+
+
+
+                txtProizvodjac.TextChanged += new EventHandler(Filter);
+                txtModel.TextChanged += new EventHandler(Filter);
+                txtBoja.TextChanged += new EventHandler(Filter);
+                cmbDostupnost.SelectedIndexChanged += new EventHandler(Filter);
+
+                void Filter(object sender, EventArgs e)
+                {
+                    string Query = @"EXEC dbo.spFilterVozila @Proizvodjac, @Model, @Boja, @Dostupnost";
+                    SqlConnection conn = new SqlConnection(SqlHelper.GetConnectionString());
+                    SqlCommand comm = new SqlCommand(Query, conn);
+
+                    comm.Parameters.Add(new SqlParameter("@Proizvodjac", SqlDbType.NVarChar));
+                    comm.Parameters["@Proizvodjac"].Value = txtProizvodjac.Text.ToString();
+                    comm.Parameters["@Proizvodjac"].IsNullable = true;
+
+                    comm.Parameters.Add(new SqlParameter("@Model", SqlDbType.NVarChar));
+                    comm.Parameters["@Model"].Value = txtModel.Text.ToString();
+                    comm.Parameters["@Model"].IsNullable = true;
+
+                    comm.Parameters.Add(new SqlParameter("@Boja", SqlDbType.NVarChar));
+                    comm.Parameters["@Boja"].Value = txtBoja.Text.ToString();
+                    comm.Parameters["@Boja"].IsNullable = true;
+
+                    comm.Parameters.Add(new SqlParameter("@Dostupnost", SqlDbType.NVarChar));
+                    if (cmbDostupnost.SelectedIndex >= 0)
+                        comm.Parameters["@Dostupnost"].Value = cmbDostupnost.Items[cmbDostupnost.SelectedIndex].ToString();
+                    else comm.Parameters["@Dostupnost"].Value = "";
+                    comm.Parameters["@Dostupnost"].IsNullable = true;
+                    
+
+                    dt = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(comm);
+                    adapter.Fill(dt);
+                    PopuniDGV(dt, FilterProperty);
+                }
             }
 
         }
