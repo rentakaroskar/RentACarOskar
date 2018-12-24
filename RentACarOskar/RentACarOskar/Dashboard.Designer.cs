@@ -59,7 +59,6 @@
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.panelFilter = new Bunifu.Framework.UI.BunifuCards();
-            this.btnFilter = new MetroFramework.Controls.MetroButton();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.labelUser = new System.Windows.Forms.Label();
@@ -88,6 +87,7 @@
             this.lblLogOut1 = new System.Windows.Forms.Label();
             this.logoPic = new System.Windows.Forms.PictureBox();
             this.btnDodajVozilo = new System.Windows.Forms.Button();
+            this.pnlFilter1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             this.panelCentar.SuspendLayout();
@@ -243,9 +243,9 @@
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.splash.Controls.Add(this.label5);
             this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(0, 0);
+            this.splash.Location = new System.Drawing.Point(0, 319);
             this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(1331, 650);
+            this.splash.Size = new System.Drawing.Size(1331, 331);
             this.splash.TabIndex = 14;
             // 
             // label5
@@ -284,9 +284,9 @@
             // 
             // panelMeni
             // 
-            this.panelMeni.Location = new System.Drawing.Point(24, 99);
+            this.panelMeni.Location = new System.Drawing.Point(24, 286);
             this.panelMeni.Name = "panelMeni";
-            this.panelMeni.Size = new System.Drawing.Size(846, 582);
+            this.panelMeni.Size = new System.Drawing.Size(846, 395);
             this.panelMeni.TabIndex = 13;
             // 
             // bunifuCards2
@@ -479,7 +479,7 @@
             this.panelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFilter.BottomSahddow = true;
             this.panelFilter.color = System.Drawing.Color.Turquoise;
-            this.panelFilter.Controls.Add(this.btnFilter);
+            this.panelFilter.Controls.Add(this.pnlFilter1);
             this.panelFilter.LeftSahddow = false;
             this.panelFilter.Location = new System.Drawing.Point(319, 95);
             this.panelFilter.Name = "panelFilter";
@@ -487,16 +487,6 @@
             this.panelFilter.ShadowDepth = 20;
             this.panelFilter.Size = new System.Drawing.Size(289, 161);
             this.panelFilter.TabIndex = 5;
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Location = new System.Drawing.Point(178, 128);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnFilter.TabIndex = 4;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.UseSelectable = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // PanelTop
             // 
@@ -886,6 +876,13 @@
             this.btnDodajVozilo.Text = "Dodaj vozilo";
             this.btnDodajVozilo.UseVisualStyleBackColor = false;
             // 
+            // pnlFilter1
+            // 
+            this.pnlFilter1.Location = new System.Drawing.Point(0, 4);
+            this.pnlFilter1.Name = "pnlFilter1";
+            this.pnlFilter1.Size = new System.Drawing.Size(284, 152);
+            this.pnlFilter1.TabIndex = 1;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -974,7 +971,6 @@
         private Bunifu.Framework.UI.BunifuImageButton imgZaposleni;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button bDelete;
-        private MetroFramework.Controls.MetroButton btnFilter;
         private Bunifu.Framework.UI.BunifuGradientPanel panelPanelZaGV;
         private System.Windows.Forms.Button btnIzdaj;
         private System.Windows.Forms.Button btnUpdate;
@@ -1002,5 +998,6 @@
         private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
         private System.Windows.Forms.Timer loader;
         private System.Windows.Forms.Button btnDodajVozilo;
+        private System.Windows.Forms.FlowLayoutPanel pnlFilter1;
     }
 }

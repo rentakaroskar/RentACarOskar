@@ -171,10 +171,10 @@ namespace RentACarOskar
             //panelCentar.Visible = true;
             panelSaTabelom.Visible = true;
             btnIzdaj.Visible = false;
-            btnFilter.Visible = true;
 
             //Filter 
             FilterProperty = new VoziloIspis();
+            PopuniFilterPanel();
         }
 
         private void btnKlijent_Click(object sender, EventArgs e)
@@ -193,9 +193,9 @@ namespace RentACarOskar
             //panelCentar.Visible = true;
             panelSaTabelom.Visible = true;
             btnIzdaj.Visible = false;
-            btnFilter.Visible = true;
 
             FilterProperty = new KlijentIspis();
+            PopuniFilterPanel();
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
@@ -208,7 +208,6 @@ namespace RentACarOskar
             myForm = pomInput;
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
-            btnFilter.Visible = true;
 
             //panelCentar.Visible = true;
             panelSaTabelom.Visible = true;
@@ -216,6 +215,7 @@ namespace RentACarOskar
 
             //Filter 
             FilterProperty = new FakturaIspis();
+            PopuniFilterPanel();
         }
         #endregion
         
@@ -261,64 +261,56 @@ namespace RentACarOskar
         #endregion
 
         #region Filter
-        private void btnFilter_Click(object sender, EventArgs e)
-        {
-            PopuniFilterPanel();
-        }
 
         private void PopuniFilterPanel()
         {
-            panelFilter.Controls.Clear();
+            pnlFilter1.Controls.Clear();
             if (FilterProperty.GetType() == typeof(FakturaIspis))
             {
                 Label lblOd = new Label();
                 lblOd.Text = "Od:";
-                lblOd.Location = new Point(1, 1);
                 lblOd.Width = 30;
-                panelFilter.Controls.Add(lblOd);
+                pnlFilter1.Controls.Add(lblOd);
                 DateTimePicker dtpOd = new DateTimePicker();
                 dtpOd.Format = DateTimePickerFormat.Custom;
                 dtpOd.Value = new DateTime(2018, 01, 01);
                 dtpOd.CustomFormat = "dd.MM.yyyy";
-                dtpOd.Location = new Point(35, 1);
                 dtpOd.Width = 170;
-                panelFilter.Controls.Add(dtpOd);
+                pnlFilter1.Controls.Add(dtpOd);
+                pnlFilter1.SetFlowBreak(dtpOd, true);
 
                 //filter
 
                 Label lblDo = new Label();
                 lblDo.Text = "Do:";
-                lblDo.Location = new Point(230, 1);
                 lblDo.Width = 30;
-                panelFilter.Controls.Add(lblDo);
+                pnlFilter1.Controls.Add(lblDo);
                 DateTimePicker dtpDo = new DateTimePicker();
                 dtpDo.Format = DateTimePickerFormat.Custom;
                 dtpDo.CustomFormat = "dd.MM.yyyy";
-                dtpDo.Location = new Point(265, 1);
                 dtpDo.Width = 170;
-                panelFilter.Controls.Add(dtpDo);
+                pnlFilter1.Controls.Add(dtpDo);
+                pnlFilter1.SetFlowBreak(dtpDo, true);
 
                 Label lblTip = new Label();
                 lblTip.Text = "Tip Fakture:";
-                lblTip.Location = new Point(1, 61);
                 lblTip.Width = 50;
-                panelFilter.Controls.Add(lblTip);
+                pnlFilter1.Controls.Add(lblTip);
                 ComboBox cbxTip = new ComboBox();
                 cbxTip.Items.Add("Racun");
                 cbxTip.Items.Add("Predracun");
                 cbxTip.Items.Add("Rezervacija");
                 cbxTip.Items.Add("Sve");
-                cbxTip.Location = new Point(60, 61);
-                panelFilter.Controls.Add(cbxTip);
+                pnlFilter1.Controls.Add(cbxTip);
+                pnlFilter1.SetFlowBreak(cbxTip, true);
 
                 Label lblKlijent = new Label();
                 lblKlijent.Text = "Klijent:";
-                lblKlijent.Location = new Point(1, 31);
                 lblKlijent.Width = 50;
-                panelFilter.Controls.Add(lblKlijent);
+                pnlFilter1.Controls.Add(lblKlijent);
                 TextBox txtKlijent = new TextBox();
-                txtKlijent.Location = new Point(60, 31);
-                panelFilter.Controls.Add(txtKlijent);
+                pnlFilter1.Controls.Add(txtKlijent);
+                pnlFilter1.SetFlowBreak(txtKlijent, true);
 
 
                 cbxTip.SelectedIndexChanged += new EventHandler(f_ValueChanged);
@@ -370,34 +362,32 @@ namespace RentACarOskar
             {
                 Label lblIme = new Label();
                 lblIme.Text = "Ime:";
-                lblIme.Location = new Point(1, 1);
                 lblIme.Width = 50;
-                panelFilter.Controls.Add(lblIme);
+                pnlFilter1.Controls.Add(lblIme);
                 TextBox txtIme = new TextBox();
-                txtIme.Location = new Point(60, 1);
-                panelFilter.Controls.Add(txtIme);
+                pnlFilter1.Controls.Add(txtIme);
+                pnlFilter1.SetFlowBreak(txtIme, true);
 
                 Label lblPrezime = new Label();
                 lblPrezime.Text = "Prezime:";
-                lblPrezime.Location = new Point(1, 31);
                 lblPrezime.Width = 50;
-                panelFilter.Controls.Add(lblPrezime);
+                pnlFilter1.Controls.Add(lblPrezime);
                 TextBox txtPrezime = new TextBox();
                 txtPrezime.Location = new Point(60, 31);
-                panelFilter.Controls.Add(txtPrezime);
+                pnlFilter1.Controls.Add(txtPrezime);
+                pnlFilter1.SetFlowBreak(txtPrezime, true);
 
                 Label lblTip = new Label();
                 lblTip.Text = "Tip:";
-                lblTip.Location = new Point(1, 61);
                 lblTip.Width = 50;
-                panelFilter.Controls.Add(lblTip);
+                pnlFilter1.Controls.Add(lblTip);
                 ComboBox cbxTip = new ComboBox();
                 cbxTip.Items.Add("Vratio");
                 cbxTip.Items.Add("Preuzeo");
                 cbxTip.Items.Add("Rezervisao");
                 cbxTip.Items.Add("Sve");
-                cbxTip.Location = new Point(60, 61);
-                panelFilter.Controls.Add(cbxTip);
+                pnlFilter1.Controls.Add(cbxTip);
+                pnlFilter1.SetFlowBreak(cbxTip, true);
 
 
 
@@ -635,6 +625,7 @@ namespace RentACarOskar
         private void label1_Click(object sender, EventArgs e)
         {
             panelSaTabelom.Visible = false;
+            PopuniFilterPanel();
         }
 
         private void detaljiVozila_Click(object sender, EventArgs e)
