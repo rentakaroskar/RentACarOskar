@@ -1,11 +1,13 @@
 ﻿using KonekcijaNaBazu;
 using MetroFramework;
 using RentACarOskar.Attributes;
+using RentACarOskar.PropertyClass;
 using RentACarOskar.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -26,6 +28,7 @@ namespace RentACarOskar
         public InputForma(PropertyInterface myInterface, StateEnum state, string email, string ID)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             userEmail = email;
             Id = ID;
             Text = myInterface.ToString().Remove(0, 36) + " " + state.ToString();
@@ -67,17 +70,44 @@ namespace RentACarOskar
                  CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
                  as PropertyInterface;
 
+         
+
+
                 LookUpControl uc = new LookUpControl(foreignKeyInterface, userEmail, Id);
                 uc.Name = item.Name;
                 uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
                 if (uc.GetLabelValue() == "Radnik ID")
                     uc.SetValueTextBox(Id, userEmail);
+                else
+                {
+
+                }
 
                 if (state == StateEnum.Update)
                 {
                     try
                     {
-                        uc.SetValueTextBox(item.GetValue(myInterface).ToString(), userEmail);
+                        
+                        string broj = item.GetValue(myInterface).ToString();
+                        string red = "";
+                        SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                            foreignKeyInterface.GetSelectQueryZaJedanItem(broj));
+                      
+                        DataTable dt = new DataTable();
+                       
+                        dt.Load(reader);
+                        //treba dodati i za ostale property-e sta treba da se prikaze u lookup polju 
+                        if (myInterface.GetType() == typeof(PropertyKlijent))
+                        {
+                            red = dt.Rows[0].ItemArray[1].ToString() + " " + dt.Rows[0].ItemArray[2].ToString();
+                        }
+                        else
+                        {
+                            red = dt.Rows[0].ItemArray[1].ToString();
+                        }
+                        
+                        reader.Close();
+                        uc.SetValueTextBox(item.GetValue(myInterface).ToString(), red);
                     }
                     catch { }
                 }
@@ -120,7 +150,6 @@ namespace RentACarOskar
                 flowPanel.Controls.Add(uc);
             }
         }
-
         private void PopulateControls()
         {
             bool i = true;

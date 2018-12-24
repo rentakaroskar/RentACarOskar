@@ -150,6 +150,11 @@ namespace RentACarOskar.PropertyClass
         {
             throw new NotImplementedException();
         }
+
+        public string GetSelectQueryZaJedanItem(string broj)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

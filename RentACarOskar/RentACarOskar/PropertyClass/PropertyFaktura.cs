@@ -162,6 +162,11 @@ namespace RentACarOskar.PropertyClass
                      FROM dbo.Faktura
                     WHERE FakturaID = " + ID;
         }
+
+        public string GetSelectQueryZaJedanItem(string broj)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnInsert = new MetroFramework.Controls.MetroButton();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.btnReturn = new MetroFramework.Controls.MetroButton();
             this.panelPanelZaGV = new System.Windows.Forms.Panel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.SuspendLayout();
             // 
             // btnInsert
@@ -91,6 +93,11 @@
             this.panelPanelZaGV.Size = new System.Drawing.Size(377, 516);
             this.panelPanelZaGV.TabIndex = 6;
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // LookUpForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,6 +111,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LookUpForma";
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "LookUpForma";
             this.ResumeLayout(false);
@@ -116,5 +124,6 @@
         private MetroFramework.Controls.MetroButton btnDelete;
         private MetroFramework.Controls.MetroButton btnReturn;
         private System.Windows.Forms.Panel panelPanelZaGV;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

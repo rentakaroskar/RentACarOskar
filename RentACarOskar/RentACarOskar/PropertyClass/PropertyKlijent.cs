@@ -120,6 +120,11 @@ namespace RentACarOskar.PropertyClass
                     FROM [dbo].[Klijent]
                     WHERE [KlijentID] = " + ID;
         }
+
+        public string GetSelectQueryZaJedanItem(string broj)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

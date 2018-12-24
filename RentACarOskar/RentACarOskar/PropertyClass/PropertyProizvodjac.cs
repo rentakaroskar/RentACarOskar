@@ -102,6 +102,11 @@ namespace RentACarOskar.PropertyClass
                      FROM [dbo].[Proizvodjac]
                      WHERE [ProizvodjacID] = " + ID;
         }
+
+        public string GetSelectQueryZaJedanItem(string broj)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

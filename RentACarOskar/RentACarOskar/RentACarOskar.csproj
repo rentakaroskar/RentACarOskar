@@ -50,6 +50,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -145,6 +146,12 @@
     <Compile Include="UserControls\LookUpControl.Designer.cs">
       <DependentUpon>LookUpControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MeniZaDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MeniZaDashboard.Designer.cs">
+      <DependentUpon>MeniZaDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TwoRadioButtonsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LookUpControl.resx">
       <DependentUpon>LookUpControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MeniZaDashboard.resx">
+      <DependentUpon>MeniZaDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TwoRadioButtonsControl.resx">
       <DependentUpon>TwoRadioButtonsControl.cs</DependentUpon>
@@ -342,6 +352,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Smoke-PNG-Image-72462.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-black1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tanchuang_btn_close_1386321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tanchuang_btn_close_13863211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logooS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoff1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

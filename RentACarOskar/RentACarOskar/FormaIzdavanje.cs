@@ -24,6 +24,7 @@ namespace RentACarOskar
             Text = "";
             Size = new Size(600, 600);
             btnStampaj.Location = new Point(480, 550);
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             //Kreiranje labela 
             #region Label

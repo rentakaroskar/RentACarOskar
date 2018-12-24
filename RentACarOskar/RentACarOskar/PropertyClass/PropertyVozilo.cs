@@ -257,6 +257,11 @@ namespace RentACarOskar.PropertyClass
                 FROM [dbo].[Vozilo]
                 WHERE [VoziloID] = " + ID;
         }
+
+        public string GetSelectQueryZaJedanItem(string broj)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }
