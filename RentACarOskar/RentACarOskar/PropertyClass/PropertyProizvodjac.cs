@@ -81,7 +81,10 @@ namespace RentACarOskar.PropertyClass
                     ([Naziv])
                      VALUES(@Naziv)";
         }
-
+        public string GetSelectQueryZaModelVozila()
+        {
+            return @"SELECT [Naziv] FROM[dbo].[Proizvodjac]";
+        }
         public string GetSelectQuery()
         {
             return @"SELECT [ProizvodjacID], [Naziv]
@@ -107,6 +110,7 @@ namespace RentACarOskar.PropertyClass
         {
             throw new NotImplementedException();
         }
+
         #endregion
     }
 }

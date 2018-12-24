@@ -664,6 +664,11 @@ namespace RentACarOskar
             }
            
         }
+
+        private void splash_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }
