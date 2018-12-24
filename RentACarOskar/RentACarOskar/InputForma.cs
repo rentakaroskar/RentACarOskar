@@ -105,7 +105,7 @@ namespace RentACarOskar
                         {
                             red = dt.Rows[0].ItemArray[1].ToString();
                         }
-                        
+
                         reader.Close();
                         uc.SetValueTextBox(item.GetValue(myInterface).ToString(), red);
                     }
@@ -174,6 +174,7 @@ namespace RentACarOskar
             {
                 try
                 {
+
                     string value = "";
 
                     if (item.GetType() == typeof(InputControl))
@@ -181,6 +182,43 @@ namespace RentACarOskar
                         InputControl input = item as InputControl;
                         value = input.GetValueFromTextBox();
 
+                        //provjera da li unosimo model vozila koji vec postoji u bazi podataka
+                        if (properties[0].Name == "ModelID" && properties[01].Name == "Naziv")
+                        {
+                            PropertyModelVozila propertyModelVozila = new PropertyModelVozila();
+                            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                            propertyModelVozila.GetSelectQueryZaModelVozila());
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    if (reader.GetString(0) == value)
+                                    {
+                                        DialogResult dr = MetroMessageBox.Show(this, $"\n\nError! Model vec postoji u bazi", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                        else if (properties[0].Name == "ProizvodjacID" && properties[01].Name == "Naziv")
+                        {
+                            PropertyProizvodjac propertyModelVozila = new PropertyProizvodjac();
+                            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                            propertyModelVozila.GetSelectQueryZaModelVozila());
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    if (reader.GetString(0) == value)
+                                    {
+                                        DialogResult dr = MetroMessageBox.Show(this, $"\n\nError! Model vec postoji u bazi", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                           
+                                            
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
 

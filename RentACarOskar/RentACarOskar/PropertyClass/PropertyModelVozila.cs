@@ -84,6 +84,11 @@ namespace RentACarOskar.PropertyClass
             return @"SELECT[ModelID], [Naziv], [ProizvodjacID] FROM[dbo].[ModelVozila]";
         }
 
+        public string GetSelectQueryZaModelVozila()
+        {
+            return @"SELECT [Naziv] FROM[dbo].[ModelVozila]";
+        }
+
         public string GetInsertQuery()
         {
             return @"INSERT INTO[dbo].[ModelVozila]

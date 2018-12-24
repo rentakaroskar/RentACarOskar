@@ -61,7 +61,7 @@
             this.Movable = false;
             this.Name = "FormaIzdavanje";
             this.Resizable = false;
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "FormaIzdavanje";
             this.ResumeLayout(false);
