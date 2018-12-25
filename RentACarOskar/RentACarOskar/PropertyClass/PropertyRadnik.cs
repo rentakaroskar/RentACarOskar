@@ -259,7 +259,7 @@ namespace RentACarOskar.PropertyClass
                    ,[Email]
                    ,[Rola]
                FROM [dbo].[Radnik]
-               [RadnikID] = " + broj;
+               WHERE [RadnikID] = " + broj;
         }
         #endregion
     }

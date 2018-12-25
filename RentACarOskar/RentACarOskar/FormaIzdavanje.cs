@@ -197,6 +197,7 @@ namespace RentACarOskar
         private void btnDodajVozilo_Click(object sender, EventArgs e)
         {
             DodajVoziloNaFakturu dodajVozilo = new DodajVoziloNaFakturu(FakturaID);
+            dodajVozilo.ShowDialog();
         }
     }
 }
