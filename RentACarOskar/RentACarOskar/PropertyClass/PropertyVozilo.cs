@@ -237,12 +237,15 @@ namespace RentACarOskar.PropertyClass
                     WHERE [VoziloID] = @VoziloID";
         }
 
-        public string GetLookupQuery()
+        public string GetLookupQuery(string ID)
         {
-            throw new NotImplementedException();
+            return @"SELECT
+                    [ModelID]
+                    FROM [dbo].[Vozilo]
+                    WHERE [VoziloID] = " + ID;
         }
 
-        public string GetLookupQuery(string ID)
+        public string GetSelectQueryZaJedanItem(string broj)
         {
             return @"SELECT 
                  [VoziloID]
@@ -255,12 +258,7 @@ namespace RentACarOskar.PropertyClass
                 ,[ZadnjiServis]
                 ,[Kilometraza]
                 FROM [dbo].[Vozilo]
-                WHERE [VoziloID] = " + ID;
-        }
-
-        public string GetSelectQueryZaJedanItem(string broj)
-        {
-            throw new NotImplementedException();
+                WHERE [VoziloID] = " + broj;
         }
         #endregion
     }

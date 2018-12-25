@@ -139,12 +139,20 @@ namespace RentACarOskar.PropertyClass
 
         public string GetLookupQuery(string ID)
         {
-            return "";
+            return @"SELECT 
+                    [VoziloID]
+                    FROM [dbo].[Cijena]
+                    WHERE [CijenaID] = " + ID;
         }
 
         public string GetSelectQueryZaJedanItem(string broj)
         {
-            throw new NotImplementedException();
+            return @"SELECT [CijenaID]
+                    ,[VoziloID]
+                    ,[CijenaPoDanu]
+                    ,[DatumCijene]
+                     FROM [dbo].[Cijena]
+                    WHERE [CijenaID] = " + broj;
         }
         #endregion
     }

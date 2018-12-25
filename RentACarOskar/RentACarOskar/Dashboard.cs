@@ -28,7 +28,7 @@ namespace RentACarOskar
 
         //Property interface za procedure
         PropertyInterface myProperty;
-        
+
         //fProperty interface za filter
         PropertyInterface FilterProperty;
 
@@ -39,8 +39,8 @@ namespace RentACarOskar
         string UserID;
         //Role Admin/User
         string Rola;
-        
-        public Dashboard(string mail, string ID,string rola)
+
+        public Dashboard(string mail, string ID, string rola)
         {
             InitializeComponent();
             timer1.Start();
@@ -52,7 +52,7 @@ namespace RentACarOskar
             //panelMeni.Controls.Add(meni);
             panelMeni.Visible = false;
             this.StartPosition = FormStartPosition.CenterParent;
-           
+
 
             panel4.Visible = true;
             UserID = ID;
@@ -76,23 +76,19 @@ namespace RentACarOskar
 
             PropertyVozilo pomInput = new PropertyVozilo();
             myForm = pomInput;
-            
+
             panelPanelZaGV.Visible = true;
             //panelCentar.Visible = false;
             panelSaTabelom.Visible = false;
-
-
+            
             btnIzdaj.Visible = false;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
             VoziloIspis pom = new VoziloIspis();
-          
-
         }
 
         //f-ja za datum i vrijeme
@@ -126,7 +122,7 @@ namespace RentACarOskar
             dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
             //pozadina hedera
-        panelPanelZaGV.Controls.Add(dgv);
+            panelPanelZaGV.Controls.Add(dgv);
 
             //Popunjavanje tabele sa vrijednostima
             dgv.DataSource = dt;
@@ -153,7 +149,7 @@ namespace RentACarOskar
             {
                 dgv.Columns[0].Visible = false;
             }
-            
+
         }
         #endregion
 
@@ -218,7 +214,7 @@ namespace RentACarOskar
             FilterProperty = new FakturaIspis();
         }
         #endregion
-        
+
         #region CRUDButtons
         private void btnInsert_Click(object sender, EventArgs e)
         {
@@ -238,7 +234,7 @@ namespace RentACarOskar
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.UserMail(UserMail, UserID);
             crud.Update(myForm, ID, dgv);
-           // Visible = true;
+            // Visible = true;
             PopulateGrid(myProperty);
         }
 
@@ -366,7 +362,7 @@ namespace RentACarOskar
                 }
             }
 
-            else if(FilterProperty.GetType() == typeof(KlijentIspis))
+            else if (FilterProperty.GetType() == typeof(KlijentIspis))
             {
                 Label lblIme = new Label();
                 lblIme.Text = "Ime:";
@@ -425,7 +421,7 @@ namespace RentACarOskar
                     if (cbxTip.SelectedIndex != 0 && cbxTip.SelectedIndex != 1 && cbxTip.SelectedIndex != 2)
                         Cmd.Parameters["@TipFaktureID"].Value = DBNull.Value;
                     else
-                    Cmd.Parameters["@TipFaktureID"].Value = cbxTip.SelectedIndex + 1;
+                        Cmd.Parameters["@TipFaktureID"].Value = cbxTip.SelectedIndex + 1;
                     Cmd.Parameters["@TipFaktureID"].IsNullable = true;
 
                     dt = new DataTable();
@@ -443,10 +439,10 @@ namespace RentACarOskar
 
         }
         #endregion
-        
+
         private void btnIzdaj_Click(object sender, EventArgs e)
         {
-             int idFakture= Convert.ToInt32(dgv.SelectedRows[0].Cells[0].Value.ToString());
+            int idFakture = Convert.ToInt32(dgv.SelectedRows[0].Cells[0].Value.ToString());
             string tipFakture = dgv.SelectedRows[0].Cells[4].Value.ToString();
 
             FormaIzdavanje formaIzdavanje = new FormaIzdavanje(idFakture, tipFakture);
@@ -455,7 +451,7 @@ namespace RentACarOskar
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-           
+
             DialogResult myResult;
             myResult = MetroMessageBox.Show(this, "Da li zelite napustiti App?", "Question Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (myResult == DialogResult.Yes)
@@ -466,7 +462,7 @@ namespace RentACarOskar
             {
                 //No delete
             }
-           
+
         }
 
         #region Animacije
@@ -552,14 +548,14 @@ namespace RentACarOskar
         {
             panelFaktura.BackColor = Color.FromArgb(20, 255, 255, 255);
             btnFaktura.BackColor = Color.Transparent;
-            lblFaktura.BackColor= Color.Transparent;
+            lblFaktura.BackColor = Color.Transparent;
         }
 
         private void panelFaktura_MouseLeave(object sender, EventArgs e)
         {
             panelFaktura.BackColor = Color.Transparent;
             btnFaktura.BackColor = Color.Transparent;
-            lblFaktura.BackColor= Color.Transparent;
+            lblFaktura.BackColor = Color.Transparent;
         }
 
         //PanelLogOut animacija
@@ -574,7 +570,7 @@ namespace RentACarOskar
         {
             panelLogOut.BackColor = Color.Transparent;
             btnLogOut.BackColor = Color.Transparent;
-            lblLogOut1.BackColor= Color.Transparent;
+            lblLogOut1.BackColor = Color.Transparent;
         }
         #endregion
 
@@ -656,13 +652,13 @@ namespace RentACarOskar
             loader.Start();
             if (bunifuCircleProgressbar1.Value < 100)
             {
-                bunifuCircleProgressbar1.Value++;
+                bunifuCircleProgressbar1.Value += 10;
             }
             else
             {
                 splash.Visible = false;
             }
-           
+
         }
     }
 

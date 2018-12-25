@@ -45,7 +45,7 @@ namespace RentACarOskar.CRUD
         {
             //Pretraga
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
-                    myProperty.GetLookupQuery(ID));
+                    myProperty.GetSelectQueryZaJedanItem(ID));
 
             DataTable dt = new DataTable();
             dt.Load(reader);

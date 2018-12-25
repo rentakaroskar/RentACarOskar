@@ -214,7 +214,7 @@ namespace RentACarOskar
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult myResult = MetroMessageBox.Show(this, "Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            DialogResult myResult = MetroMessageBox.Show(this, "Do you really want to delete this item?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             if (myResult == DialogResult.Yes)
             {
                 int SelektovaniRed = dgv.SelectedRows[0].Index;

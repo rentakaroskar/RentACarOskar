@@ -119,23 +119,27 @@ namespace RentACarOskar.PropertyClass
         public string GetUpdateQuery()
         {
             return @"UPDATE [dbo].[StatusVozila]
-                    SET [DostupnostID] = @DostupnostID, [VoziloID]=@VoziloID, [DatumStatusa]=@DatumStatusa
+                    SET [DostupnostID] = @DostupnostID,
+                        [VoziloID]=@VoziloID,
+                        [DatumStatusa]=@DatumStatusa
                      WHERE [StatusID] = @StatusID";
-        }
-
-        public string GetLookupQuery()
-        {
-            throw new NotImplementedException();
         }
 
         public string GetLookupQuery(string ID)
         {
-            throw new NotImplementedException();
+            return @"SELECT 
+                        [DostupnostID],
+                        [VoziloID],
+                        [DatumStatusa]
+                    FROM [dbo].[StatusVozila]
+                    WHERE [StatusID] = " + ID;
         }
 
         public string GetSelectQueryZaJedanItem(string broj)
         {
-            throw new NotImplementedException();
+            return @"SELECT [StatusID], [DostupnostID], [VoziloID], [DatumStatusa]
+            FROM [dbo].[StatusVozila]
+            WHERE [StatusID] = " + broj;
         }
         #endregion
     }

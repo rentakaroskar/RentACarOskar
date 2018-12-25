@@ -152,7 +152,17 @@ namespace RentACarOskar.PropertyClass
 
         public string GetLookupQuery(string ID)
         {
-            return @"SELECT 
+            return @"SELECT
+                        RadnikID,
+                        KlijentID,
+                        TipFaktureID
+                     FROM dbo.Faktura
+                    WHERE FakturaID = " + ID;
+        }
+
+        public string GetSelectQueryZaJedanItem(string broj)
+        {
+            return @"SELECT
                         FakturaID,
                         RadnikID,
                         KlijentID,
@@ -160,12 +170,7 @@ namespace RentACarOskar.PropertyClass
                         Napomena,
                         DatumFakture
                      FROM dbo.Faktura
-                    WHERE FakturaID = " + ID;
-        }
-
-        public string GetSelectQueryZaJedanItem(string broj)
-        {
-            throw new NotImplementedException();
+                    WHERE FakturaID = " + broj;
         }
         #endregion
     }

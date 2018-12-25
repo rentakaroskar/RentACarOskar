@@ -237,19 +237,29 @@ namespace RentACarOskar.PropertyClass
                   WHERE [RadnikID] = @RadnikID";
         }
 
-        public string GetLookupQuery()
-        {
-            throw new NotImplementedException();
-        }
-
         public string GetLookupQuery(string ID)
         {
-            throw new NotImplementedException();
+            return @"SELECT 
+                   [OsobaID]
+               FROM [dbo].[Radnik]
+               [RadnikID] = " + ID;
         }
 
         public string GetSelectQueryZaJedanItem(string broj)
         {
-            throw new NotImplementedException();
+            return @"SELECT 
+                    [RadnikID]
+                   ,[OsobaID]
+                   ,[Pozicija]
+                   ,[Plata]
+                   ,[MjestoRodjenja]
+                   ,[BracniStatus]
+                   ,[DatumZaposlenja]
+                   ,[Lozinka]
+                   ,[Email]
+                   ,[Rola]
+               FROM [dbo].[Radnik]
+               [RadnikID] = " + broj;
         }
         #endregion
     }

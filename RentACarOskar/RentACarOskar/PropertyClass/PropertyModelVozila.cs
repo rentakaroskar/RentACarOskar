@@ -106,13 +106,19 @@ namespace RentACarOskar.PropertyClass
         public string GetLookupQuery(string ID)
         {
             return @"SELECT
-                        [ModelID], [Naziv], [ProizvodjacID] FROM[dbo].[ModelVozila]
+                        [Naziv],
+                        [ProizvodjacID]
+                        FROM [dbo].[ModelVozila]
                     WHERE [ModelID] = " + ID;
         }
 
         public string GetSelectQueryZaJedanItem(string broj)
         {
-            return $@"SELECT [ModelID], [Naziv], [ProizvodjacID]  FROM [dbo].[ModelVozila] WHERE [ModelID] = {broj}";
+            return $@"SELECT [ModelID], 
+                             [Naziv], 
+                             [ProizvodjacID]
+                             FROM [dbo].[ModelVozila]
+                             WHERE [ModelID] = {broj}";
         }
         #endregion
     }

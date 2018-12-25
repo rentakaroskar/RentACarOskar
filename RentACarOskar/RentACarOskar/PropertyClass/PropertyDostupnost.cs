@@ -91,19 +91,21 @@ namespace RentACarOskar.PropertyClass
                     WHERE DostupnostID = @DostupnostID";
         }
 
-        public string GetLookupQuery()
-        {
-            return "";
-        }
-
         public string GetLookupQuery(string ID)
         {
-            throw new NotImplementedException();
+            return @"SELECT
+                        TipDostupnosti
+                     FROM dbo.Dostupnost
+                     WHERE DostupnostID = " + ID;
         }
 
         public string GetSelectQueryZaJedanItem(string broj)
         {
-            throw new NotImplementedException();
+            return @"SELECT 
+                        DostupnostID,
+                        TipDostupnosti
+                     FROM dbo.Dostupnost
+                     WHERE DostupnostID = " + broj;
         }
         #endregion
     }
