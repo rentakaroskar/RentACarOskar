@@ -81,6 +81,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajVoziloNaFakturu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajVoziloNaFakturu.Designer.cs">
+      <DependentUpon>DodajVoziloNaFakturu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

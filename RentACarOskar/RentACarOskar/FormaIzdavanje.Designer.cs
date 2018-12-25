@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.btnStampaj = new MetroFramework.Controls.MetroButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnDodajVozilo = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // btnStampaj
@@ -50,11 +51,25 @@
             this.bunifuElipse1.ElipseRadius = 10;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // btnDodajVozilo
+            // 
+            this.btnDodajVozilo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDodajVozilo.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnDodajVozilo.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnDodajVozilo.Location = new System.Drawing.Point(23, 399);
+            this.btnDodajVozilo.Name = "btnDodajVozilo";
+            this.btnDodajVozilo.Size = new System.Drawing.Size(107, 28);
+            this.btnDodajVozilo.TabIndex = 6;
+            this.btnDodajVozilo.Text = "Dodaj Vozilo";
+            this.btnDodajVozilo.UseSelectable = true;
+            this.btnDodajVozilo.Click += new System.EventHandler(this.btnDodajVozilo_Click);
+            // 
             // FormaIzdavanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDodajVozilo);
             this.Controls.Add(this.btnStampaj);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -71,5 +86,6 @@
         #endregion
         private MetroFramework.Controls.MetroButton btnStampaj;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private MetroFramework.Controls.MetroButton btnDodajVozilo;
     }
 }
