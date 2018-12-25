@@ -13,7 +13,7 @@ using System.Reflection;
 using RentACarOskar.Attributes;
 using RentACarOskar.CRUD;
 using MetroFramework;
-
+using RentACarOskar.PropertyClass;
 
 namespace RentACarOskar.CRUD
 {
@@ -57,15 +57,18 @@ namespace RentACarOskar.CRUD
             var properties = type.GetProperties();
             PropertyInterface pom = myProperty;
             int i = 0;
-
-            foreach (DataGridViewCell cell in dgv.Rows[0].Cells)
+            try
             {
-                String value = cell.Value.ToString();
+                foreach (DataGridViewCell cell in dgv.Rows[0].Cells)
+                {
+                    String value = cell.Value.ToString();
 
-                PropertyInfo property = properties.Where(x => dgv.Columns[i].HeaderText == x.GetCustomAttribute<DisplayNameAttribute>().DisplayName).FirstOrDefault();
-                property.SetValue(myProperty, Convert.ChangeType(value, property.PropertyType));
-                i++;
+                    PropertyInfo property = properties.Where(x => dgv.Columns[i].HeaderText == x.GetCustomAttribute<DisplayNameAttribute>().DisplayName).FirstOrDefault();
+                    property.SetValue(myProperty, Convert.ChangeType(value, property.PropertyType));
+                    i++;
+                }
             }
+            catch { }
 
             InputForma inputForma = new InputForma(myProperty, StateEnum.Update, UserEmail, UserID);
 

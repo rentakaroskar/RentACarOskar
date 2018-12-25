@@ -24,7 +24,7 @@ namespace RentACarOskar
         StateEnum state;
         string userEmail;
         string Id;
-
+        int VoziloID;
         public InputForma(PropertyInterface myInterface, StateEnum state, string email, string ID)
         {
             InitializeComponent();
@@ -193,14 +193,13 @@ namespace RentACarOskar
             {
                 try
                 {
-
                     string value = "";
 
                     if (item.GetType() == typeof(InputControl))
                     {
                         InputControl input = item as InputControl;
                         value = input.GetValueFromTextBox();
-
+                        
                         //provjera da li unosimo model vozila koji vec postoji u bazi podataka
                         if (properties[0].Name == "ModelID" && properties[01].Name == "Naziv")
                         {
@@ -285,6 +284,13 @@ namespace RentACarOskar
                     SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                    myInterface.GetInsertQuery(), myInterface.GetInsertParameters().ToArray());
 
+                    if(myInterface.GetType() == typeof(PropertyVozilo))
+                    {
+                        PropertyCijena pomCijena = new PropertyCijena();
+                        
+                        SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
+                        pomCijena.GetInsertQuery());
+                    }
                     //CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create, myInterface);
                 }
                 else

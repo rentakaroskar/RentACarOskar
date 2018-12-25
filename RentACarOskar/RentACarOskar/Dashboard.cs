@@ -258,7 +258,18 @@ namespace RentACarOskar
 
         private void btnCijena_Click(object sender, EventArgs e)
         {
-
+            PropertyInterface pom = myProperty;
+            string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
+            PropertyCijena cijenaTabela = new PropertyCijena();
+            myForm = cijenaTabela;
+            PopulateGrid(myForm);
+            myProperty = pom;
+            //Visible = false;
+            CRUDfunkcije crud = new CRUDfunkcije();
+            crud.UserMail(UserMail, UserID);
+            crud.Update(myForm, ID, dgv);
+            // Visible = true;
+            PopulateGrid(myProperty);
         }
         #endregion
 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace RentACarOskar.PropertyClass
 {
     public class PropertyCijena : PropertyInterface
-    {       
+    {
         #region Attributes
 
         [DisplayName("Cijena ID")]
@@ -26,14 +26,14 @@ namespace RentACarOskar.PropertyClass
         [DisplayName("Cijena po danu")]
         [SqlName("CijenaPoDanu")]
         public decimal CijenaPoDanu { get; set; }
-        
+
         [DisplayName("Datum cijene")]
         [SqlName("DatumCijene")]
         public DateTime DatumCijene { get; set; }
 
 
         #endregion
-        
+
         #region Parameters
         public List<SqlParameter> GetDeleteParameters()
         {
@@ -62,7 +62,7 @@ namespace RentACarOskar.PropertyClass
                 parametri.Add(novi);
             }
             {
-                SqlParameter novi = new SqlParameter("@DatumCijene", System.Data.SqlDbType.Date);
+                SqlParameter novi = new SqlParameter("@DatumCijene", System.Data.SqlDbType.DateTime);
                 novi.Value = DatumCijene;
                 parametri.Add(novi);
             }
@@ -91,14 +91,14 @@ namespace RentACarOskar.PropertyClass
                 parametri.Add(novi);
             }
             {
-                SqlParameter novi = new SqlParameter("@DatumCijene", System.Data.SqlDbType.Date);
+                SqlParameter novi = new SqlParameter("@DatumCijene", System.Data.SqlDbType.DateTime);
                 novi.Value = DatumCijene;
                 parametri.Add(novi);
             }
             return parametri;
         }
         #endregion
-        
+
         #region Queries
         public string GetDeleteQuery()
         {
@@ -110,13 +110,14 @@ namespace RentACarOskar.PropertyClass
         {
             return @"
                     INSERT INTO [dbo].[Cijena]
-                         ([VoziloID]
-                         ,[CijenaPoDanu]
-                        ,[DatumCijene])
+                    ([VoziloID]
+                    ,[CijenaPoDanu]
+                    ,[DatumCijene])
                      VALUES
-                     (@VoziloID
-                     ,@CijenaPoDanu
-                     ,@DatumCijene)";
+                     ((SELECT MAX(VoziloID)
+                        FROM dbo.Vozilo)
+                     ,0
+                     ,GETDATE())";
         }
 
         public string GetSelectQuery()
@@ -130,11 +131,14 @@ namespace RentACarOskar.PropertyClass
 
         public string GetUpdateQuery()
         {
-            return @"UPDATE [dbo].[Cijena]
-                     SET [VoziloID] = VoziloID
-                     ,[CijenaPoDanu] = @CijenaPoDanu
-                     ,[DatumCijene] = @DatumCijene
-                     WHERE [CijenaID] = @CijenaID";
+            return @"INSERT INTO [dbo].[Cijena]
+                     ([VoziloID]
+                     ,[CijenaPoDanu]
+                     ,[DatumCijene])
+                     VALUES
+                     (@VoziloID
+                     ,@CijenaPoDanu
+                     ,GETDATE())";
         }
 
         public string GetLookupQuery(string ID)
@@ -147,12 +151,16 @@ namespace RentACarOskar.PropertyClass
 
         public string GetSelectQueryZaJedanItem(string broj)
         {
-            return @"SELECT [CijenaID]
-                    ,[VoziloID]
-                    ,[CijenaPoDanu]
-                    ,[DatumCijene]
-                     FROM [dbo].[Cijena]
-                    WHERE [CijenaID] = " + broj;
+            return @"SELECT c.[CijenaID]
+                    ,c.[VoziloID]
+                    ,c.[CijenaPoDanu]
+                    ,c.[DatumCijene]
+                    FROM [dbo].[Cijena] as c
+                        JOIN (SELECT c1.VoziloID, max(c1.DatumCijene) as DatumCijene
+					          FROM [dbo].[Cijena] as c1 GROUP BY c1.VoziloID) as c1
+					       on c1.VoziloID = c.VoziloID
+                    WHERE (c1.VoziloID = c.VoziloID and  c.[DatumCijene] =c1.[DatumCijene])
+                    and c.VoziloID =" + broj;
         }
         #endregion
     }
