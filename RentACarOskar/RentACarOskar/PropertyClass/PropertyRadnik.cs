@@ -262,7 +262,6 @@ namespace RentACarOskar.PropertyClass
                    ,[Rola]
                FROM [dbo].[Radnik]
                WHERE [RadnikID] = " + broj;
-
         }
         #endregion
     }

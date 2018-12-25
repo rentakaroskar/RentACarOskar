@@ -16,6 +16,7 @@ namespace RentACarOskar
 {
     public partial class FormaIzdavanje : MetroFramework.Forms.MetroForm
     {
+        int FakturaID;
         
         public FormaIzdavanje(int fakturaID, string tipFakture)
         {
@@ -26,8 +27,8 @@ namespace RentACarOskar
             Text = "";
             Size = new Size(600, 600);
             btnStampaj.Location = new Point(480, 550);
+            btnDodajVozilo.Location = new Point(30, 550);
             this.StartPosition = FormStartPosition.CenterScreen;
-
             //Kreiranje labela 
             #region Label
             Label naziv = new Label();
@@ -152,6 +153,7 @@ namespace RentACarOskar
             ukupno.Location = new Point(390, 515);
             ukupno.Size = new Size(220, 20);
             Controls.Add(ukupno);
+            FakturaID = fakturaID;
             #endregion
 
             dgvRacun.AutoSizeColumnsMode =
@@ -191,5 +193,11 @@ namespace RentACarOskar
             return klijent;
         }
         #endregion
+
+        private void btnDodajVozilo_Click(object sender, EventArgs e)
+        {
+            DodajVoziloNaFakturu dodajVozilo = new DodajVoziloNaFakturu(FakturaID);
+            dodajVozilo.ShowDialog();
+        }
     }
 }

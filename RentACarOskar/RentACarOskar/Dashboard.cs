@@ -503,7 +503,7 @@ namespace RentACarOskar
                     comm.Parameters.Add(new SqlParameter("@Dostupnost", SqlDbType.NVarChar));
                     if (cmbDostupnost.SelectedIndex >= 0)
                         comm.Parameters["@Dostupnost"].Value = cmbDostupnost.Items[cmbDostupnost.SelectedIndex].ToString();
-                    else comm.Parameters["@Dostupnost"].Value = "";
+                    else comm.Parameters["@Dostupnost"].Value = DBNull.Value;
                     comm.Parameters["@Dostupnost"].IsNullable = true;
                     
 
