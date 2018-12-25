@@ -88,6 +88,7 @@
             this.lblLogOut1 = new System.Windows.Forms.Label();
             this.logoPic = new System.Windows.Forms.PictureBox();
             this.btnDodajVozilo = new System.Windows.Forms.Button();
+            this.btnCijena = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             this.panelCentar.SuspendLayout();
@@ -222,7 +223,7 @@
             // panelSaTabelom
             // 
             this.panelSaTabelom.BackColor = System.Drawing.Color.Transparent;
-            this.panelSaTabelom.Controls.Add(this.splash);
+            this.panelSaTabelom.Controls.Add(this.btnCijena);
             this.panelSaTabelom.Controls.Add(this.bunifuCards2);
             this.panelSaTabelom.Controls.Add(this.btnInsert);
             this.panelSaTabelom.Controls.Add(this.btnIzdaj);
@@ -242,7 +243,7 @@
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.splash.Controls.Add(this.label5);
             this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(0, 457);
+            this.splash.Location = new System.Drawing.Point(243, 29);
             this.splash.Name = "splash";
             this.splash.Size = new System.Drawing.Size(1345, 193);
             this.splash.TabIndex = 14;
@@ -648,6 +649,7 @@
             // panelZaposleni
             // 
             this.panelZaposleni.BackColor = System.Drawing.Color.Transparent;
+            this.panelZaposleni.Controls.Add(this.splash);
             this.panelZaposleni.Controls.Add(this.lblZaposleni);
             this.panelZaposleni.Controls.Add(this.imgZaposleni);
             this.panelZaposleni.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -884,6 +886,25 @@
             this.btnDodajVozilo.Text = "Dodaj vozilo";
             this.btnDodajVozilo.UseVisualStyleBackColor = false;
             // 
+            // btnCijena
+            // 
+            this.btnCijena.BackColor = System.Drawing.Color.White;
+            this.btnCijena.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCijena.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCijena.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnCijena.FlatAppearance.BorderSize = 2;
+            this.btnCijena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnCijena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCijena.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCijena.Location = new System.Drawing.Point(435, 598);
+            this.btnCijena.Name = "btnCijena";
+            this.btnCijena.Size = new System.Drawing.Size(111, 34);
+            this.btnCijena.TabIndex = 13;
+            this.btnCijena.Text = "CIJENA";
+            this.btnCijena.UseVisualStyleBackColor = false;
+            this.btnCijena.Visible = false;
+            this.btnCijena.Click += new System.EventHandler(this.btnCijena_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1000,5 +1021,6 @@
         private System.Windows.Forms.Timer loader;
         private System.Windows.Forms.Button btnDodajVozilo;
         private System.Windows.Forms.FlowLayoutPanel pnlFilter1;
+        private System.Windows.Forms.Button btnCijena;
     }
 }

@@ -167,7 +167,7 @@ namespace RentACarOskar
             //panelCentar.Visible = true;
             panelSaTabelom.Visible = true;
             btnIzdaj.Visible = false;
-
+            btnCijena.Visible = true;
             //Filter 
             FilterProperty = new VoziloIspis();
             PopuniFilterPanel();
@@ -189,6 +189,7 @@ namespace RentACarOskar
             //panelCentar.Visible = true;
             panelSaTabelom.Visible = true;
             btnIzdaj.Visible = false;
+            btnCijena.Visible = false;
 
             FilterProperty = new KlijentIspis();
             PopuniFilterPanel();
@@ -208,6 +209,7 @@ namespace RentACarOskar
             //panelCentar.Visible = true;
             panelSaTabelom.Visible = true;
             btnIzdaj.Visible = true;
+            btnCijena.Visible = false;
 
             //Filter 
             FilterProperty = new FakturaIspis();
@@ -253,6 +255,11 @@ namespace RentACarOskar
             {
                 //No delete
             }
+        }
+
+        private void btnCijena_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
 
@@ -722,6 +729,8 @@ namespace RentACarOskar
         {
 
         }
+
+        
     }
 
 }
