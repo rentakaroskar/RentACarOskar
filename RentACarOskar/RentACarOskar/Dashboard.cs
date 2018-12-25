@@ -660,9 +660,19 @@ namespace RentACarOskar
                 panelPanelZaGV.Width = 1090;
                 dgv.Size = panelPanelZaGV.Size;
                 panelSaTabelom.Width = panelPanelZaGV.Width;
+
+                bunifuCards1.Width = 345;
+                bunifuCards2.Width = bunifuCards1.Width;
+                panelFilter.Width = bunifuCards1.Width;
+                panelZaBunifuKartice.Width = panelPanelZaGV.Width;
             }
             else
             {
+                bunifuCards1.Width = 289;
+                bunifuCards2.Width = bunifuCards1.Width;
+                panelFilter.Width = bunifuCards1.Width;
+               
+
                 PanelLeft.Width = 245;
                 logoPic.Visible = true;
                 loptica.Visible = false;
@@ -670,6 +680,10 @@ namespace RentACarOskar
                 panelPanelZaGV.Width = 906;
                 dgv.Size = panelPanelZaGV.Size;
                 panelSaTabelom.Width = panelPanelZaGV.Width;
+                panelZaBunifuKartice.Width = panelPanelZaGV.Width;
+
+
+
             }
         }
 
