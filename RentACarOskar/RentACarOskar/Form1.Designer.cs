@@ -113,7 +113,7 @@ namespace RentACarOskar
             this.tbPassword.Location = new System.Drawing.Point(27, 307);
             this.tbPassword.MaxLength = 32767;
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '\0';
+            this.tbPassword.PasswordChar = '●';
             this.tbPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbPassword.SelectedText = "";
             this.tbPassword.SelectionLength = 0;
@@ -122,6 +122,7 @@ namespace RentACarOskar
             this.tbPassword.Size = new System.Drawing.Size(268, 23);
             this.tbPassword.TabIndex = 3;
             this.tbPassword.UseSelectable = true;
+            this.tbPassword.UseSystemPasswordChar = true;
             this.tbPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.tbPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyUp_Enter);

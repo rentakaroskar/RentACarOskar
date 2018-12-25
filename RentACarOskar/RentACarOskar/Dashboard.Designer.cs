@@ -71,7 +71,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.panelZaposleni = new System.Windows.Forms.Panel();
+            this.btnZaposleni = new System.Windows.Forms.Panel();
             this.lblZaposleni = new System.Windows.Forms.Label();
             this.imgZaposleni = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelFaktura = new System.Windows.Forms.Panel();
@@ -105,7 +105,7 @@
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
-            this.panelZaposleni.SuspendLayout();
+            this.btnZaposleni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgZaposleni)).BeginInit();
             this.panelFaktura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFaktura)).BeginInit();
@@ -246,7 +246,6 @@
             this.splash.Name = "splash";
             this.splash.Size = new System.Drawing.Size(1345, 193);
             this.splash.TabIndex = 14;
-            this.splash.Paint += new System.Windows.Forms.PaintEventHandler(this.splash_Paint);
             // 
             // label5
             // 
@@ -585,7 +584,7 @@
             this.panelMenu.BackgroundImage = global::RentACarOskar.Properties.Resources.blur2;
             this.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMenu.Controls.Add(this.panel2);
-            this.panelMenu.Controls.Add(this.panelZaposleni);
+            this.panelMenu.Controls.Add(this.btnZaposleni);
             this.panelMenu.Controls.Add(this.panelFaktura);
             this.panelMenu.Controls.Add(this.panelKlijenti);
             this.panelMenu.Controls.Add(this.panelAutomobili);
@@ -645,16 +644,17 @@
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // panelZaposleni
+            // btnZaposleni
             // 
-            this.panelZaposleni.BackColor = System.Drawing.Color.Transparent;
-            this.panelZaposleni.Controls.Add(this.lblZaposleni);
-            this.panelZaposleni.Controls.Add(this.imgZaposleni);
-            this.panelZaposleni.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelZaposleni.Location = new System.Drawing.Point(2, 478);
-            this.panelZaposleni.Name = "panelZaposleni";
-            this.panelZaposleni.Size = new System.Drawing.Size(245, 60);
-            this.panelZaposleni.TabIndex = 10;
+            this.btnZaposleni.BackColor = System.Drawing.Color.Transparent;
+            this.btnZaposleni.Controls.Add(this.lblZaposleni);
+            this.btnZaposleni.Controls.Add(this.imgZaposleni);
+            this.btnZaposleni.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnZaposleni.Location = new System.Drawing.Point(2, 478);
+            this.btnZaposleni.Name = "btnZaposleni";
+            this.btnZaposleni.Size = new System.Drawing.Size(245, 60);
+            this.btnZaposleni.TabIndex = 10;
+            this.btnZaposleni.Click += new System.EventHandler(this.btnZaposleni_Click);
             // 
             // lblZaposleni
             // 
@@ -666,6 +666,7 @@
             this.lblZaposleni.Size = new System.Drawing.Size(94, 22);
             this.lblZaposleni.TabIndex = 7;
             this.lblZaposleni.Text = "Zaposleni";
+            this.lblZaposleni.Click += new System.EventHandler(this.btnZaposleni_Click);
             // 
             // imgZaposleni
             // 
@@ -680,6 +681,7 @@
             this.imgZaposleni.TabIndex = 6;
             this.imgZaposleni.TabStop = false;
             this.imgZaposleni.Zoom = 10;
+            this.imgZaposleni.Click += new System.EventHandler(this.btnZaposleni_Click);
             // 
             // panelFaktura
             // 
@@ -920,8 +922,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
-            this.panelZaposleni.ResumeLayout(false);
-            this.panelZaposleni.PerformLayout();
+            this.btnZaposleni.ResumeLayout(false);
+            this.btnZaposleni.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgZaposleni)).EndInit();
             this.panelFaktura.ResumeLayout(false);
             this.panelFaktura.PerformLayout();
@@ -967,7 +969,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.Panel panelZaposleni;
+        private System.Windows.Forms.Panel btnZaposleni;
         private System.Windows.Forms.Label lblZaposleni;
         private Bunifu.Framework.UI.BunifuImageButton imgZaposleni;
         private System.Windows.Forms.PictureBox pictureBox1;
