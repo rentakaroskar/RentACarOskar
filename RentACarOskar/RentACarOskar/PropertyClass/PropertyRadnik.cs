@@ -244,9 +244,14 @@ namespace RentACarOskar.PropertyClass
 
         public string GetLookupQuery(string ID)
         {
-            throw new NotImplementedException();
-        }
+            return @"SELECT [RadnikID]
+                            ,[OsobaID]
+                               ,[Plata]
 
+                          
+                    FROM [dbo].[Radnik]
+                    WHERE [RadnikId] = " + ID;
+        }
         public string GetSelectQueryZaJedanItem(string broj)
         {
             throw new NotImplementedException();
