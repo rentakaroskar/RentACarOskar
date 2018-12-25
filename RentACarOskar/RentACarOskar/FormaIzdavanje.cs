@@ -16,11 +16,13 @@ namespace RentACarOskar
 {
     public partial class FormaIzdavanje : MetroFramework.Forms.MetroForm
     {
+        
         public FormaIzdavanje(int fakturaID, string tipFakture)
         {
             Font font = new Font("Arial", 9);
 
             InitializeComponent();
+            
             Text = "";
             Size = new Size(600, 600);
             btnStampaj.Location = new Point(480, 550);
@@ -152,8 +154,16 @@ namespace RentACarOskar
             Controls.Add(ukupno);
             #endregion
 
+            dgvRacun.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
+            DataGridViewTextBoxColumn vozilo =
+                new DataGridViewTextBoxColumn();
+            vozilo.HeaderText = "Vozilo";
+            vozilo.MinimumWidth = 50;
+            vozilo.FillWeight = 100;
+
         }
-         
         #region PronadjiKlijenta
         private List<string> PronadjiKlijenta(int fakturaID)
         {

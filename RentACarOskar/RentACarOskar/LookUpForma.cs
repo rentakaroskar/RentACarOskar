@@ -20,7 +20,6 @@ namespace RentACarOskar
     public partial class LookUpForma : MetroFramework.Forms.MetroForm
     {
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-
         PropertyInterface myProperty;
 
         public string Key;
@@ -74,8 +73,8 @@ namespace RentACarOskar
             dgv.MultiSelect = false;
             dgv.Dock = DockStyle.Fill;
 
-            dgv.Size = panelPanelZaGV.Size;
-
+            dgv.Size = panelPanelZaGV.Size; 
+           
             //izvuci display name
             var type = myProperty.GetType();
             var properties = type.GetProperties();
