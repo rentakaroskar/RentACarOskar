@@ -466,9 +466,9 @@
             // 
             // pnlFilter1
             // 
-            this.pnlFilter1.Location = new System.Drawing.Point(0, 15);
+            this.pnlFilter1.Location = new System.Drawing.Point(14, 20);
             this.pnlFilter1.Name = "pnlFilter1";
-            this.pnlFilter1.Size = new System.Drawing.Size(284, 141);
+            this.pnlFilter1.Size = new System.Drawing.Size(258, 136);
             this.pnlFilter1.TabIndex = 1;
             // 
             // splash
