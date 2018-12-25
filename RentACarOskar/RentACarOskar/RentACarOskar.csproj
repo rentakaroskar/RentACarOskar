@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="IspisDGV\FakturaIspis.cs" />
     <Compile Include="IspisDGV\KlijentIspis.cs" />
+    <Compile Include="IspisDGV\RadnikIspis.cs" />
     <Compile Include="LookUpForma.cs">
       <SubType>Form</SubType>
     </Compile>

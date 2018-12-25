@@ -239,12 +239,14 @@ namespace RentACarOskar.PropertyClass
 
         public string GetLookupQuery(string ID)
         {
-            return @"SELECT 
-                   [OsobaID]
-               FROM [dbo].[Radnik]
-               [RadnikID] = " + ID;
-        }
+            return @"SELECT [RadnikID]
+                            ,[OsobaID]
+                               ,[Plata]
 
+                          
+                    FROM [dbo].[Radnik]
+                    WHERE [RadnikId] = " + ID;
+        }
         public string GetSelectQueryZaJedanItem(string broj)
         {
             return @"SELECT 

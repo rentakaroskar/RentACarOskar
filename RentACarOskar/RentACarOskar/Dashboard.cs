@@ -14,8 +14,7 @@ using RentACarOskar.CRUD;
 using MetroFramework;
 using System.Collections.Generic;
 using RentACarOskar.UserControls;
-
-
+using MetroFramework.Controls;
 
 namespace RentACarOskar
 {
@@ -62,11 +61,11 @@ namespace RentACarOskar
 
             if (Rola == "Admin")
             {
-                panelZaposleni.Visible = true;
+                btnZaposleni.Visible = true;
             }
             else
             {
-                panelZaposleni.Visible = false;
+                btnZaposleni.Visible = false;
             }
 
             VoziloIspis pom = new VoziloIspis();
@@ -270,10 +269,12 @@ namespace RentACarOskar
             pnlFilter1.Controls.Clear();
             if (FilterProperty.GetType() == typeof(FakturaIspis))
             {
-                Label lblOd = new Label();
+                MetroLabel lblOd = new MetroLabel();
+                //Label lblOd = new Label();
                 lblOd.Text = "Od:";
                 lblOd.Width = 30;
                 pnlFilter1.Controls.Add(lblOd);
+               
                 DateTimePicker dtpOd = new DateTimePicker();
                 dtpOd.Format = DateTimePickerFormat.Custom;
                 dtpOd.Value = new DateTime(2018, 01, 01);
@@ -284,10 +285,12 @@ namespace RentACarOskar
 
                 //filter
 
-                Label lblDo = new Label();
+                //Label lblDo = new Label();
+                MetroLabel lblDo = new MetroLabel();
                 lblDo.Text = "Do:";
                 lblDo.Width = 30;
                 pnlFilter1.Controls.Add(lblDo);
+                
                 DateTimePicker dtpDo = new DateTimePicker();
                 dtpDo.Format = DateTimePickerFormat.Custom;
                 dtpDo.CustomFormat = "dd.MM.yyyy";
@@ -739,12 +742,26 @@ namespace RentACarOskar
            
         }
 
-        private void splash_Paint(object sender, PaintEventArgs e)
+        private void btnZaposleni_Click(object sender, EventArgs e)
         {
+            //Za popunjavanje DT-Klijent
+            RadnikIspis pom = new RadnikIspis();
+            PopulateGrid(pom);
 
+            //Pom za Input formu
+            PropertyRadnik pomInput = new PropertyRadnik();
+            myForm = pomInput;
+
+            panelPanelZaGV.Visible = true;
+            bDelete.Visible = true;
+
+            //panelCentar.Visible = true;
+            panelSaTabelom.Visible = true;
+            btnIzdaj.Visible = false;
+
+          
         }
 
-        
     }
 
 }
