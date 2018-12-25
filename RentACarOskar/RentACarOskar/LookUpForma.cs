@@ -80,13 +80,17 @@ namespace RentACarOskar
             var type = myProperty.GetType();
             var properties = type.GetProperties();
 
-            //promjeniti nazive kolona
-            foreach (DataGridViewColumn item in dgv.Columns)
+            try
             {
-                item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>()
-                .FirstOrDefault().Name == item.HeaderText).FirstOrDefault()
-                .GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
+                //promjeniti nazive kolona
+                foreach (DataGridViewColumn item in dgv.Columns)
+                {
+                    item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>()
+                    .FirstOrDefault().Name == item.HeaderText).FirstOrDefault()
+                    .GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
+                }
             }
+            catch { }
 
             //design
             //boja teksta i pozadina kada selektujemo item 
