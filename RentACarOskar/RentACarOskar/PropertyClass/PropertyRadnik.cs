@@ -241,7 +241,7 @@ namespace RentACarOskar.PropertyClass
         {
             return @"SELECT [RadnikID]
                             ,[OsobaID]
-                               ,[Plata]
+                        
 
                           
                     FROM [dbo].[Radnik]
@@ -261,7 +261,8 @@ namespace RentACarOskar.PropertyClass
                    ,[Email]
                    ,[Rola]
                FROM [dbo].[Radnik]
-               [RadnikID] = " + broj;
+               WHERE [RadnikID] = " + broj;
+
         }
         #endregion
     }

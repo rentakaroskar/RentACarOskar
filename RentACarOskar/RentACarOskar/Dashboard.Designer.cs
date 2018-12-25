@@ -42,25 +42,26 @@
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelSaTabelom = new System.Windows.Forms.Panel();
-            this.btnCijena = new System.Windows.Forms.Button();
-            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.label4 = new System.Windows.Forms.Label();
-            this.detaljiVozila = new MetroFramework.Controls.MetroButton();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.btnIzdaj = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bDelete = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelZaBunifuKartice = new System.Windows.Forms.FlowLayoutPanel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelMeni = new System.Windows.Forms.Panel();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.panelFilter = new Bunifu.Framework.UI.BunifuCards();
             this.pnlFilter1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+            this.label4 = new System.Windows.Forms.Label();
+            this.detaljiVozila = new MetroFramework.Controls.MetroButton();
+            this.btnCijena = new System.Windows.Forms.Button();
             this.splash = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnIzdaj = new System.Windows.Forms.Button();
+            this.bDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.labelUser = new System.Windows.Forms.Label();
@@ -89,17 +90,17 @@
             this.lblLogOut1 = new System.Windows.Forms.Label();
             this.logoPic = new System.Windows.Forms.PictureBox();
             this.btnDodajVozilo = new System.Windows.Forms.Button();
-            this.panelZaBunifuKartice = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             this.panelCentar.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelSaTabelom.SuspendLayout();
-            this.bunifuCards2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelZaBunifuKartice.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panelFilter.SuspendLayout();
+            this.bunifuCards2.SuspendLayout();
             this.splash.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelTop.SuspendLayout();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -118,7 +119,6 @@
             this.panelLogOut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
-            this.panelZaBunifuKartice.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogOut
@@ -226,15 +226,12 @@
             // 
             this.panelSaTabelom.BackColor = System.Drawing.Color.Transparent;
             this.panelSaTabelom.Controls.Add(this.panelZaBunifuKartice);
-            this.panelSaTabelom.Controls.Add(this.btnCijena);
             this.panelSaTabelom.Controls.Add(this.splash);
-            this.panelSaTabelom.Controls.Add(this.bunifuCards2);
+            this.panelSaTabelom.Controls.Add(this.btnCijena);
             this.panelSaTabelom.Controls.Add(this.panelPanelZaGV);
             this.panelSaTabelom.Controls.Add(this.btnInsert);
             this.panelSaTabelom.Controls.Add(this.btnIzdaj);
             this.panelSaTabelom.Controls.Add(this.bDelete);
-            this.panelSaTabelom.Controls.Add(this.bunifuCards1);
-            this.panelSaTabelom.Controls.Add(this.panelFilter);
             this.panelSaTabelom.Controls.Add(this.btnUpdate);
             this.panelSaTabelom.Controls.Add(this.pictureBox1);
             this.panelSaTabelom.Location = new System.Drawing.Point(0, 0);
@@ -242,207 +239,15 @@
             this.panelSaTabelom.Size = new System.Drawing.Size(1370, 650);
             this.panelSaTabelom.TabIndex = 9;
             // 
-            // btnCijena
+            // panelZaBunifuKartice
             // 
-            this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.splash.Controls.Add(this.label5);
-            this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(0, 638);
-            this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(1345, 12);
-            this.splash.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(330, 446);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(216, 33);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Loading Data...";
-            // 
-            // bunifuCircleProgressbar1
-            // 
-            this.bunifuCircleProgressbar1.animated = true;
-            this.bunifuCircleProgressbar1.animationIterval = 4;
-            this.bunifuCircleProgressbar1.animationSpeed = 20;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.Magenta;
-            this.bunifuCircleProgressbar1.LabelVisible = true;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
-            this.bunifuCircleProgressbar1.LineThickness = 3;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(346, 239);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.LightGray;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.Magenta;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(184, 184);
-            this.bunifuCircleProgressbar1.TabIndex = 1;
-            this.bunifuCircleProgressbar1.Value = 0;
-            this.btnCijena.BackColor = System.Drawing.Color.White;
-            this.btnCijena.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCijena.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCijena.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnCijena.FlatAppearance.BorderSize = 2;
-            this.btnCijena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnCijena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCijena.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCijena.Location = new System.Drawing.Point(435, 598);
-            this.btnCijena.Name = "btnCijena";
-            this.btnCijena.Size = new System.Drawing.Size(111, 34);
-            this.btnCijena.TabIndex = 13;
-            this.btnCijena.Text = "CIJENA";
-            this.btnCijena.UseVisualStyleBackColor = false;
-            this.btnCijena.Visible = false;
-            this.btnCijena.Click += new System.EventHandler(this.btnCijena_Click);
-            // 
-            // bunifuCards2
-            // 
-            this.bunifuCards2.BackColor = System.Drawing.Color.White;
-            this.bunifuCards2.BorderRadius = 5;
-            this.bunifuCards2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bunifuCards2.BottomSahddow = true;
-            this.bunifuCards2.color = System.Drawing.Color.Violet;
-            this.bunifuCards2.Controls.Add(this.label4);
-            this.bunifuCards2.Controls.Add(this.detaljiVozila);
-            this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(569, 3);
-            this.bunifuCards2.Name = "bunifuCards2";
-            this.bunifuCards2.RightSahddow = true;
-            this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(247, 136);
-            this.bunifuCards2.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Violet;
-            this.label4.Location = new System.Drawing.Point(5, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(243, 44);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Detalji vozila";
-            // 
-            // detaljiVozila
-            // 
-            this.detaljiVozila.Location = new System.Drawing.Point(13, 87);
-            this.detaljiVozila.Name = "detaljiVozila";
-            this.detaljiVozila.Size = new System.Drawing.Size(111, 37);
-            this.detaljiVozila.TabIndex = 5;
-            this.detaljiVozila.Text = "Detaljnije...";
-            this.detaljiVozila.UseSelectable = true;
-            this.detaljiVozila.Click += new System.EventHandler(this.detaljiVozila_Click);
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.BackColor = System.Drawing.Color.White;
-            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInsert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnInsert.FlatAppearance.BorderSize = 2;
-            this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(292, 590);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(111, 34);
-            this.btnInsert.TabIndex = 0;
-            this.btnInsert.Text = "INSERT";
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            this.btnInsert.MouseLeave += new System.EventHandler(this.btnInsert_MouseLeave);
-            this.btnInsert.MouseHover += new System.EventHandler(this.btnInsert_MouseHover);
-            // 
-            // btnIzdaj
-            // 
-            this.btnIzdaj.BackColor = System.Drawing.Color.White;
-            this.btnIzdaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIzdaj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnIzdaj.FlatAppearance.BorderSize = 2;
-            this.btnIzdaj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnIzdaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIzdaj.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIzdaj.Location = new System.Drawing.Point(538, 590);
-            this.btnIzdaj.Name = "btnIzdaj";
-            this.btnIzdaj.Size = new System.Drawing.Size(111, 34);
-            this.btnIzdaj.TabIndex = 6;
-            this.btnIzdaj.Text = "IZDAJ";
-            this.btnIzdaj.UseVisualStyleBackColor = false;
-            this.btnIzdaj.Click += new System.EventHandler(this.btnIzdaj_Click);
-            this.btnIzdaj.MouseLeave += new System.EventHandler(this.btnIzdaj_MouseLeave);
-            this.btnIzdaj.MouseHover += new System.EventHandler(this.btnIzdaj_MouseHover);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.White;
-            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnUpdate.FlatAppearance.BorderSize = 2;
-            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(415, 590);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(111, 34);
-            this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
-            this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
-            // 
-            // panelPanelZaGV
-            // 
-            this.panelPanelZaGV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPanelZaGV.BackgroundImage")));
-            this.panelPanelZaGV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelPanelZaGV.GradientBottomLeft = System.Drawing.Color.White;
-            this.panelPanelZaGV.GradientBottomRight = System.Drawing.Color.White;
-            this.panelPanelZaGV.GradientTopLeft = System.Drawing.Color.White;
-            this.panelPanelZaGV.GradientTopRight = System.Drawing.Color.White;
-            this.panelPanelZaGV.Location = new System.Drawing.Point(24, 190);
-            this.panelPanelZaGV.Name = "panelPanelZaGV";
-            this.panelPanelZaGV.Quality = 10;
-            this.panelPanelZaGV.Size = new System.Drawing.Size(880, 389);
-            this.panelPanelZaGV.TabIndex = 0;
-            // 
-            // bDelete
-            // 
-            this.bDelete.BackColor = System.Drawing.Color.White;
-            this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.bDelete.FlatAppearance.BorderSize = 2;
-            this.bDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.bDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDelete.Location = new System.Drawing.Point(538, 590);
-            this.bDelete.Name = "bDelete";
-            this.bDelete.Size = new System.Drawing.Size(111, 34);
-            this.bDelete.TabIndex = 7;
-            this.bDelete.Text = "DELETE";
-            this.bDelete.UseVisualStyleBackColor = false;
-            this.bDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            this.bDelete.MouseLeave += new System.EventHandler(this.bDelete_MouseLeave);
-            this.bDelete.MouseHover += new System.EventHandler(this.bDelete_MouseHover);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 417);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1331, 233);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.panelZaBunifuKartice.Controls.Add(this.bunifuCards1);
+            this.panelZaBunifuKartice.Controls.Add(this.panelFilter);
+            this.panelZaBunifuKartice.Controls.Add(this.bunifuCards2);
+            this.panelZaBunifuKartice.Location = new System.Drawing.Point(24, 6);
+            this.panelZaBunifuKartice.Name = "panelZaBunifuKartice";
+            this.panelZaBunifuKartice.Size = new System.Drawing.Size(880, 175);
+            this.panelZaBunifuKartice.TabIndex = 14;
             // 
             // bunifuCards1
             // 
@@ -506,26 +311,83 @@
             this.panelFilter.Name = "panelFilter";
             this.panelFilter.RightSahddow = true;
             this.panelFilter.ShadowDepth = 20;
-            this.panelFilter.Size = new System.Drawing.Size(246, 136);
+            this.panelFilter.Size = new System.Drawing.Size(285, 161);
             this.panelFilter.TabIndex = 5;
             // 
             // pnlFilter1
             // 
-            this.pnlFilter1.Location = new System.Drawing.Point(14, 20);
+            this.pnlFilter1.Location = new System.Drawing.Point(22, 20);
             this.pnlFilter1.Name = "pnlFilter1";
-            this.pnlFilter1.Size = new System.Drawing.Size(258, 136);
+            this.pnlFilter1.Size = new System.Drawing.Size(250, 136);
             this.pnlFilter1.TabIndex = 1;
+            // 
+            // bunifuCards2
+            // 
+            this.bunifuCards2.BackColor = System.Drawing.Color.White;
+            this.bunifuCards2.BorderRadius = 5;
+            this.bunifuCards2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bunifuCards2.BottomSahddow = true;
+            this.bunifuCards2.color = System.Drawing.Color.Violet;
+            this.bunifuCards2.Controls.Add(this.label4);
+            this.bunifuCards2.Controls.Add(this.detaljiVozila);
+            this.bunifuCards2.LeftSahddow = false;
+            this.bunifuCards2.Location = new System.Drawing.Point(565, 3);
+            this.bunifuCards2.Name = "bunifuCards2";
+            this.bunifuCards2.RightSahddow = true;
+            this.bunifuCards2.ShadowDepth = 20;
+            this.bunifuCards2.Size = new System.Drawing.Size(303, 157);
+            this.bunifuCards2.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Violet;
+            this.label4.Location = new System.Drawing.Point(5, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(243, 44);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Detalji vozila";
+            // 
+            // detaljiVozila
+            // 
+            this.detaljiVozila.Location = new System.Drawing.Point(13, 87);
+            this.detaljiVozila.Name = "detaljiVozila";
+            this.detaljiVozila.Size = new System.Drawing.Size(111, 37);
+            this.detaljiVozila.TabIndex = 5;
+            this.detaljiVozila.Text = "Detaljnije...";
+            this.detaljiVozila.UseSelectable = true;
+            this.detaljiVozila.Click += new System.EventHandler(this.detaljiVozila_Click);
+            // 
+            // btnCijena
+            // 
+            this.btnCijena.BackColor = System.Drawing.Color.White;
+            this.btnCijena.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCijena.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCijena.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnCijena.FlatAppearance.BorderSize = 2;
+            this.btnCijena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnCijena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCijena.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCijena.Location = new System.Drawing.Point(555, 589);
+            this.btnCijena.Name = "btnCijena";
+            this.btnCijena.Size = new System.Drawing.Size(111, 34);
+            this.btnCijena.TabIndex = 13;
+            this.btnCijena.Text = "CIJENA";
+            this.btnCijena.UseVisualStyleBackColor = false;
+            this.btnCijena.Visible = false;
+            this.btnCijena.Click += new System.EventHandler(this.btnCijena_Click);
             // 
             // splash
             // 
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.splash.Controls.Add(this.label5);
             this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(243, 29);
+            this.splash.Location = new System.Drawing.Point(15, 610);
             this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(1345, 193);
+            this.splash.Size = new System.Drawing.Size(1345, 173);
             this.splash.TabIndex = 14;
-            this.splash.Paint += new System.Windows.Forms.PaintEventHandler(this.splash_Paint);
             // 
             // label5
             // 
@@ -560,6 +422,109 @@
             this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(184, 184);
             this.bunifuCircleProgressbar1.TabIndex = 1;
             this.bunifuCircleProgressbar1.Value = 0;
+            // 
+            // panelPanelZaGV
+            // 
+            this.panelPanelZaGV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPanelZaGV.BackgroundImage")));
+            this.panelPanelZaGV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPanelZaGV.GradientBottomLeft = System.Drawing.Color.White;
+            this.panelPanelZaGV.GradientBottomRight = System.Drawing.Color.White;
+            this.panelPanelZaGV.GradientTopLeft = System.Drawing.Color.White;
+            this.panelPanelZaGV.GradientTopRight = System.Drawing.Color.White;
+            this.panelPanelZaGV.Location = new System.Drawing.Point(24, 199);
+            this.panelPanelZaGV.Name = "panelPanelZaGV";
+            this.panelPanelZaGV.Quality = 10;
+            this.panelPanelZaGV.Size = new System.Drawing.Size(880, 380);
+            this.panelPanelZaGV.TabIndex = 0;
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackColor = System.Drawing.Color.White;
+            this.btnInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnInsert.FlatAppearance.BorderSize = 2;
+            this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Location = new System.Drawing.Point(204, 590);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(111, 34);
+            this.btnInsert.TabIndex = 0;
+            this.btnInsert.Text = "INSERT";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            this.btnInsert.MouseLeave += new System.EventHandler(this.btnInsert_MouseLeave);
+            this.btnInsert.MouseHover += new System.EventHandler(this.btnInsert_MouseHover);
+            // 
+            // btnIzdaj
+            // 
+            this.btnIzdaj.BackColor = System.Drawing.Color.White;
+            this.btnIzdaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIzdaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIzdaj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnIzdaj.FlatAppearance.BorderSize = 2;
+            this.btnIzdaj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnIzdaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIzdaj.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIzdaj.Location = new System.Drawing.Point(438, 589);
+            this.btnIzdaj.Name = "btnIzdaj";
+            this.btnIzdaj.Size = new System.Drawing.Size(111, 34);
+            this.btnIzdaj.TabIndex = 6;
+            this.btnIzdaj.Text = "IZDAJ";
+            this.btnIzdaj.UseVisualStyleBackColor = false;
+            this.btnIzdaj.Click += new System.EventHandler(this.btnIzdaj_Click);
+            this.btnIzdaj.MouseLeave += new System.EventHandler(this.btnIzdaj_MouseLeave);
+            this.btnIzdaj.MouseHover += new System.EventHandler(this.btnIzdaj_MouseHover);
+            // 
+            // bDelete
+            // 
+            this.bDelete.BackColor = System.Drawing.Color.White;
+            this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.bDelete.FlatAppearance.BorderSize = 2;
+            this.bDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.bDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDelete.Location = new System.Drawing.Point(438, 590);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(111, 34);
+            this.bDelete.TabIndex = 7;
+            this.bDelete.Text = "DELETE";
+            this.bDelete.UseVisualStyleBackColor = false;
+            this.bDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.bDelete.MouseLeave += new System.EventHandler(this.bDelete_MouseLeave);
+            this.bDelete.MouseHover += new System.EventHandler(this.bDelete_MouseHover);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.White;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnUpdate.FlatAppearance.BorderSize = 2;
+            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(321, 590);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(111, 34);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
+            this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 417);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1331, 233);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // PanelTop
             // 
@@ -952,16 +917,6 @@
             this.btnDodajVozilo.Text = "Dodaj vozilo";
             this.btnDodajVozilo.UseVisualStyleBackColor = false;
             // 
-            // panelZaBunifuKartice
-            // 
-            this.panelZaBunifuKartice.Controls.Add(this.bunifuCards1);
-            this.panelZaBunifuKartice.Controls.Add(this.panelFilter);
-            this.panelZaBunifuKartice.Controls.Add(this.bunifuCards2);
-            this.panelZaBunifuKartice.Location = new System.Drawing.Point(24, 29);
-            this.panelZaBunifuKartice.Name = "panelZaBunifuKartice";
-            this.panelZaBunifuKartice.Size = new System.Drawing.Size(880, 190);
-            this.panelZaBunifuKartice.TabIndex = 14;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -981,14 +936,15 @@
             this.panelCentar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panelSaTabelom.ResumeLayout(false);
-            this.bunifuCards2.ResumeLayout(false);
-            this.bunifuCards2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelZaBunifuKartice.ResumeLayout(false);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.panelFilter.ResumeLayout(false);
+            this.bunifuCards2.ResumeLayout(false);
+            this.bunifuCards2.PerformLayout();
             this.splash.ResumeLayout(false);
             this.splash.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelTop.ResumeLayout(false);
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
@@ -1014,7 +970,6 @@
             this.panelLogOut.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
-            this.panelZaBunifuKartice.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
