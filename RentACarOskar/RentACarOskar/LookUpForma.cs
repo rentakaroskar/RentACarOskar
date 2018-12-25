@@ -80,13 +80,17 @@ namespace RentACarOskar
             var type = myProperty.GetType();
             var properties = type.GetProperties();
 
-            //promjeniti nazive kolona
-            foreach (DataGridViewColumn item in dgv.Columns)
+            try
             {
-                item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>()
-                .FirstOrDefault().Name == item.HeaderText).FirstOrDefault()
-                .GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
+                //promjeniti nazive kolona
+                foreach (DataGridViewColumn item in dgv.Columns)
+                {
+                    item.HeaderText = properties.Where(x => x.GetCustomAttributes<SqlNameAttribute>()
+                    .FirstOrDefault().Name == item.HeaderText).FirstOrDefault()
+                    .GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName;
+                }
             }
+            catch { }
 
             //design
             //boja teksta i pozadina kada selektujemo item 
@@ -214,7 +218,7 @@ namespace RentACarOskar
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult myResult = MetroMessageBox.Show(this, "Are you really delete the item?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            DialogResult myResult = MetroMessageBox.Show(this, "Do you really want to delete this item?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             if (myResult == DialogResult.Yes)
             {
                 int SelektovaniRed = dgv.SelectedRows[0].Index;

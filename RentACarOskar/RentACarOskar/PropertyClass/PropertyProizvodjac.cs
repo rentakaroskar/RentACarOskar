@@ -108,7 +108,8 @@ namespace RentACarOskar.PropertyClass
 
         public string GetSelectQueryZaJedanItem(string broj)
         {
-            throw new NotImplementedException();
+            return @"SELECT [ProizvodjacID], [Naziv]
+                     FROM [dbo].[Proizvodjac] WHERE [ProizvodjacID] = " + broj;
         }
 
         #endregion

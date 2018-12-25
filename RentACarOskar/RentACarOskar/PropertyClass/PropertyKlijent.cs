@@ -114,16 +114,19 @@ namespace RentACarOskar.PropertyClass
 
         public string GetLookupQuery(string ID)
         {
-            return @"SELECT [KlijentID]
-                            ,[OsobaID]
-                            ,[BrojVozacke]
+            return @"SELECT [OsobaID],
+                            [BrojVozacke]
                     FROM [dbo].[Klijent]
                     WHERE [KlijentID] = " + ID;
         }
 
         public string GetSelectQueryZaJedanItem(string broj)
         {
-            throw new NotImplementedException();
+            return @"SELECT [KlijentID],
+                            [OsobaID],
+                            [BrojVozacke]
+                    FROM [dbo].[Klijent]
+                    WHERE [KlijentID] = " + broj;
         }
         #endregion
     }

@@ -92,19 +92,20 @@ namespace RentACarOskar.PropertyClass
                     WHERE TipFaktureID = @TipFaktureID";
         }
 
-        public string GetLookupQuery()
-        {
-            throw new NotImplementedException();
-        }
-
         public string GetLookupQuery(string ID)
         {
-            throw new NotImplementedException();
+            return @"SELECT
+                            NazivTipa
+                    FROM dbo.TipFakture 
+                    WHERE TipFaktureID = " + ID;
         }
 
         public string GetSelectQueryZaJedanItem(string broj)
         {
-            throw new NotImplementedException();
+            return @"SELECT TipFaktureID,
+                            NazivTipa
+                    FROM dbo.TipFakture 
+                    WHERE TipFaktureID = " + broj;
         }
         #endregion
     }

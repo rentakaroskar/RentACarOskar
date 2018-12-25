@@ -141,19 +141,22 @@ namespace RentACarOskar.PropertyClass
                 WHERE [CijenaFakturaID] = @CijenaFakturaID";
         }
 
-        public string GetLookupQuery()
-        {
-            return "";
-        }
-
         public string GetLookupQuery(string ID)
         {
-            throw new NotImplementedException();
+            return @"SELECT [CijenaID]
+                        ,[FakturaID]
+                        FROM [dbo].[CijenaFaktura]
+                        WHERE [CijenaFakturaID] = " + ID;
         }
 
         public string GetSelectQueryZaJedanItem(string broj)
         {
-            throw new NotImplementedException();
+            return @"SELECT [CijenaFakturaID]
+                        ,[CijenaID]
+                        ,[FakturaID]
+                        ,[BrojDana]
+                        FROM [dbo].[CijenaFaktura]
+                        WHERE [CijenaFakturaID] = " + broj;
         }
         #endregion
     }

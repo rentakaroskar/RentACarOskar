@@ -187,7 +187,7 @@ namespace RentACarOskar.PropertyClass
 
         public string GetLookupQuery(string ID)
         {
-            return @"SELECT [Ime], 
+            return @"SELECT [Ime] + ' ' + 
                         [Prezime]
                      FROM dbo.Osoba
                      WHERE [OsobaID] = " + ID;

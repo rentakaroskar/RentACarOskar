@@ -70,40 +70,59 @@ namespace RentACarOskar
                  CreateInstance(item.GetCustomAttribute<ForeignKeyAttribute>().ClassName)
                  as PropertyInterface;
 
-         
-
-
                 LookUpControl uc = new LookUpControl(foreignKeyInterface, userEmail, Id);
                 uc.Name = item.Name;
                 uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
                 if (uc.GetLabelValue() == "Radnik ID")
                     uc.SetValueTextBox(Id, userEmail);
-                else
-                {
-
-                }
 
                 if (state == StateEnum.Update)
                 {
                     try
                     {
-                        
+
                         string broj = item.GetValue(myInterface).ToString();
                         string red = "";
                         SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
                             foreignKeyInterface.GetSelectQueryZaJedanItem(broj));
-                      
+
                         DataTable dt = new DataTable();
-                       
+
                         dt.Load(reader);
                         //treba dodati i za ostale property-e sta treba da se prikaze u lookup polju 
                         if (myInterface.GetType() == typeof(PropertyKlijent))
                         {
                             red = dt.Rows[0].ItemArray[1].ToString() + " " + dt.Rows[0].ItemArray[2].ToString();
                         }
-                        else
+                        else if (myInterface.GetType() == typeof(PropertyFaktura) && item.Name == "KlijentID")
                         {
-                            red = dt.Rows[0].ItemArray[1].ToString();
+                            DataTable dtpom = new DataTable();
+                            bool prop = true;
+                            foreach (PropertyInfo itemPom in foreignKeyInterface.GetType().GetProperties())
+                            {
+                                //Izbacivanje prikaza primarnog kljuca
+                                if (prop == false)
+                                {
+                                    if (itemPom.Name.Contains("ID"))
+                                    {
+                                        string klasa = itemPom.GetCustomAttributes<ForeignKeyAttribute>().FirstOrDefault().ClassName;
+
+                                        foreignKeyInterface = Assembly.GetExecutingAssembly().
+                                        CreateInstance(klasa) as PropertyInterface;
+
+                                        reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                                        foreignKeyInterface.GetLookupQuery(dt.Rows[0].ItemArray[1].ToString()));
+
+                                        dtpom.Load(reader);
+                                    }
+                                }
+                                prop = false;
+                            }
+                            red = dtpom.Rows[0].ItemArray[0].ToString();
+
+                        }
+                        else
+                        {  red = dt.Rows[0].ItemArray[1].ToString();
                         }
 
                         reader.Close();
