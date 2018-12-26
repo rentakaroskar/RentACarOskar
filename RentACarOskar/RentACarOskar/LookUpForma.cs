@@ -61,7 +61,7 @@ namespace RentACarOskar
             //logika za popunjavanje datatable
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
                 myProperty.GetSelectQuery());
-
+            
             dt.Load(reader);
             reader.Close();
 
@@ -72,7 +72,6 @@ namespace RentACarOskar
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.MultiSelect = false;
             dgv.Dock = DockStyle.Fill;
-
             dgv.Size = panelPanelZaGV.Size; 
            
             //izvuci display name
