@@ -17,7 +17,9 @@ namespace RentACarOskar
     public partial class FormaIzdavanje : MetroFramework.Forms.MetroForm
     {
         int FakturaID;
-        
+        DataGridView dgvRacun;
+
+
         public FormaIzdavanje(int fakturaID, string tipFakture)
         {
             Font font = new Font("Arial", 9);
@@ -130,14 +132,14 @@ namespace RentACarOskar
                 bezPdv += Convert.ToDecimal(dt.Rows[i].ItemArray[3].ToString());
             }
 
-            DataGridView dgvRacun = new DataGridView();
+            dgvRacun = new DataGridView();
             dgvRacun.DataSource = dt;
             dgvRacun.Location = new Point(15, 200);
             dgvRacun.Size = new Size(570, 270);
             Controls.Add(dgvRacun);
 
             Label ukupnobezPDV = new Label();
-            ukupnobezPDV.Text = "Ukupno bez PDV-a : " + bezPdv;
+            ukupnobezPDV.Text = "Ukupno bez PDV-a :" + bezPdv;
             ukupnobezPDV.Location = new Point(390, 475);
             ukupnobezPDV.Size = new Size(220, 20);
             Controls.Add(ukupnobezPDV);
