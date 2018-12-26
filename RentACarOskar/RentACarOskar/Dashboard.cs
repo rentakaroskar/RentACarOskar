@@ -214,6 +214,25 @@ namespace RentACarOskar
             FilterProperty = new FakturaIspis();
             PopuniFilterPanel();
         }
+
+        private void btnZaposleni_Click(object sender, EventArgs e)
+        {
+            //Za popunjavanje DT-Klijent
+            RadnikIspis pom = new RadnikIspis();
+            PopulateGrid(pom);
+
+            //Pom za Input formu
+            PropertyRadnik pomInput = new PropertyRadnik();
+            myForm = pomInput;
+
+            panelPanelZaGV.Visible = true;
+            bDelete.Visible = true;
+
+            //panelCentar.Visible = true;
+            panelSaTabelom.Visible = true;
+            btnIzdaj.Visible = false;
+            btnCijena.Visible = false;
+        }
         #endregion
 
         #region CRUDButtons
@@ -235,7 +254,7 @@ namespace RentACarOskar
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.UserMail(UserMail, UserID);
             crud.Update(myForm, ID, dgv);
-            // Visible = true;
+            //Visible = true;
             PopulateGrid(myProperty);
         }
 
@@ -517,6 +536,7 @@ namespace RentACarOskar
         }
         #endregion
 
+        #region OtherButtons
         private void btnIzdaj_Click(object sender, EventArgs e)
         {
             int idFakture = Convert.ToInt32(dgv.SelectedRows[0].Cells[0].Value.ToString());
@@ -528,7 +548,6 @@ namespace RentACarOskar
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-
             DialogResult myResult;
             myResult = MetroMessageBox.Show(this, "Da li zelite napustiti App?", "Question Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (myResult == DialogResult.Yes)
@@ -539,8 +558,22 @@ namespace RentACarOskar
             {
                 //No delete
             }
-
         }
+
+        private void detaljiVozila_Click(object sender, EventArgs e)
+        {
+            PropertyInterface pom = myProperty;
+            string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
+            PopulateGrid(myForm);
+            myProperty = pom;
+            //Visible = false;
+            CRUDfunkcije crud = new CRUDfunkcije();
+            crud.UserMail(UserMail, UserID);
+            crud.Update(myForm, ID, dgv);
+            // Visible = true;
+            PopulateGrid(myProperty);
+        }
+        #endregion
 
         #region Animacije
         //ButtonInsert animacija
@@ -725,20 +758,6 @@ namespace RentACarOskar
             PopuniFilterPanel();
         }
 
-        private void detaljiVozila_Click(object sender, EventArgs e)
-        {
-            PropertyInterface pom = myProperty;
-            string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
-            PopulateGrid(myForm);
-            myProperty = pom;
-            //Visible = false;
-            CRUDfunkcije crud = new CRUDfunkcije();
-            crud.UserMail(UserMail, UserID);
-            crud.Update(myForm, ID, dgv);
-            // Visible = true;
-            PopulateGrid(myProperty);
-        }
-
         private void loader_Tick(object sender, EventArgs e)
         {
             loader.Start();
@@ -750,29 +769,6 @@ namespace RentACarOskar
             {
                 splash.Visible = false;
             }
-           
         }
-
-        private void btnZaposleni_Click(object sender, EventArgs e)
-        {
-            //Za popunjavanje DT-Klijent
-            RadnikIspis pom = new RadnikIspis();
-            PopulateGrid(pom);
-
-            //Pom za Input formu
-            PropertyRadnik pomInput = new PropertyRadnik();
-            myForm = pomInput;
-
-            panelPanelZaGV.Visible = true;
-            bDelete.Visible = true;
-
-            //panelCentar.Visible = true;
-            panelSaTabelom.Visible = true;
-            btnIzdaj.Visible = false;
-
-          
-        }
-
     }
-
 }
