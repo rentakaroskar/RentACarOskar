@@ -98,7 +98,6 @@ namespace RentACarOskar.CRUD
 
                 SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                       myProperty.GetDeleteQuery(), myProperty.GetDeleteParameters().ToArray());
-                //SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, this.myProperty.GetDeleteQuery(), this.myProperty.GetDeleteParameters().ToArray());
                 CRUD.IstorijaCRUD.Istorija(UserEmail, StateEnum.Delete, myProperty);
                 //PopulateGrid(myProperty);
             }

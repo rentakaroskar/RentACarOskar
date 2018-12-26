@@ -40,7 +40,7 @@ namespace RentACarOskar.PropertyClass
         [SqlName("Pol")]
         [NotRequired]
         [TwoRadioButtons("M", "Z")]
-        public char Pol { get; set; }
+        public string Pol { get; set; }
 
         [DisplayName("Broj telefona")]
         [SqlName("BrojTelefon")]
@@ -78,7 +78,7 @@ namespace RentACarOskar.PropertyClass
                 lista.Add(parameter);
             }
             {
-                SqlParameter parameter = new SqlParameter("@Pol", System.Data.SqlDbType.NChar);
+                SqlParameter parameter = new SqlParameter("@Pol", System.Data.SqlDbType.NVarChar);
                 parameter.Value = Pol;
                 lista.Add(parameter);
             }
@@ -124,7 +124,7 @@ namespace RentACarOskar.PropertyClass
                 lista.Add(parameter);
             }
             {
-                SqlParameter parameter = new SqlParameter("@Pol", System.Data.SqlDbType.NChar);
+                SqlParameter parameter = new SqlParameter("@Pol", System.Data.SqlDbType.NVarChar);
                 parameter.Value = Pol;
                 lista.Add(parameter);
             }

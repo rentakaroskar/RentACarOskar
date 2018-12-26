@@ -31,6 +31,9 @@ namespace RentACarOskar
         //fProperty interface za filter
         PropertyInterface FilterProperty;
 
+        //Objekat klase CRUD gdje se nalaze sve metode za CRUD operacije
+        CRUDfunkcije crud = new CRUDfunkcije();
+
         DataTable dt;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
 
@@ -42,18 +45,20 @@ namespace RentACarOskar
         public Dashboard(string mail, string ID, string rola)
         {
             InitializeComponent();
+            //Loading timer
             timer1.Start();
             loader.Start();
-
             labelTime.Text = DateTime.Now.ToLongTimeString();
             labelDate.Text = DateTime.Now.ToLongDateString();
+
             //MeniZaDashboard meni = new MeniZaDashboard();
             //panelMeni.Controls.Add(meni);
             panelMeni.Visible = false;
             this.StartPosition = FormStartPosition.CenterParent;
-
-
+            
             panel4.Visible = true;
+
+            //Prilikom logina cuvamo informacije ko se prijavio na aplikaciju
             UserID = ID;
             UserMail = mail;
             labelUser.Text = mail;
@@ -67,14 +72,6 @@ namespace RentACarOskar
             {
                 btnZaposleni.Visible = false;
             }
-
-            VoziloIspis pom = new VoziloIspis();
-            PopulateGrid(pom);
-
-            FilterProperty = new VoziloIspis();
-
-            PropertyVozilo pomInput = new PropertyVozilo();
-            myForm = pomInput;
 
             panelPanelZaGV.Visible = true;
             //panelCentar.Visible = false;
@@ -112,6 +109,7 @@ namespace RentACarOskar
             PopuniDGV(dt, property);
         }
 
+        //Ucitavanje zadate Property klase iz foldera IspisDGV
         private void PopuniDGV(DataTable dt, PropertyInterface property)
         {
             //Ciscenje panela za refresh
@@ -126,6 +124,7 @@ namespace RentACarOskar
             //Popunjavanje tabele sa vrijednostima
             dgv.DataSource = dt;
 
+            //Poziv metode za dizajniranje DGV-a
             DGVDizajn();
 
             //izvuci display name
@@ -153,81 +152,89 @@ namespace RentACarOskar
         #endregion
 
         #region MenuButtons
+        //Menu item Vozilo
         private void btnVozilo_Click(object sender, EventArgs e)
         {
+            //Klasa koja se prikazuje u DGV
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
-            //Pom za Input formu
+
+            //Pomocna klasa za Input formu preko koje se rade sve CRUD funkcije
             PropertyVozilo pomInput = new PropertyVozilo();
             myForm = pomInput;
+
+            //Sakrivanje i prikazivanje dugmica i prikaza za zadatu tabelu
             panelPanelZaGV.Visible = true;
             bDelete.Visible = true;
-
             //panelCentar.Visible = true;
             panelSaTabelom.Visible = true;
             btnIzdaj.Visible = false;
             btnCijena.Visible = true;
-            //Filter 
+
+            //Filter popunjavanje
             FilterProperty = new VoziloIspis();
             PopuniFilterPanel();
         }
 
         private void btnKlijent_Click(object sender, EventArgs e)
         {
-            //Za popunjavanje DT-Klijent
+            //Klasa koja se prikazuje u DGV
             KlijentIspis pom = new KlijentIspis();
             PopulateGrid(pom);
 
-            //Pom za Input formu
+            //Pomocna klasa za Input formu preko koje se rade sve CRUD funkcije
             PropertyKlijent pomInput = new PropertyKlijent();
             myForm = pomInput;
 
+            //Sakrivanje i prikazivanje dugmica i prikaza za zadatu tabelu
             panelPanelZaGV.Visible = true;
             bDelete.Visible = true;
-
             //panelCentar.Visible = true;
             panelSaTabelom.Visible = true;
             btnIzdaj.Visible = false;
             btnCijena.Visible = false;
 
+            //Filter popunjavanje
             FilterProperty = new KlijentIspis();
             PopuniFilterPanel();
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
         {
+            //Klasa koja se prikazuje u DGV
             FakturaIspis pom = new FakturaIspis();
             PopulateGrid(pom);
 
-            //Pom za Input formu
+            //Pomocna klasa za Input formu preko koje se rade sve CRUD funkcije
             PropertyFaktura pomInput = new PropertyFaktura();
             myForm = pomInput;
+
+            //Sakrivanje i prikazivanje dugmica i prikaza za zadatu tabelu
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
-
             //panelCentar.Visible = true;
             panelSaTabelom.Visible = true;
             btnIzdaj.Visible = true;
             btnCijena.Visible = false;
 
-            //Filter 
+            //Filter popunjavanje
             FilterProperty = new FakturaIspis();
             PopuniFilterPanel();
         }
 
         private void btnZaposleni_Click(object sender, EventArgs e)
         {
-            //Za popunjavanje DT-Klijent
+            //Klasa koja se prikazuje u DGV
             RadnikIspis pom = new RadnikIspis();
             PopulateGrid(pom);
 
-            //Pom za Input formu
+            //Pomocna klasa za Input formu preko koje se rade sve CRUD funkcije
             PropertyRadnik pomInput = new PropertyRadnik();
             myForm = pomInput;
 
+            //Sakrivanje i prikazivanje dugmica i prikaza za zadatu tabelu
             panelPanelZaGV.Visible = true;
             bDelete.Visible = true;
-
             //panelCentar.Visible = true;
             panelSaTabelom.Visible = true;
             btnIzdaj.Visible = false;
@@ -236,58 +243,84 @@ namespace RentACarOskar
         #endregion
 
         #region CRUDButtons
+
+        //Insert operacija
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            CRUDfunkcije crud = new CRUDfunkcije();
+            //Metoda za upisivanje Mail-a i ID korisnika
             crud.UserMail(UserMail, UserID);
+
+            //Pozivanje metode INSERT za zadatu Property klasu
             crud.Insert(myForm);
+
+            //Popunjavanje DGV-a nakon zavrsene metode INSERT
             PopulateGrid(myProperty);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             PropertyInterface pom = myProperty;
+
+            //Kupljenje ID vrijednosti iz DGV selektovanog reda
             string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
+
+            //Popunjavanje DGV-a sa property klasom
             PopulateGrid(myForm);
             myProperty = pom;
             //Visible = false;
-            CRUDfunkcije crud = new CRUDfunkcije();
+
+            //Metoda za upisivanje Mail-a i ID korisnika
             crud.UserMail(UserMail, UserID);
+
+            //Pozivanje metode UPDATE za zadatu Property klasu, selektovani ID i dgv sa popunjenim podacima prave property klase
             crud.Update(myForm, ID, dgv);
             //Visible = true;
+
+            //Popunjavanje DGV-a nakon zavrsene metode UPDATE
             PopulateGrid(myProperty);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //Iskakanje MessageBox-a za potvrdu brisanja selektovanog reda u DGV
             DialogResult myResult = MetroMessageBox.Show(this, "Do you really want to delete this item?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             if (myResult == DialogResult.Yes)
             {
                 int SelektovaniRed = dgv.SelectedRows[0].Index;
-                CRUDfunkcije crud = new CRUDfunkcije();
+
+                //Metoda za upisivanje Mail-a i ID korisnika
                 crud.UserMail(UserMail, UserID);
+
+                //Pozivanje metode DELETE za zadatu Property klasu i selektovani red u DGV
                 crud.Delete(myForm, SelektovaniRed, dgv);
+
+                //Popunjavanje DGV-a nakon zavrsene metode DELETE
                 PopulateGrid(myProperty);
-            }
-            else
-            {
-                //No delete
             }
         }
 
         private void btnCijena_Click(object sender, EventArgs e)
         {
             PropertyInterface pom = myProperty;
+
+            //Kupljenje ID vozila iz DGV selektovanog reda
             string ID = dgv.SelectedRows[0].Cells[0].Value.ToString();
+
+            //Kreiranje objekta PropertyCijena i popunjavanje tabele sa cijenama
             PropertyCijena cijenaTabela = new PropertyCijena();
             myForm = cijenaTabela;
             PopulateGrid(myForm);
             myProperty = pom;
             //Visible = false;
-            CRUDfunkcije crud = new CRUDfunkcije();
+
+            //Metoda za upisivanje Mail-a i ID korisnika
             crud.UserMail(UserMail, UserID);
+
+            //Pozivanje metode UPDATE sa PropertyCijena, selektovani ID i dgv sa popunjenim podacima cijena
             crud.Update(myForm, ID, dgv);
             // Visible = true;
+
+            //Popunjavanje DGV-a nakon zavrsene metode UPDATE
             PopulateGrid(myProperty);
         }
         #endregion
@@ -770,5 +803,7 @@ namespace RentACarOskar
                 splash.Visible = false;
             }
         }
+
+        
     }
 }

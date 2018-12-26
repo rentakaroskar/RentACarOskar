@@ -52,10 +52,10 @@
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.label4 = new System.Windows.Forms.Label();
             this.detaljiVozila = new MetroFramework.Controls.MetroButton();
-            this.btnCijena = new System.Windows.Forms.Button();
             this.splash = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.btnCijena = new System.Windows.Forms.Button();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnIzdaj = new System.Windows.Forms.Button();
@@ -360,25 +360,6 @@
             this.detaljiVozila.UseSelectable = true;
             this.detaljiVozila.Click += new System.EventHandler(this.detaljiVozila_Click);
             // 
-            // btnCijena
-            // 
-            this.btnCijena.BackColor = System.Drawing.Color.White;
-            this.btnCijena.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCijena.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCijena.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnCijena.FlatAppearance.BorderSize = 2;
-            this.btnCijena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnCijena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCijena.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCijena.Location = new System.Drawing.Point(555, 589);
-            this.btnCijena.Name = "btnCijena";
-            this.btnCijena.Size = new System.Drawing.Size(111, 34);
-            this.btnCijena.TabIndex = 13;
-            this.btnCijena.Text = "CIJENA";
-            this.btnCijena.UseVisualStyleBackColor = false;
-            this.btnCijena.Visible = false;
-            this.btnCijena.Click += new System.EventHandler(this.btnCijena_Click);
-            // 
             // splash
             // 
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
@@ -422,6 +403,25 @@
             this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(184, 184);
             this.bunifuCircleProgressbar1.TabIndex = 1;
             this.bunifuCircleProgressbar1.Value = 0;
+            // 
+            // btnCijena
+            // 
+            this.btnCijena.BackColor = System.Drawing.Color.White;
+            this.btnCijena.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCijena.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCijena.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnCijena.FlatAppearance.BorderSize = 2;
+            this.btnCijena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnCijena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCijena.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCijena.Location = new System.Drawing.Point(555, 589);
+            this.btnCijena.Name = "btnCijena";
+            this.btnCijena.Size = new System.Drawing.Size(111, 34);
+            this.btnCijena.TabIndex = 13;
+            this.btnCijena.Text = "CIJENA";
+            this.btnCijena.UseVisualStyleBackColor = false;
+            this.btnCijena.Visible = false;
+            this.btnCijena.Click += new System.EventHandler(this.btnCijena_Click);
             // 
             // panelPanelZaGV
             // 

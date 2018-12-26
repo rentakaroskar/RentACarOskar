@@ -132,7 +132,11 @@ namespace RentACarOskar
 
                 Value = row.Cells[0].Value.ToString();
 
-                Value2 = row.Cells[1].Value.ToString();
+                try
+                {
+                    Value2 = row.Cells[1].Value.ToString();
+                }
+                catch { }
             }
             else
             {
@@ -207,6 +211,7 @@ namespace RentACarOskar
             CRUDfunkcije crud = new CRUDfunkcije();
             crud.UserMail(UserMail, UserID);
             crud.Update(myProperty, ID, dgv);
+
             Visible = true;
             try
             {

@@ -291,7 +291,7 @@ namespace RentACarOskar
                         SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                         pomCijena.GetInsertQuery());
                     }
-                    //CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create, myInterface);
+                    CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create, myInterface);
                 }
                 else
                 {
@@ -308,7 +308,7 @@ namespace RentACarOskar
                                     myInterface.GetUpdateQuery(), myInterface.GetUpdateParameters().ToArray());
 
 
-                    //CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
+                    CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
                 }
                 else
                 {

@@ -39,7 +39,7 @@ namespace RentACarOskar.PropertyClass
         [DisplayName("Bracni status")]
         [SqlName("BracniStatus")]
         [TwoRadioButtons("Ozenjen/Udata", "Neozenjen/Neudata")]
-        public char BracniStatus { get; set; }
+        public string BracniStatus { get; set; }
 
         [DisplayName("Datum zaposlenja")]
         [SqlName("DatumZaposlenja")]
@@ -100,7 +100,7 @@ namespace RentACarOskar.PropertyClass
                 parametri.Add(novi);
             }
             {
-                SqlParameter novi = new SqlParameter("@BracniStatus", System.Data.SqlDbType.Char);
+                SqlParameter novi = new SqlParameter("@BracniStatus", System.Data.SqlDbType.NVarChar);
                 novi.Value = BracniStatus;
                 parametri.Add(novi);
             }
@@ -117,6 +117,11 @@ namespace RentACarOskar.PropertyClass
             {
                 SqlParameter novi = new SqlParameter("@Email", System.Data.SqlDbType.NVarChar);
                 novi.Value = Email;
+                parametri.Add(novi);
+            }
+            {
+                SqlParameter novi = new SqlParameter("@Rola", System.Data.SqlDbType.NVarChar);
+                novi.Value = Rola;
                 parametri.Add(novi);
             }
             return parametri;
@@ -152,7 +157,7 @@ namespace RentACarOskar.PropertyClass
                 parametri.Add(novi);
             }
             {
-                SqlParameter novi = new SqlParameter("@BracniStatus", System.Data.SqlDbType.Char);
+                SqlParameter novi = new SqlParameter("@BracniStatus", System.Data.SqlDbType.NVarChar);
                 novi.Value = BracniStatus;
                 parametri.Add(novi);
             }
@@ -169,6 +174,11 @@ namespace RentACarOskar.PropertyClass
             {
                 SqlParameter novi = new SqlParameter("@Email", System.Data.SqlDbType.NVarChar);
                 novi.Value = Email;
+                parametri.Add(novi);
+            }
+            {
+                SqlParameter novi = new SqlParameter("@Rola", System.Data.SqlDbType.NVarChar);
+                novi.Value = Rola;
                 parametri.Add(novi);
             }
             return parametri;
@@ -193,7 +203,8 @@ namespace RentACarOskar.PropertyClass
                 ,[BracniStatus]
                 ,[DatumZaposlenja]
                 ,[Lozinka]
-                ,[Email])
+                ,[Email]
+                ,[Rola])
            VALUES
                (@OsobaID
                ,@Pozicija
@@ -202,7 +213,8 @@ namespace RentACarOskar.PropertyClass
                ,@BracniStatus
                ,@DatumZaposlenja
                ,@Lozinka
-               ,@Email)";
+               ,@Email
+               ,@Rola)";
         }
 
         public string GetSelectQuery()
@@ -234,6 +246,7 @@ namespace RentACarOskar.PropertyClass
                       ,[DatumZaposlenja] = @DatumZaposlenja
                       ,[Lozinka] = @Lozinka
                       ,[Email] = @Email
+                      ,[Rola] = @Rola
                   WHERE [RadnikID] = @RadnikID";
         }
 
@@ -241,9 +254,6 @@ namespace RentACarOskar.PropertyClass
         {
             return @"SELECT [RadnikID]
                             ,[OsobaID]
-                        
-
-                          
                     FROM [dbo].[Radnik]
                     WHERE [RadnikId] = " + ID;
         }

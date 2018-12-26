@@ -103,6 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 599);
+            this.ControlBox = false;
             this.Controls.Add(this.panelPanelZaGV);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnDelete);
