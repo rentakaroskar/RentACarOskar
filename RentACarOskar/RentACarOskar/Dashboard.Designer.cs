@@ -225,8 +225,8 @@
             // panelSaTabelom
             // 
             this.panelSaTabelom.BackColor = System.Drawing.Color.Transparent;
-            this.panelSaTabelom.Controls.Add(this.panelZaBunifuKartice);
             this.panelSaTabelom.Controls.Add(this.splash);
+            this.panelSaTabelom.Controls.Add(this.panelZaBunifuKartice);
             this.panelSaTabelom.Controls.Add(this.btnCijena);
             this.panelSaTabelom.Controls.Add(this.panelPanelZaGV);
             this.panelSaTabelom.Controls.Add(this.btnInsert);
@@ -255,7 +255,7 @@
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuCards1.BottomSahddow = true;
-            this.bunifuCards1.color = System.Drawing.Color.Tomato;
+            this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.bunifuCards1.Controls.Add(this.panelMeni);
             this.bunifuCards1.Controls.Add(this.labelDate);
             this.bunifuCards1.Controls.Add(this.labelTime);
@@ -279,7 +279,7 @@
             this.labelDate.AutoSize = true;
             this.labelDate.BackColor = System.Drawing.Color.Transparent;
             this.labelDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.ForeColor = System.Drawing.Color.Tomato;
+            this.labelDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.labelDate.Location = new System.Drawing.Point(7, 87);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(53, 20);
@@ -291,7 +291,7 @@
             this.labelTime.AutoSize = true;
             this.labelTime.BackColor = System.Drawing.Color.Transparent;
             this.labelTime.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTime.ForeColor = System.Drawing.Color.Tomato;
+            this.labelTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.labelTime.Location = new System.Drawing.Point(3, 25);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(131, 44);
@@ -304,7 +304,7 @@
             this.panelFilter.BorderRadius = 5;
             this.panelFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFilter.BottomSahddow = true;
-            this.panelFilter.color = System.Drawing.Color.Turquoise;
+            this.panelFilter.color = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.panelFilter.Controls.Add(this.pnlFilter1);
             this.panelFilter.LeftSahddow = false;
             this.panelFilter.Location = new System.Drawing.Point(274, 3);
@@ -327,7 +327,7 @@
             this.bunifuCards2.BorderRadius = 5;
             this.bunifuCards2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuCards2.BottomSahddow = true;
-            this.bunifuCards2.color = System.Drawing.Color.Violet;
+            this.bunifuCards2.color = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.bunifuCards2.Controls.Add(this.label4);
             this.bunifuCards2.Controls.Add(this.detaljiVozila);
             this.bunifuCards2.LeftSahddow = false;
@@ -343,20 +343,21 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Violet;
-            this.label4.Location = new System.Drawing.Point(5, 15);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.label4.Location = new System.Drawing.Point(9, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(243, 44);
+            this.label4.Size = new System.Drawing.Size(131, 44);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Detalji vozila";
+            this.label4.Text = "Detalji";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // detaljiVozila
             // 
-            this.detaljiVozila.Location = new System.Drawing.Point(13, 87);
+            this.detaljiVozila.Location = new System.Drawing.Point(167, 70);
             this.detaljiVozila.Name = "detaljiVozila";
             this.detaljiVozila.Size = new System.Drawing.Size(111, 37);
             this.detaljiVozila.TabIndex = 5;
-            this.detaljiVozila.Text = "Detaljnije...";
+            this.detaljiVozila.Text = "Vise...";
             this.detaljiVozila.UseSelectable = true;
             this.detaljiVozila.Click += new System.EventHandler(this.detaljiVozila_Click);
             // 
@@ -365,9 +366,9 @@
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.splash.Controls.Add(this.label5);
             this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(15, 610);
+            this.splash.Location = new System.Drawing.Point(64, 202);
             this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(1345, 173);
+            this.splash.Size = new System.Drawing.Size(1345, 421);
             this.splash.TabIndex = 14;
             // 
             // label5
