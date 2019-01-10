@@ -66,11 +66,11 @@ namespace RentACarOskar
 
             if (Rola == "Admin")
             {
-                btnZaposleni.Visible = true;
+                panelZaposleni.Visible = true;
             }
             else
             {
-                btnZaposleni.Visible = false;
+                panelZaposleni.Visible = false;
             }
 
             panelPanelZaGV.Visible = true;
@@ -174,6 +174,9 @@ namespace RentACarOskar
             //Filter popunjavanje
             FilterProperty = new VoziloIspis();
             PopuniFilterPanel();
+
+            BgColor(panelAutomobili);
+
         }
 
         private void btnKlijent_Click(object sender, EventArgs e)
@@ -197,6 +200,9 @@ namespace RentACarOskar
             //Filter popunjavanje
             FilterProperty = new KlijentIspis();
             PopuniFilterPanel();
+
+            BgColor(panelKlijenti);
+
         }
 
         private void btnFaktura_Click(object sender, EventArgs e)
@@ -220,6 +226,8 @@ namespace RentACarOskar
             //Filter popunjavanje
             FilterProperty = new FakturaIspis();
             PopuniFilterPanel();
+
+            BgColor(panelFaktura);
         }
 
         private void btnZaposleni_Click(object sender, EventArgs e)
@@ -244,7 +252,21 @@ namespace RentACarOskar
             //Filter popunjavanje
             PopulateGrid(pom);
             PopuniFilterPanel();
+
+            BgColor(panelZaposleni);
         }
+        //private void panelHome_Paint(object sender, PaintEventArgs e)
+        //{
+        //    BgColor(panelHome);
+        //}
+        private void panelHome_MouseClick(object sender, MouseEventArgs e)
+        {
+            BgColor(panelHome);
+
+        }
+
+
+
         #endregion
 
         #region CRUDButtons
@@ -639,6 +661,7 @@ namespace RentACarOskar
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+           
             DialogResult myResult;
             myResult = MetroMessageBox.Show(this, "Da li zelite napustiti App?", "Question Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (myResult == DialogResult.Yes)
@@ -716,6 +739,10 @@ namespace RentACarOskar
         //PanelAutomobili animacija
         private void panelAutomobili_MouseHover(object sender, EventArgs e)
         {
+            if (panelAutomobili.BackColor == Color.FromArgb(20, 255, 255, 254))
+            {
+                return;
+            }
             panelAutomobili.BackColor = Color.FromArgb(20, 255, 255, 255);
             slicicaAuto.BackColor = Color.Transparent;
             lblAutomobili.BackColor = Color.Transparent;
@@ -723,30 +750,50 @@ namespace RentACarOskar
 
         private void panelAutomobili_MouseLeave(object sender, EventArgs e)
         {
+            if (panelAutomobili.BackColor == Color.FromArgb(20, 255, 255, 254))
+            {
+                return;
+            }
             panelAutomobili.BackColor = Color.Transparent;
             slicicaAuto.BackColor = Color.Transparent;
             lblAutomobili.BackColor = Color.Transparent;
+           
+
         }
+       
 
         //PanelKlijenti animacija
         private void panelKlijenti_MouseHover(object sender, EventArgs e)
         {
+            if (panelKlijenti.BackColor == Color.FromArgb(20, 255, 255, 254))
+            {
+                return;
+            }
             panelKlijenti.BackColor = Color.FromArgb(20, 255, 255, 255);
             slicicaPeople.BackColor = Color.Transparent;
             lblKlijenti.BackColor = Color.Transparent;
+           
         }
 
         private void panelKlijenti_MouseLeave(object sender, EventArgs e)
         {
+            if (panelKlijenti.BackColor == Color.FromArgb(20, 255, 255, 254))
+            {
+                return;
+            }
             panelKlijenti.BackColor = Color.Transparent;
             slicicaPeople.BackColor = Color.Transparent;
             lblKlijenti.BackColor = Color.Transparent;
-
+           
         }
 
         //PanelFaktura animacija
         private void panelFaktura_MouseHover(object sender, EventArgs e)
         {
+            if (panelFaktura.BackColor == Color.FromArgb(20, 255, 255, 254))
+            {
+                return;
+            }
             panelFaktura.BackColor = Color.FromArgb(20, 255, 255, 255);
             btnFaktura.BackColor = Color.Transparent;
             lblFaktura.BackColor = Color.Transparent;
@@ -754,9 +801,56 @@ namespace RentACarOskar
 
         private void panelFaktura_MouseLeave(object sender, EventArgs e)
         {
+            if(panelFaktura.BackColor == Color.FromArgb(20, 255, 255, 254))
+            {
+                return;
+            }
             panelFaktura.BackColor = Color.Transparent;
             btnFaktura.BackColor = Color.Transparent;
             lblFaktura.BackColor = Color.Transparent;
+       
+        }
+        //panel home animacija
+        private void panelHome_MouseHover(object sender, EventArgs e)
+        {
+            if (panelHome.BackColor == Color.FromArgb(20, 255, 255, 254))
+            {
+                return;
+            }
+            panelHome.BackColor = Color.FromArgb(20, 255, 255, 255);
+            imgHome.BackColor = Color.Transparent;
+            label1.BackColor = Color.Transparent;
+        }
+        private void panelHome_MouseLeave(object sender, EventArgs e)
+        {
+            if (panelHome.BackColor == Color.FromArgb(20, 255, 255, 254))
+            {
+                return;
+            }
+            panelHome.BackColor = Color.Transparent;
+            imgHome.BackColor = Color.Transparent;
+            label1.BackColor = Color.Transparent;
+        }
+        //panel zaposleni animacija
+        private void btnZaposleni_MouseHover(object sender, EventArgs e)
+        {
+            if (panelZaposleni.BackColor == Color.FromArgb(20, 255, 255, 254))
+            {
+                return;
+            }
+            panelZaposleni.BackColor = Color.FromArgb(20, 255, 255, 255);
+            imgZaposleni.BackColor = Color.Transparent;
+            lblZaposleni.BackColor = Color.Transparent;
+        }
+        private void panelZaposleni_MouseLeave(object sender, EventArgs e)
+        {
+            if (panelZaposleni.BackColor == Color.FromArgb(20, 255, 255, 254))
+            {
+                return;
+            }
+            panelZaposleni.BackColor = Color.Transparent;
+            imgZaposleni.BackColor = Color.Transparent;
+            lblZaposleni.BackColor = Color.Transparent;
         }
 
         //PanelLogOut animacija
@@ -772,6 +866,20 @@ namespace RentACarOskar
             panelLogOut.BackColor = Color.Transparent;
             btnLogOut.BackColor = Color.Transparent;
             lblLogOut1.BackColor = Color.Transparent;
+        }
+        //f-ja ostaje cekirna boja na btn koji je kliknut
+        public void BgColor(Panel sender)
+        {
+            panelZaposleni.BackColor = Color.Transparent;
+            panelFaktura.BackColor = Color.Transparent;
+            panelKlijenti.BackColor = Color.Transparent;
+            panelAutomobili.BackColor = Color.Transparent;
+            panelHome.BackColor = Color.Transparent;
+
+
+            sender.BackColor = Color.FromArgb(20, 255, 255, 254);
+            //sender.BackColor = Color.Red;
+
         }
         #endregion
 
@@ -846,7 +954,7 @@ namespace RentACarOskar
         private void label1_Click(object sender, EventArgs e)
         {
             panelSaTabelom.Visible = false;
-            PopuniFilterPanel();
+           // PopuniFilterPanel();
         }
 
         private void loader_Tick(object sender, EventArgs e)
@@ -862,6 +970,6 @@ namespace RentACarOskar
             }
         }
 
-        
+       
     }
 }
