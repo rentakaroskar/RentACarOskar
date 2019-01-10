@@ -57,6 +57,7 @@ namespace RentACarOskar.PropertyClass
         [NotRequired]
         public string Email { get; set; }
 
+        [ComboBox("Admin", "User")]
         [DisplayName("Rola")]
         [SqlName("Rola")]
         [NotRequired]

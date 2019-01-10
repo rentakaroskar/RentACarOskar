@@ -34,5 +34,10 @@ namespace RentACarOskar.UserControls
         {
             comboBox.Text = vrijednost;
         }
+
+        public string GetText()
+        {
+            return comboBox.Text;
+        }
     }
 }

@@ -284,6 +284,14 @@ namespace RentACarOskar
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
                     }
+                    else if (item.GetType() == typeof(ComboBoxControl))
+                    {
+                        ComboBoxControl input = item as ComboBoxControl;
+                        value = input.GetText();
+
+                        PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
+                        property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+                    }
                 }
                 catch (Exception)
                 {
