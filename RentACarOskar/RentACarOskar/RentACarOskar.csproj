@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ComboBoxAttribute.cs" />
     <Compile Include="Attributes\ForeignKeyAttribute.cs" />
     <Compile Include="Attributes\LookupKeyAttribute.cs" />
     <Compile Include="Attributes\LookupValue2Attribute.cs" />
@@ -135,6 +136,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyInterface.cs" />
     <Compile Include="StateEnum.cs" />
+    <Compile Include="UserControls\ComboBoxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ComboBoxControl.Designer.cs">
+      <DependentUpon>ComboBoxControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\InputControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -193,6 +200,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\ComboBoxControl.resx">
+      <DependentUpon>ComboBoxControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\InputControl.resx">
       <DependentUpon>InputControl.cs</DependentUpon>
     </EmbeddedResource>
