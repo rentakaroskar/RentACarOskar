@@ -226,7 +226,8 @@ namespace RentACarOskar
         {
             //Klasa koja se prikazuje u DGV
             RadnikIspis pom = new RadnikIspis();
-            PopulateGrid(pom);
+
+            FilterProperty = new RadnikIspis();
 
             //Pomocna klasa za Input formu preko koje se rade sve CRUD funkcije
             PropertyRadnik pomInput = new PropertyRadnik();
@@ -239,6 +240,10 @@ namespace RentACarOskar
             panelSaTabelom.Visible = true;
             btnIzdaj.Visible = false;
             btnCijena.Visible = false;
+
+            //Filter popunjavanje
+            PopulateGrid(pom);
+            PopuniFilterPanel();
         }
         #endregion
 
@@ -566,6 +571,59 @@ namespace RentACarOskar
                 }
             }
 
+            else if (FilterProperty.GetType() == typeof(RadnikIspis))
+            {
+                Label lblIme = new Label();
+                lblIme.Text = "Ime";
+                pnlFilter1.Controls.Add(lblIme);
+                TextBox txtIme = new TextBox();
+                pnlFilter1.Controls.Add(txtIme);
+                pnlFilter1.SetFlowBreak(txtIme, true);
+
+                Label lblPrezime = new Label();
+                lblPrezime.Text = "Prezime";
+                pnlFilter1.Controls.Add(lblPrezime);
+                TextBox txtPrezime = new TextBox();
+                pnlFilter1.Controls.Add(txtPrezime);
+                pnlFilter1.SetFlowBreak(txtPrezime, true);
+
+                Label lblPozicija = new Label();
+                lblPozicija.Text = "Pozicija";
+                pnlFilter1.Controls.Add(lblPozicija);
+                TextBox txtPozicija = new TextBox();
+                pnlFilter1.Controls.Add(txtPozicija);
+                pnlFilter1.SetFlowBreak(txtPozicija, true);
+
+                txtIme.TextChanged += new EventHandler(Filter);
+                txtPrezime.TextChanged += new EventHandler(Filter);
+                txtPozicija.TextChanged += new EventHandler(Filter);
+
+                void Filter(object sender, EventArgs e)
+                {
+                    string Query = @"EXEC dbo.spFilterZaposleni @Ime, @Prezime, @Pozicija";
+                    SqlConnection conn = new SqlConnection(SqlHelper.GetConnectionString());
+                    SqlCommand comm = new SqlCommand(Query, conn);
+
+                    comm.Parameters.Add(new SqlParameter("@Ime", SqlDbType.NVarChar));
+                    comm.Parameters["@Ime"].Value = txtIme.Text.ToString();
+                    comm.Parameters["@Ime"].IsNullable = true;
+
+                    comm.Parameters.Add(new SqlParameter("@Prezime", SqlDbType.NVarChar));
+                    comm.Parameters["@Prezime"].Value = txtPrezime.Text.ToString();
+                    comm.Parameters["@Prezime"].IsNullable = true;
+
+                    comm.Parameters.Add(new SqlParameter("@Pozicija", SqlDbType.NVarChar));
+                    comm.Parameters["@Pozicija"].Value = txtPozicija.Text.ToString();
+                    comm.Parameters["@Pozicija"].IsNullable = true;
+
+
+
+                    dt = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(comm);
+                    adapter.Fill(dt);
+                    PopuniDGV(dt, FilterProperty);
+                }
+            }
         }
         #endregion
 
