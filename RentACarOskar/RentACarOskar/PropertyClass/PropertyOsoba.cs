@@ -172,6 +172,15 @@ namespace RentACarOskar.PropertyClass
              ,[Adresa]  FROM [dbo].[Osoba]";
         }
 
+        public string GetSelectQueryRadnik()
+        {
+            return @"SELECT [OsobaID] ,[Ime] ,[Prezime],[JMB], [DatumRodjenja], [Pol], [BrojTelefon]
+             ,[Adresa]  FROM [dbo].[Osoba]
+            WHERE OsobaID NOT IN 
+				(SELECT r.OsobaID
+				FROM dbo.Radnik r)";
+        }
+
         public string GetSelectQueryZaJedanItem(string broj)
         {
             return $@"SELECT [OsobaID] ,[Ime] ,[Prezime],[JMB], [DatumRodjenja], [Pol], [BrojTelefon]
