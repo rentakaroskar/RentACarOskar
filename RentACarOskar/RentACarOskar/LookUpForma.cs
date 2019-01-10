@@ -59,9 +59,17 @@ namespace RentACarOskar
             DataTable dt = new DataTable();
 
             //logika za popunjavanje datatable
+          
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
                 myProperty.GetSelectQuery());
-            
+
+            if (myProperty.GetType() == typeof(PropertyOsoba))
+            {
+                PropertyOsoba pom = myProperty as PropertyOsoba;
+                reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+               pom.GetSelectQueryRadnik());
+            }
+
             dt.Load(reader);
             reader.Close();
 
