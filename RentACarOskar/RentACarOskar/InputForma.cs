@@ -151,6 +151,23 @@ namespace RentACarOskar
                 flowPanel.Controls.Add(uc);
             }
 
+            else if (item.GetCustomAttribute<ComboBoxAttribute>() != null)
+            {
+                ComboBoxControl uc = new ComboBoxControl();
+                uc.Name = item.Name;
+                uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
+                uc.FillComboBox(item.GetCustomAttribute<ComboBoxAttribute>().vrijednosti);
+                if (state == StateEnum.Update)
+                {
+                    try
+                    {
+                        uc.SetComboBox(item.GetValue(myInterface).ToString());
+                    }
+                    catch { }
+                }
+                flowPanel.Controls.Add(uc);
+            }
+
             //Dodavanje kontrole za TextBox
             else
             {

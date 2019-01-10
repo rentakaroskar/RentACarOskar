@@ -23,7 +23,8 @@ namespace RentACarOskar.PropertyClass
         [ForeignKey("Osoba", "OsobaID", "RentACarOskar.PropertyClass.PropertyOsoba")]
         [LookupValue]
         public int OsobaID { get; set; }
-
+        
+        [ComboBox("Direktor", "Radnik", "Menadzer")]
         [DisplayName("Pozicija")]
         [SqlName("Pozicija")]
         public string Pozicija { get; set; }
