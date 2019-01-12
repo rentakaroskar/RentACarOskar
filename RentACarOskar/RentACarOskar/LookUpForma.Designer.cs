@@ -88,6 +88,7 @@
             // 
             // panelPanelZaGV
             // 
+            this.panelPanelZaGV.AutoSize = true;
             this.panelPanelZaGV.Location = new System.Drawing.Point(23, 68);
             this.panelPanelZaGV.Name = "panelPanelZaGV";
             this.panelPanelZaGV.Size = new System.Drawing.Size(377, 516);
@@ -116,6 +117,7 @@
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "LookUpForma";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -59,7 +59,7 @@ namespace RentACarOskar
             DataTable dt = new DataTable();
 
             //logika za popunjavanje datatable
-          
+
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
                 myProperty.GetSelectQuery());
 
@@ -80,8 +80,8 @@ namespace RentACarOskar
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.MultiSelect = false;
             dgv.Dock = DockStyle.Fill;
-            dgv.Size = panelPanelZaGV.Size; 
-           
+            dgv.Size = panelPanelZaGV.Size;
+
             //izvuci display name
             var type = myProperty.GetType();
             var properties = type.GetProperties();
@@ -104,6 +104,7 @@ namespace RentACarOskar
             dgv.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             //boja header teksta u tabeli
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.WhiteSmoke;
+
         }
         #endregion
 
