@@ -39,5 +39,11 @@ namespace RentACarOskar.UserControls
         {
             return comboBox.Text;
         }
+        //ReadOnly koristimo ako kliknemo na detalje da imamo0 samo ispis da ne mozemo mijenjati vrijednost
+        public void ReadOnly()
+        {
+            comboBox.Enabled = false;
+
+        }
     }
 }

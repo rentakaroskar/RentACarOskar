@@ -681,7 +681,7 @@ namespace RentACarOskar
             PopulateGrid(myForm);
             myProperty = pom;
             //Visible = false;
-            CRUDfunkcije crud = new CRUDfunkcije();
+            CRUDfunkcije crud = new CRUDfunkcije("detalji");
             crud.UserMail(UserMail, UserID);
             crud.Update(myForm, ID, dgv);
             // Visible = true;

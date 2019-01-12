@@ -73,5 +73,14 @@ namespace RentACarOskar.UserControls
         {
             return tbKey.Text;
         }
+
+        //ReadOnly koristimo ako kliknemo na detalje da imamo0 samo ispis da ne mozemo mijenjati vrijednost
+        public void ReadOnly()
+        {
+            this.tbKey.Enabled = false;
+            this.tbNaziv.Enabled = false;
+            btnLookup.Visible = false;
+
+        }
     }
 }
