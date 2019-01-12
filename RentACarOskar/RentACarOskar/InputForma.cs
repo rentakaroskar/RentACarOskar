@@ -24,7 +24,6 @@ namespace RentACarOskar
         StateEnum state;
         string userEmail;
         string Id;
-        int VoziloID;
         public InputForma(PropertyInterface myInterface, StateEnum state, string email, string ID)
         {
             InitializeComponent();
@@ -84,11 +83,20 @@ namespace RentACarOskar
                         string broj = item.GetValue(myInterface).ToString();
                         string red = "";
                         SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
-                            foreignKeyInterface.GetSelectQueryZaJedanItem(broj));
+                        foreignKeyInterface.GetSelectQueryZaJedanItem(broj));
 
                         DataTable dt = new DataTable();
 
                         dt.Load(reader);
+                        if (uc.GetLabelValue() == "Radnik ID")
+                        {
+                            PropertyOsoba pom = new PropertyOsoba();
+                            broj = dt.Rows[0][1].ToString();
+                            reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                            pom.GetSelectQueryZaJedanItem(broj));
+                            dt = new DataTable();
+                            dt.Load(reader);
+                        }
                         //treba dodati i za ostale property-e sta treba da se prikaze u lookup polju 
                         if (myInterface.GetType() == typeof(PropertyKlijent))
                         {
@@ -122,7 +130,8 @@ namespace RentACarOskar
 
                         }
                         else
-                        {  red = dt.Rows[0].ItemArray[1].ToString();
+                        {
+                            red = dt.Rows[0].ItemArray[1].ToString();
                         }
 
                         reader.Close();
@@ -216,7 +225,7 @@ namespace RentACarOskar
                     {
                         InputControl input = item as InputControl;
                         value = input.GetValueFromTextBox();
-                        
+
                         //provjera da li unosimo model vozila koji vec postoji u bazi podataka
                         if (properties[0].Name == "ModelID" && properties[01].Name == "Naziv")
                         {
@@ -252,8 +261,8 @@ namespace RentACarOskar
                                 }
                             }
                         }
-                           
-                                            
+
+
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
 
@@ -309,10 +318,10 @@ namespace RentACarOskar
                     SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                    myInterface.GetInsertQuery(), myInterface.GetInsertParameters().ToArray());
 
-                    if(myInterface.GetType() == typeof(PropertyVozilo))
+                    if (myInterface.GetType() == typeof(PropertyVozilo))
                     {
                         PropertyCijena pomCijena = new PropertyCijena();
-                        
+
                         SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text,
                         pomCijena.GetInsertQuery());
                     }
