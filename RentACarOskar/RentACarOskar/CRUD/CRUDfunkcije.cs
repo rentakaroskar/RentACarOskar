@@ -14,6 +14,7 @@ using RentACarOskar.Attributes;
 using RentACarOskar.CRUD;
 using MetroFramework;
 using RentACarOskar.PropertyClass;
+using Bunifu.Framework.UI;
 
 namespace RentACarOskar.CRUD
 {
@@ -23,6 +24,18 @@ namespace RentACarOskar.CRUD
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
         string UserEmail;
         string UserID;
+        string DetaljiUpdate;
+
+        //kontstruktor preko kog provjeravamo dali nam trebaju detalji ili update
+        public CRUDfunkcije(string DetaljiUpdate)
+        {
+            this.DetaljiUpdate = DetaljiUpdate;
+        }
+        public CRUDfunkcije()
+        {
+            
+        }
+
 
         //NA LOOKUP FORMI TREBA PROMIJENITTI IZGLED TABELE U 
         //Bunifu.Framework.UI.BunifuCustomDataGrid dgv DA BI RADILE CRUD OPERACIJE
@@ -70,7 +83,16 @@ namespace RentACarOskar.CRUD
             }
             catch { }
 
-            InputForma inputForma = new InputForma(myProperty, StateEnum.Update, UserEmail, UserID);
+            InputForma inputForma = null;
+            if (DetaljiUpdate != "detalji")
+            {
+                 inputForma = new InputForma(myProperty, StateEnum.Update, UserEmail, UserID);
+            }
+            else
+            {
+                inputForma = new InputForma("detalji",myProperty, StateEnum.Update, UserEmail, UserID);
+            }
+           
 
             inputForma.ShowDialog();
 

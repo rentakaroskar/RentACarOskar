@@ -57,7 +57,7 @@
             // btnCancel
             // 
             this.btnCancel.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnCancel.Location = new System.Drawing.Point(155, 412);
+            this.btnCancel.Location = new System.Drawing.Point(670, 412);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 23);
             this.btnCancel.TabIndex = 2;

@@ -33,5 +33,12 @@ namespace RentACarOskar.UserControls
         {
             tbNaziv.Text = value;
         }
+
+        //ReadOnly koristimo ako kliknemo na detalje da imamo0 samo ispis da ne mozemo mijenjati vrijednost
+        public void ReadOnly()
+        {
+            tbNaziv.Enabled = false;
+
+        }
     }
 }

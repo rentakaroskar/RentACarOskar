@@ -44,5 +44,12 @@ namespace RentACarOskar.UserControls
             else
                 rb2.Checked = true;
         }
+        //ReadOnly koristimo ako kliknemo na detalje da imamo0 samo ispis da ne mozemo mijenjati vrijednost
+        public void ReadOnly()
+        {
+            rb1.Enabled = false;
+            rb2.Enabled = false;
+
+        }
     }
 }

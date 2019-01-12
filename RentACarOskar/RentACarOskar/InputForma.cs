@@ -24,6 +24,9 @@ namespace RentACarOskar
         StateEnum state;
         string userEmail;
         string Id;
+        int VoziloID;
+        string Detalji;
+
         public InputForma(PropertyInterface myInterface, StateEnum state, string email, string ID)
         {
             InitializeComponent();
@@ -35,10 +38,25 @@ namespace RentACarOskar
             this.state = state;
             PopulateControls();
         }
+        public InputForma(string detalji, PropertyInterface myInterface, StateEnum state, string email, string ID)
+        {
+            InitializeComponent();
+            Detalji = detalji;         
+            this.StartPosition = FormStartPosition.CenterScreen;
+            userEmail = email;
+            Id = ID;
+            Text = myInterface.ToString().Remove(0, 36) + " " + state.ToString();
+            this.myInterface = myInterface;
+            this.state = state;
+            btnOk.Visible = false;
+            PopulateControls();
+
+        }
 
         //Funkcija za popunjavanje kontrole u Input formi
         private void PopunjavanjeKontrola(PropertyInfo item)
         {
+
             if (item.GetCustomAttributes<BrowsableAttribute>().Count() > 0)
             {
                 //f-ja koja provjerava da li ima  BrowsableAttribute ako ima da se ne prikazuje na input formi
@@ -59,6 +77,11 @@ namespace RentACarOskar
                     }
                     catch { }
                 }
+                //provjera da li smo kliknuli na detalje ako jesmo da polje bude samo read only
+                if (Detalji == "detalji")
+                {
+                    uc.ReadOnly();
+                }
                 flowPanel.Controls.Add(uc);
             }
 
@@ -74,7 +97,11 @@ namespace RentACarOskar
                 uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
                 if (uc.GetLabelValue() == "Radnik ID")
                     uc.SetValueTextBox(Id, userEmail);
-
+                //provjera da li smo kliknuli na detalje ako jesmo da polje bude samo read only
+                if (Detalji == "detalji")
+                {
+                    uc.ReadOnly();
+                }
                 if (state == StateEnum.Update)
                 {
                     try
@@ -149,6 +176,11 @@ namespace RentACarOskar
                 uc.Name = item.Name;
                 uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
                 uc.SetRadioButtons(item.GetCustomAttribute<TwoRadioButtonsAttribute>().Value1, item.GetCustomAttribute<TwoRadioButtonsAttribute>().Value2);
+                //provjera da li smo kliknuli na detalje ako jesmo da polje bude samo read only
+                if (Detalji == "detalji")
+                {
+                    uc.ReadOnly();
+                }
                 if (state == StateEnum.Update)
                 {
                     try
@@ -166,6 +198,10 @@ namespace RentACarOskar
                 uc.Name = item.Name;
                 uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
                 uc.FillComboBox(item.GetCustomAttribute<ComboBoxAttribute>().vrijednosti);
+                if (Detalji == "detalji")
+                {
+                    uc.ReadOnly();
+                }
                 if (state == StateEnum.Update)
                 {
                     try
@@ -183,7 +219,10 @@ namespace RentACarOskar
                 InputControl uc = new InputControl();
                 uc.Name = item.Name;
                 uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
-
+                if (Detalji == "detalji")
+                {
+                    uc.ReadOnly();
+                }
                 if (state == StateEnum.Update)
                 {
                     try
