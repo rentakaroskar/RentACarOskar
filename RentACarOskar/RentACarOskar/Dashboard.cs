@@ -359,7 +359,7 @@ namespace RentACarOskar
             pnlFilter1.Controls.Clear();
             if (FilterProperty.GetType() == typeof(FakturaIspis))
             {
-                MetroLabel lblOd = new MetroLabel();
+                Label lblOd = new Label();
                 //Label lblOd = new Label();
                 lblOd.Text = "Od:";
                 lblOd.Width = 30;
@@ -376,7 +376,7 @@ namespace RentACarOskar
                 //filter
 
                 //Label lblDo = new Label();
-                MetroLabel lblDo = new MetroLabel();
+                Label lblDo = new Label();
                 lblDo.Text = "Do:";
                 lblDo.Width = 30;
                 pnlFilter1.Controls.Add(lblDo);
@@ -525,28 +525,28 @@ namespace RentACarOskar
             else if (FilterProperty.GetType() == typeof(VoziloIspis))
             {
                 Label lblProizvodjac = new Label();
-                lblProizvodjac.Text = "Proizvodjac";
+                lblProizvodjac.Text = "Proizvodjac:";
                 pnlFilter1.Controls.Add(lblProizvodjac);
                 TextBox txtProizvodjac = new TextBox();
                 pnlFilter1.Controls.Add(txtProizvodjac);
                 pnlFilter1.SetFlowBreak(txtProizvodjac, true);
               
                 Label lblModel = new Label();
-                lblModel.Text = "Model";
+                lblModel.Text = "Model:";
                 pnlFilter1.Controls.Add(lblModel);
                 TextBox txtModel = new TextBox();
                 pnlFilter1.Controls.Add(txtModel);
                 pnlFilter1.SetFlowBreak(txtModel, true);
 
                 Label lblBoja = new Label();
-                lblBoja.Text = "Boja";
+                lblBoja.Text = "Boja:";
                 pnlFilter1.Controls.Add(lblBoja);
                 TextBox txtBoja = new TextBox();
                 pnlFilter1.Controls.Add(txtBoja);
                 pnlFilter1.SetFlowBreak(txtBoja, true);
 
                 Label lblDostupnost = new Label();
-                lblDostupnost.Text = "Dostupnost";
+                lblDostupnost.Text = "Dostupnost:";
                 pnlFilter1.Controls.Add(lblDostupnost);
                 ComboBox cmbDostupnost = new ComboBox();
                 cmbDostupnost.Items.Add("Zauzet");
@@ -596,21 +596,21 @@ namespace RentACarOskar
             else if (FilterProperty.GetType() == typeof(RadnikIspis))
             {
                 Label lblIme = new Label();
-                lblIme.Text = "Ime";
+                lblIme.Text = "Ime:";
                 pnlFilter1.Controls.Add(lblIme);
                 TextBox txtIme = new TextBox();
                 pnlFilter1.Controls.Add(txtIme);
                 pnlFilter1.SetFlowBreak(txtIme, true);
 
                 Label lblPrezime = new Label();
-                lblPrezime.Text = "Prezime";
+                lblPrezime.Text = "Prezime:";
                 pnlFilter1.Controls.Add(lblPrezime);
                 TextBox txtPrezime = new TextBox();
                 pnlFilter1.Controls.Add(txtPrezime);
                 pnlFilter1.SetFlowBreak(txtPrezime, true);
 
                 Label lblPozicija = new Label();
-                lblPozicija.Text = "Pozicija";
+                lblPozicija.Text = "Pozicija:";
                 pnlFilter1.Controls.Add(lblPozicija);
                 TextBox txtPozicija = new TextBox();
                 pnlFilter1.Controls.Add(txtPozicija);
