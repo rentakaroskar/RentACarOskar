@@ -154,7 +154,17 @@ namespace RentACarOskar
                                 prop = false;
                             }
                             red = dtpom.Rows[0].ItemArray[0].ToString();
-
+                        }
+                        else if (uc.GetLabelValue() == "Model ID")
+                        {
+                            PropertyProizvodjac pom = new PropertyProizvodjac();
+                            broj = dt.Rows[0][2].ToString();
+                            red = dt.Rows[0].ItemArray[1].ToString();
+                            reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                            pom.GetSelectQueryZaJedanItem(broj));
+                            dt = new DataTable();
+                            dt.Load(reader);
+                            red += " " + dt.Rows[0].ItemArray[1].ToString();
                         }
                         else if (myInterface.GetType() == typeof(PropertyCijena) && item.Name == "VoziloID")
                         {
@@ -212,6 +222,11 @@ namespace RentACarOskar
                         else
                         {
                             red = dt.Rows[0].ItemArray[1].ToString();
+                            try
+                            {
+                                red += " " + dt.Rows[0].ItemArray[2].ToString();
+                            }
+                            catch { }
                         }
 
                         reader.Close();
