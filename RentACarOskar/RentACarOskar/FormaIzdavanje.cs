@@ -18,19 +18,67 @@ namespace RentACarOskar
     {
         int FakturaID;
         DataGridView dgvRacun;
-
+        int fakturaID;
+        string tipFakture;
 
         public FormaIzdavanje(int fakturaID, string tipFakture)
+        {
+            popunjavanjeDGVa(fakturaID, tipFakture);
+            this.fakturaID = fakturaID;
+            this.tipFakture = tipFakture;
+        }
+
+        private void btnDodajVozilo_Click(object sender, EventArgs e)
+        {
+            DodajVoziloNaFakturu dodajVozilo = new DodajVoziloNaFakturu(FakturaID);
+            dodajVozilo.ShowDialog();
+            refresh(FakturaID);
+        }
+
+        private void refresh(int FakturaID)
+        {
+            string QueryKlijent = "EXEC dbo.spVozilaNafakturi @FakturaID";
+
+            SqlConnection conn = new SqlConnection(SqlHelper.GetConnectionString());
+            SqlCommand cmd = new SqlCommand(QueryKlijent, conn);
+
+            cmd.Parameters.Add("@FakturaID", SqlDbType.Int);
+            cmd.Parameters["@FakturaID"].Value = fakturaID;
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+            dataAdapter.Fill(dt);
+            decimal bezPdv = 0;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                bezPdv += Convert.ToDecimal(dt.Rows[i].ItemArray[3].ToString());
+            }
+            Controls.Remove(dgvRacun);
+            dgvRacun = new DataGridView();
+            dgvRacun.DataSource = dt;
+            dgvRacun.Location = new Point(15, 200);
+            dgvRacun.Size = new Size(570, 270);
+            Controls.Add(dgvRacun);
+            btnCancel.Location = new Point(570, 10);
+            Controls[Controls.Count - 4].Text = "Ukupno bez PDV-a :" + bezPdv;
+            Controls[Controls.Count - 3].Text = "Iznos PDV-a: " + (bezPdv * (decimal)0.17).ToString("F");
+            Controls[Controls.Count - 2].Text = "Ukupno za platiti: " + (bezPdv * (decimal)1.17).ToString("F");
+            DizajnDgva();
+        }
+
+        private void popunjavanjeDGVa(int fakturaID, string tipFakture)
         {
             Font font = new Font("Arial", 9);
 
             InitializeComponent();
-            
+
             Text = "";
             Size = new Size(600, 600);
+            btnCancel.Location = new Point(570, 10);
             btnStampaj.Location = new Point(480, 550);
             btnDodajVozilo.Location = new Point(30, 550);
             this.StartPosition = FormStartPosition.CenterScreen;
+
             //Kreiranje labela 
             #region Label
             Label naziv = new Label();
@@ -68,7 +116,7 @@ namespace RentACarOskar
             pib.Location = new Point(50, 135);
             pib.Font = font;
             Controls.Add(pib);
-            
+
             Label brRacuna = new Label();
             if (tipFakture == "Predracun")
             {
@@ -91,21 +139,21 @@ namespace RentACarOskar
             List<string> klijent = PronadjiKlijenta(fakturaID);
 
             Label imePrezime = new Label();
-            imePrezime.Text = "Ime i prezime: "+klijent[0] + " " + klijent[1];
+            imePrezime.Text = "Ime i prezime: " + klijent[0] + " " + klijent[1];
             imePrezime.Size = new Size(190, 20);
             imePrezime.Location = new Point(370, 75);
             imePrezime.Font = font;
             Controls.Add(imePrezime);
 
             Label jmb = new Label();
-            jmb.Text = "JMB: "+klijent[2];
+            jmb.Text = "JMB: " + klijent[2];
             imePrezime.Size = new Size(180, 20);
             jmb.Location = new Point(370, 95);
             jmb.Font = font;
             Controls.Add(jmb);
 
             Label adresaKlijent = new Label();
-            adresaKlijent.Text ="Adresa: "+klijent[3];
+            adresaKlijent.Text = "Adresa: " + klijent[3];
             adresaKlijent.Size = new Size(190, 20);
             adresaKlijent.Location = new Point(370, 115);
             adresaKlijent.Font = font;
@@ -126,7 +174,7 @@ namespace RentACarOskar
             DataTable dt = new DataTable();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
             dataAdapter.Fill(dt);
-            decimal bezPdv = 0; 
+            decimal bezPdv = 0;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 bezPdv += Convert.ToDecimal(dt.Rows[i].ItemArray[3].ToString());
@@ -158,14 +206,7 @@ namespace RentACarOskar
             FakturaID = fakturaID;
             #endregion
 
-            dgvRacun.AutoSizeColumnsMode =
-            DataGridViewAutoSizeColumnsMode.Fill;
-
-            DataGridViewTextBoxColumn vozilo =
-                new DataGridViewTextBoxColumn();
-            vozilo.HeaderText = "Vozilo";
-            vozilo.MinimumWidth = 50;
-            vozilo.FillWeight = 100;
+            DizajnDgva();
 
         }
         #region PronadjiKlijenta
@@ -196,10 +237,30 @@ namespace RentACarOskar
         }
         #endregion
 
-        private void btnDodajVozilo_Click(object sender, EventArgs e)
+        private void DizajnDgva()
         {
-            DodajVoziloNaFakturu dodajVozilo = new DodajVoziloNaFakturu(FakturaID);
-            dodajVozilo.ShowDialog();
+            dgvRacun.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRacun.AllowUserToAddRows = false;
+            dgvRacun.BackgroundColor = Color.White;
+            dgvRacun.ReadOnly = true;
+            dgvRacun.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DataGridViewTextBoxColumn vozilo =
+                new DataGridViewTextBoxColumn();
+
+            vozilo.HeaderText = "Vozilo";
+            vozilo.MinimumWidth = 50;
+            vozilo.FillWeight = 100;
+        }
+
+        private void btnStampaj_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

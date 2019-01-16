@@ -32,6 +32,7 @@
             this.btnStampaj = new MetroFramework.Controls.MetroButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnDodajVozilo = new MetroFramework.Controls.MetroButton();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStampaj
@@ -45,6 +46,7 @@
             this.btnStampaj.TabIndex = 5;
             this.btnStampaj.Text = "STAMPAJ";
             this.btnStampaj.UseSelectable = true;
+            this.btnStampaj.Click += new System.EventHandler(this.btnStampaj_Click);
             // 
             // bunifuElipse1
             // 
@@ -64,11 +66,25 @@
             this.btnDodajVozilo.UseSelectable = true;
             this.btnDodajVozilo.Click += new System.EventHandler(this.btnDodajVozilo_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Image = global::RentACarOskar.Properties.Resources.cross;
+            this.btnCancel.Location = new System.Drawing.Point(772, 10);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(21, 20);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // FormaIzdavanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDodajVozilo);
             this.Controls.Add(this.btnStampaj);
             this.MaximizeBox = false;
@@ -87,5 +103,6 @@
         private MetroFramework.Controls.MetroButton btnStampaj;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private MetroFramework.Controls.MetroButton btnDodajVozilo;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

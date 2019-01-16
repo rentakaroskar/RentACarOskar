@@ -16,11 +16,13 @@ namespace RentACarOskar.PropertyClass
         [DisplayName("Cijena ID")]
         [SqlName("CijenaID")]
         [PrimaryKey]
+        [LookupKey]
         public int CijenaID { get; set; }
 
         [DisplayName("Vozilo ID")]
         [SqlName("VoziloID")]
         [ForeignKey("Vozilo", "VoziloID", "RentACarOskar.PropertyClass.PropertyVozilo")]
+        [LookupValue]
         public int VoziloID { get; set; }
 
         [DisplayName("Cijena po danu")]

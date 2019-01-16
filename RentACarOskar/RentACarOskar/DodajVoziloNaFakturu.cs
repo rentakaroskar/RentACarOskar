@@ -31,6 +31,7 @@ namespace RentACarOskar
         {
             pnlDGV.Controls.Clear();
             dgv = new DataGridView();
+            dgv.ReadOnly = true;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.MouseClick += new MouseEventHandler(dgvrowchange);
             //dgv.Location = new Point(5, 5);

@@ -156,6 +156,59 @@ namespace RentACarOskar
                             red = dtpom.Rows[0].ItemArray[0].ToString();
 
                         }
+                        else if (myInterface.GetType() == typeof(PropertyCijena) && item.Name == "VoziloID")
+                        {
+                            DataTable dtpom = new DataTable();
+                            bool prop = true;
+                            foreach (PropertyInfo itemPom in foreignKeyInterface.GetType().GetProperties())
+                            {
+                                //Izbacivanje prikaza primarnog kljuca
+                                if (prop == false)
+                                {
+                                    if (itemPom.Name.Contains("ID"))
+                                    {
+                                        string klasa = itemPom.GetCustomAttributes<ForeignKeyAttribute>().FirstOrDefault().ClassName;
+
+                                        foreignKeyInterface = Assembly.GetExecutingAssembly().
+                                        CreateInstance(klasa) as PropertyInterface;
+
+                                        reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                                        foreignKeyInterface.GetLookupQuery(dt.Rows[0].ItemArray[1].ToString()));
+
+                                        dtpom.Load(reader);
+                                        reader.Close();
+                                        red = dtpom.Rows[0].ItemArray[0].ToString();
+                                        bool prop1 = true;
+                                        foreach (PropertyInfo itemPom1 in foreignKeyInterface.GetType().GetProperties())
+                                        {
+                                            
+                                            //Izbacivanje prikaza primarnog kljuca
+                                            if (prop1 == false)
+                                            {
+                                                if (itemPom1.Name.Contains("ID"))
+                                                {
+                                                    string klasa1 = itemPom1.GetCustomAttributes<ForeignKeyAttribute>().FirstOrDefault().ClassName;
+
+                                                    foreignKeyInterface = Assembly.GetExecutingAssembly().
+                                                    CreateInstance(klasa1) as PropertyInterface;
+
+                                                    reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                                                    foreignKeyInterface.GetLookupQuery(dtpom.Rows[0].ItemArray[1].ToString()));
+                                                    dtpom = new DataTable();
+                                                    dtpom.Load(reader);
+
+                                                    red += " " + dtpom.Rows[0].ItemArray[0].ToString();
+                                                    break;
+                                                }
+                                            }
+                                            prop1 = false;
+                                        }
+                                        break;
+                                    }
+                                }
+                                prop = false;
+                            }
+                        }
                         else
                         {
                             red = dt.Rows[0].ItemArray[1].ToString();
