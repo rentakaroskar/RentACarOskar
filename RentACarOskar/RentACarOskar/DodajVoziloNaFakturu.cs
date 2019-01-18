@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace RentACarOskar
 {
-    public partial class DodajVoziloNaFakturu : Form
+    public partial class DodajVoziloNaFakturu : MetroFramework.Forms.MetroForm
     {
         DataGridView dgv = new DataGridView();
         int fakturaID;
@@ -79,6 +79,16 @@ namespace RentACarOskar
             cmd.ExecuteNonQuery();
             con.Close();
             popunidgv();
+        }
+
+        private void DodajVoziloNaFakturu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
