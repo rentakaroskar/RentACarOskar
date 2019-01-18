@@ -42,6 +42,9 @@
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelSaTabelom = new System.Windows.Forms.Panel();
+            this.splash = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.panelZaBunifuKartice = new System.Windows.Forms.FlowLayoutPanel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelMeni = new System.Windows.Forms.Panel();
@@ -52,9 +55,6 @@
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.label4 = new System.Windows.Forms.Label();
             this.detaljiVozila = new MetroFramework.Controls.MetroButton();
-            this.splash = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.btnCijena = new System.Windows.Forms.Button();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnInsert = new System.Windows.Forms.Button();
@@ -90,16 +90,17 @@
             this.lblLogOut1 = new System.Windows.Forms.Label();
             this.logoPic = new System.Windows.Forms.PictureBox();
             this.btnDodajVozilo = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             this.panelCentar.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelSaTabelom.SuspendLayout();
+            this.splash.SuspendLayout();
             this.panelZaBunifuKartice.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panelFilter.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
-            this.splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelTop.SuspendLayout();
             this.bgPanel.SuspendLayout();
@@ -225,7 +226,7 @@
             // panelSaTabelom
             // 
             this.panelSaTabelom.BackColor = System.Drawing.Color.Transparent;
-            this.panelSaTabelom.Controls.Add(this.splash);
+            this.panelSaTabelom.Controls.Add(this.panel2);
             this.panelSaTabelom.Controls.Add(this.panelZaBunifuKartice);
             this.panelSaTabelom.Controls.Add(this.btnCijena);
             this.panelSaTabelom.Controls.Add(this.panelPanelZaGV);
@@ -238,6 +239,50 @@
             this.panelSaTabelom.Name = "panelSaTabelom";
             this.panelSaTabelom.Size = new System.Drawing.Size(1370, 650);
             this.panelSaTabelom.TabIndex = 9;
+            // 
+            // splash
+            // 
+            this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.splash.Controls.Add(this.label5);
+            this.splash.Controls.Add(this.bunifuCircleProgressbar1);
+            this.splash.Location = new System.Drawing.Point(116, 53);
+            this.splash.Name = "splash";
+            this.splash.Size = new System.Drawing.Size(849, 366);
+            this.splash.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.LightGray;
+            this.label5.Location = new System.Drawing.Point(330, 446);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(216, 33);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Loading Data...";
+            // 
+            // bunifuCircleProgressbar1
+            // 
+            this.bunifuCircleProgressbar1.animated = true;
+            this.bunifuCircleProgressbar1.animationIterval = 4;
+            this.bunifuCircleProgressbar1.animationSpeed = 20;
+            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
+            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.Magenta;
+            this.bunifuCircleProgressbar1.LabelVisible = true;
+            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
+            this.bunifuCircleProgressbar1.LineThickness = 3;
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(346, 239);
+            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.bunifuCircleProgressbar1.MaxValue = 100;
+            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
+            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.LightGray;
+            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.Magenta;
+            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(184, 184);
+            this.bunifuCircleProgressbar1.TabIndex = 1;
+            this.bunifuCircleProgressbar1.Value = 0;
             // 
             // panelZaBunifuKartice
             // 
@@ -361,50 +406,6 @@
             this.detaljiVozila.UseSelectable = true;
             this.detaljiVozila.Click += new System.EventHandler(this.detaljiVozila_Click);
             // 
-            // splash
-            // 
-            this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.splash.Controls.Add(this.label5);
-            this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(64, 202);
-            this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(1345, 421);
-            this.splash.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(330, 446);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(216, 33);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Loading Data...";
-            // 
-            // bunifuCircleProgressbar1
-            // 
-            this.bunifuCircleProgressbar1.animated = true;
-            this.bunifuCircleProgressbar1.animationIterval = 4;
-            this.bunifuCircleProgressbar1.animationSpeed = 20;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.Magenta;
-            this.bunifuCircleProgressbar1.LabelVisible = true;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
-            this.bunifuCircleProgressbar1.LineThickness = 3;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(346, 239);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.LightGray;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.Magenta;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(184, 184);
-            this.bunifuCircleProgressbar1.TabIndex = 1;
-            this.bunifuCircleProgressbar1.Value = 0;
-            // 
             // btnCijena
             // 
             this.btnCijena.BackColor = System.Drawing.Color.White;
@@ -452,7 +453,7 @@
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(111, 34);
             this.btnInsert.TabIndex = 0;
-            this.btnInsert.Text = "INSERT";
+            this.btnInsert.Text = "UNESI";
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             this.btnInsert.MouseLeave += new System.EventHandler(this.btnInsert_MouseLeave);
@@ -511,7 +512,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(111, 34);
             this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.Text = "IZMIJENI";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
@@ -561,7 +562,7 @@
             this.labelUser.BackColor = System.Drawing.Color.WhiteSmoke;
             this.labelUser.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.labelUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelUser.Location = new System.Drawing.Point(729, 19);
+            this.labelUser.Location = new System.Drawing.Point(756, 18);
             this.labelUser.Name = "labelUser";
             this.labelUser.Size = new System.Drawing.Size(65, 22);
             this.labelUser.TabIndex = 3;
@@ -587,9 +588,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(671, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 22);
+            this.label2.Size = new System.Drawing.Size(79, 22);
             this.label2.TabIndex = 8;
-            this.label2.Text = "User:";
+            this.label2.Text = "Korisnik:";
             // 
             // PanelLeft
             // 
@@ -615,6 +616,7 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.panelMenu.BackgroundImage = global::RentACarOskar.Properties.Resources.blur2;
             this.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMenu.Controls.Add(this.splash);
             this.panelMenu.Controls.Add(this.panelHome);
             this.panelMenu.Controls.Add(this.panelZaposleni);
             this.panelMenu.Controls.Add(this.panelFaktura);
@@ -659,9 +661,9 @@
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(95, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 22);
+            this.label1.Size = new System.Drawing.Size(89, 22);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Home";
+            this.label1.Text = "Početna";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHome_MouseClick);
             this.label1.MouseLeave += new System.EventHandler(this.panelHome_MouseLeave);
@@ -895,9 +897,9 @@
             this.lblLogOut1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblLogOut1.Location = new System.Drawing.Point(97, 20);
             this.lblLogOut1.Name = "lblLogOut1";
-            this.lblLogOut1.Size = new System.Drawing.Size(85, 22);
+            this.lblLogOut1.Size = new System.Drawing.Size(47, 22);
             this.lblLogOut1.TabIndex = 8;
-            this.lblLogOut1.Text = "Log Out";
+            this.lblLogOut1.Text = "Izlaz";
             this.lblLogOut1.Click += new System.EventHandler(this.btnLogOut_Click);
             this.lblLogOut1.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
             this.lblLogOut1.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
@@ -933,6 +935,14 @@
             this.btnDodajVozilo.Text = "Dodaj vozilo";
             this.btnDodajVozilo.UseVisualStyleBackColor = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.WindowText;
+            this.panel2.Location = new System.Drawing.Point(6, 629);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(908, 617);
+            this.panel2.TabIndex = 15;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -952,14 +962,14 @@
             this.panelCentar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panelSaTabelom.ResumeLayout(false);
+            this.splash.ResumeLayout(false);
+            this.splash.PerformLayout();
             this.panelZaBunifuKartice.ResumeLayout(false);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.panelFilter.ResumeLayout(false);
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
-            this.splash.ResumeLayout(false);
-            this.splash.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelTop.ResumeLayout(false);
             this.bgPanel.ResumeLayout(false);
@@ -1052,5 +1062,6 @@
         private System.Windows.Forms.FlowLayoutPanel pnlFilter1;
         private System.Windows.Forms.Button btnCijena;
         private System.Windows.Forms.FlowLayoutPanel panelZaBunifuKartice;
+        private System.Windows.Forms.Panel panel2;
     }
 }
