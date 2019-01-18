@@ -128,6 +128,19 @@ namespace RentACarOskar.PropertyClass
                     FROM [dbo].[Klijent]
                     WHERE [KlijentID] = " + broj;
         }
+
+        public string GetSelectQueryZaFakturu()
+        {
+            return @"SELECT k.[KlijentID],
+                            o.Ime,
+                            o.Prezime,
+                            k.[BrojVozacke]
+                    FROM [dbo].[Klijent] AS k
+	                    JOIN [dbo].Osoba AS o
+	                    	ON k.OsobaID = o.OsobaID";
+        }
+
+
         #endregion
     }
 }

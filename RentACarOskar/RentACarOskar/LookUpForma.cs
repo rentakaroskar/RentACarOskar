@@ -14,6 +14,7 @@ using RentACarOskar.Attributes;
 using RentACarOskar.CRUD;
 using MetroFramework;
 using RentACarOskar.PropertyClass;
+using RentACarOskar.IspisDGV;
 
 namespace RentACarOskar
 {
@@ -63,11 +64,19 @@ namespace RentACarOskar
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
                 myProperty.GetSelectQuery());
 
+
             if (myProperty.GetType() == typeof(PropertyOsoba))
             {
                 PropertyOsoba pom = myProperty as PropertyOsoba;
                 reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
                pom.GetSelectQueryRadnik());
+            }
+
+            if (myProperty.GetType() == typeof(PropertyKlijent))
+            {
+                PropertyKlijent pom = myProperty as PropertyKlijent;
+                reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                pom.GetSelectQueryZaFakturu());
             }
 
             dt.Load(reader);
@@ -189,11 +198,28 @@ namespace RentACarOskar
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgv.SelectedRows[0];
-            var properties = myProperty.GetType().GetProperties();
+            int red;
+            if (myProperty.GetType() == typeof(PropertyKlijent))
+            {
+                red = dgv.SelectedRows[0].Index;
+                SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                            myProperty.GetSelectQuery());
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                dgv.DataSource = dt;
 
-            LookUpKupljenje(properties, row);
+                DataGridViewRow row = dgv.Rows[red];
+                var properties = myProperty.GetType().GetProperties();
 
+                LookUpKupljenje(properties, row);
+            }
+            else
+            {
+                DataGridViewRow row = dgv.SelectedRows[0];
+                var properties = myProperty.GetType().GetProperties();
+
+                LookUpKupljenje(properties, row);
+            }
             this.Close();
         }
 
