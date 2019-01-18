@@ -31,12 +31,13 @@
             this.pnlDGV = new System.Windows.Forms.Panel();
             this.btnDodajVozilo = new MetroFramework.Controls.MetroButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtAuto = new System.Windows.Forms.TextBox();
-            this.txtCijenaPoDanu = new System.Windows.Forms.TextBox();
-            this.lblAuto = new System.Windows.Forms.Label();
-            this.lblCijenaPoDanu = new System.Windows.Forms.Label();
-            this.txtBrojDana = new System.Windows.Forms.Label();
             this.nupBrojDana = new System.Windows.Forms.NumericUpDown();
+            this.txtBrojDana = new System.Windows.Forms.Label();
+            this.lblCijenaPoDanu = new System.Windows.Forms.Label();
+            this.lblAuto = new System.Windows.Forms.Label();
+            this.txtCijenaPoDanu = new System.Windows.Forms.TextBox();
+            this.txtAuto = new System.Windows.Forms.TextBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupBrojDana)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             this.btnDodajVozilo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDodajVozilo.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnDodajVozilo.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnDodajVozilo.Location = new System.Drawing.Point(347, 372);
+            this.btnDodajVozilo.Location = new System.Drawing.Point(13, 372);
             this.btnDodajVozilo.Name = "btnDodajVozilo";
             this.btnDodajVozilo.Size = new System.Drawing.Size(113, 45);
             this.btnDodajVozilo.TabIndex = 7;
@@ -73,49 +74,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(447, 125);
             this.panel1.TabIndex = 8;
-            // 
-            // txtAuto
-            // 
-            this.txtAuto.Enabled = false;
-            this.txtAuto.Location = new System.Drawing.Point(203, 9);
-            this.txtAuto.Name = "txtAuto";
-            this.txtAuto.Size = new System.Drawing.Size(119, 20);
-            this.txtAuto.TabIndex = 0;
-            // 
-            // txtCijenaPoDanu
-            // 
-            this.txtCijenaPoDanu.Enabled = false;
-            this.txtCijenaPoDanu.Location = new System.Drawing.Point(204, 47);
-            this.txtCijenaPoDanu.Name = "txtCijenaPoDanu";
-            this.txtCijenaPoDanu.Size = new System.Drawing.Size(119, 20);
-            this.txtCijenaPoDanu.TabIndex = 1;
-            // 
-            // lblAuto
-            // 
-            this.lblAuto.AutoSize = true;
-            this.lblAuto.Location = new System.Drawing.Point(116, 12);
-            this.lblAuto.Name = "lblAuto";
-            this.lblAuto.Size = new System.Drawing.Size(32, 13);
-            this.lblAuto.TabIndex = 2;
-            this.lblAuto.Text = "Auto:";
-            // 
-            // lblCijenaPoDanu
-            // 
-            this.lblCijenaPoDanu.AutoSize = true;
-            this.lblCijenaPoDanu.Location = new System.Drawing.Point(115, 50);
-            this.lblCijenaPoDanu.Name = "lblCijenaPoDanu";
-            this.lblCijenaPoDanu.Size = new System.Drawing.Size(81, 13);
-            this.lblCijenaPoDanu.TabIndex = 3;
-            this.lblCijenaPoDanu.Text = "Cijena po danu:";
-            // 
-            // txtBrojDana
-            // 
-            this.txtBrojDana.AutoSize = true;
-            this.txtBrojDana.Location = new System.Drawing.Point(116, 86);
-            this.txtBrojDana.Name = "txtBrojDana";
-            this.txtBrojDana.Size = new System.Drawing.Size(55, 13);
-            this.txtBrojDana.TabIndex = 4;
-            this.txtBrojDana.Text = "Broj dana:";
             // 
             // nupBrojDana
             // 
@@ -139,16 +97,74 @@
             0,
             0});
             // 
+            // txtBrojDana
+            // 
+            this.txtBrojDana.AutoSize = true;
+            this.txtBrojDana.Location = new System.Drawing.Point(116, 86);
+            this.txtBrojDana.Name = "txtBrojDana";
+            this.txtBrojDana.Size = new System.Drawing.Size(55, 13);
+            this.txtBrojDana.TabIndex = 4;
+            this.txtBrojDana.Text = "Broj dana:";
+            // 
+            // lblCijenaPoDanu
+            // 
+            this.lblCijenaPoDanu.AutoSize = true;
+            this.lblCijenaPoDanu.Location = new System.Drawing.Point(115, 50);
+            this.lblCijenaPoDanu.Name = "lblCijenaPoDanu";
+            this.lblCijenaPoDanu.Size = new System.Drawing.Size(81, 13);
+            this.lblCijenaPoDanu.TabIndex = 3;
+            this.lblCijenaPoDanu.Text = "Cijena po danu:";
+            // 
+            // lblAuto
+            // 
+            this.lblAuto.AutoSize = true;
+            this.lblAuto.Location = new System.Drawing.Point(116, 12);
+            this.lblAuto.Name = "lblAuto";
+            this.lblAuto.Size = new System.Drawing.Size(32, 13);
+            this.lblAuto.TabIndex = 2;
+            this.lblAuto.Text = "Auto:";
+            // 
+            // txtCijenaPoDanu
+            // 
+            this.txtCijenaPoDanu.Enabled = false;
+            this.txtCijenaPoDanu.Location = new System.Drawing.Point(204, 47);
+            this.txtCijenaPoDanu.Name = "txtCijenaPoDanu";
+            this.txtCijenaPoDanu.Size = new System.Drawing.Size(119, 20);
+            this.txtCijenaPoDanu.TabIndex = 1;
+            // 
+            // txtAuto
+            // 
+            this.txtAuto.Enabled = false;
+            this.txtAuto.Location = new System.Drawing.Point(203, 9);
+            this.txtAuto.Name = "txtAuto";
+            this.txtAuto.Size = new System.Drawing.Size(119, 20);
+            this.txtAuto.TabIndex = 0;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButton1.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.metroButton1.Location = new System.Drawing.Point(347, 372);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(113, 45);
+            this.metroButton1.TabIndex = 9;
+            this.metroButton1.Text = "Cancel";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // DodajVoziloNaFakturu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 445);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDodajVozilo);
             this.Controls.Add(this.pnlDGV);
             this.Name = "DodajVoziloNaFakturu";
             this.Text = "DodajVoziloNaFakturu";
+            this.Load += new System.EventHandler(this.DodajVoziloNaFakturu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupBrojDana)).EndInit();
@@ -167,5 +183,6 @@
         private System.Windows.Forms.Label lblAuto;
         private System.Windows.Forms.TextBox txtCijenaPoDanu;
         private System.Windows.Forms.TextBox txtAuto;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

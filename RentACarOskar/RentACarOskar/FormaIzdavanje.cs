@@ -201,5 +201,10 @@ namespace RentACarOskar
             DodajVoziloNaFakturu dodajVozilo = new DodajVoziloNaFakturu(FakturaID);
             dodajVozilo.ShowDialog();
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
