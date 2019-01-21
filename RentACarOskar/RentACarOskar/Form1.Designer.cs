@@ -213,7 +213,7 @@ namespace RentACarOskar
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
-            this.pictureBox1.Location = new System.Drawing.Point(-8, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(323, 406);
             this.pictureBox1.TabIndex = 9;

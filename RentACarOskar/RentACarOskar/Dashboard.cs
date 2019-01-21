@@ -82,7 +82,7 @@ namespace RentACarOskar
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            me.BackColor = Color.Transparent;
+            //me.BackColor = Color.Transparent;
             splash.Visible = true;
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
