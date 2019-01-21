@@ -27,7 +27,7 @@ namespace RentACarOskar.UserControls
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
             brojVozila());
             dt.Load(reader);
-            //brVozila.Text = dt.Rows[0].ToString();
+            brVozila.Text = dt.Rows[0].ToString();
            
             //int x = dt.Rows[0];
             reader.Close();

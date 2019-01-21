@@ -122,7 +122,7 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(313, 269);
+            this.bunifuCards1.Size = new System.Drawing.Size(287, 241);
             this.bunifuCards1.TabIndex = 3;
             // 
             // labelDate
@@ -156,7 +156,7 @@
             // brVozila
             // 
             this.brVozila.AutoSize = true;
-            this.brVozila.Location = new System.Drawing.Point(69, 368);
+            this.brVozila.Location = new System.Drawing.Point(69, 383);
             this.brVozila.Name = "brVozila";
             this.brVozila.Size = new System.Drawing.Size(35, 13);
             this.brVozila.TabIndex = 4;

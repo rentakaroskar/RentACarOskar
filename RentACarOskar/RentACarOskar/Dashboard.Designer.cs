@@ -42,13 +42,8 @@
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelSaTabelom = new System.Windows.Forms.Panel();
-            this.splash = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelZaBunifuKartice = new System.Windows.Forms.FlowLayoutPanel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.panelMeni = new System.Windows.Forms.Panel();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.panelFilter = new Bunifu.Framework.UI.BunifuCards();
@@ -60,11 +55,15 @@
             this.detaljiVozila = new MetroFramework.Controls.MetroButton();
             this.btnCijena = new System.Windows.Forms.Button();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.panelMeni = new System.Windows.Forms.Panel();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnIzdaj = new System.Windows.Forms.Button();
             this.bDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.splash = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.labelUser = new System.Windows.Forms.Label();
@@ -98,7 +97,6 @@
             this.panelCentar.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelSaTabelom.SuspendLayout();
-            this.splash.SuspendLayout();
             this.panelZaBunifuKartice.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panelFilter.SuspendLayout();
@@ -229,10 +227,11 @@
             // panelSaTabelom
             // 
             this.panelSaTabelom.BackColor = System.Drawing.Color.Transparent;
-            this.panelSaTabelom.Controls.Add(this.panel2);
+            this.panelSaTabelom.Controls.Add(this.splash);
             this.panelSaTabelom.Controls.Add(this.panelZaBunifuKartice);
             this.panelSaTabelom.Controls.Add(this.btnCijena);
             this.panelSaTabelom.Controls.Add(this.panelPanelZaGV);
+            this.panelSaTabelom.Controls.Add(this.panelMeni);
             this.panelSaTabelom.Controls.Add(this.btnInsert);
             this.panelSaTabelom.Controls.Add(this.btnIzdaj);
             this.panelSaTabelom.Controls.Add(this.bDelete);
@@ -243,53 +242,8 @@
             this.panelSaTabelom.Size = new System.Drawing.Size(1370, 650);
             this.panelSaTabelom.TabIndex = 9;
             // 
-            // splash
-            // 
-            this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.splash.Controls.Add(this.label5);
-            this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(64, 199);
-            this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(1345, 330);
-            this.splash.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(330, 446);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(216, 33);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Loading Data...";
-            // 
-            // bunifuCircleProgressbar1
-            // 
-            this.bunifuCircleProgressbar1.animated = true;
-            this.bunifuCircleProgressbar1.animationIterval = 4;
-            this.bunifuCircleProgressbar1.animationSpeed = 20;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.Magenta;
-            this.bunifuCircleProgressbar1.LabelVisible = true;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
-            this.bunifuCircleProgressbar1.LineThickness = 3;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(346, 239);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.LightGray;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.Magenta;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(184, 184);
-            this.bunifuCircleProgressbar1.TabIndex = 1;
-            this.bunifuCircleProgressbar1.Value = 0;
-            // 
             // panelZaBunifuKartice
             // 
-            this.panelZaBunifuKartice.Controls.Add(this.splash);
             this.panelZaBunifuKartice.Controls.Add(this.bunifuCards1);
             this.panelZaBunifuKartice.Controls.Add(this.panelFilter);
             this.panelZaBunifuKartice.Controls.Add(this.bunifuCards2);
@@ -305,23 +259,15 @@
             this.bunifuCards1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.bunifuCards1.Controls.Add(this.panelMeni);
             this.bunifuCards1.Controls.Add(this.labelDate);
             this.bunifuCards1.Controls.Add(this.labelTime);
             this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(3, 375);
+            this.bunifuCards1.Location = new System.Drawing.Point(3, 3);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(265, 161);
             this.bunifuCards1.TabIndex = 8;
-            // 
-            // panelMeni
-            // 
-            this.panelMeni.Location = new System.Drawing.Point(33, 261);
-            this.panelMeni.Name = "panelMeni";
-            this.panelMeni.Size = new System.Drawing.Size(846, 141);
-            this.panelMeni.TabIndex = 13;
             // 
             // labelDate
             // 
@@ -356,7 +302,7 @@
             this.panelFilter.color = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.panelFilter.Controls.Add(this.pnlFilter1);
             this.panelFilter.LeftSahddow = false;
-            this.panelFilter.Location = new System.Drawing.Point(274, 375);
+            this.panelFilter.Location = new System.Drawing.Point(274, 3);
             this.panelFilter.Name = "panelFilter";
             this.panelFilter.RightSahddow = true;
             this.panelFilter.ShadowDepth = 20;
@@ -382,7 +328,7 @@
             this.bunifuCards2.Controls.Add(this.label4);
             this.bunifuCards2.Controls.Add(this.detaljiVozila);
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(565, 375);
+            this.bunifuCards2.Location = new System.Drawing.Point(565, 3);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
@@ -466,6 +412,13 @@
             this.panelPanelZaGV.Quality = 10;
             this.panelPanelZaGV.Size = new System.Drawing.Size(880, 380);
             this.panelPanelZaGV.TabIndex = 0;
+            // 
+            // panelMeni
+            // 
+            this.panelMeni.Location = new System.Drawing.Point(19, 289);
+            this.panelMeni.Name = "panelMeni";
+            this.panelMeni.Size = new System.Drawing.Size(846, 141);
+            this.panelMeni.TabIndex = 13;
             // 
             // btnInsert
             // 
@@ -561,10 +514,12 @@
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.splash.Controls.Add(this.label5);
             this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(3, 3);
+            this.splash.Location = new System.Drawing.Point(6, 6);
             this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(849, 366);
+            this.splash.Size = new System.Drawing.Size(905, 583);
             this.splash.TabIndex = 14;
+            this.splash.Visible = false;
+            this.splash.Paint += new System.Windows.Forms.PaintEventHandler(this.splash_Paint);
             // 
             // label5
             // 
@@ -572,7 +527,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(330, 446);
+            this.label5.Location = new System.Drawing.Point(340, 444);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(216, 33);
             this.label5.TabIndex = 10;
@@ -581,12 +536,12 @@
             // bunifuCircleProgressbar1
             // 
             this.bunifuCircleProgressbar1.animated = true;
-            this.bunifuCircleProgressbar1.animationIterval = 4;
-            this.bunifuCircleProgressbar1.animationSpeed = 20;
+            this.bunifuCircleProgressbar1.animationIterval = 8;
+            this.bunifuCircleProgressbar1.animationSpeed = 35;
             this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
             this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.Magenta;
+            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.Plum;
             this.bunifuCircleProgressbar1.LabelVisible = true;
             this.bunifuCircleProgressbar1.LineProgressThickness = 8;
             this.bunifuCircleProgressbar1.LineThickness = 3;
@@ -595,7 +550,7 @@
             this.bunifuCircleProgressbar1.MaxValue = 100;
             this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
             this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.LightGray;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.Magenta;
+            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.Orchid;
             this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(184, 184);
             this.bunifuCircleProgressbar1.TabIndex = 1;
             this.bunifuCircleProgressbar1.Value = 0;
@@ -982,7 +937,7 @@
             this.logoPic.ErrorImage = null;
             this.logoPic.Image = global::RentACarOskar.Properties.Resources.logoo1;
             this.logoPic.InitialImage = null;
-            this.logoPic.Location = new System.Drawing.Point(28, 50);
+            this.logoPic.Location = new System.Drawing.Point(44, 50);
             this.logoPic.Name = "logoPic";
             this.logoPic.Size = new System.Drawing.Size(195, 144);
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1025,8 +980,6 @@
             this.panelCentar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panelSaTabelom.ResumeLayout(false);
-            this.splash.ResumeLayout(false);
-            this.splash.PerformLayout();
             this.panelZaBunifuKartice.ResumeLayout(false);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
@@ -1129,6 +1082,5 @@
         private System.Windows.Forms.FlowLayoutPanel panelZaBunifuKartice;
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel2;
     }
 }

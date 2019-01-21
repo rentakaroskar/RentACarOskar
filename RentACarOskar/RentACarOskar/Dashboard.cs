@@ -82,11 +82,13 @@ namespace RentACarOskar
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            me.BackColor = Color.Transparent;
+            splash.Visible = true;
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
             VoziloIspis pom = new VoziloIspis();
-           MeniZaDashboard dashboard = new MeniZaDashboard();
-            panel2.Controls.Add(dashboard);
+           // MeniZaDashboard dashboard = new MeniZaDashboard();
+           //panel2.Controls.Add(dashboard);
         }
 
         //f-ja za datum i vrijeme
@@ -982,6 +984,11 @@ namespace RentACarOskar
         private void metroButton1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void splash_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
