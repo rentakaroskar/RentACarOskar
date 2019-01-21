@@ -126,7 +126,9 @@
             this.Controls.Add(this.btnInsert);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "LookUpForma";
+            this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "LookUpForma";

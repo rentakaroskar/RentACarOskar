@@ -164,6 +164,7 @@
             this.Controls.Add(this.pnlDGV);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "DodajVoziloNaFakturu";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Silver;
