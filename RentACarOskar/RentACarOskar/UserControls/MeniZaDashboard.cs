@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KonekcijaNaBazu;
+using System.Data.SqlClient;
 
 namespace RentACarOskar.UserControls
 {
@@ -20,12 +21,22 @@ namespace RentACarOskar.UserControls
 
             labelTime.Text = DateTime.Now.ToLongTimeString();
             labelDate.Text = DateTime.Now.ToLongDateString();
-            string query = @"SELECT COUNT(v.VoziloID)
+
+            DataTable dt = new DataTable();
+            //int x = SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, brojVozila());
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+            brojVozila());
+            dt.Load(reader);
+            //brVozila.Text = dt.Rows[0].ToString();
+           
+            //int x = dt.Rows[0];
+            reader.Close();
+            //brVozila.Text = x.ToString();
+        }
+        public string brojVozila()
+        {
+            return @"SELECT COUNT(v.VoziloID)
                                 FROM dbo.Vozilo v";
-
-            int x = SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, query);
-
-            brVozila.Text = x.ToString();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

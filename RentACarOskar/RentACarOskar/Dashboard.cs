@@ -85,8 +85,8 @@ namespace RentACarOskar
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
             VoziloIspis pom = new VoziloIspis();
-           // MeniZaDashboard dashboard = new MeniZaDashboard();
-           // panel2.Controls.Add(dashboard);
+           MeniZaDashboard dashboard = new MeniZaDashboard();
+            panel2.Controls.Add(dashboard);
         }
 
         //f-ja za datum i vrijeme
