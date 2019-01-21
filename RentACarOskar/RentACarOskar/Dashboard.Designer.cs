@@ -65,9 +65,6 @@
             this.bDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.splash = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.PanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.labelUser = new System.Windows.Forms.Label();
