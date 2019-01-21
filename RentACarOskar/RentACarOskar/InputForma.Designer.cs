@@ -50,7 +50,7 @@
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(107, 23);
             this.btnOk.TabIndex = 1;
-            this.btnOk.Text = "OK";
+            this.btnOk.Text = "Potvrdi";
             this.btnOk.UseSelectable = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
@@ -61,7 +61,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 23);
             this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Nazad";
             this.btnCancel.UseSelectable = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 

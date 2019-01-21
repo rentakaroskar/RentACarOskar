@@ -44,7 +44,7 @@
             this.btnStampaj.Name = "btnStampaj";
             this.btnStampaj.Size = new System.Drawing.Size(107, 28);
             this.btnStampaj.TabIndex = 5;
-            this.btnStampaj.Text = "STAMPAJ";
+            this.btnStampaj.Text = "ŠTAMPAJ";
             this.btnStampaj.UseSelectable = true;
             this.btnStampaj.Click += new System.EventHandler(this.btnStampaj_Click);
             // 
