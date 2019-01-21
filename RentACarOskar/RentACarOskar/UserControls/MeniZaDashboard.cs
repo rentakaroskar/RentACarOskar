@@ -23,14 +23,15 @@ namespace RentACarOskar.UserControls
             labelDate.Text = DateTime.Now.ToLongDateString();
 
             DataTable dt = new DataTable();
-            //int x = SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, brojVozila());
+            int x = SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, brojVozila());
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
             brojVozila());
             dt.Load(reader);
-            brVozila.Text = dt.Rows[0].ToString();
-           
+           brVozila.Text = dt.Rows[0].ToString();
+            
+
             //int x = dt.Rows[0];
-            reader.Close();
+            //reader.Close();
             //brVozila.Text = x.ToString();
         }
         public string brojVozila()
