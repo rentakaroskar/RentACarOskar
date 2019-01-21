@@ -46,7 +46,7 @@
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(107, 23);
             this.btnInsert.TabIndex = 2;
-            this.btnInsert.Text = "Add New";
+            this.btnInsert.Text = "Dodaj";
             this.btnInsert.UseSelectable = true;
             this.btnInsert.Click += new System.EventHandler(this.btnOk_Click);
             // 
@@ -58,7 +58,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(107, 23);
             this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Izmijeni";
             this.btnUpdate.UseSelectable = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -71,7 +71,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(107, 23);
             this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Obriši";
             this.btnDelete.UseSelectable = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -83,7 +83,7 @@
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(107, 23);
             this.btnReturn.TabIndex = 5;
-            this.btnReturn.Text = "Return";
+            this.btnReturn.Text = "Nazad";
             this.btnReturn.UseSelectable = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
@@ -126,7 +126,9 @@
             this.Controls.Add(this.btnInsert);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "LookUpForma";
+            this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "LookUpForma";

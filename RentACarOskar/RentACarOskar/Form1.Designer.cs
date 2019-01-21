@@ -46,6 +46,7 @@ namespace RentACarOskar
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
@@ -58,7 +59,7 @@ namespace RentACarOskar
             label4.AutoSize = true;
             label4.BackColor = System.Drawing.Color.Transparent;
             label4.ForeColor = System.Drawing.Color.White;
-            label4.Location = new System.Drawing.Point(242, 149);
+            label4.Location = new System.Drawing.Point(205, 150);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(31, 13);
             label4.TabIndex = 10;
@@ -69,7 +70,7 @@ namespace RentACarOskar
             label5.AutoSize = true;
             label5.BackColor = System.Drawing.Color.Transparent;
             label5.ForeColor = System.Drawing.Color.White;
-            label5.Location = new System.Drawing.Point(40, 149);
+            label5.Location = new System.Drawing.Point(88, 149);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(31, 13);
             label5.TabIndex = 11;
@@ -89,7 +90,7 @@ namespace RentACarOskar
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(98, 42);
             this.btnLogIn.TabIndex = 8;
-            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.Text = "Prijavi se";
             this.btnLogIn.UseVisualStyleBackColor = false;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             this.btnLogIn.MouseLeave += new System.EventHandler(this.btnLogIn_MouseLeave);
@@ -135,9 +136,9 @@ namespace RentACarOskar
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(23, 199);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 21);
+            this.label1.Size = new System.Drawing.Size(116, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "User name";
+            this.label1.Text = "Korisničko ime";
             // 
             // tbUserName
             // 
@@ -190,11 +191,11 @@ namespace RentACarOskar
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(77, 148);
+            this.label3.Location = new System.Drawing.Point(122, 149);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 24);
+            this.label3.Size = new System.Drawing.Size(83, 24);
             this.label3.TabIndex = 3;
-            this.label3.Text = "MEMBER LOGIN";
+            this.label3.Text = "OSCAR";
             // 
             // label2
             // 
@@ -204,15 +205,15 @@ namespace RentACarOskar
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(23, 281);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.Size = new System.Drawing.Size(42, 21);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Password";
+            this.label2.Text = "Šifra";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(-8, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(323, 406);
             this.pictureBox1.TabIndex = 9;
@@ -255,6 +256,18 @@ namespace RentACarOskar
             this.bunifuElipse3.ElipseRadius = 5;
             this.bunifuElipse3.TargetControl = this.tbPassword;
             // 
+            // bunifuCheckbox1
+            // 
+            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox1.Checked = true;
+            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox1.Location = new System.Drawing.Point(164, 360);
+            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
+            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox1.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +278,7 @@ namespace RentACarOskar
             this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
             this.BackMaxSize = 550;
             this.ClientSize = new System.Drawing.Size(321, 493);
+            this.Controls.Add(this.bunifuCheckbox1);
             this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(label5);
             this.Controls.Add(label4);
@@ -307,6 +321,7 @@ namespace RentACarOskar
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
     }
 }
 
