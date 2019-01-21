@@ -286,6 +286,10 @@ namespace RentACarOskar
             {
                 InputControl uc = new InputControl();
                 uc.Name = item.Name;
+                if (uc.Name == "Napomena")
+                {
+                    uc.SetValueInTextBox(" ");
+                }
                 uc.SetLabel(item.GetCustomAttributes<DisplayNameAttribute>().FirstOrDefault().DisplayName);
                 if (Detalji == "detalji")
                 {
@@ -300,6 +304,7 @@ namespace RentACarOskar
                     catch { }
                 }
                 flowPanel.Controls.Add(uc);
+               
             }          
         }
         private void PopulateControls()
