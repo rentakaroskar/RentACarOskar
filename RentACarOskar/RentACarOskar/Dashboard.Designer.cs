@@ -98,11 +98,11 @@
             this.panel4.SuspendLayout();
             this.panelSaTabelom.SuspendLayout();
             this.panelZaBunifuKartice.SuspendLayout();
+            this.splash.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panelFilter.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.splash.SuspendLayout();
             this.PanelTop.SuspendLayout();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -343,7 +343,6 @@
             this.metroButton1.TabIndex = 14;
             this.metroButton1.Text = "Izdaj...";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // label6
             // 
@@ -368,7 +367,6 @@
             this.label4.Size = new System.Drawing.Size(131, 44);
             this.label4.TabIndex = 12;
             this.label4.Text = "Detalji";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // detaljiVozila
             // 
@@ -390,7 +388,7 @@
             this.btnCijena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.btnCijena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCijena.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCijena.Location = new System.Drawing.Point(555, 589);
+            this.btnCijena.Location = new System.Drawing.Point(792, 589);
             this.btnCijena.Name = "btnCijena";
             this.btnCijena.Size = new System.Drawing.Size(111, 34);
             this.btnCijena.TabIndex = 13;
@@ -408,6 +406,7 @@
             this.panelPanelZaGV.GradientTopLeft = System.Drawing.Color.White;
             this.panelPanelZaGV.GradientTopRight = System.Drawing.Color.White;
             this.panelPanelZaGV.Location = new System.Drawing.Point(24, 199);
+            this.panelPanelZaGV.Margin = new System.Windows.Forms.Padding(0);
             this.panelPanelZaGV.Name = "panelPanelZaGV";
             this.panelPanelZaGV.Quality = 10;
             this.panelPanelZaGV.Size = new System.Drawing.Size(880, 380);
@@ -430,7 +429,7 @@
             this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(204, 590);
+            this.btnInsert.Location = new System.Drawing.Point(24, 589);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(111, 34);
             this.btnInsert.TabIndex = 0;
@@ -450,7 +449,7 @@
             this.btnIzdaj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.btnIzdaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIzdaj.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIzdaj.Location = new System.Drawing.Point(438, 589);
+            this.btnIzdaj.Location = new System.Drawing.Point(536, 589);
             this.btnIzdaj.Name = "btnIzdaj";
             this.btnIzdaj.Size = new System.Drawing.Size(111, 34);
             this.btnIzdaj.TabIndex = 6;
@@ -469,7 +468,7 @@
             this.bDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.bDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDelete.Location = new System.Drawing.Point(438, 590);
+            this.bDelete.Location = new System.Drawing.Point(536, 589);
             this.bDelete.Name = "bDelete";
             this.bDelete.Size = new System.Drawing.Size(111, 34);
             this.bDelete.TabIndex = 7;
@@ -489,7 +488,7 @@
             this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(321, 590);
+            this.btnUpdate.Location = new System.Drawing.Point(280, 589);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(111, 34);
             this.btnUpdate.TabIndex = 5;
@@ -921,7 +920,7 @@
             this.lblLogOut1.AutoSize = true;
             this.lblLogOut1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogOut1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblLogOut1.Location = new System.Drawing.Point(97, 20);
+            this.lblLogOut1.Location = new System.Drawing.Point(95, 17);
             this.lblLogOut1.Name = "lblLogOut1";
             this.lblLogOut1.Size = new System.Drawing.Size(47, 22);
             this.lblLogOut1.TabIndex = 8;
@@ -987,8 +986,6 @@
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.splash.ResumeLayout(false);
-            this.splash.PerformLayout();
             this.PanelTop.ResumeLayout(false);
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();

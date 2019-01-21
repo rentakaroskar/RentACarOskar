@@ -82,7 +82,7 @@ namespace RentACarOskar
                 {
                     uc.ReadOnly();
                 }
-                flowPanel.Controls.Add(uc);
+                flowPanel.Controls.Add(uc); 
             }
 
             //Dodavanje kontrole za Lookup
@@ -300,7 +300,7 @@ namespace RentACarOskar
                     catch { }
                 }
                 flowPanel.Controls.Add(uc);
-            }
+            }          
         }
         private void PopulateControls()
         {
@@ -318,10 +318,10 @@ namespace RentACarOskar
 
         #region Buttons
         private void btnOk_Click(object sender, EventArgs e)
-        {
+        {       
             var properties = myInterface.GetType().GetProperties();
             //String za dodavanje imena polja koja su obavezna a nisu popunjena
-
+            
             foreach (var item in flowPanel.Controls)
             {
                 try
@@ -332,7 +332,7 @@ namespace RentACarOskar
                     {
                         InputControl input = item as InputControl;
                         value = input.GetValueFromTextBox();
-
+                      
                         //provjera da li unosimo model vozila koji vec postoji u bazi podataka
                         if (properties[0].Name == "ModelID" && properties[01].Name == "Naziv")
                         {
@@ -407,7 +407,7 @@ namespace RentACarOskar
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
-                    }
+                    }                
                 }
                 catch (Exception)
                 {
