@@ -124,7 +124,13 @@ namespace RentACarOskar
             string columnName = properties.Where(x => x.GetCustomAttribute<LookupKeyAttribute>() != null)
                 .FirstOrDefault().GetCustomAttribute<SqlNameAttribute>().Name;
 
-            Key = row.Cells[columnName].Value.ToString();
+            //dodan try/catch block by MARKO
+            try
+            {
+                Key = row.Cells[columnName].Value.ToString();
+            }
+            catch
+            { return; }
 
             columnName = properties.Where(x => x.GetCustomAttribute<LookupValueAttribute>() != null)
                 .FirstOrDefault().GetCustomAttribute<SqlNameAttribute>().Name;

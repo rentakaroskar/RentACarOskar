@@ -18,6 +18,7 @@ namespace RentACarOskar
     {
         int FakturaID;
         DataGridView dgvRacun;
+        DataTable dt;
         int fakturaID;
         string tipFakture;
 
@@ -26,6 +27,7 @@ namespace RentACarOskar
             popunjavanjeDGVa(fakturaID, tipFakture);
             this.fakturaID = fakturaID;
             this.tipFakture = tipFakture;
+
         }
 
         private void btnDodajVozilo_Click(object sender, EventArgs e)
@@ -45,9 +47,14 @@ namespace RentACarOskar
             cmd.Parameters.Add("@FakturaID", SqlDbType.Int);
             cmd.Parameters["@FakturaID"].Value = fakturaID;
 
-            DataTable dt = new DataTable();
+            dt = new DataTable();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
             dataAdapter.Fill(dt);
+
+
+            //sakriva kolonu koju necu da se vidi...
+            dt.Columns[6].ColumnMapping = MappingType.Hidden;
+
             decimal bezPdv = 0;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -59,11 +66,15 @@ namespace RentACarOskar
             dgvRacun.Location = new Point(15, 200);
             dgvRacun.Size = new Size(570, 270);
             Controls.Add(dgvRacun);
+
+            dgvRacun.AllowUserToOrderColumns = false;
+
             btnCancel.Location = new Point(570, 10);
             Controls[Controls.Count - 4].Text = "Ukupno bez PDV-a :" + bezPdv;
             Controls[Controls.Count - 3].Text = "Iznos PDV-a: " + (bezPdv * (decimal)0.17).ToString("F");
             Controls[Controls.Count - 2].Text = "Ukupno za platiti: " + (bezPdv * (decimal)1.17).ToString("F");
             DizajnDgva();
+
         }
 
         private void popunjavanjeDGVa(int fakturaID, string tipFakture)
@@ -77,6 +88,7 @@ namespace RentACarOskar
             btnCancel.Location = new Point(570, 10);
             btnStampaj.Location = new Point(480, 550);
             btnDodajVozilo.Location = new Point(30, 550);
+            btnRemove.Location = new Point(180, 550);
             this.StartPosition = FormStartPosition.CenterScreen;
 
             //Kreiranje labela 
@@ -126,8 +138,6 @@ namespace RentACarOskar
             {
                 brRacuna.Text = "Broj racuna: " + fakturaID.ToString() + "/" + DateTime.Today.Year.ToString();
             }
-            else
-                brRacuna.Text = "Broj rezervacije: " + fakturaID.ToString() + "/" + DateTime.Today.Year.ToString();
             brRacuna.Size = new Size(220, 20);
             brRacuna.Location = new Point(210, 170);
             brRacuna.Font = new Font("Arial", 12);
@@ -171,9 +181,14 @@ namespace RentACarOskar
             cmd.Parameters.Add("@FakturaID", SqlDbType.Int);
             cmd.Parameters["@FakturaID"].Value = fakturaID;
 
-            DataTable dt = new DataTable();
+            dt = new DataTable();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
             dataAdapter.Fill(dt);
+            
+
+            //sakriva kolonu koju necu da se vidi...
+            dt.Columns[6].ColumnMapping = MappingType.Hidden;
+
             decimal bezPdv = 0;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -185,6 +200,7 @@ namespace RentACarOskar
             dgvRacun.Location = new Point(15, 200);
             dgvRacun.Size = new Size(570, 270);
             Controls.Add(dgvRacun);
+            dgvRacun.AllowUserToOrderColumns = false;
 
             Label ukupnobezPDV = new Label();
             ukupnobezPDV.Text = "Ukupno bez PDV-a :" + bezPdv;
@@ -209,6 +225,7 @@ namespace RentACarOskar
             DizajnDgva();
 
         }
+        
         #region PronadjiKlijenta
         private List<string> PronadjiKlijenta(int fakturaID)
         {
@@ -266,6 +283,31 @@ namespace RentACarOskar
         private void metroButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = dgvRacun.SelectedRows[0].Index;
+                int cijenaID = Convert.ToInt32(dt.Rows[index].ItemArray[6].ToString());
+                brisiAutoSaFakture(cijenaID);
+            }
+            catch { }
+
+        }
+
+        private void brisiAutoSaFakture(int cijenaFakturaID)
+        {
+            string QueryDelete =
+                @"DELETE FROM [dbo].[CijenaFaktura]
+                   WHERE CijenaFakturaID = " + cijenaFakturaID.ToString();
+
+            SqlConnection conn = new SqlConnection(SqlHelper.GetConnectionString());
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+           QueryDelete);
+
+            refresh(FakturaID);
         }
     }
 }

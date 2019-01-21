@@ -398,7 +398,6 @@ namespace RentACarOskar
                 ComboBox cbxTip = new ComboBox();
                 cbxTip.Items.Add("Racun");
                 cbxTip.Items.Add("Predracun");
-                cbxTip.Items.Add("Rezervacija");
                 cbxTip.Items.Add("Sve");
                 pnlFilter1.Controls.Add(cbxTip);
                 pnlFilter1.SetFlowBreak(cbxTip, true);
@@ -483,7 +482,6 @@ namespace RentACarOskar
                 ComboBox cbxTip = new ComboBox();
                 cbxTip.Items.Add("Vratio");
                 cbxTip.Items.Add("Preuzeo");
-                cbxTip.Items.Add("Rezervisao");
                 cbxTip.Items.Add("Sve");
                 pnlFilter1.Controls.Add(cbxTip);
                 pnlFilter1.SetFlowBreak(cbxTip, true);
@@ -554,7 +552,7 @@ namespace RentACarOskar
                 ComboBox cmbDostupnost = new ComboBox();
                 cmbDostupnost.Items.Add("Zauzet");
                 cmbDostupnost.Items.Add("Slobodan");
-                cmbDostupnost.Items.Add("Rezervisano");
+                cmbDostupnost.Items.Add("Sve");
                 pnlFilter1.Controls.Add(cmbDostupnost);
 
 
