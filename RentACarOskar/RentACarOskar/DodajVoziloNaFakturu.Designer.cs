@@ -44,7 +44,7 @@
             // 
             // pnlDGV
             // 
-            this.pnlDGV.Location = new System.Drawing.Point(13, 13);
+            this.pnlDGV.Location = new System.Drawing.Point(13, 94);
             this.pnlDGV.Name = "pnlDGV";
             this.pnlDGV.Size = new System.Drawing.Size(447, 221);
             this.pnlDGV.TabIndex = 0;
@@ -54,7 +54,7 @@
             this.btnDodajVozilo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDodajVozilo.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnDodajVozilo.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnDodajVozilo.Location = new System.Drawing.Point(13, 372);
+            this.btnDodajVozilo.Location = new System.Drawing.Point(13, 453);
             this.btnDodajVozilo.Name = "btnDodajVozilo";
             this.btnDodajVozilo.Size = new System.Drawing.Size(113, 45);
             this.btnDodajVozilo.TabIndex = 7;
@@ -70,7 +70,7 @@
             this.panel1.Controls.Add(this.lblAuto);
             this.panel1.Controls.Add(this.txtCijenaPoDanu);
             this.panel1.Controls.Add(this.txtAuto);
-            this.panel1.Location = new System.Drawing.Point(13, 241);
+            this.panel1.Location = new System.Drawing.Point(13, 322);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(447, 125);
             this.panel1.TabIndex = 8;
@@ -145,7 +145,7 @@
             this.metroButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.metroButton1.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.metroButton1.Location = new System.Drawing.Point(347, 372);
+            this.metroButton1.Location = new System.Drawing.Point(347, 453);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(113, 45);
             this.metroButton1.TabIndex = 9;
@@ -157,13 +157,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 445);
+            this.ClientSize = new System.Drawing.Size(472, 515);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDodajVozilo);
             this.Controls.Add(this.pnlDGV);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DodajVoziloNaFakturu";
+            this.Resizable = false;
+            this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "DodajVoziloNaFakturu";
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.Load += new System.EventHandler(this.DodajVoziloNaFakturu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

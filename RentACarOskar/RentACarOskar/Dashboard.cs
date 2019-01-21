@@ -55,7 +55,7 @@ namespace RentACarOskar
             //panelMeni.Controls.Add(meni);
             panelMeni.Visible = false;
             this.StartPosition = FormStartPosition.CenterParent;
-            
+
             panel4.Visible = true;
 
             //Prilikom logina cuvamo informacije ko se prijavio na aplikaciju
@@ -76,7 +76,7 @@ namespace RentACarOskar
             panelPanelZaGV.Visible = true;
             //panelCentar.Visible = false;
             panelSaTabelom.Visible = false;
-            
+
             btnIzdaj.Visible = false;
         }
 
@@ -368,7 +368,7 @@ namespace RentACarOskar
                 lblOd.Text = "Od:";
                 lblOd.Width = 30;
                 pnlFilter1.Controls.Add(lblOd);
-               
+
                 DateTimePicker dtpOd = new DateTimePicker();
                 dtpOd.Format = DateTimePickerFormat.Custom;
                 dtpOd.Value = new DateTime(2018, 01, 01);
@@ -384,7 +384,7 @@ namespace RentACarOskar
                 lblDo.Text = "Do:";
                 lblDo.Width = 30;
                 pnlFilter1.Controls.Add(lblDo);
-                
+
                 DateTimePicker dtpDo = new DateTimePicker();
                 dtpDo.Format = DateTimePickerFormat.Custom;
                 dtpDo.CustomFormat = "dd.MM.yyyy";
@@ -534,7 +534,7 @@ namespace RentACarOskar
                 TextBox txtProizvodjac = new TextBox();
                 pnlFilter1.Controls.Add(txtProizvodjac);
                 pnlFilter1.SetFlowBreak(txtProizvodjac, true);
-              
+
                 Label lblModel = new Label();
                 lblModel.Text = "Model:";
                 pnlFilter1.Controls.Add(lblModel);
@@ -588,7 +588,7 @@ namespace RentACarOskar
                         comm.Parameters["@Dostupnost"].Value = cmbDostupnost.Items[cmbDostupnost.SelectedIndex].ToString();
                     else comm.Parameters["@Dostupnost"].Value = DBNull.Value;
                     comm.Parameters["@Dostupnost"].IsNullable = true;
-                    
+
 
                     dt = new DataTable();
                     SqlDataAdapter adapter = new SqlDataAdapter(comm);
@@ -665,7 +665,7 @@ namespace RentACarOskar
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-           
+
             DialogResult myResult;
             myResult = MetroMessageBox.Show(this, "Da li zelite napustiti App?", "Question Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (myResult == DialogResult.Yes)
@@ -761,10 +761,10 @@ namespace RentACarOskar
             panelAutomobili.BackColor = Color.Transparent;
             slicicaAuto.BackColor = Color.Transparent;
             lblAutomobili.BackColor = Color.Transparent;
-           
+
 
         }
-       
+
 
         //PanelKlijenti animacija
         private void panelKlijenti_MouseHover(object sender, EventArgs e)
@@ -776,7 +776,7 @@ namespace RentACarOskar
             panelKlijenti.BackColor = Color.FromArgb(20, 255, 255, 255);
             slicicaPeople.BackColor = Color.Transparent;
             lblKlijenti.BackColor = Color.Transparent;
-           
+
         }
 
         private void panelKlijenti_MouseLeave(object sender, EventArgs e)
@@ -788,7 +788,7 @@ namespace RentACarOskar
             panelKlijenti.BackColor = Color.Transparent;
             slicicaPeople.BackColor = Color.Transparent;
             lblKlijenti.BackColor = Color.Transparent;
-           
+
         }
 
         //PanelFaktura animacija
@@ -805,14 +805,14 @@ namespace RentACarOskar
 
         private void panelFaktura_MouseLeave(object sender, EventArgs e)
         {
-            if(panelFaktura.BackColor == Color.FromArgb(20, 255, 255, 254))
+            if (panelFaktura.BackColor == Color.FromArgb(20, 255, 255, 254))
             {
                 return;
             }
             panelFaktura.BackColor = Color.Transparent;
             btnFaktura.BackColor = Color.Transparent;
             lblFaktura.BackColor = Color.Transparent;
-       
+
         }
         //panel home animacija
         private void panelHome_MouseHover(object sender, EventArgs e)
@@ -910,7 +910,7 @@ namespace RentACarOskar
                 bunifuCards1.Width = 289;
                 bunifuCards2.Width = bunifuCards1.Width;
                 panelFilter.Width = bunifuCards1.Width;
-               
+
 
                 PanelLeft.Width = 245;
                 logoPic.Visible = true;
@@ -920,9 +920,6 @@ namespace RentACarOskar
                 dgv.Size = panelPanelZaGV.Size;
                 panelSaTabelom.Width = panelPanelZaGV.Width;
                 panelZaBunifuKartice.Width = panelPanelZaGV.Width;
-
-
-
             }
         }
 
@@ -960,7 +957,7 @@ namespace RentACarOskar
             panelSaTabelom.Visible = false;
             // PopuniFilterPanel();
             MeniZaDashboard meni = new MeniZaDashboard();
-            
+
         }
 
         private void loader_Tick(object sender, EventArgs e)
@@ -974,16 +971,6 @@ namespace RentACarOskar
             {
                 splash.Visible = false;
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void splash_Paint(object sender, PaintEventArgs e)
