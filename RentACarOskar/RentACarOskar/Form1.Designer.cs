@@ -46,7 +46,7 @@ namespace RentACarOskar
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
@@ -256,17 +256,20 @@ namespace RentACarOskar
             this.bunifuElipse3.ElipseRadius = 5;
             this.bunifuElipse3.TargetControl = this.tbPassword;
             // 
-            // bunifuCheckbox1
+            // checkBox2
             // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = true;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(164, 360);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 13;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.checkBox2.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.checkBox2.ForeColor = System.Drawing.Color.White;
+            this.checkBox2.Location = new System.Drawing.Point(190, 336);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(105, 21);
+            this.checkBox2.TabIndex = 16;
+            this.checkBox2.Text = "Prikazi lozinku";
+            this.checkBox2.UseVisualStyleBackColor = false;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.bunifuCheckbox1_OnChange);
             // 
             // Form1
             // 
@@ -278,7 +281,7 @@ namespace RentACarOskar
             this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
             this.BackMaxSize = 550;
             this.ClientSize = new System.Drawing.Size(321, 493);
-            this.Controls.Add(this.bunifuCheckbox1);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(label5);
             this.Controls.Add(label4);
@@ -321,7 +324,8 @@ namespace RentACarOskar
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 
