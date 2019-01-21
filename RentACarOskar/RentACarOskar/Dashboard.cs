@@ -403,7 +403,6 @@ namespace RentACarOskar
                 cbxTip.Width = 100;
                 cbxTip.Items.Add("Racun");
                 cbxTip.Items.Add("Predracun");
-                cbxTip.Items.Add("Rezervacija");
                 cbxTip.Items.Add("Sve");
                 cbxTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(cbxTip);
@@ -497,7 +496,6 @@ namespace RentACarOskar
                 cbxTip.Width = 100;
                 cbxTip.Items.Add("Vratio");
                 cbxTip.Items.Add("Preuzeo");
-                cbxTip.Items.Add("Rezervisao");
                 cbxTip.Items.Add("Sve");
                 cbxTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(cbxTip);
@@ -578,7 +576,7 @@ namespace RentACarOskar
                 cmbDostupnost.Width = 100;
                 cmbDostupnost.Items.Add("Zauzet");
                 cmbDostupnost.Items.Add("Slobodan");
-                cmbDostupnost.Items.Add("Rezervisano");
+                cmbDostupnost.Items.Add("Sve");
                 pnlFilter1.Controls.Add(cmbDostupnost);
 
 
