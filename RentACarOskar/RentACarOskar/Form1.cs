@@ -26,6 +26,9 @@ namespace RentACarOskar
             // panel3.BackColor = Color.FromArgb(102, 0, 0, 0);
             //metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);  
             this.ControlBox = false;
+            checkBox2.CheckAlign = ContentAlignment.MiddleRight;
+
+
 
         }
 
@@ -118,5 +121,19 @@ namespace RentACarOskar
         {
             CenterToScreen();
         }
+
+        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                tbPassword.UseSystemPasswordChar = false;
+                tbPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                tbPassword.UseSystemPasswordChar = true;
+            }
+        }
+
     }
 }
