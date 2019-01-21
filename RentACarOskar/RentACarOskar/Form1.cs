@@ -26,7 +26,8 @@ namespace RentACarOskar
             // panel3.BackColor = Color.FromArgb(102, 0, 0, 0);
             //metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);  
             this.ControlBox = false;
-
+            
+         
         }
 
         #region Prijavljivanje_Enter
@@ -117,6 +118,6 @@ namespace RentACarOskar
         private void Form1_Load(object sender, EventArgs e)
         {
             CenterToScreen();
-        }
+        }        
     }
 }
