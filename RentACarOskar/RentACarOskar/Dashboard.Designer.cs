@@ -346,7 +346,7 @@
             this.labelDate.BackColor = System.Drawing.Color.Transparent;
             this.labelDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.labelDate.Location = new System.Drawing.Point(7, 87);
+            this.labelDate.Location = new System.Drawing.Point(21, 90);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(53, 20);
             this.labelDate.TabIndex = 11;
@@ -358,7 +358,7 @@
             this.labelTime.BackColor = System.Drawing.Color.Transparent;
             this.labelTime.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.labelTime.Location = new System.Drawing.Point(3, 25);
+            this.labelTime.Location = new System.Drawing.Point(17, 32);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(131, 44);
             this.labelTime.TabIndex = 10;
@@ -403,7 +403,7 @@
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(303, 157);
+            this.bunifuCards2.Size = new System.Drawing.Size(303, 161);
             this.bunifuCards2.TabIndex = 6;
             // 
             // metroButton1

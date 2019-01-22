@@ -74,6 +74,7 @@ namespace RentACarOskar
             }
 
             panelPanelZaGV.Visible = true;
+            panelPanelZaGV.Font=new Font("Century Gothic", 9);
             //panelCentar.Visible = false;
             panelSaTabelom.Visible = false;
 
@@ -367,18 +368,19 @@ namespace RentACarOskar
         private void PopuniFilterPanel()
         {
             pnlFilter1.Controls.Clear();
+            pnlFilter1.Font = new Font("Century Gothic", 9);
+            
             if (FilterProperty.GetType() == typeof(FakturaIspis))
             {
                 Label lblOd = new Label();
                 //Label lblOd = new Label();
                 lblOd.Text = "Od:";
-                lblOd.Font = new Font("Century Gothic", 9);
                 lblOd.Width = 100;
                 pnlFilter1.Controls.Add(lblOd);
 
                 DateTimePicker dtpOd = new DateTimePicker();
                 dtpOd.Format = DateTimePickerFormat.Custom;
-                dtpOd.Value = new DateTime(2018, 01, 01);
+                dtpOd.Value = new DateTime(2018, 01, 01);          
                 dtpOd.CustomFormat = "dd.MM.yyyy";
                 dtpOd.Width = 100;
                 pnlFilter1.Controls.Add(dtpOd);
@@ -389,14 +391,12 @@ namespace RentACarOskar
                 //Label lblDo = new Label();
                 Label lblDo = new Label();
                 lblDo.Text = "Do:";
-                lblDo.Font = new Font("Century Gothic", 9);
                 lblDo.Width = 100;
                 pnlFilter1.Controls.Add(lblDo);
 
                 DateTimePicker dtpDo = new DateTimePicker();
                 dtpDo.Format = DateTimePickerFormat.Custom;
                 dtpDo.CustomFormat = "dd.MM.yyyy";
-                dtpDo.Font = new Font("Century Gothic", 9);
                 dtpDo.Width = 100;
                 pnlFilter1.Controls.Add(dtpDo);
                 pnlFilter1.SetFlowBreak(dtpDo, true);
@@ -404,20 +404,17 @@ namespace RentACarOskar
                 Label lblTip = new Label();
                 lblTip.Text = "Tip Fakture:";
                 lblTip.Width = 100;
-                lblTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblTip);
                 ComboBox cbxTip = new ComboBox();
                 cbxTip.Width = 100;
                 cbxTip.Items.Add("Racun");
                 cbxTip.Items.Add("Predracun");
                 cbxTip.Items.Add("Sve");
-                cbxTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(cbxTip);
                 pnlFilter1.SetFlowBreak(cbxTip, true);
 
                 Label lblKlijent = new Label();
                 lblKlijent.Text = "Klijent:";
-                lblKlijent.Font = new Font("Century Gothic", 9);
                 lblKlijent.Width = 100;
                 pnlFilter1.Controls.Add(lblKlijent);
                 TextBox txtKlijent = new TextBox();
