@@ -51,8 +51,13 @@ namespace RentACarOskar
             labelTime.Text = DateTime.Now.ToLongTimeString();
             labelDate.Text = DateTime.Now.ToLongDateString();
 
-            //MeniZaDashboard meni = new MeniZaDashboard();
-            //panelMeni.Controls.Add(meni);
+            //prikaz dashbord-a
+            panelMeniDashboard.Visible = true;
+
+
+            MeniZaDashboard meni = new MeniZaDashboard(mail);
+            panelMeniDashboard.Controls.Add(meni);
+
             panelMeni.Visible = false;
             this.StartPosition = FormStartPosition.CenterParent;
 
@@ -158,6 +163,9 @@ namespace RentACarOskar
         //Menu item Vozilo
         private void btnVozilo_Click(object sender, EventArgs e)
         {
+            //sakrivanje glavnog dashbord-a
+            panelMeniDashboard.Visible = false;
+
             //Klasa koja se prikazuje u DGV
             VoziloIspis pom = new VoziloIspis();
             PopulateGrid(pom);
@@ -184,6 +192,9 @@ namespace RentACarOskar
 
         private void btnKlijent_Click(object sender, EventArgs e)
         {
+            //sakrivanje glavnog dashbord-a
+            panelMeniDashboard.Visible = false;
+
             //Klasa koja se prikazuje u DGV
             KlijentIspis pom = new KlijentIspis();
             PopulateGrid(pom);
@@ -210,6 +221,10 @@ namespace RentACarOskar
 
         private void btnFaktura_Click(object sender, EventArgs e)
         {
+
+            //sakrivanje glavnog dashbord-a
+            panelMeniDashboard.Visible = false;
+
             //Klasa koja se prikazuje u DGV
             FakturaIspis pom = new FakturaIspis();
             PopulateGrid(pom);
@@ -235,6 +250,9 @@ namespace RentACarOskar
 
         private void btnZaposleni_Click(object sender, EventArgs e)
         {
+            //sakrivanje glavnog dashbord-a
+            panelMeniDashboard.Visible = false;
+
             //Klasa koja se prikazuje u DGV
             RadnikIspis pom = new RadnikIspis();
 
@@ -265,6 +283,9 @@ namespace RentACarOskar
         private void panelHome_MouseClick(object sender, MouseEventArgs e)
         {
             BgColor(panelHome);
+
+            //prikaz dashbord-a
+            panelMeniDashboard.Visible = true;
 
         }
 
@@ -955,7 +976,7 @@ namespace RentACarOskar
         {
             panelSaTabelom.Visible = false;
             // PopuniFilterPanel();
-            MeniZaDashboard meni = new MeniZaDashboard();
+            MeniZaDashboard meni = new MeniZaDashboard(UserMail);
 
         }
 
@@ -972,9 +993,5 @@ namespace RentACarOskar
             }
         }
 
-        private void splash_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

@@ -10,41 +10,94 @@ using System.Windows.Forms;
 using KonekcijaNaBazu;
 using System.Data.SqlClient;
 
+
 namespace RentACarOskar.UserControls
 {
     public partial class MeniZaDashboard : UserControl
     {
-        public MeniZaDashboard()
+        public MeniZaDashboard(string userName)
         {
             InitializeComponent();
             timer1.Start();
 
-            labelTime.Text = DateTime.Now.ToLongTimeString();
-            labelDate.Text = DateTime.Now.ToLongDateString();
+            string _userName = userName;
 
+            labelUserName.Text = _userName;
+            labelBrVozila.Text = DateTime.Now.ToLongDateString();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+
+            int brVozila = 0;
+
+            string stringQuery;
+            stringQuery = brojVozila();
+            brVozila = DobavljanePOdatakaIzBaze(stringQuery);
+            labelBrVozila.Text = brVozila.ToString();
+
+
+            stringQuery = brojSlobodnihVozila();
+            brVozila = DobavljanePOdatakaIzBaze(stringQuery);
+            labelSlobodnaVozila.Text = brVozila.ToString();
+
+            chart1.Series["s1"].Points.AddXY(" ", brVozila);
+
+            stringQuery = brojZauzetihVozila();
+            brVozila = DobavljanePOdatakaIzBaze(stringQuery);
+            lblBrojzauzetihVozila.Text = brVozila.ToString();
+            chart1.Series["s1"].Points.AddXY(" ", brVozila);
+
+
+
+
+
+        }
+        public int DobavljanePOdatakaIzBaze(string query)
+        {
+            int br = 0;
             DataTable dt = new DataTable();
-            //int x = SqlHelper.ExecuteNonQuery(SqlHelper.GetConnectionString(), CommandType.Text, brojVozila());
-            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
-            brojVozila());
+            SqlDataReader reader;
+
+           reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+           query);
+
             dt.Load(reader);
-            brVozila.Text = dt.Rows[0].ToString();
-           
-            //int x = dt.Rows[0];
+            object field = dt.Rows[0].ItemArray[0];
             reader.Close();
-            //brVozila.Text = x.ToString();
+            br = Convert.ToInt32(field);
+            return br;
         }
         public string brojVozila()
         {
             return @"SELECT COUNT(v.VoziloID)
-                                FROM dbo.Vozilo v";
+                                FROM dbo.Vozilo v
+                        WHERE IsDeleted = 0";
+        }
+        public string brojSlobodnihVozila()
+        {
+            return @"SELECT count(v.VoziloID)
+                        FROM dbo.vFilterVozila v
+                        WHERE
+                        v.Dostupnost='Slobodan'";
+        }
+        public string brojZauzetihVozila()
+        {
+            return @"SELECT count(v.VoziloID)
+                        FROM dbo.vFilterVozila v
+                        WHERE
+                        v.Dostupnost='Zauzet'";
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            labelTime.Text = DateTime.Now.ToLongTimeString();
+            ///labelTime.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
         }
 
+
         private void brVozila_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
         {
 
         }
