@@ -221,10 +221,14 @@ namespace RentACarOskar
             }
             else
             {
-                DataGridViewRow row = dgv.SelectedRows[0];
-                var properties = myProperty.GetType().GetProperties();
+                try
+                {
+                    DataGridViewRow row = dgv.SelectedRows[0];
+                    var properties = myProperty.GetType().GetProperties();
 
-                LookUpKupljenje(properties, row);
+                    LookUpKupljenje(properties, row);
+                }
+                catch { }
             }
             this.Close();
         }
