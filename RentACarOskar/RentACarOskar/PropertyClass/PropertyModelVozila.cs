@@ -125,6 +125,16 @@ namespace RentACarOskar.PropertyClass
                              FROM [dbo].[ModelVozila]
                              WHERE [ModelID] = {broj}";
         }
+
+        public string GetSelectLookUp()
+        {
+            return @"SELECT 
+	                mv.ModelID,
+	                mv.Naziv AS Model,
+	                p.Naziv AS Proizvodjac
+                    FROM dbo.ModelVozila mv
+	                    JOIN dbo.Proizvodjac p ON p.ProizvodjacID = mv.ProizvodjacID";
+        }
         #endregion
     }
 }

@@ -79,6 +79,14 @@ namespace RentACarOskar
                 pom.GetSelectQueryZaFakturu());
             }
 
+            if (myProperty.GetType() == typeof(PropertyModelVozila))
+            {
+                PropertyModelVozila pom = myProperty as PropertyModelVozila;
+                reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                pom.GetSelectLookUp());
+            }
+
+
             dt.Load(reader);
             reader.Close();
 
@@ -206,6 +214,20 @@ namespace RentACarOskar
         {
             int red;
             if (myProperty.GetType() == typeof(PropertyKlijent))
+            {
+                red = dgv.SelectedRows[0].Index;
+                SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                            myProperty.GetSelectQuery());
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                dgv.DataSource = dt;
+
+                DataGridViewRow row = dgv.Rows[red];
+                var properties = myProperty.GetType().GetProperties();
+
+                LookUpKupljenje(properties, row);
+            }
+            else if (myProperty.GetType() == typeof(PropertyModelVozila))
             {
                 red = dgv.SelectedRows[0].Index;
                 SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
