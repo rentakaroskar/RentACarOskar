@@ -102,7 +102,6 @@
             this.proba.SuspendLayout();
             this.splash.SuspendLayout();
             this.panelZaBunifuKartice.SuspendLayout();
-            this.splash.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panelFilter.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
@@ -247,7 +246,6 @@
             // 
             // panelPanelZaGV
             // 
-            this.panelPanelZaGV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPanelZaGV.BackgroundImage")));
             this.panelPanelZaGV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelPanelZaGV.Controls.Add(this.proba);
             this.panelPanelZaGV.GradientBottomLeft = System.Drawing.Color.White;
@@ -255,6 +253,7 @@
             this.panelPanelZaGV.GradientTopLeft = System.Drawing.Color.White;
             this.panelPanelZaGV.GradientTopRight = System.Drawing.Color.White;
             this.panelPanelZaGV.Location = new System.Drawing.Point(24, 199);
+            this.panelPanelZaGV.Margin = new System.Windows.Forms.Padding(0);
             this.panelPanelZaGV.Name = "panelPanelZaGV";
             this.panelPanelZaGV.Quality = 10;
             this.panelPanelZaGV.Size = new System.Drawing.Size(880, 380);
@@ -468,21 +467,6 @@
             this.btnCijena.UseVisualStyleBackColor = false;
             this.btnCijena.Visible = false;
             this.btnCijena.Click += new System.EventHandler(this.btnCijena_Click);
-            // 
-            // panelPanelZaGV
-            // 
-            this.panelPanelZaGV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPanelZaGV.BackgroundImage")));
-            this.panelPanelZaGV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelPanelZaGV.GradientBottomLeft = System.Drawing.Color.White;
-            this.panelPanelZaGV.GradientBottomRight = System.Drawing.Color.White;
-            this.panelPanelZaGV.GradientTopLeft = System.Drawing.Color.White;
-            this.panelPanelZaGV.GradientTopRight = System.Drawing.Color.White;
-            this.panelPanelZaGV.Location = new System.Drawing.Point(24, 199);
-            this.panelPanelZaGV.Margin = new System.Windows.Forms.Padding(0);
-            this.panelPanelZaGV.Name = "panelPanelZaGV";
-            this.panelPanelZaGV.Quality = 10;
-            this.panelPanelZaGV.Size = new System.Drawing.Size(880, 380);
-            this.panelPanelZaGV.TabIndex = 0;
             // 
             // panelMeni
             // 

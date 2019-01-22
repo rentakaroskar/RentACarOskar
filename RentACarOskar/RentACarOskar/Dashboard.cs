@@ -36,7 +36,7 @@ namespace RentACarOskar
 
         DataTable dt;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-
+        
         string UserMail;
         string UserID;
         //Role Admin/User
@@ -110,6 +110,13 @@ namespace RentACarOskar
             dt.Load(reader);
             reader.Close();
             PopuniDGV(dt, property);
+
+            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgv.AllowUserToResizeRows = false;
+            dgv.AllowUserToResizeColumns = false;
+
+            dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
         }
 
         //Ucitavanje zadate Property klase iz foldera IspisDGV
@@ -691,6 +698,8 @@ namespace RentACarOskar
 
             FormaIzdavanje formaIzdavanje = new FormaIzdavanje(idFakture, tipFakture);
             formaIzdavanje.ShowDialog();
+            
+            PopulateGrid(myProperty);
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
