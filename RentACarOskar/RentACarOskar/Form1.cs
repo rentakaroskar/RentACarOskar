@@ -18,7 +18,7 @@ namespace RentACarOskar
     {
         public Form1()
         {
-           
+            
             InitializeComponent();
             Color panelColor = Color.FromArgb(102, 0, 0, 0);
             //panel3.BackColor = panelColor;
@@ -26,7 +26,7 @@ namespace RentACarOskar
             // panel3.BackColor = Color.FromArgb(102, 0, 0, 0);
             //metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);  
             this.ControlBox = false;
-            checkBox2.CheckAlign = ContentAlignment.MiddleRight;
+            checkBox2.CheckAlign = ContentAlignment.MiddleRight;     
 
 
 
@@ -120,6 +120,9 @@ namespace RentACarOskar
         private void Form1_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+           /* Font font = new Font("Century Gothic", 9, FontStyle.Regular);
+            tbUserName.Font = font;
+            tbPassword.Font = font;*/
         }
 
         private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
