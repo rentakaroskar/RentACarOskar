@@ -33,6 +33,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnDodajVozilo = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnRemove = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // btnStampaj
@@ -62,7 +63,7 @@
             this.btnDodajVozilo.Name = "btnDodajVozilo";
             this.btnDodajVozilo.Size = new System.Drawing.Size(107, 28);
             this.btnDodajVozilo.TabIndex = 6;
-            this.btnDodajVozilo.Text = "Dodaj Vozilo";
+            this.btnDodajVozilo.Text = "DODAJ VOZILO";
             this.btnDodajVozilo.UseSelectable = true;
             this.btnDodajVozilo.Click += new System.EventHandler(this.btnDodajVozilo_Click);
             // 
@@ -78,12 +79,26 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnRemove
+            // 
+            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemove.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnRemove.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnRemove.Location = new System.Drawing.Point(151, 399);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(107, 28);
+            this.btnRemove.TabIndex = 8;
+            this.btnRemove.Text = "OBRISI VOZILO";
+            this.btnRemove.UseSelectable = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // FormaIzdavanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDodajVozilo);
             this.Controls.Add(this.btnStampaj);
@@ -104,5 +119,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private MetroFramework.Controls.MetroButton btnDodajVozilo;
         private System.Windows.Forms.Button btnCancel;
+        private MetroFramework.Controls.MetroButton btnRemove;
     }
 }

@@ -86,7 +86,7 @@ namespace RentACarOskar
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
             VoziloIspis pom = new VoziloIspis();
-           // MeniZaDashboard dashboard = new MeniZaDashboard();
+            //MeniZaDashboard dashboard = new MeniZaDashboard();
            //panel2.Controls.Add(dashboard);
         }
 
@@ -365,14 +365,15 @@ namespace RentACarOskar
                 Label lblOd = new Label();
                 //Label lblOd = new Label();
                 lblOd.Text = "Od:";
-                lblOd.Width = 30;
+                lblOd.Font = new Font("Century Gothic", 9);
+                lblOd.Width = 100;
                 pnlFilter1.Controls.Add(lblOd);
 
                 DateTimePicker dtpOd = new DateTimePicker();
                 dtpOd.Format = DateTimePickerFormat.Custom;
                 dtpOd.Value = new DateTime(2018, 01, 01);
                 dtpOd.CustomFormat = "dd.MM.yyyy";
-                dtpOd.Width = 170;
+                dtpOd.Width = 100;
                 pnlFilter1.Controls.Add(dtpOd);
                 pnlFilter1.SetFlowBreak(dtpOd, true);
 
@@ -381,33 +382,39 @@ namespace RentACarOskar
                 //Label lblDo = new Label();
                 Label lblDo = new Label();
                 lblDo.Text = "Do:";
-                lblDo.Width = 30;
+                lblDo.Font = new Font("Century Gothic", 9);
+                lblDo.Width = 100;
                 pnlFilter1.Controls.Add(lblDo);
 
                 DateTimePicker dtpDo = new DateTimePicker();
                 dtpDo.Format = DateTimePickerFormat.Custom;
                 dtpDo.CustomFormat = "dd.MM.yyyy";
-                dtpDo.Width = 170;
+                dtpDo.Font = new Font("Century Gothic", 9);
+                dtpDo.Width = 100;
                 pnlFilter1.Controls.Add(dtpDo);
                 pnlFilter1.SetFlowBreak(dtpDo, true);
 
                 Label lblTip = new Label();
                 lblTip.Text = "Tip Fakture:";
-                lblTip.Width = 50;
+                lblTip.Width = 100;
+                lblTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblTip);
                 ComboBox cbxTip = new ComboBox();
+                cbxTip.Width = 100;
                 cbxTip.Items.Add("Racun");
                 cbxTip.Items.Add("Predracun");
-                cbxTip.Items.Add("Rezervacija");
                 cbxTip.Items.Add("Sve");
+                cbxTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(cbxTip);
                 pnlFilter1.SetFlowBreak(cbxTip, true);
 
                 Label lblKlijent = new Label();
                 lblKlijent.Text = "Klijent:";
-                lblKlijent.Width = 50;
+                lblKlijent.Font = new Font("Century Gothic", 9);
+                lblKlijent.Width = 100;
                 pnlFilter1.Controls.Add(lblKlijent);
                 TextBox txtKlijent = new TextBox();
+                txtKlijent.Width = 100;
                 pnlFilter1.Controls.Add(txtKlijent);
                 pnlFilter1.SetFlowBreak(txtKlijent, true);
 
@@ -461,30 +468,36 @@ namespace RentACarOskar
             {
                 Label lblIme = new Label();
                 lblIme.Text = "Ime:";
-                lblIme.Width = 50;
+                lblIme.Width = 100;
+                lblIme.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblIme);
                 TextBox txtIme = new TextBox();
+                txtIme.Width = 100;
                 pnlFilter1.Controls.Add(txtIme);
                 pnlFilter1.SetFlowBreak(txtIme, true);
 
                 Label lblPrezime = new Label();
                 lblPrezime.Text = "Prezime:";
-                lblPrezime.Width = 50;
+                lblPrezime.Width = 100;
+                lblPrezime.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblPrezime);
                 TextBox txtPrezime = new TextBox();
+                txtPrezime.Width = 100;
                 txtPrezime.Location = new Point(60, 31);
                 pnlFilter1.Controls.Add(txtPrezime);
                 pnlFilter1.SetFlowBreak(txtPrezime, true);
 
                 Label lblTip = new Label();
                 lblTip.Text = "Tip:";
-                lblTip.Width = 50;
+                lblTip.Width = 100;
+                lblTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblTip);
                 ComboBox cbxTip = new ComboBox();
+                cbxTip.Width = 100;
                 cbxTip.Items.Add("Vratio");
                 cbxTip.Items.Add("Preuzeo");
-                cbxTip.Items.Add("Rezervisao");
                 cbxTip.Items.Add("Sve");
+                cbxTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(cbxTip);
                 pnlFilter1.SetFlowBreak(cbxTip, true);
 
@@ -529,32 +542,41 @@ namespace RentACarOskar
             {
                 Label lblProizvodjac = new Label();
                 lblProizvodjac.Text = "Proizvodjac:";
+                lblProizvodjac.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblProizvodjac);
                 TextBox txtProizvodjac = new TextBox();
+                txtProizvodjac.Width = 100;
                 pnlFilter1.Controls.Add(txtProizvodjac);
                 pnlFilter1.SetFlowBreak(txtProizvodjac, true);
 
                 Label lblModel = new Label();
                 lblModel.Text = "Model:";
+                lblModel.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblModel);
                 TextBox txtModel = new TextBox();
+                txtModel.Width = 100;
                 pnlFilter1.Controls.Add(txtModel);
                 pnlFilter1.SetFlowBreak(txtModel, true);
 
                 Label lblBoja = new Label();
                 lblBoja.Text = "Boja:";
+                lblBoja.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblBoja);
                 TextBox txtBoja = new TextBox();
+
+                txtBoja.Width = 100;
                 pnlFilter1.Controls.Add(txtBoja);
                 pnlFilter1.SetFlowBreak(txtBoja, true);
 
                 Label lblDostupnost = new Label();
                 lblDostupnost.Text = "Dostupnost:";
+                lblDostupnost.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblDostupnost);
                 ComboBox cmbDostupnost = new ComboBox();
+                cmbDostupnost.Width = 100;
                 cmbDostupnost.Items.Add("Zauzet");
                 cmbDostupnost.Items.Add("Slobodan");
-                cmbDostupnost.Items.Add("Rezervisano");
+                cmbDostupnost.Items.Add("Sve");
                 pnlFilter1.Controls.Add(cmbDostupnost);
 
 
@@ -600,22 +622,31 @@ namespace RentACarOskar
             {
                 Label lblIme = new Label();
                 lblIme.Text = "Ime:";
+                lblIme.Width = 100;
+                lblIme.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblIme);
                 TextBox txtIme = new TextBox();
+                txtIme.Width = 100;
                 pnlFilter1.Controls.Add(txtIme);
                 pnlFilter1.SetFlowBreak(txtIme, true);
 
                 Label lblPrezime = new Label();
                 lblPrezime.Text = "Prezime:";
+                lblPrezime.Width = 100;
+                lblPrezime.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblPrezime);
                 TextBox txtPrezime = new TextBox();
+                txtPrezime.Width = 100;
                 pnlFilter1.Controls.Add(txtPrezime);
                 pnlFilter1.SetFlowBreak(txtPrezime, true);
 
                 Label lblPozicija = new Label();
                 lblPozicija.Text = "Pozicija:";
+                lblPozicija.Width = 100;
+                lblPozicija.Font= new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblPozicija);
                 TextBox txtPozicija = new TextBox();
+                txtPozicija.Width = 100;
                 pnlFilter1.Controls.Add(txtPozicija);
                 pnlFilter1.SetFlowBreak(txtPozicija, true);
 
