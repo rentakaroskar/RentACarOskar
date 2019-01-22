@@ -246,7 +246,6 @@
             // 
             // panelPanelZaGV
             // 
-            this.panelPanelZaGV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPanelZaGV.BackgroundImage")));
             this.panelPanelZaGV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelPanelZaGV.Controls.Add(this.proba);
             this.panelPanelZaGV.GradientBottomLeft = System.Drawing.Color.White;
