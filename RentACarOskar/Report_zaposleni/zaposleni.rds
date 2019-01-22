@@ -3,6 +3,7 @@
   <ConnectionProperties>
     <Extension>SQL</Extension>
     <ConnectString>Data Source=MS-SQL\ITIVITY,11111;Initial Catalog=RentACarTim5</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
   </ConnectionProperties>
   <DataSourceID>1a2fbcf5-4c8a-429f-b685-4cbc2f02e488</DataSourceID>
 </RptDataSource>

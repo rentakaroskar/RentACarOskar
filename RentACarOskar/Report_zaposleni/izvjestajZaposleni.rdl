@@ -99,22 +99,22 @@ FROM dbo.Radnik r</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.72792in</Width>
+                  <Width>0.55085in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.75in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.78125in</Width>
+                  <Width>0.95832in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.71876in</Width>
+                  <Width>0.57293in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.77083in</Width>
+                  <Width>0.72916in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.6875in</Width>
+                  <Width>0.875in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.80208in</Width>
@@ -558,7 +558,7 @@ FROM dbo.Radnik r</CommandText>
                                   <Value>=Fields!DatumRodjenja.Value</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <Format>d</Format>
+                                    <Format>dd.MM.yyyy</Format>
                                     <Color>DimGray</Color>
                                   </Style>
                                 </TextRun>
@@ -625,7 +625,7 @@ FROM dbo.Radnik r</CommandText>
                                   <Value>=Fields!DatumZaposlenja.Value</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <Format>d</Format>
+                                    <Format>dd.MM.yyyy</Format>
                                     <Color>DimGray</Color>
                                   </Style>
                                 </TextRun>
