@@ -691,6 +691,8 @@ namespace RentACarOskar
 
             FormaIzdavanje formaIzdavanje = new FormaIzdavanje(idFakture, tipFakture);
             formaIzdavanje.ShowDialog();
+            
+            PopulateGrid(myProperty);
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
