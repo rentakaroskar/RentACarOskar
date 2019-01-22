@@ -110,6 +110,13 @@ namespace RentACarOskar
             dt.Load(reader);
             reader.Close();
             PopuniDGV(dt, property);
+
+            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgv.AllowUserToResizeRows = false;
+            dgv.AllowUserToResizeColumns = false;
+
+            dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
         }
 
         //Ucitavanje zadate Property klase iz foldera IspisDGV
