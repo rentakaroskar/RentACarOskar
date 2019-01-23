@@ -28,6 +28,10 @@ namespace RentACarOskar
             {
                 rvIzvjestaj.ServerReport.ReportPath = "/Report_RentACarOscar/izvjestajZaposleni";
             }
+            else if (property.GetType() == typeof(PropertyFaktura))
+            {
+                rvIzvjestaj.ServerReport.ReportPath = "/Report_RentACarOscar/izvjestajSvihFaktura";
+            }
         }
 
         private void Izvjestaj_Load(object sender, EventArgs e)

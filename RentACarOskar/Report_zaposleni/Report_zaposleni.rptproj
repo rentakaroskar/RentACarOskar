@@ -54,6 +54,7 @@
   <ItemGroup>
     <Report Include="izvjestajFaktura.rdl" />
     <Report Include="izvjestajKlijenti.rdl" />
+    <Report Include="izvjestajSvihFaktura.rdl" />
     <Report Include="izvjestajVozila.rdl" />
     <Report Include="izvjestajZaposleni.rdl" />
   </ItemGroup>
