@@ -16,9 +16,35 @@ namespace RentACarOskar
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
+        //Podesavanje kontrola na login formi da njihov parent bude picture box a ne citava forma da se 
+        //dizajn na formi moze prikazati iza kontrola
+        private void KontrolePrekoBoxa()
+        {
+            //Uzimanje pozicije trazene kontrole
+            var pos = this.PointToScreen(checkBox2.Location);
+            pos = pictureBox1.PointToClient(pos);
+
+            //Mijenjanje parent-a
+            checkBox2.Parent = pictureBox1;
+
+            //Vracanje pozicije
+            checkBox2.Location = pos;
+
+
+            pos = this.PointToScreen(label1.Location);
+            pos = pictureBox1.PointToClient(pos);
+            label1.Parent = pictureBox1;
+            label1.Location = pos;
+
+            pos = this.PointToScreen(label2.Location);
+            pos = pictureBox1.PointToClient(pos);
+            label2.Parent = pictureBox1;
+            label2.Location = pos;
+        }
+
         public Form1()
         {
-           
+            
             InitializeComponent();
             Color panelColor = Color.FromArgb(102, 0, 0, 0);
             //panel3.BackColor = panelColor;
@@ -26,10 +52,9 @@ namespace RentACarOskar
             // panel3.BackColor = Color.FromArgb(102, 0, 0, 0);
             //metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);  
             this.ControlBox = false;
-            checkBox2.CheckAlign = ContentAlignment.MiddleRight;
+            checkBox2.CheckAlign = ContentAlignment.MiddleRight;     
 
-
-
+            KontrolePrekoBoxa();
         }
 
         #region Prijavljivanje_Enter
@@ -120,6 +145,9 @@ namespace RentACarOskar
         private void Form1_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+           /* Font font = new Font("Century Gothic", 9, FontStyle.Regular);
+            tbUserName.Font = font;
+            tbPassword.Font = font;*/
         }
 
         private void bunifuCheckbox1_OnChange(object sender, EventArgs e)

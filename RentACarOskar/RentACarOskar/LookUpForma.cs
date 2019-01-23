@@ -79,6 +79,14 @@ namespace RentACarOskar
                 pom.GetSelectQueryZaFakturu());
             }
 
+            if (myProperty.GetType() == typeof(PropertyModelVozila))
+            {
+                PropertyModelVozila pom = myProperty as PropertyModelVozila;
+                reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                pom.GetSelectLookUp());
+            }
+
+
             dt.Load(reader);
             reader.Close();
 
@@ -124,7 +132,13 @@ namespace RentACarOskar
             string columnName = properties.Where(x => x.GetCustomAttribute<LookupKeyAttribute>() != null)
                 .FirstOrDefault().GetCustomAttribute<SqlNameAttribute>().Name;
 
-            Key = row.Cells[columnName].Value.ToString();
+            //dodan try/catch block by MARKO
+            try
+            {
+                Key = row.Cells[columnName].Value.ToString();
+            }
+            catch
+            { return; }
 
             columnName = properties.Where(x => x.GetCustomAttribute<LookupValueAttribute>() != null)
                 .FirstOrDefault().GetCustomAttribute<SqlNameAttribute>().Name;
@@ -213,12 +227,30 @@ namespace RentACarOskar
 
                 LookUpKupljenje(properties, row);
             }
-            else
+            else if (myProperty.GetType() == typeof(PropertyModelVozila))
             {
-                DataGridViewRow row = dgv.SelectedRows[0];
+                red = dgv.SelectedRows[0].Index;
+                SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
+                            myProperty.GetSelectQuery());
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                dgv.DataSource = dt;
+
+                DataGridViewRow row = dgv.Rows[red];
                 var properties = myProperty.GetType().GetProperties();
 
                 LookUpKupljenje(properties, row);
+            }
+            else
+            {
+                try
+                {
+                    DataGridViewRow row = dgv.SelectedRows[0];
+                    var properties = myProperty.GetType().GetProperties();
+
+                    LookUpKupljenje(properties, row);
+                }
+                catch { }
             }
             this.Close();
         }

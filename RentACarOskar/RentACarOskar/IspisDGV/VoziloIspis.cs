@@ -38,9 +38,6 @@ namespace RentACarOskar.IspisDGV
         [SqlName("Dostupnost")]
         public string Dostupnost { get; set; }
 
-        [DisplayName("Datum Rezervacije")]
-        [SqlName("DatumRezervacije")]
-        public DateTime DatumRezervacije { get; set; }
         #endregion
 
         #region Parameters

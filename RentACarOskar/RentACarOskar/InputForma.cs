@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,8 +25,8 @@ namespace RentACarOskar
         StateEnum state;
         string userEmail;
         string Id;
-        int VoziloID;
         string Detalji;
+        string Greske = "";
 
         public InputForma(PropertyInterface myInterface, StateEnum state, string email, string ID)
         {
@@ -41,7 +42,7 @@ namespace RentACarOskar
         public InputForma(string detalji, PropertyInterface myInterface, StateEnum state, string email, string ID)
         {
             InitializeComponent();
-            Detalji = detalji;         
+            Detalji = detalji;
             this.StartPosition = FormStartPosition.CenterScreen;
             userEmail = email;
             Id = ID;
@@ -82,7 +83,7 @@ namespace RentACarOskar
                 {
                     uc.ReadOnly();
                 }
-                flowPanel.Controls.Add(uc); 
+                flowPanel.Controls.Add(uc);
             }
 
             //Dodavanje kontrole za Lookup
@@ -191,7 +192,7 @@ namespace RentACarOskar
                                         bool prop1 = true;
                                         foreach (PropertyInfo itemPom1 in foreignKeyInterface.GetType().GetProperties())
                                         {
-                                            
+
                                             //Izbacivanje prikaza primarnog kljuca
                                             if (prop1 == false)
                                             {
@@ -304,8 +305,8 @@ namespace RentACarOskar
                     catch { }
                 }
                 flowPanel.Controls.Add(uc);
-               
-            }          
+
+            }
         }
         private void PopulateControls()
         {
@@ -323,10 +324,11 @@ namespace RentACarOskar
 
         #region Buttons
         private void btnOk_Click(object sender, EventArgs e)
-        {       
+        {
+            Greske = "";
             var properties = myInterface.GetType().GetProperties();
             //String za dodavanje imena polja koja su obavezna a nisu popunjena
-            
+
             foreach (var item in flowPanel.Controls)
             {
                 try
@@ -337,7 +339,7 @@ namespace RentACarOskar
                     {
                         InputControl input = item as InputControl;
                         value = input.GetValueFromTextBox();
-                      
+
                         //provjera da li unosimo model vozila koji vec postoji u bazi podataka
                         if (properties[0].Name == "ModelID" && properties[01].Name == "Naziv")
                         {
@@ -374,12 +376,56 @@ namespace RentACarOskar
                             }
                         }
 
+                        string ImePolja = properties.Where(x => (item as InputControl).Name == x.Name).FirstOrDefault().GetCustomAttribute<DisplayNameAttribute>().DisplayName;
+                        if (properties.Where(x => (item as InputControl).Name == x.Name &&
+                        x.GetCustomAttribute<NotRequiredAttribute>() != null).FirstOrDefault() == null && value == "")
+                        {
+                            Greske += "Polje \"" + ImePolja + "\" ne smije biti prazno!\n";
+                            continue;
+                        }
+                        else
+                        {
+                            if (Regex.IsMatch(value, @"^[0-9]{3}[//]{1}[0-9]{3}[/-]{1}[0-9]{3}$") == false && (item as InputControl).Name == "BrojTelefon")
+                            {
+                                Greske += "Polje \"" + ImePolja + "\" ne smije da sadrzi slova i znakove osim '-' i '/'!\n";
+                                continue;
+                            }
+                            else if (Regex.IsMatch(value, @"^[a-zA-Z]+$") == false && 
+                                ((item as InputControl).Name == "Ime" || 
+                                (item as InputControl).Name == "Prezime" || 
+                                (item as InputControl).Name == "Gorivo" || 
+                                (item as InputControl).Name == "Boja"))
+                            {
+                                Greske += "Polje \"" + ImePolja + "\" ne smije da sadrzi brojeve i znakove!\n";
+                                continue;
+                            }
+                            else if (Regex.IsMatch(value, @"^[0-9]{13}$") == false &&
+                               (item as InputControl).Name == "JMB")
+                            {
+                                Greske += "Polje \"" + ImePolja + "\" mora da sadrzi samo 13 brojeva!\n";
+                                continue;
+                            }
+                            else if (Regex.IsMatch(value, @"^[2-5]{1}$") == false &&
+                                (item as InputControl).Name == "BrojVrata")
+                            {
+                                Greske += "Polje \"" + ImePolja + "\" mora da sadrzi jednu cifru od 2 do 5!\n";
+                                continue;
+                            }
+                            else if (Regex.IsMatch(value, @"^[0-9\.]+$") == false &&
+                               (item as InputControl).Name == "Kilometraza")
+                            {
+                                Greske += "Polje \"" + ImePolja + "\" ne smije da sadrzi slova i znakove!\n";
+                                continue;
+                            }
+                            else if ((item as InputControl).Name == "BrojRegistracije" && Regex.IsMatch(value, @"^[A-Z0-9]{3}[\-]{1}[A-Z]{1}[\-]{1}[0-9]{3}$") == false)
+                            {
+                                Greske += "Polje \"" + ImePolja + "\" nije u pravilnom formatu!\n";
+                                continue;
+                            }
+                        }
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
-
-                        if (value == "")
-                            throw new Exception();
                     }
                     else if (item.GetType() == typeof(InputDateControl))
                     {
@@ -393,9 +439,17 @@ namespace RentACarOskar
                     {
                         LookUpControl input = item as LookUpControl;
                         value = input.GetKeyValue();
+                        
+                        if (value == "")
+                        {
+                            Greske += "Polje \"" + (item as LookUpControl).Name + "\" ne smije biti prazno!\n";
+                            continue;
+                        }
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
+
+
                     }
                     else if (item.GetType() == typeof(TwoRadioButtonsControl))
                     {
@@ -412,13 +466,19 @@ namespace RentACarOskar
 
                         PropertyInfo property = properties.Where(x => input.Name == x.Name).FirstOrDefault();
                         property.SetValue(myInterface, Convert.ChangeType(value, property.PropertyType));
-                    }                
+                    }
                 }
                 catch (Exception)
                 {
-                    DialogResult dr = MetroMessageBox.Show(this, $"\n\nError! Sva polja moraju biti popunjena!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult dr = MetroMessageBox.Show(this, "Neocekivana greska!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+            }
+
+            if (Greske != "")
+            {
+                DialogResult dr = MetroMessageBox.Show(this, Greske, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             //Provjera poziva Input forme
@@ -439,11 +499,6 @@ namespace RentACarOskar
                     }
                     CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create, myInterface);
                 }
-                else
-                {
-                    //No delete
-                }
-
             }
             else if (state == StateEnum.Update)
             {
@@ -455,10 +510,6 @@ namespace RentACarOskar
 
 
                     CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
-                }
-                else
-                {
-                    //No delete
                 }
             }
 

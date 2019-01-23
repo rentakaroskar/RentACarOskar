@@ -36,7 +36,7 @@ namespace RentACarOskar
 
         DataTable dt;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-
+        
         string UserMail;
         string UserID;
         //Role Admin/User
@@ -74,6 +74,7 @@ namespace RentACarOskar
             }
 
             panelPanelZaGV.Visible = true;
+            panelPanelZaGV.Font=new Font("Century Gothic", 9);
             //panelCentar.Visible = false;
             panelSaTabelom.Visible = false;
 
@@ -110,6 +111,13 @@ namespace RentACarOskar
             dt.Load(reader);
             reader.Close();
             PopuniDGV(dt, property);
+
+            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgv.AllowUserToResizeRows = false;
+            dgv.AllowUserToResizeColumns = false;
+
+            dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
         }
 
         //Ucitavanje zadate Property klase iz foldera IspisDGV
@@ -360,18 +368,19 @@ namespace RentACarOskar
         private void PopuniFilterPanel()
         {
             pnlFilter1.Controls.Clear();
+            pnlFilter1.Font = new Font("Century Gothic", 9);
+            
             if (FilterProperty.GetType() == typeof(FakturaIspis))
             {
                 Label lblOd = new Label();
                 //Label lblOd = new Label();
                 lblOd.Text = "Od:";
-                lblOd.Font = new Font("Century Gothic", 9);
                 lblOd.Width = 100;
                 pnlFilter1.Controls.Add(lblOd);
 
                 DateTimePicker dtpOd = new DateTimePicker();
                 dtpOd.Format = DateTimePickerFormat.Custom;
-                dtpOd.Value = new DateTime(2018, 01, 01);
+                dtpOd.Value = new DateTime(2018, 01, 01);          
                 dtpOd.CustomFormat = "dd.MM.yyyy";
                 dtpOd.Width = 100;
                 pnlFilter1.Controls.Add(dtpOd);
@@ -382,14 +391,12 @@ namespace RentACarOskar
                 //Label lblDo = new Label();
                 Label lblDo = new Label();
                 lblDo.Text = "Do:";
-                lblDo.Font = new Font("Century Gothic", 9);
                 lblDo.Width = 100;
                 pnlFilter1.Controls.Add(lblDo);
 
                 DateTimePicker dtpDo = new DateTimePicker();
                 dtpDo.Format = DateTimePickerFormat.Custom;
                 dtpDo.CustomFormat = "dd.MM.yyyy";
-                dtpDo.Font = new Font("Century Gothic", 9);
                 dtpDo.Width = 100;
                 pnlFilter1.Controls.Add(dtpDo);
                 pnlFilter1.SetFlowBreak(dtpDo, true);
@@ -397,21 +404,17 @@ namespace RentACarOskar
                 Label lblTip = new Label();
                 lblTip.Text = "Tip Fakture:";
                 lblTip.Width = 100;
-                lblTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(lblTip);
                 ComboBox cbxTip = new ComboBox();
                 cbxTip.Width = 100;
                 cbxTip.Items.Add("Racun");
                 cbxTip.Items.Add("Predracun");
-                cbxTip.Items.Add("Rezervacija");
                 cbxTip.Items.Add("Sve");
-                cbxTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(cbxTip);
                 pnlFilter1.SetFlowBreak(cbxTip, true);
 
                 Label lblKlijent = new Label();
                 lblKlijent.Text = "Klijent:";
-                lblKlijent.Font = new Font("Century Gothic", 9);
                 lblKlijent.Width = 100;
                 pnlFilter1.Controls.Add(lblKlijent);
                 TextBox txtKlijent = new TextBox();
@@ -497,7 +500,6 @@ namespace RentACarOskar
                 cbxTip.Width = 100;
                 cbxTip.Items.Add("Vratio");
                 cbxTip.Items.Add("Preuzeo");
-                cbxTip.Items.Add("Rezervisao");
                 cbxTip.Items.Add("Sve");
                 cbxTip.Font = new Font("Century Gothic", 9);
                 pnlFilter1.Controls.Add(cbxTip);
@@ -578,7 +580,7 @@ namespace RentACarOskar
                 cmbDostupnost.Width = 100;
                 cmbDostupnost.Items.Add("Zauzet");
                 cmbDostupnost.Items.Add("Slobodan");
-                cmbDostupnost.Items.Add("Rezervisano");
+                cmbDostupnost.Items.Add("Sve");
                 pnlFilter1.Controls.Add(cmbDostupnost);
 
 
@@ -693,13 +695,15 @@ namespace RentACarOskar
 
             FormaIzdavanje formaIzdavanje = new FormaIzdavanje(idFakture, tipFakture);
             formaIzdavanje.ShowDialog();
+            
+            PopulateGrid(myProperty);
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
 
             DialogResult myResult;
-            myResult = MetroMessageBox.Show(this, "Da li zelite napustiti App?", "Question Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            myResult = MetroMessageBox.Show(this, "Da li zelite napustiti aplikaciju i vratiti se na login formu?", "Question Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (myResult == DialogResult.Yes)
             {
                 DialogResult = DialogResult.Cancel;
