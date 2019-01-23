@@ -39,7 +39,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.loader = new System.Windows.Forms.Timer(this.components);
+            this.btnDodajVozilo = new System.Windows.Forms.Button();
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.panelMeniDashboard = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelSaTabelom = new System.Windows.Forms.Panel();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -92,10 +95,11 @@
             this.btnLogOut = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblLogOut1 = new System.Windows.Forms.Label();
             this.logoPic = new System.Windows.Forms.PictureBox();
-            this.btnDodajVozilo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             this.panelCentar.SuspendLayout();
+            this.panelMeniDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             this.panelSaTabelom.SuspendLayout();
             this.panelPanelZaGV.SuspendLayout();
@@ -201,11 +205,29 @@
             // 
             this.loader.Tick += new System.EventHandler(this.loader_Tick);
             // 
+            // btnDodajVozilo
+            // 
+            this.btnDodajVozilo.BackColor = System.Drawing.Color.White;
+            this.btnDodajVozilo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDodajVozilo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDodajVozilo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnDodajVozilo.FlatAppearance.BorderSize = 2;
+            this.btnDodajVozilo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
+            this.btnDodajVozilo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDodajVozilo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajVozilo.Location = new System.Drawing.Point(142, 133);
+            this.btnDodajVozilo.Name = "btnDodajVozilo";
+            this.btnDodajVozilo.Size = new System.Drawing.Size(134, 42);
+            this.btnDodajVozilo.TabIndex = 8;
+            this.btnDodajVozilo.Text = "Dodaj vozilo";
+            this.btnDodajVozilo.UseVisualStyleBackColor = false;
+            // 
             // panelCentar
             // 
             this.panelCentar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelCentar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentar.BackgroundImage")));
             this.panelCentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentar.Controls.Add(this.panelMeniDashboard);
             this.panelCentar.Controls.Add(this.panel4);
             this.panelCentar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentar.GradientBottomLeft = System.Drawing.Color.White;
@@ -218,13 +240,33 @@
             this.panelCentar.Size = new System.Drawing.Size(927, 650);
             this.panelCentar.TabIndex = 2;
             // 
+            // panelMeniDashboard
+            // 
+            this.panelMeniDashboard.BackColor = System.Drawing.Color.White;
+            this.panelMeniDashboard.Controls.Add(this.splash);
+            this.panelMeniDashboard.Controls.Add(this.pictureBox2);
+            this.panelMeniDashboard.Location = new System.Drawing.Point(0, 3);
+            this.panelMeniDashboard.Name = "panelMeniDashboard";
+            this.panelMeniDashboard.Size = new System.Drawing.Size(927, 647);
+            this.panelMeniDashboard.TabIndex = 14;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 399);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(927, 245);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel4.Controls.Add(this.panelSaTabelom);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1208, 650);
+            this.panel4.Size = new System.Drawing.Size(1252, 650);
             this.panel4.TabIndex = 13;
             // 
             // panelSaTabelom
@@ -241,9 +283,10 @@
             this.panelSaTabelom.Controls.Add(this.pictureBox1);
             this.panelSaTabelom.Location = new System.Drawing.Point(0, 0);
             this.panelSaTabelom.Name = "panelSaTabelom";
-            this.panelSaTabelom.Size = new System.Drawing.Size(1370, 650);
+            this.panelSaTabelom.Size = new System.Drawing.Size(927, 650);
             this.panelSaTabelom.TabIndex = 9;
             // 
+            // splash// 
             // panelPanelZaGV
             // 
             this.panelPanelZaGV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPanelZaGV.BackgroundImage")));
@@ -268,17 +311,14 @@
             this.proba.Size = new System.Drawing.Size(744, 287);
             this.proba.TabIndex = 0;
             // 
-            // splash
-            // 
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.splash.Controls.Add(this.label5);
             this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splash.Location = new System.Drawing.Point(0, 0);
+            this.splash.Location = new System.Drawing.Point(0, -3);
             this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(744, 287);
-            this.splash.TabIndex = 1;
-            this.splash.Paint += new System.Windows.Forms.PaintEventHandler(this.splash_Paint);
+            this.splash.Size = new System.Drawing.Size(1022, 650);
+            this.splash.TabIndex = 14;
+            this.splash.Visible = false;
             // 
             // label5
             // 
@@ -286,7 +326,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(340, 391);
+            this.label5.Location = new System.Drawing.Point(340, 444);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(216, 33);
             this.label5.TabIndex = 10;
@@ -295,7 +335,7 @@
             // bunifuCircleProgressbar1
             // 
             this.bunifuCircleProgressbar1.animated = true;
-            this.bunifuCircleProgressbar1.animationIterval = 10;
+            this.bunifuCircleProgressbar1.animationIterval = 8;
             this.bunifuCircleProgressbar1.animationSpeed = 35;
             this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
@@ -304,7 +344,7 @@
             this.bunifuCircleProgressbar1.LabelVisible = true;
             this.bunifuCircleProgressbar1.LineProgressThickness = 8;
             this.bunifuCircleProgressbar1.LineThickness = 3;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(346, 176);
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(346, 239);
             this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.bunifuCircleProgressbar1.MaxValue = 100;
             this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
@@ -460,7 +500,7 @@
             this.btnCijena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.btnCijena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCijena.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCijena.Location = new System.Drawing.Point(792, 589);
+            this.btnCijena.Location = new System.Drawing.Point(514, 589);
             this.btnCijena.Name = "btnCijena";
             this.btnCijena.Size = new System.Drawing.Size(111, 34);
             this.btnCijena.TabIndex = 13;
@@ -486,7 +526,7 @@
             this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(24, 589);
+            this.btnInsert.Location = new System.Drawing.Point(163, 589);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(111, 34);
             this.btnInsert.TabIndex = 0;
@@ -506,7 +546,7 @@
             this.btnIzdaj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.btnIzdaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIzdaj.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIzdaj.Location = new System.Drawing.Point(536, 589);
+            this.btnIzdaj.Location = new System.Drawing.Point(397, 589);
             this.btnIzdaj.Name = "btnIzdaj";
             this.btnIzdaj.Size = new System.Drawing.Size(111, 34);
             this.btnIzdaj.TabIndex = 6;
@@ -525,7 +565,7 @@
             this.bDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.bDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDelete.Location = new System.Drawing.Point(536, 589);
+            this.bDelete.Location = new System.Drawing.Point(397, 589);
             this.bDelete.Name = "bDelete";
             this.bDelete.Size = new System.Drawing.Size(111, 34);
             this.bDelete.TabIndex = 7;
@@ -947,29 +987,12 @@
             this.logoPic.ErrorImage = null;
             this.logoPic.Image = global::RentACarOskar.Properties.Resources.logoo1;
             this.logoPic.InitialImage = null;
-            this.logoPic.Location = new System.Drawing.Point(44, 50);
+            this.logoPic.Location = new System.Drawing.Point(25, 58);
             this.logoPic.Name = "logoPic";
             this.logoPic.Size = new System.Drawing.Size(195, 144);
             this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
-            // 
-            // btnDodajVozilo
-            // 
-            this.btnDodajVozilo.BackColor = System.Drawing.Color.White;
-            this.btnDodajVozilo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDodajVozilo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDodajVozilo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnDodajVozilo.FlatAppearance.BorderSize = 2;
-            this.btnDodajVozilo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.btnDodajVozilo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDodajVozilo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajVozilo.Location = new System.Drawing.Point(142, 133);
-            this.btnDodajVozilo.Name = "btnDodajVozilo";
-            this.btnDodajVozilo.Size = new System.Drawing.Size(134, 42);
-            this.btnDodajVozilo.TabIndex = 8;
-            this.btnDodajVozilo.Text = "Dodaj vozilo";
-            this.btnDodajVozilo.UseVisualStyleBackColor = false;
             // 
             // Dashboard
             // 
@@ -988,6 +1011,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).EndInit();
             this.panelCentar.ResumeLayout(false);
+            this.panelMeniDashboard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panelSaTabelom.ResumeLayout(false);
             this.panelPanelZaGV.ResumeLayout(false);
@@ -1093,6 +1118,8 @@
         private System.Windows.Forms.FlowLayoutPanel panelZaBunifuKartice;
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panelMeniDashboard;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel proba;
         private System.Windows.Forms.FlowLayoutPanel pnlFilter1;
     }

@@ -101,7 +101,7 @@ namespace RentACarOskar
                 {
                     string rola = dt.Rows[i][9].ToString();
                     //MessageBox.Show("Uspjesan Login");
-                    AutoClosingMessageBox.Show("Uspjesan Login", "LogIn", 1000);
+                    //AutoClosingMessageBox.Show("Uspjesan Login", "LogIn", 1000);
                     string mail = tbUserName.Text;
                     string ID = dt.Rows[i][0].ToString();
                     Dashboard pom = new Dashboard(mail, ID,rola);
