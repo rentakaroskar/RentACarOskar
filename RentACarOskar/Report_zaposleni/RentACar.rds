@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="zaposleni">
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="RentACar">
   <ConnectionProperties>
     <Extension>SQL</Extension>
     <ConnectString>Data Source=MS-SQL\ITIVITY,11111;Initial Catalog=RentACarTim5</ConnectString>
