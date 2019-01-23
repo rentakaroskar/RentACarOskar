@@ -49,7 +49,7 @@ namespace RentACarOskar.UserControls
             lblBrojzauzetihVozila.Text = brVozila.ToString();
             chart1.Series["s1"].Points.AddXY(" ", brVozila);
 
-            MjesecnaZaradaRadnika(8);
+            MjesecnaZaradaRadnika(_userId);
 
 
             
