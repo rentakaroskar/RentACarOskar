@@ -266,18 +266,10 @@ namespace RentACarOskar
 
             BgColor(panelZaposleni);
         }
-        //private void panelHome_Paint(object sender, PaintEventArgs e)
-        //{
-        //    BgColor(panelHome);
-        //}
         private void panelHome_MouseClick(object sender, MouseEventArgs e)
         {
             BgColor(panelHome);
-
         }
-
-
-
         #endregion
 
         #region CRUDButtons
