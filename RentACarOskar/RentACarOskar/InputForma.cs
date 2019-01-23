@@ -380,14 +380,14 @@ namespace RentACarOskar
                         if (properties.Where(x => (item as InputControl).Name == x.Name &&
                         x.GetCustomAttribute<NotRequiredAttribute>() != null).FirstOrDefault() == null && value == "")
                         {
-                            Greske += "Polje " + ImePolja + " ne smije biti prazno!\n";
+                            Greske += "Polje \"" + ImePolja + "\" ne smije biti prazno!\n";
                             continue;
                         }
                         else
                         {
                             if (Regex.IsMatch(value, @"^[0-9]{3}[//]{1}[0-9]{3}[/-]{1}[0-9]{3}$") == false && (item as InputControl).Name == "BrojTelefon")
                             {
-                                Greske += "Polje " + ImePolja + " ne smije da sadrzi slova i znakove osim '-' i '/'!\n";
+                                Greske += "Polje \"" + ImePolja + "\" ne smije da sadrzi slova i znakove osim '-' i '/'!\n";
                                 continue;
                             }
                             else if (Regex.IsMatch(value, @"^[a-zA-Z]+$") == false && 
@@ -396,30 +396,30 @@ namespace RentACarOskar
                                 (item as InputControl).Name == "Gorivo" || 
                                 (item as InputControl).Name == "Boja"))
                             {
-                                Greske += "Polje " + ImePolja + " ne smije da sadrzi brojeve i znakove!\n";
+                                Greske += "Polje \"" + ImePolja + "\" ne smije da sadrzi brojeve i znakove!\n";
                                 continue;
                             }
                             else if (Regex.IsMatch(value, @"^[0-9]{13}$") == false &&
                                (item as InputControl).Name == "JMB")
                             {
-                                Greske += "Polje " + ImePolja + " mora da sadrzi samo 13 brojeva!\n";
+                                Greske += "Polje \"" + ImePolja + "\" mora da sadrzi samo 13 brojeva!\n";
                                 continue;
                             }
                             else if (Regex.IsMatch(value, @"^[2-5]{1}$") == false &&
                                 (item as InputControl).Name == "BrojVrata")
                             {
-                                Greske += "Polje " + ImePolja + " mora da sadrzi jednu cifru od 2 do 5!\n";
+                                Greske += "Polje \"" + ImePolja + "\" mora da sadrzi jednu cifru od 2 do 5!\n";
                                 continue;
                             }
                             else if (Regex.IsMatch(value, @"^[0-9]+$") == false &&
                                (item as InputControl).Name == "Kilometraza")
                             {
-                                Greske += "Polje " + ImePolja + " ne smije da sadrzi slova i znakove!\n";
+                                Greske += "Polje \"" + ImePolja + "\" ne smije da sadrzi slova i znakove!\n";
                                 continue;
                             }
                             else if ((item as InputControl).Name == "BrojRegistracije" && Regex.IsMatch(value, @"^[A-Z0-9]{3}[\-]{1}[A-Z]{1}[\-]{1}[0-9]{3}$") == false)
                             {
-                                Greske += "Polje " + ImePolja + " nije u pravilnom formatu!\n";
+                                Greske += "Polje \"" + ImePolja + "\" nije u pravilnom formatu!\n";
                                 continue;
                             }
                         }
@@ -442,7 +442,7 @@ namespace RentACarOskar
                         
                         if (value == "")
                         {
-                            Greske += "Polje " + (item as LookUpControl).Name + " ne smije biti prazno!\n";
+                            Greske += "Polje \"" + (item as LookUpControl).Name + "\" ne smije biti prazno!\n";
                             continue;
                         }
 
@@ -499,11 +499,6 @@ namespace RentACarOskar
                     }
                     CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Create, myInterface);
                 }
-                else
-                {
-                    //No delete
-                }
-
             }
             else if (state == StateEnum.Update)
             {
@@ -515,10 +510,6 @@ namespace RentACarOskar
 
 
                     CRUD.IstorijaCRUD.Istorija(userEmail, StateEnum.Update, myInterface);
-                }
-                else
-                {
-                    //No delete
                 }
             }
 
