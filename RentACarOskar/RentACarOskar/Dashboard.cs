@@ -706,7 +706,7 @@ namespace RentACarOskar
         {
 
             DialogResult myResult;
-            myResult = MetroMessageBox.Show(this, "Da li zelite napustiti App?", "Question Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            myResult = MetroMessageBox.Show(this, "Da li zelite napustiti aplikaciju i vratiti se na login formu?", "Question Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (myResult == DialogResult.Yes)
             {
                 DialogResult = DialogResult.Cancel;
