@@ -223,9 +223,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.label6.Location = new System.Drawing.Point(25, 122);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 22);
+            this.label6.Size = new System.Drawing.Size(182, 22);
             this.label6.TabIndex = 22;
-            this.label6.Text = "Vrijeme logovavanja:";
+            this.label6.Text = "Vrijeme logovanja:";
             // 
             // labelUserName
             // 

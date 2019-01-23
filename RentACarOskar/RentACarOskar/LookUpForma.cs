@@ -215,7 +215,10 @@ namespace RentACarOskar
             int red;
             if (myProperty.GetType() == typeof(PropertyKlijent))
             {
-                red = dgv.SelectedRows[0].Index;
+                try
+                {
+                    red = dgv.SelectedRows[0].Index;
+                
                 SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.GetConnectionString(), CommandType.Text,
                             myProperty.GetSelectQuery());
                 DataTable dt = new DataTable();
@@ -226,6 +229,8 @@ namespace RentACarOskar
                 var properties = myProperty.GetType().GetProperties();
 
                 LookUpKupljenje(properties, row);
+                }
+                catch { this.Close(); }
             }
             else if (myProperty.GetType() == typeof(PropertyModelVozila))
             {

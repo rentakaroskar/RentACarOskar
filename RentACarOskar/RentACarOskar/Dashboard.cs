@@ -1008,7 +1008,9 @@ namespace RentACarOskar
         {
             panelSaTabelom.Visible = false;
             // PopuniFilterPanel();
+            panelMeniDashboard.Controls.Clear();
             MeniZaDashboard meni = new MeniZaDashboard(UserMail, _UserId);
+            panelMeniDashboard.Controls.Add(meni);
 
         }
 
