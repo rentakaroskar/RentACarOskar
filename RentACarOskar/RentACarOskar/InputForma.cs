@@ -411,7 +411,7 @@ namespace RentACarOskar
                                 Greske += "Polje \"" + ImePolja + "\" mora da sadrzi jednu cifru od 2 do 5!\n";
                                 continue;
                             }
-                            else if (Regex.IsMatch(value, @"^[0-9]+$") == false &&
+                            else if (Regex.IsMatch(value, @"^[0-9\.]+$") == false &&
                                (item as InputControl).Name == "Kilometraza")
                             {
                                 Greske += "Polje \"" + ImePolja + "\" ne smije da sadrzi slova i znakove!\n";
