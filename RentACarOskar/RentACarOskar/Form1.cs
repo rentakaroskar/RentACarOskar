@@ -40,6 +40,7 @@ namespace RentACarOskar
             pos = pictureBox1.PointToClient(pos);
             label2.Parent = pictureBox1;
             label2.Location = pos;
+            
         }
 
         public Form1()
@@ -52,8 +53,7 @@ namespace RentACarOskar
             // panel3.BackColor = Color.FromArgb(102, 0, 0, 0);
             //metroPanel1.BackColor = Color.FromArgb(20, 255, 255, 255);  
             this.ControlBox = false;
-            checkBox2.CheckAlign = ContentAlignment.MiddleRight;     
-
+            checkBox2.CheckAlign = ContentAlignment.MiddleRight;
             KontrolePrekoBoxa();
         }
 
