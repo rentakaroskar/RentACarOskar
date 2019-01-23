@@ -41,8 +41,10 @@ namespace RentACarOskar
         string UserID;
         //Role Admin/User
         string Rola;
+        int _UserId;
 
         public Dashboard(string mail, string ID, string rola)
+
         {
             InitializeComponent();
             //Loading timer
@@ -54,8 +56,8 @@ namespace RentACarOskar
             //prikaz dashbord-a
             panelMeniDashboard.Visible = true;
 
-
-            MeniZaDashboard meni = new MeniZaDashboard(mail);
+             _UserId = Convert.ToInt32(ID);
+            MeniZaDashboard meni = new MeniZaDashboard(mail, _UserId);
             panelMeniDashboard.Controls.Add(meni);
 
             panelMeni.Visible = false;
@@ -687,7 +689,7 @@ namespace RentACarOskar
         {
 
             DialogResult myResult;
-            myResult = MetroMessageBox.Show(this, "Da li zelite napustiti App?", "Question Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            myResult = MetroMessageBox.Show(this, "Da li zelite napustiti aplikaciju?", "Izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (myResult == DialogResult.Yes)
             {
                 DialogResult = DialogResult.Cancel;
@@ -976,7 +978,7 @@ namespace RentACarOskar
         {
             panelSaTabelom.Visible = false;
             // PopuniFilterPanel();
-            MeniZaDashboard meni = new MeniZaDashboard(UserMail);
+            MeniZaDashboard meni = new MeniZaDashboard(UserMail, _UserId);
 
         }
 

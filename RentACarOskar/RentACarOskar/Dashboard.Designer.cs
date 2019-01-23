@@ -34,7 +34,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.loptica = new System.Windows.Forms.PictureBox();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.loader = new System.Windows.Forms.Timer(this.components);
             this.btnDodajVozilo = new System.Windows.Forms.Button();
@@ -70,7 +72,6 @@
             this.labelUser = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.PanelLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelHome = new System.Windows.Forms.Panel();
@@ -92,9 +93,9 @@
             this.panelLogOut = new System.Windows.Forms.Panel();
             this.btnLogOut = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblLogOut1 = new System.Windows.Forms.Label();
-            this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             this.panelCentar.SuspendLayout();
             this.panelMeniDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -123,7 +124,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
             this.panelLogOut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,12 +162,37 @@
             this.bunifuDragControl1.TargetControl = this.loptica;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // loptica
+            // 
+            this.loptica.BackColor = System.Drawing.Color.Transparent;
+            this.loptica.Image = global::RentACarOskar.Properties.Resources.logooS;
+            this.loptica.Location = new System.Drawing.Point(3, 50);
+            this.loptica.Name = "loptica";
+            this.loptica.Size = new System.Drawing.Size(60, 40);
+            this.loptica.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.loptica.TabIndex = 4;
+            this.loptica.TabStop = false;
+            this.loptica.Visible = false;
+            this.loptica.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // bunifuDragControl2
             // 
             this.bunifuDragControl2.Fixed = true;
             this.bunifuDragControl2.Horizontal = true;
             this.bunifuDragControl2.TargetControl = this.label3;
             this.bunifuDragControl2.Vertical = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(47, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 33);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Dashboard";
             // 
             // timer1
             // 
@@ -215,19 +240,20 @@
             // panelMeniDashboard
             // 
             this.panelMeniDashboard.BackColor = System.Drawing.Color.White;
+            this.panelMeniDashboard.Controls.Add(this.splash);
             this.panelMeniDashboard.Controls.Add(this.pictureBox2);
-            this.panelMeniDashboard.Location = new System.Drawing.Point(0, 6);
+            this.panelMeniDashboard.Location = new System.Drawing.Point(0, 3);
             this.panelMeniDashboard.Name = "panelMeniDashboard";
-            this.panelMeniDashboard.Size = new System.Drawing.Size(927, 644);
+            this.panelMeniDashboard.Size = new System.Drawing.Size(927, 647);
             this.panelMeniDashboard.TabIndex = 14;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 338);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 399);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(927, 306);
+            this.pictureBox2.Size = new System.Drawing.Size(927, 245);
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
@@ -243,7 +269,6 @@
             // panelSaTabelom
             // 
             this.panelSaTabelom.BackColor = System.Drawing.Color.Transparent;
-            this.panelSaTabelom.Controls.Add(this.splash);
             this.panelSaTabelom.Controls.Add(this.panelZaBunifuKartice);
             this.panelSaTabelom.Controls.Add(this.btnCijena);
             this.panelSaTabelom.Controls.Add(this.panelPanelZaGV);
@@ -263,9 +288,9 @@
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.splash.Controls.Add(this.label5);
             this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(6, 6);
+            this.splash.Location = new System.Drawing.Point(0, -3);
             this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(40, 583);
+            this.splash.Size = new System.Drawing.Size(1022, 650);
             this.splash.TabIndex = 14;
             this.splash.Visible = false;
             // 
@@ -633,18 +658,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Korisnik:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(47, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 33);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Dashboard";
-            // 
             // PanelLeft
             // 
             this.PanelLeft.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -956,19 +969,6 @@
             this.lblLogOut1.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
             this.lblLogOut1.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
             // 
-            // loptica
-            // 
-            this.loptica.BackColor = System.Drawing.Color.Transparent;
-            this.loptica.Image = global::RentACarOskar.Properties.Resources.logooS;
-            this.loptica.Location = new System.Drawing.Point(3, 50);
-            this.loptica.Name = "loptica";
-            this.loptica.Size = new System.Drawing.Size(60, 40);
-            this.loptica.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.loptica.TabIndex = 4;
-            this.loptica.TabStop = false;
-            this.loptica.Visible = false;
-            this.loptica.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
             // logoPic
             // 
             this.logoPic.BackColor = System.Drawing.Color.Transparent;
@@ -998,6 +998,7 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loptica)).EndInit();
             this.panelCentar.ResumeLayout(false);
             this.panelMeniDashboard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1036,7 +1037,6 @@
             this.panelLogOut.ResumeLayout(false);
             this.panelLogOut.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loptica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
             this.ResumeLayout(false);
 

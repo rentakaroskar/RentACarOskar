@@ -15,12 +15,16 @@ namespace RentACarOskar.UserControls
 {
     public partial class MeniZaDashboard : UserControl
     {
-        public MeniZaDashboard(string userName)
+        public MeniZaDashboard(string userName,int userId)
         {
             InitializeComponent();
             timer1.Start();
+            loader.Start();
+            labelTime.Text = DateTime.Now.ToLongTimeString();
+            labelDate.Text = DateTime.Now.ToLongDateString();
 
             string _userName = userName;
+            int _userId = userId;
 
             labelUserName.Text = _userName;
             labelBrVozila.Text = DateTime.Now.ToLongDateString();
@@ -45,10 +49,44 @@ namespace RentACarOskar.UserControls
             lblBrojzauzetihVozila.Text = brVozila.ToString();
             chart1.Series["s1"].Points.AddXY(" ", brVozila);
 
+            MjesecnaZaradaRadnika(8);
 
 
+            
+            //stringQuery = brojVozila();
+            //brVozila = DobavljanePOdatakaIzBaze(stringQuery);
+            //labelBrVozila.Text = brVozila.ToString();
 
 
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelTime.Text = DateTime.Now.ToLongTimeString();
+            timer1.Start();
+        }
+
+        //f-ja koja poziva proceduru koja u sebi ima return
+        public void MjesecnaZaradaRadnika(int idRadnika)
+        {
+            int plata = 0;
+            using (SqlConnection con = new SqlConnection(SqlHelper.GetConnectionString()))
+            {
+                using (SqlCommand cmd = new SqlCommand("mjesecnaZaradaRadnika", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@radnikId", SqlDbType.Int).Value = idRadnika;
+
+                    var returnParameter = cmd.Parameters.Add("@Iznos", System.Data.SqlDbType.Int);
+                    returnParameter.Direction = ParameterDirection.ReturnValue;
+
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    var result = returnParameter.Value;
+                    labelPlata.Text = result.ToString();
+                }               
+            }
         }
         public int DobavljanePOdatakaIzBaze(string query)
         {
@@ -85,11 +123,32 @@ namespace RentACarOskar.UserControls
                         WHERE
                         v.Dostupnost='Zauzet'";
         }
-        private void timer1_Tick(object sender, EventArgs e)
+        public string listaSlobodnihVozila()
         {
-            ///labelTime.Text = DateTime.Now.ToLongTimeString();
-            timer1.Start();
+            return @"SELECT 
+                	mv.Naziv,
+                	p.Naziv,
+                	v.VrstaGoriva,
+                	v.GodinaProizvodnje,
+                	sv.DatumStatusa
+                    FROM dbo.Vozilo v
+                     JOIN dbo.ModelVozila mv
+                     ON v.ModelID = mv.ModelID
+                     JOIN dbo.Proizvodjac p
+                     ON mv.ProizvodjacID = p.ProizvodjacID
+                     LEFT JOIN dbo.StatusVozila sv 
+                     ON v.VoziloID = sv.VoziloID
+                     LEFT JOIN dbo.Dostupnost d ON sv.DostupnostID = d.DostupnostID
+                     WHERE (d.TipDostupnosti IS NULL OR d.DostupnostID = 2)
+	                and v.IsDeleted = 0
+
+                    ORDER BY mv.Naziv";
         }
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    labelTime.Text = DateTime.Now.ToLongTimeString();
+        //    timer1.Start();
+        //}
 
 
         private void brVozila_Click(object sender, EventArgs e)
