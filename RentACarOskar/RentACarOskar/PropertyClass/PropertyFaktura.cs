@@ -79,7 +79,7 @@ namespace RentACarOskar.PropertyClass
                 lista.Add(parameter);
             }
             {
-                SqlParameter parameter = new SqlParameter("@DatumFakture", System.Data.SqlDbType.Date);
+                SqlParameter parameter = new SqlParameter("@DatumFakture", System.Data.SqlDbType.DateTime);
                 parameter.Value = DatumFakture;
                 lista.Add(parameter);
             }
@@ -114,7 +114,7 @@ namespace RentACarOskar.PropertyClass
                 lista.Add(parameter);
             }
             {
-                SqlParameter parameter = new SqlParameter("@DatumFakture", System.Data.SqlDbType.Date);
+                SqlParameter parameter = new SqlParameter("@DatumFakture", System.Data.SqlDbType.DateTime);
                 parameter.Value = DatumFakture;
                 lista.Add(parameter);
             }

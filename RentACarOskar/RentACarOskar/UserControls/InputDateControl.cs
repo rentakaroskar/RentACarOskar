@@ -26,7 +26,7 @@ namespace RentACarOskar.UserControls
         //GetValue
         public string GetValueFromDateBox()
         {
-            return dtNaziv.Text;
+            return dtNaziv.Value.ToString();
         }
         //SetValue
         public void SetValueInDateBox(string value)
