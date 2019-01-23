@@ -57,7 +57,7 @@
             this.panelFilter = new Bunifu.Framework.UI.BunifuCards();
             this.pnlFilter1 = new System.Windows.Forms.FlowLayoutPanel();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnIzvjestaj = new MetroFramework.Controls.MetroButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.detaljiVozila = new MetroFramework.Controls.MetroButton();
@@ -434,7 +434,7 @@
             this.bunifuCards2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.bunifuCards2.Controls.Add(this.metroButton1);
+            this.bunifuCards2.Controls.Add(this.btnIzvjestaj);
             this.bunifuCards2.Controls.Add(this.label6);
             this.bunifuCards2.Controls.Add(this.label4);
             this.bunifuCards2.Controls.Add(this.detaljiVozila);
@@ -446,14 +446,15 @@
             this.bunifuCards2.Size = new System.Drawing.Size(303, 161);
             this.bunifuCards2.TabIndex = 6;
             // 
-            // metroButton1
+            // btnIzvjestaj
             // 
-            this.metroButton1.Location = new System.Drawing.Point(167, 97);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(111, 37);
-            this.metroButton1.TabIndex = 14;
-            this.metroButton1.Text = "Izdaj...";
-            this.metroButton1.UseSelectable = true;
+            this.btnIzvjestaj.Location = new System.Drawing.Point(167, 97);
+            this.btnIzvjestaj.Name = "btnIzvjestaj";
+            this.btnIzvjestaj.Size = new System.Drawing.Size(111, 37);
+            this.btnIzvjestaj.TabIndex = 14;
+            this.btnIzvjestaj.Text = "Izdaj...";
+            this.btnIzvjestaj.UseSelectable = true;
+            this.btnIzvjestaj.Click += new System.EventHandler(this.btnIzvjestaj_Click);
             // 
             // label6
             // 
@@ -1115,7 +1116,7 @@
         private System.Windows.Forms.Button btnDodajVozilo;
         private System.Windows.Forms.Button btnCijena;
         private System.Windows.Forms.FlowLayoutPanel panelZaBunifuKartice;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnIzvjestaj;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panelMeniDashboard;
         private System.Windows.Forms.PictureBox pictureBox2;

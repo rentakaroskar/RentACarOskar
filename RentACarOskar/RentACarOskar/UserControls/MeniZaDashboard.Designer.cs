@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblBrojzauzetihVozila = new System.Windows.Forms.Label();
@@ -88,20 +88,20 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(17, 57);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(29, 59);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series3.Legend = "Legend1";
-            series3.Name = "s1";
-            series3.YValuesPerPoint = 2;
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(151, 115);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "s1";
+            series1.YValuesPerPoint = 2;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(138, 115);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
             // 
@@ -149,7 +149,7 @@
             this.labelBrVozila.BackColor = System.Drawing.Color.Transparent;
             this.labelBrVozila.Font = new System.Drawing.Font("Century Gothic", 18F);
             this.labelBrVozila.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.labelBrVozila.Location = new System.Drawing.Point(285, 24);
+            this.labelBrVozila.Location = new System.Drawing.Point(286, 24);
             this.labelBrVozila.Name = "labelBrVozila";
             this.labelBrVozila.Size = new System.Drawing.Size(86, 30);
             this.labelBrVozila.TabIndex = 13;

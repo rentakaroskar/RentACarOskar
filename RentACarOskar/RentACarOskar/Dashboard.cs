@@ -15,6 +15,7 @@ using MetroFramework;
 using System.Collections.Generic;
 using RentACarOskar.UserControls;
 using MetroFramework.Controls;
+using Microsoft.Reporting.WinForms;
 
 namespace RentACarOskar
 {
@@ -36,7 +37,8 @@ namespace RentACarOskar
 
         DataTable dt;
         Bunifu.Framework.UI.BunifuCustomDataGrid dgv = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-        
+
+        int brojRedovaDGVAVozila = 0;
         string UserMail;
         string UserID;
         //Role Admin/User
@@ -198,6 +200,7 @@ namespace RentACarOskar
 
             BgColor(panelAutomobili);
 
+            brojRedovaDGVAVozila = dgv.Rows.Count;
         }
 
         private void btnKlijent_Click(object sender, EventArgs e)
@@ -309,6 +312,34 @@ namespace RentACarOskar
 
             //Popunjavanje DGV-a nakon zavrsene metode INSERT
             PopulateGrid(myProperty);
+
+            if(myForm.GetType() == typeof(PropertyVozilo))
+            {
+                if (brojRedovaDGVAVozila < dgv.Rows.Count)
+                {
+                    PropertyInterface pom = myProperty;
+
+                    //Kupljenje ID vozila iz DGV selektovanog reda
+                    string ID = dgv.Rows[dgv.Rows.Count - 1].Cells[0].Value.ToString();
+
+                    //Kreiranje objekta PropertyCijena i popunjavanje tabele sa cijenama
+                    PropertyCijena cijenaTabela = new PropertyCijena();
+                    myForm = cijenaTabela;
+                    PopulateGrid(myForm);
+                    myProperty = pom;
+                    //Visible = false;
+
+                    //Metoda za upisivanje Mail-a i ID korisnika
+                    crud.UserMail(UserMail, UserID);
+
+                    //Pozivanje metode UPDATE sa PropertyCijena, selektovani ID i dgv sa popunjenim podacima cijena
+                    crud.Update(myForm, ID, dgv);
+                    // Visible = true;
+
+                    //Popunjavanje DGV-a nakon zavrsene metode UPDATE
+                    PopulateGrid(myProperty);
+                }
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -1027,5 +1058,10 @@ namespace RentACarOskar
             }
         }
 
+        private void btnIzvjestaj_Click(object sender, EventArgs e)
+        {
+            Izvjestaj pom = new Izvjestaj(myForm);
+            pom.ShowDialog();
+        }
     }
 }
