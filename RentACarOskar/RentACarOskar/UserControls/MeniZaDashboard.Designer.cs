@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblBrojzauzetihVozila = new System.Windows.Forms.Label();
@@ -81,27 +81,27 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(354, 167);
+            this.bunifuCards1.Size = new System.Drawing.Size(354, 177);
             this.bunifuCards1.TabIndex = 3;
             this.bunifuCards1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards1_Paint);
             // 
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(29, 59);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(17, 57);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "s1";
-            series2.YValuesPerPoint = 2;
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(138, 115);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.Legend = "Legend1";
+            series3.Name = "s1";
+            series3.YValuesPerPoint = 2;
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(151, 115);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
             // 
@@ -109,11 +109,11 @@
             // 
             this.lblBrojzauzetihVozila.AutoSize = true;
             this.lblBrojzauzetihVozila.BackColor = System.Drawing.Color.Transparent;
-            this.lblBrojzauzetihVozila.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.lblBrojzauzetihVozila.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.lblBrojzauzetihVozila.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.lblBrojzauzetihVozila.Location = new System.Drawing.Point(291, 81);
             this.lblBrojzauzetihVozila.Name = "lblBrojzauzetihVozila";
-            this.lblBrojzauzetihVozila.Size = new System.Drawing.Size(41, 16);
+            this.lblBrojzauzetihVozila.Size = new System.Drawing.Size(45, 17);
             this.lblBrojzauzetihVozila.TabIndex = 19;
             this.lblBrojzauzetihVozila.Text = "label1";
             this.lblBrojzauzetihVozila.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -134,11 +134,11 @@
             // 
             this.labelSlobodnaVozila.AutoSize = true;
             this.labelSlobodnaVozila.BackColor = System.Drawing.Color.Transparent;
-            this.labelSlobodnaVozila.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.labelSlobodnaVozila.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.labelSlobodnaVozila.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.labelSlobodnaVozila.Location = new System.Drawing.Point(291, 66);
             this.labelSlobodnaVozila.Name = "labelSlobodnaVozila";
-            this.labelSlobodnaVozila.Size = new System.Drawing.Size(41, 16);
+            this.labelSlobodnaVozila.Size = new System.Drawing.Size(45, 17);
             this.labelSlobodnaVozila.TabIndex = 18;
             this.labelSlobodnaVozila.Text = "label1";
             this.labelSlobodnaVozila.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -159,11 +159,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.label2.Location = new System.Drawing.Point(173, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 16);
+            this.label2.Size = new System.Drawing.Size(106, 17);
             this.label2.TabIndex = 15;
             this.label2.Text = "Slobodna vozila:";
             // 
@@ -171,11 +171,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
             this.label4.Location = new System.Drawing.Point(173, 81);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 16);
+            this.label4.Size = new System.Drawing.Size(96, 17);
             this.label4.TabIndex = 17;
             this.label4.Text = "Zauzeta vozila:";
             // 
@@ -209,7 +209,7 @@
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.Font = new System.Drawing.Font("Century Gothic", 13F);
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.lblTime.Location = new System.Drawing.Point(37, 144);
+            this.lblTime.Location = new System.Drawing.Point(25, 136);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(28, 21);
             this.lblTime.TabIndex = 23;
@@ -221,7 +221,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.label6.Location = new System.Drawing.Point(25, 122);
+            this.label6.Location = new System.Drawing.Point(25, 103);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(182, 22);
             this.label6.TabIndex = 22;
@@ -233,7 +233,7 @@
             this.labelUserName.BackColor = System.Drawing.Color.Transparent;
             this.labelUserName.Font = new System.Drawing.Font("Century Gothic", 13F);
             this.labelUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.labelUserName.Location = new System.Drawing.Point(150, 72);
+            this.labelUserName.Location = new System.Drawing.Point(25, 60);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(166, 21);
             this.labelUserName.TabIndex = 21;
@@ -245,7 +245,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 18F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(62)))));
-            this.label3.Location = new System.Drawing.Point(140, 37);
+            this.label3.Location = new System.Drawing.Point(24, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 30);
             this.label3.TabIndex = 20;
@@ -254,9 +254,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::RentACarOskar.Properties.Resources.avatar_circle_human_male_2_512;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(242, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(79, 73);
+            this.pictureBox1.Size = new System.Drawing.Size(95, 86);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
