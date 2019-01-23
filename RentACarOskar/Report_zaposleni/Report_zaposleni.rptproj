@@ -8,7 +8,7 @@
     <OverwriteDataSources>False</OverwriteDataSources>
     <TargetServerVersion>SSRS2008R2</TargetServerVersion>
     <Platform>Win32</Platform>
-    <TargetReportFolder>Report_zaposleni</TargetReportFolder>
+    <TargetReportFolder>Report_RentACarOscar</TargetReportFolder>
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
@@ -52,6 +52,8 @@
     <DataSource Include="RentACar.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="izvjestajFaktura.rdl" />
+    <Report Include="izvjestajKlijenti.rdl" />
     <Report Include="izvjestajVozila.rdl" />
     <Report Include="izvjestajZaposleni.rdl" />
   </ItemGroup>
