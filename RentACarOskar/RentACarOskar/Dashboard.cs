@@ -292,6 +292,7 @@ namespace RentACarOskar
 
             //prikaz dashbord-a
             panelMeniDashboard.Visible = true;
+            panelMeniDashboard.Width = 1090;
 
         }
         #endregion
@@ -956,6 +957,9 @@ namespace RentACarOskar
                 bunifuCards2.Width = bunifuCards1.Width;
                 panelFilter.Width = bunifuCards1.Width;
                 panelZaBunifuKartice.Width = panelPanelZaGV.Width;
+                panelMeniDashboard.Width = 1090;
+                pictureBox2.Width = 1600;
+
             }
             else
             {
@@ -972,6 +976,7 @@ namespace RentACarOskar
                 dgv.Size = panelPanelZaGV.Size;
                 panelSaTabelom.Width = panelPanelZaGV.Width;
                 panelZaBunifuKartice.Width = panelPanelZaGV.Width;
+                
             }
         }
 
@@ -1009,6 +1014,11 @@ namespace RentACarOskar
             panelSaTabelom.Visible = false;
             // PopuniFilterPanel();
             MeniZaDashboard meni = new MeniZaDashboard(UserMail, _UserId);
+            panelMeniDashboard.Width = 1600;
+            meni.Width = panelMeniDashboard.Width;
+            
+            pictureBox2.Width = 1600;
+
 
         }
 
