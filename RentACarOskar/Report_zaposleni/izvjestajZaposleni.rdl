@@ -102,10 +102,10 @@ FROM dbo.Radnik r</CommandText>
                   <Width>0.55085in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.75in</Width>
+                  <Width>0.74543in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.95832in</Width>
+                  <Width>1.07748in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.75in</Width>
@@ -720,7 +720,7 @@ FROM dbo.Radnik r</CommandText>
             <Top>0.87375in</Top>
             <Left>0.15625in</Left>
             <Height>0.75in</Height>
-            <Width>6.07166in</Width>
+            <Width>6.18625in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -767,7 +767,7 @@ FROM dbo.Radnik r</CommandText>
         <Height>3.04986in</Height>
         <Style />
       </Body>
-      <Width>6.22791in</Width>
+      <Width>6.3425in</Width>
       <Page>
         <PageHeader>
           <Height>1.59472in</Height>
@@ -898,6 +898,39 @@ FROM dbo.Radnik r</CommandText>
                 </Border>
               </Style>
             </Line>
+            <Textbox Name="ExecutionTime">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style>
+                        <Format>dd.MM.yyyy.   HH:mm</Format>
+                        <Color>DimGray</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <Top>0.10237cm</Top>
+              <Left>10.92408cm</Left>
+              <Height>0.6cm</Height>
+              <Width>4.88319cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -905,6 +938,49 @@ FROM dbo.Radnik r</CommandText>
             </Border>
           </Style>
         </PageHeader>
+        <PageFooter>
+          <Height>1in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="PageNumber">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!PageNumber</Value>
+                      <Style>
+                        <Color>DimGray</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>PageNumber</rd:DefaultName>
+              <Top>0.3125in</Top>
+              <Left>5.08208in</Left>
+              <Height>0.25in</Height>
+              <Width>1in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
         <TopMargin>1in</TopMargin>

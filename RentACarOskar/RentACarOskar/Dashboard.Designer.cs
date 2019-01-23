@@ -42,14 +42,14 @@
             this.btnDodajVozilo = new System.Windows.Forms.Button();
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelMeniDashboard = new System.Windows.Forms.Panel();
+            this.splash = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelSaTabelom = new System.Windows.Forms.Panel();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.proba = new System.Windows.Forms.Panel();
-            this.splash = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.panelZaBunifuKartice = new System.Windows.Forms.FlowLayoutPanel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.labelDate = new System.Windows.Forms.Label();
@@ -99,12 +99,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             this.panelCentar.SuspendLayout();
             this.panelMeniDashboard.SuspendLayout();
+            this.splash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             this.panelSaTabelom.SuspendLayout();
             this.panelPanelZaGV.SuspendLayout();
             this.proba.SuspendLayout();
-            this.splash.SuspendLayout();
             this.panelZaBunifuKartice.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panelFilter.SuspendLayout();
@@ -243,73 +243,13 @@
             // panelMeniDashboard
             // 
             this.panelMeniDashboard.BackColor = System.Drawing.Color.White;
-            this.panelMeniDashboard.Controls.Add(this.splash);
             this.panelMeniDashboard.Controls.Add(this.pictureBox2);
-            this.panelMeniDashboard.Location = new System.Drawing.Point(0, 3);
+            this.panelMeniDashboard.Location = new System.Drawing.Point(0, 0);
             this.panelMeniDashboard.Name = "panelMeniDashboard";
-            this.panelMeniDashboard.Size = new System.Drawing.Size(927, 647);
+            this.panelMeniDashboard.Size = new System.Drawing.Size(927, 650);
             this.panelMeniDashboard.TabIndex = 14;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 399);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(927, 245);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Controls.Add(this.panelSaTabelom);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1252, 650);
-            this.panel4.TabIndex = 13;
-            // 
-            // panelSaTabelom
-            // 
-            this.panelSaTabelom.BackColor = System.Drawing.Color.Transparent;
-            this.panelSaTabelom.Controls.Add(this.panelPanelZaGV);
-            this.panelSaTabelom.Controls.Add(this.panelZaBunifuKartice);
-            this.panelSaTabelom.Controls.Add(this.btnCijena);
-            this.panelSaTabelom.Controls.Add(this.panelMeni);
-            this.panelSaTabelom.Controls.Add(this.btnInsert);
-            this.panelSaTabelom.Controls.Add(this.btnIzdaj);
-            this.panelSaTabelom.Controls.Add(this.bDelete);
-            this.panelSaTabelom.Controls.Add(this.btnUpdate);
-            this.panelSaTabelom.Controls.Add(this.pictureBox1);
-            this.panelSaTabelom.Location = new System.Drawing.Point(0, 0);
-            this.panelSaTabelom.Name = "panelSaTabelom";
-            this.panelSaTabelom.Size = new System.Drawing.Size(927, 650);
-            this.panelSaTabelom.TabIndex = 9;
-            // 
-            // splash// 
-            // panelPanelZaGV
-            // 
-            this.panelPanelZaGV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPanelZaGV.BackgroundImage")));
-            this.panelPanelZaGV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelPanelZaGV.Controls.Add(this.proba);
-            this.panelPanelZaGV.GradientBottomLeft = System.Drawing.Color.White;
-            this.panelPanelZaGV.GradientBottomRight = System.Drawing.Color.White;
-            this.panelPanelZaGV.GradientTopLeft = System.Drawing.Color.White;
-            this.panelPanelZaGV.GradientTopRight = System.Drawing.Color.White;
-            this.panelPanelZaGV.Location = new System.Drawing.Point(24, 199);
-            this.panelPanelZaGV.Margin = new System.Windows.Forms.Padding(0);
-            this.panelPanelZaGV.Name = "panelPanelZaGV";
-            this.panelPanelZaGV.Quality = 10;
-            this.panelPanelZaGV.Size = new System.Drawing.Size(880, 380);
-            this.panelPanelZaGV.TabIndex = 0;
-            // 
-            // proba
-            // 
-            this.proba.Controls.Add(this.splash);
-            this.proba.Location = new System.Drawing.Point(53, 30);
-            this.proba.Name = "proba";
-            this.proba.Size = new System.Drawing.Size(744, 287);
-            this.proba.TabIndex = 0;
+            // splash
             // 
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.splash.Controls.Add(this.label5);
@@ -353,6 +293,65 @@
             this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(184, 184);
             this.bunifuCircleProgressbar1.TabIndex = 1;
             this.bunifuCircleProgressbar1.Value = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 399);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(927, 245);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.panelSaTabelom);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1252, 650);
+            this.panel4.TabIndex = 13;
+            // 
+            // panelSaTabelom
+            // 
+            this.panelSaTabelom.BackColor = System.Drawing.Color.Transparent;
+            this.panelSaTabelom.Controls.Add(this.panelPanelZaGV);
+            this.panelSaTabelom.Controls.Add(this.panelZaBunifuKartice);
+            this.panelSaTabelom.Controls.Add(this.btnCijena);
+            this.panelSaTabelom.Controls.Add(this.panelMeni);
+            this.panelSaTabelom.Controls.Add(this.btnInsert);
+            this.panelSaTabelom.Controls.Add(this.btnIzdaj);
+            this.panelSaTabelom.Controls.Add(this.bDelete);
+            this.panelSaTabelom.Controls.Add(this.btnUpdate);
+            this.panelSaTabelom.Controls.Add(this.pictureBox1);
+            this.panelSaTabelom.Location = new System.Drawing.Point(0, 0);
+            this.panelSaTabelom.Name = "panelSaTabelom";
+            this.panelSaTabelom.Size = new System.Drawing.Size(927, 650);
+            this.panelSaTabelom.TabIndex = 9;
+            // 
+            // panelPanelZaGV
+            // 
+            this.panelPanelZaGV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPanelZaGV.BackgroundImage")));
+            this.panelPanelZaGV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPanelZaGV.Controls.Add(this.proba);
+            this.panelPanelZaGV.GradientBottomLeft = System.Drawing.Color.White;
+            this.panelPanelZaGV.GradientBottomRight = System.Drawing.Color.White;
+            this.panelPanelZaGV.GradientTopLeft = System.Drawing.Color.White;
+            this.panelPanelZaGV.GradientTopRight = System.Drawing.Color.White;
+            this.panelPanelZaGV.Location = new System.Drawing.Point(24, 199);
+            this.panelPanelZaGV.Margin = new System.Windows.Forms.Padding(0);
+            this.panelPanelZaGV.Name = "panelPanelZaGV";
+            this.panelPanelZaGV.Quality = 10;
+            this.panelPanelZaGV.Size = new System.Drawing.Size(880, 380);
+            this.panelPanelZaGV.TabIndex = 0;
+            // 
+            // proba
+            // 
+            this.proba.Location = new System.Drawing.Point(53, 30);
+            this.proba.Name = "proba";
+            this.proba.Size = new System.Drawing.Size(744, 287);
+            this.proba.TabIndex = 0;
             // 
             // panelZaBunifuKartice
             // 
@@ -1012,13 +1011,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.loptica)).EndInit();
             this.panelCentar.ResumeLayout(false);
             this.panelMeniDashboard.ResumeLayout(false);
+            this.splash.ResumeLayout(false);
+            this.splash.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panelSaTabelom.ResumeLayout(false);
             this.panelPanelZaGV.ResumeLayout(false);
             this.proba.ResumeLayout(false);
-            this.splash.ResumeLayout(false);
-            this.splash.PerformLayout();
             this.panelZaBunifuKartice.ResumeLayout(false);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();

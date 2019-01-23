@@ -955,7 +955,7 @@ namespace RentACarOskar
                 bunifuCards1.Width = 345;
                 bunifuCards2.Width = bunifuCards1.Width;
                 panelFilter.Width = bunifuCards1.Width;
-                panelZaBunifuKartice.Width = panelPanelZaGV.Width;
+                panelZaBunifuKartice.Width = panelPanelZaGV.Width;               
             }
             else
             {
