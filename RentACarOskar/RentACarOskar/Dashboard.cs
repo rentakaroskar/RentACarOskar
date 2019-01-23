@@ -15,6 +15,7 @@ using MetroFramework;
 using System.Collections.Generic;
 using RentACarOskar.UserControls;
 using MetroFramework.Controls;
+using Microsoft.Reporting.WinForms;
 
 namespace RentACarOskar
 {
@@ -1057,5 +1058,10 @@ namespace RentACarOskar
             }
         }
 
+        private void btnIzvjestaj_Click(object sender, EventArgs e)
+        {
+            Izvjestaj pom = new Izvjestaj(myForm);
+            pom.ShowDialog();
+        }
     }
 }
