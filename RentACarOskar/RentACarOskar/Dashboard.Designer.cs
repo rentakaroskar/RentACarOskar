@@ -104,6 +104,7 @@
             this.panel4.SuspendLayout();
             this.panelSaTabelom.SuspendLayout();
             this.panelPanelZaGV.SuspendLayout();
+            this.proba.SuspendLayout();
             this.panelZaBunifuKartice.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panelFilter.SuspendLayout();
@@ -242,7 +243,6 @@
             // panelMeniDashboard
             // 
             this.panelMeniDashboard.BackColor = System.Drawing.Color.White;
-            this.panelMeniDashboard.Controls.Add(this.splash);
             this.panelMeniDashboard.Controls.Add(this.pictureBox2);
             this.panelMeniDashboard.Location = new System.Drawing.Point(0, 0);
             this.panelMeniDashboard.Name = "panelMeniDashboard";
@@ -254,9 +254,9 @@
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.splash.Controls.Add(this.label5);
             this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(0, 0);
+            this.splash.Location = new System.Drawing.Point(0, -3);
             this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(1075, 722);
+            this.splash.Size = new System.Drawing.Size(1022, 650);
             this.splash.TabIndex = 14;
             this.splash.Visible = false;
             // 
@@ -1017,6 +1017,7 @@
             this.panel4.ResumeLayout(false);
             this.panelSaTabelom.ResumeLayout(false);
             this.panelPanelZaGV.ResumeLayout(false);
+            this.proba.ResumeLayout(false);
             this.panelZaBunifuKartice.ResumeLayout(false);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();

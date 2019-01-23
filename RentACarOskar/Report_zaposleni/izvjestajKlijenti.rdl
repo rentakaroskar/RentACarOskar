@@ -3,37 +3,32 @@
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="izvjestaj_zaposleni">
+    <DataSource Name="Klijenti">
       <DataSourceReference>RentACar</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>4d9f224f-e713-4095-b478-eaca279dd977</rd:DataSourceID>
+      <rd:DataSourceID>7a508ef7-fd4c-4501-bf0e-32f52f747292</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="Klijenti">
       <Query>
-        <DataSourceName>izvjestaj_zaposleni</DataSourceName>
+        <DataSourceName>Klijenti</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@Pozicija">
-            <Value>=Parameters!Pozicija.Value</Value>
+          <QueryParameter Name="@TipFaktureID">
+            <Value>=Parameters!TipFaktureID.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@PlataOd">
-            <Value>=Parameters!PlataOd.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@PlataDo">
-            <Value>=Parameters!PlataDo.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@DatumZaposlenjaOd">
-            <Value>=Parameters!DatumZaposlenjaOd.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@DatumZaposlenjaDo">
-            <Value>=Parameters!DatumZaposlenjaDo.Value</Value>
+          <QueryParameter Name="@KlijentID">
+            <Value>=Parameters!KlijentID.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>izvjestaj_zaposleni</CommandText>
+        <CommandText>Izvjestaj_Klijent</CommandText>
       </Query>
       <Fields>
+        <Field Name="Klijent_ID">
+          <DataField>Klijent ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="Ime">
           <DataField>Ime</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -46,46 +41,16 @@
           <DataField>JMB</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DatumRodjenja">
-          <DataField>DatumRodjenja</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="MjestoRodjenja">
-          <DataField>MjestoRodjenja</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Pozicija">
-          <DataField>Pozicija</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="Adresa">
           <DataField>Adresa</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="BrojTelefon">
-          <DataField>BrojTelefon</DataField>
+        <Field Name="Broj_telefona">
+          <DataField>Broj telefona</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DatumZaposlenja">
-          <DataField>DatumZaposlenja</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Plata">
-          <DataField>Plata</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Pozicije">
-      <Query>
-        <DataSourceName>izvjestaj_zaposleni</DataSourceName>
-        <CommandText>SELECT DISTINCT
- r.Pozicija
-FROM dbo.Radnik r</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Pozicija">
-          <DataField>Pozicija</DataField>
+        <Field Name="Tip">
+          <DataField>Tip</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -99,28 +64,22 @@ FROM dbo.Radnik r</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.55085in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.74543in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.07748in</Width>
+                  <Width>0.66543in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.75in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.72916in</Width>
+                  <Width>1.14581in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.03125in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.0821in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.875in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.80208in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.65625in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -244,7 +203,7 @@ FROM dbo.Radnik r</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Pozicija</Value>
+                                  <Value>Adresa</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Color>White</Color>
@@ -281,7 +240,7 @@ FROM dbo.Radnik r</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Datum Rodjenja</Value>
+                                  <Value>Broj telefona</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Color>White</Color>
@@ -318,7 +277,7 @@ FROM dbo.Radnik r</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mjesto Rodjenja</Value>
+                                  <Value>Tip</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Color>White</Color>
@@ -331,80 +290,6 @@ FROM dbo.Radnik r</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox13</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#173f4b</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox11">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Datum Zaposlenja</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Color>White</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox11</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#173f4b</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox15">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Plata</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Color>White</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox15</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -523,14 +408,14 @@ FROM dbo.Radnik r</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Pozicija">
+                        <Textbox Name="Adresa">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Pozicija.Value</Value>
+                                  <Value>=Fields!Adresa.Value</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Color>DimGray</Color>
@@ -540,7 +425,7 @@ FROM dbo.Radnik r</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Pozicija</rd:DefaultName>
+                          <rd:DefaultName>Adresa</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -556,14 +441,14 @@ FROM dbo.Radnik r</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="DatumRodjenja">
+                        <Textbox Name="Broj_telefona">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DatumRodjenja.Value</Value>
+                                  <Value>=Fields!Broj_telefona.Value</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Format>dd.MM.yyyy</Format>
@@ -574,7 +459,7 @@ FROM dbo.Radnik r</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>DatumRodjenja</rd:DefaultName>
+                          <rd:DefaultName>Broj_telefona</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -590,14 +475,14 @@ FROM dbo.Radnik r</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="MjestoRodjenja">
+                        <Textbox Name="Tip">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!MjestoRodjenja.Value</Value>
+                                  <Value>=Fields!Tip.Value</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
                                     <Color>DimGray</Color>
@@ -607,76 +492,7 @@ FROM dbo.Radnik r</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>MjestoRodjenja</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="DatumZaposlenja">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DatumZaposlenja.Value</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Format>dd.MM.yyyy</Format>
-                                    <Color>DimGray</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>DatumZaposlenja</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Plata">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Plata.Value</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                    <Color>DimGray</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Plata</rd:DefaultName>
+                          <rd:DefaultName>Tip</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -702,8 +518,6 @@ FROM dbo.Radnik r</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -716,11 +530,11 @@ FROM dbo.Radnik r</CommandText>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>Klijenti</DataSetName>
             <Top>0.87375in</Top>
-            <Left>0.15625in</Left>
+            <Left>0.40624in</Left>
             <Height>0.75in</Height>
-            <Width>6.18625in</Width>
+            <Width>5.54959in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -734,7 +548,7 @@ FROM dbo.Radnik r</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>IZVJEŠTAJ ZAPOSLENIH</Value>
+                    <Value>IZVJEŠTAJ KLIJENTA</Value>
                     <Style>
                       <FontSize>18pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -764,13 +578,13 @@ FROM dbo.Radnik r</CommandText>
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>3.04986in</Height>
+        <Height>1.95611in</Height>
         <Style />
       </Body>
-      <Width>6.3425in</Width>
+      <Width>6.39458in</Width>
       <Page>
         <PageHeader>
-          <Height>1.59472in</Height>
+          <Height>1.80083in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -800,6 +614,7 @@ FROM dbo.Radnik r</CommandText>
                         <FontFamily>Arial Narrow</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Normal</FontWeight>
+                        <Format>dd.MM.yyyy</Format>
                         <Color>DimGray</Color>
                       </Style>
                     </TextRun>
@@ -815,6 +630,7 @@ FROM dbo.Radnik r</CommandText>
                       <Style>
                         <FontFamily>Arial Narrow</FontFamily>
                         <FontWeight>Normal</FontWeight>
+                        <Format>dd.MM.yyyy</Format>
                         <Color>DimGray</Color>
                       </Style>
                     </TextRun>
@@ -830,6 +646,7 @@ FROM dbo.Radnik r</CommandText>
                       <Style>
                         <FontFamily>Arial Narrow</FontFamily>
                         <FontWeight>Normal</FontWeight>
+                        <Format>dd.MM.yyyy</Format>
                         <Color>DimGray</Color>
                       </Style>
                     </TextRun>
@@ -845,6 +662,7 @@ FROM dbo.Radnik r</CommandText>
                       <Style>
                         <FontFamily>Arial Narrow</FontFamily>
                         <FontWeight>Normal</FontWeight>
+                        <Format>dd.MM.yyyy</Format>
                         <Color>DimGray</Color>
                       </Style>
                     </TextRun>
@@ -860,6 +678,7 @@ FROM dbo.Radnik r</CommandText>
                       <Style>
                         <FontFamily>Arial Narrow</FontFamily>
                         <FontWeight>Normal</FontWeight>
+                        <Format>dd.MM.yyyy</Format>
                         <Color>DimGray</Color>
                       </Style>
                     </TextRun>
@@ -870,9 +689,9 @@ FROM dbo.Radnik r</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.33208in</Top>
+              <Top>0.4536in</Top>
               <Left>4.30082in</Left>
-              <Height>0.93056in</Height>
+              <Height>0.96181in</Height>
               <Width>1.92709in</Width>
               <ZIndex>1</ZIndex>
               <Style>
@@ -907,7 +726,7 @@ FROM dbo.Radnik r</CommandText>
                     <TextRun>
                       <Value>=Globals!ExecutionTime</Value>
                       <Style>
-                        <Format>dd.MM.yyyy.   HH:mm</Format>
+                        <Format>dd.MM.yyyy.    HH:mm</Format>
                         <Color>DimGray</Color>
                       </Style>
                     </TextRun>
@@ -916,10 +735,10 @@ FROM dbo.Radnik r</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>0.10237cm</Top>
-              <Left>10.92408cm</Left>
-              <Height>0.6cm</Height>
-              <Width>4.88319cm</Width>
+              <Top>0.13416in</Top>
+              <Left>4.30082in</Left>
+              <Height>0.25in</Height>
+              <Width>1.92709in</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -960,8 +779,8 @@ FROM dbo.Radnik r</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.3125in</Top>
-              <Left>5.08208in</Left>
+              <Top>0.48014in</Top>
+              <Left>5.22791in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <Style>
@@ -990,85 +809,31 @@ FROM dbo.Radnik r</CommandText>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="PlataOd">
+    <ReportParameter Name="TipFaktureID">
       <DataType>Integer</DataType>
       <Nullable>true</Nullable>
-      <Prompt>Plata Od</Prompt>
+      <Prompt>Tip Fakture ID</Prompt>
     </ReportParameter>
-    <ReportParameter Name="PlataDo">
+    <ReportParameter Name="KlijentID">
       <DataType>Integer</DataType>
       <Nullable>true</Nullable>
-      <Prompt>Plata Do</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="DatumZaposlenjaOd">
-      <DataType>DateTime</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>Datum Zaposlenja Od</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="DatumZaposlenjaDo">
-      <DataType>DateTime</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>Datum Zaposlenja Do</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="Pozicija">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <DefaultValue>
-        <Values>
-          <Value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
-        </Values>
-      </DefaultValue>
-      <Prompt>Pozicija</Prompt>
-      <ValidValues>
-        <ParameterValues>
-          <ParameterValue>
-            <Label>Null</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>="Direktor"</Value>
-            <Label>Direktor</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>="Radnik"</Value>
-            <Label>Radnik</Label>
-          </ParameterValue>
-          <ParameterValue>
-            <Value>="Menadzer"</Value>
-            <Label>Menadzer</Label>
-          </ParameterValue>
-        </ParameterValues>
-      </ValidValues>
+      <Prompt>Klijent ID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
-      <NumberOfColumns>3</NumberOfColumns>
+      <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>Pozicija</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>PlataOd</ParameterName>
+          <ParameterName>TipFaktureID</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>PlataDo</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>DatumZaposlenjaOd</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>DatumZaposlenjaDo</ParameterName>
+          <ParameterName>KlijentID</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -1361,5 +1126,5 @@ y32OCdeuyRSVDsMS/t10T/2C6bpRO9pAHsA/nWIEi7bPvOQnC0c/TWFpy6WO4THygv6Ph/XpzhJTBy/X
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>63f812e4-8d02-4177-a20a-2c424fa70671</rd:ReportID>
+  <rd:ReportID>da05a671-f868-4d82-aba3-794c7900c0a0</rd:ReportID>
 </Report>
