@@ -18,7 +18,7 @@
             <Value>=Parameters!ModelID.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@ProizvodjacID">
-            <Value>=Parameters!ProizvodjacID.Value</Value>
+            <Value>=Parameters!Proizvodjac.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@DostupnostID">
             <Value>=Parameters!DostupnostID.Value</Value>
@@ -50,6 +50,66 @@
         </Field>
         <Field Name="Dostupnost">
           <DataField>Dostupnost</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ParProizvodjac">
+      <Query>
+        <DataSourceName>RentACar</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>IzvjestajVozilaParametarProizvodjac</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ProizvodjacID">
+          <DataField>ProizvodjacID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Naziv">
+          <DataField>Naziv</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ParModel">
+      <Query>
+        <DataSourceName>RentACar</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@ProizvodjacID">
+            <Value>=Parameters!Proizvodjac.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>IzvjestajVozilaModelParametar</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ModelID">
+          <DataField>ModelID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Naziv">
+          <DataField>Naziv</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProizvodjacID">
+          <DataField>ProizvodjacID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ParDostupnost">
+      <Query>
+        <DataSourceName>RentACar</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>IzvjestajVoziloDostupnost</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DostupnostID">
+          <DataField>DostupnostID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TipDostupnosti">
+          <DataField>TipDostupnosti</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -805,20 +865,41 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
+    <ReportParameter Name="Proizvodjac">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Proizvodjac</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ParProizvodjac</DataSetName>
+          <ValueField>ProizvodjacID</ValueField>
+          <LabelField>Naziv</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
     <ReportParameter Name="ModelID">
       <DataType>Integer</DataType>
       <Nullable>true</Nullable>
       <Prompt>Model ID</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="ProizvodjacID">
-      <DataType>Integer</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>Proizvodjac ID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ParModel</DataSetName>
+          <ValueField>ModelID</ValueField>
+          <LabelField>Naziv</LabelField>
+        </DataSetReference>
+      </ValidValues>
     </ReportParameter>
     <ReportParameter Name="DostupnostID">
       <DataType>Integer</DataType>
       <Nullable>true</Nullable>
       <Prompt>Dostupnost ID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ParDostupnost</DataSetName>
+          <ValueField>DostupnostID</ValueField>
+          <LabelField>TipDostupnosti</LabelField>
+        </DataSetReference>
+      </ValidValues>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
@@ -829,12 +910,12 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>ModelID</ParameterName>
+          <ParameterName>Proizvodjac</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>ProizvodjacID</ParameterName>
+          <ParameterName>ModelID</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
