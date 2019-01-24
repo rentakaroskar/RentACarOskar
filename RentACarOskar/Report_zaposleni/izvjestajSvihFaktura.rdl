@@ -71,7 +71,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>IZVJEŠTAJ VOZILA</Value>
+                    <Value>IZVJEŠTAJ SVIH FAKTURA</Value>
                     <Style>
                       <FontSize>18pt</FontSize>
                       <FontWeight>Bold</FontWeight>
