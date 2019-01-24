@@ -95,7 +95,9 @@ namespace RentACarOskar
             bDelete.Visible = false;
             VoziloIspis pom = new VoziloIspis();
             //MeniZaDashboard dashboard = new MeniZaDashboard();
-           //panel2.Controls.Add(dashboard);
+            //panel2.Controls.Add(dashboard);
+            BgColor(panelHome);
+            
         }
 
         //f-ja za datum i vrijeme
@@ -932,6 +934,8 @@ namespace RentACarOskar
             panelKlijenti.BackColor = Color.Transparent;
             panelAutomobili.BackColor = Color.Transparent;
             panelHome.BackColor = Color.Transparent;
+
+            label1.BackColor = Color.Transparent;
 
 
             sender.BackColor = Color.FromArgb(20, 255, 255, 254);
