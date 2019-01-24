@@ -271,13 +271,13 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 399);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(972, 245);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
+            //this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            //this.pictureBox2.Image = global::RentACarOskar.Properties.Resources.Smoke_PNG_Image_72462;
+            //this.pictureBox2.Location = new System.Drawing.Point(0, 399);
+            //this.pictureBox2.Name = "pictureBox2";
+            //this.pictureBox2.Size = new System.Drawing.Size(972, 245);
+            //this.pictureBox2.TabIndex = 15;
+            //this.pictureBox2.TabStop = false;
             // 
             // panel4
             // 
