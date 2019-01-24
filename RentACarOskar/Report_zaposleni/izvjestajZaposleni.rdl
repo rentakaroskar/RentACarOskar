@@ -795,7 +795,7 @@ FROM dbo.Radnik r</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Rent A Car OSKAR</Value>
+                      <Value>Rent A Car OŠCAR</Value>
                       <Style>
                         <FontFamily>Arial Narrow</FontFamily>
                         <FontSize>12pt</FontSize>

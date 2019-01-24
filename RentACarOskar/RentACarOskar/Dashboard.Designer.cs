@@ -34,22 +34,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.loptica = new System.Windows.Forms.PictureBox();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.loader = new System.Windows.Forms.Timer(this.components);
             this.btnDodajVozilo = new System.Windows.Forms.Button();
             this.panelCentar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelMeniDashboard = new System.Windows.Forms.Panel();
-            this.splash = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelSaTabelom = new System.Windows.Forms.Panel();
             this.panelPanelZaGV = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.proba = new System.Windows.Forms.Panel();
+            this.splash = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.panelZaBunifuKartice = new System.Windows.Forms.FlowLayoutPanel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.labelDate = new System.Windows.Forms.Label();
@@ -73,6 +70,7 @@
             this.labelUser = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.PanelLeft = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelHome = new System.Windows.Forms.Panel();
@@ -94,17 +92,18 @@
             this.panelLogOut = new System.Windows.Forms.Panel();
             this.btnLogOut = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblLogOut1 = new System.Windows.Forms.Label();
+            this.loptica = new System.Windows.Forms.PictureBox();
             this.logoPic = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             this.panelCentar.SuspendLayout();
             this.panelMeniDashboard.SuspendLayout();
-            this.splash.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             this.panelSaTabelom.SuspendLayout();
             this.panelPanelZaGV.SuspendLayout();
-            this.proba.SuspendLayout();
+            this.splash.SuspendLayout();
             this.panelZaBunifuKartice.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panelFilter.SuspendLayout();
@@ -127,6 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
             this.panelLogOut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loptica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,37 +165,12 @@
             this.bunifuDragControl1.TargetControl = this.loptica;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // loptica
-            // 
-            this.loptica.BackColor = System.Drawing.Color.Transparent;
-            this.loptica.Image = global::RentACarOskar.Properties.Resources.logooS;
-            this.loptica.Location = new System.Drawing.Point(3, 50);
-            this.loptica.Name = "loptica";
-            this.loptica.Size = new System.Drawing.Size(60, 40);
-            this.loptica.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.loptica.TabIndex = 4;
-            this.loptica.TabStop = false;
-            this.loptica.Visible = false;
-            this.loptica.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
             // bunifuDragControl2
             // 
             this.bunifuDragControl2.Fixed = true;
             this.bunifuDragControl2.Horizontal = true;
             this.bunifuDragControl2.TargetControl = this.label3;
             this.bunifuDragControl2.Vertical = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(47, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 33);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Dashboard";
             // 
             // timer1
             // 
@@ -243,7 +218,7 @@
             // panelMeniDashboard
             // 
             this.panelMeniDashboard.BackColor = System.Drawing.Color.White;
-            this.panelMeniDashboard.Controls.Add(this.pictureBox2);
+            this.panelMeniDashboard.Controls.Add(this.splash);
             this.panelMeniDashboard.Location = new System.Drawing.Point(0, 0);
             this.panelMeniDashboard.Name = "panelMeniDashboard";
             this.panelMeniDashboard.Size = new System.Drawing.Size(927, 650);
@@ -358,9 +333,9 @@
             this.splash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.splash.Controls.Add(this.label5);
             this.splash.Controls.Add(this.bunifuCircleProgressbar1);
-            this.splash.Location = new System.Drawing.Point(0, -3);
+            this.splash.Location = new System.Drawing.Point(0, 0);
             this.splash.Name = "splash";
-            this.splash.Size = new System.Drawing.Size(1022, 650);
+            this.splash.Size = new System.Drawing.Size(1099, 700);
             this.splash.TabIndex = 14;
             this.splash.Visible = false;
             // 
@@ -714,6 +689,18 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Korisnik:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(47, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 33);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Dashboard";
+            // 
             // PanelLeft
             // 
             this.PanelLeft.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -738,6 +725,9 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.panelMenu.BackgroundImage = global::RentACarOskar.Properties.Resources.blur2;
             this.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMenu.Controls.Add(this.label9);
+            this.panelMenu.Controls.Add(this.label8);
+            this.panelMenu.Controls.Add(this.label7);
             this.panelMenu.Controls.Add(this.panelHome);
             this.panelMenu.Controls.Add(this.panelZaposleni);
             this.panelMenu.Controls.Add(this.panelFaktura);
@@ -895,6 +885,8 @@
             this.btnFaktura.TabStop = false;
             this.btnFaktura.Zoom = 10;
             this.btnFaktura.Click += new System.EventHandler(this.btnFaktura_Click);
+            this.btnFaktura.MouseLeave += new System.EventHandler(this.panelFaktura_MouseLeave);
+            this.btnFaktura.MouseHover += new System.EventHandler(this.panelFaktura_MouseHover);
             // 
             // panelKlijenti
             // 
@@ -938,6 +930,8 @@
             this.slicicaPeople.TabStop = false;
             this.slicicaPeople.Zoom = 10;
             this.slicicaPeople.Click += new System.EventHandler(this.btnKlijent_Click);
+            this.slicicaPeople.MouseLeave += new System.EventHandler(this.panelKlijenti_MouseLeave);
+            this.slicicaPeople.MouseHover += new System.EventHandler(this.panelKlijenti_MouseHover);
             // 
             // panelAutomobili
             // 
@@ -967,6 +961,8 @@
             this.slicicaAuto.TabStop = false;
             this.slicicaAuto.Zoom = 10;
             this.slicicaAuto.Click += new System.EventHandler(this.btnVozilo_Click);
+            this.slicicaAuto.MouseLeave += new System.EventHandler(this.panelAutomobili_MouseLeave);
+            this.slicicaAuto.MouseHover += new System.EventHandler(this.panelAutomobili_MouseHover);
             // 
             // lblAutomobili
             // 
@@ -1025,19 +1021,64 @@
             this.lblLogOut1.MouseLeave += new System.EventHandler(this.panelLogOut_MouseLeave);
             this.lblLogOut1.MouseHover += new System.EventHandler(this.panelLogOut_MouseHover);
             // 
+            // loptica
+            // 
+            this.loptica.BackColor = System.Drawing.Color.Transparent;
+            this.loptica.Image = global::RentACarOskar.Properties.Resources.logooS;
+            this.loptica.Location = new System.Drawing.Point(3, 50);
+            this.loptica.Name = "loptica";
+            this.loptica.Size = new System.Drawing.Size(60, 40);
+            this.loptica.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.loptica.TabIndex = 4;
+            this.loptica.TabStop = false;
+            this.loptica.Visible = false;
+            this.loptica.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // logoPic
             // 
             this.logoPic.BackColor = System.Drawing.Color.Transparent;
             this.logoPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.logoPic.ErrorImage = null;
-            this.logoPic.Image = global::RentACarOskar.Properties.Resources.logoo1;
+            this.logoPic.Image = global::RentACarOskar.Properties.Resources.logooisjecen;
             this.logoPic.InitialImage = null;
-            this.logoPic.Location = new System.Drawing.Point(25, 58);
+            this.logoPic.Location = new System.Drawing.Point(17, 34);
             this.logoPic.Name = "logoPic";
-            this.logoPic.Size = new System.Drawing.Size(195, 148);
-            this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoPic.Size = new System.Drawing.Size(195, 136);
+            this.logoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoPic.TabIndex = 0;
             this.logoPic.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(57, 151);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(117, 36);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "OŠCAR";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 192);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(83, 187);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(103, 17);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Ime govori sve";
             // 
             // Dashboard
             // 
@@ -1054,16 +1095,13 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loptica)).EndInit();
             this.panelCentar.ResumeLayout(false);
             this.panelMeniDashboard.ResumeLayout(false);
-            this.splash.ResumeLayout(false);
-            this.splash.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panelSaTabelom.ResumeLayout(false);
             this.panelPanelZaGV.ResumeLayout(false);
-            this.proba.ResumeLayout(false);
+            this.splash.ResumeLayout(false);
+            this.splash.PerformLayout();
             this.panelZaBunifuKartice.ResumeLayout(false);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
@@ -1077,6 +1115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.PanelLeft.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            this.panelMenu.PerformLayout();
             this.panelHome.ResumeLayout(false);
             this.panelHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgHome)).EndInit();
@@ -1095,6 +1134,7 @@
             this.panelLogOut.ResumeLayout(false);
             this.panelLogOut.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loptica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
             this.ResumeLayout(false);
 
@@ -1164,8 +1204,10 @@
         private MetroFramework.Controls.MetroButton btnIzvjestaj;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panelMeniDashboard;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel proba;
         private System.Windows.Forms.FlowLayoutPanel pnlFilter1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

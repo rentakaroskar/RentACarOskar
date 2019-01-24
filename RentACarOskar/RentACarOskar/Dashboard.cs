@@ -83,13 +83,14 @@ namespace RentACarOskar
             panelPanelZaGV.Font=new Font("Century Gothic", 9);
             //panelCentar.Visible = false;
             panelSaTabelom.Visible = false;
-
+            
             btnIzdaj.Visible = false;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
             splash.Visible = true;
+            splash.BringToFront();
             panelPanelZaGV.Visible = true;
             bDelete.Visible = false;
             VoziloIspis pom = new VoziloIspis();
