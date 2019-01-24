@@ -12,10 +12,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using RentACarOskar.CRUD;
 using MetroFramework;
-using System.Collections.Generic;
 using RentACarOskar.UserControls;
-using MetroFramework.Controls;
-using Microsoft.Reporting.WinForms;
 
 namespace RentACarOskar
 {
