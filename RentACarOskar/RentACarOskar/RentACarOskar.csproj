@@ -433,5 +433,11 @@
   <ItemGroup>
     <None Include="Resources\avatar-circle-human-male-2-512.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logooisjecen.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

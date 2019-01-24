@@ -38,7 +38,6 @@ namespace RentACarOskar
             this.label1 = new System.Windows.Forms.Label();
             this.tbUserName = new MetroFramework.Controls.MetroTextBox();
             this.slicicaAuto = new Bunifu.Framework.UI.BunifuImageButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -47,6 +46,7 @@ namespace RentACarOskar
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.slicicaAuto)).BeginInit();
@@ -136,9 +136,9 @@ namespace RentACarOskar
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(23, 199);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 21);
+            this.label1.Size = new System.Drawing.Size(123, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Korisničko ime";
+            this.label1.Text = "Korisnički email";
             // 
             // tbUserName
             // 
@@ -184,18 +184,6 @@ namespace RentACarOskar
             this.slicicaAuto.TabIndex = 7;
             this.slicicaAuto.TabStop = false;
             this.slicicaAuto.Zoom = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(122, 149);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "OSCAR";
             // 
             // label2
             // 
@@ -274,6 +262,18 @@ namespace RentACarOskar
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(114, 145);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 30);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "OŠCAR";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,12 +284,12 @@ namespace RentACarOskar
             this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
             this.BackMaxSize = 550;
             this.ClientSize = new System.Drawing.Size(321, 493);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(label5);
             this.Controls.Add(label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.slicicaAuto);
             this.Controls.Add(this.label1);
@@ -319,7 +319,6 @@ namespace RentACarOskar
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogIn;
         private Bunifu.Framework.UI.BunifuImageButton slicicaAuto;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
@@ -328,6 +327,7 @@ namespace RentACarOskar
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label7;
     }
 }
 

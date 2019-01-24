@@ -373,6 +373,16 @@ namespace RentACarOskar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_black {
             get {
                 object obj = ResourceManager.GetObject("logo-black", resourceCulture);
@@ -436,6 +446,16 @@ namespace RentACarOskar.Properties {
         internal static System.Drawing.Bitmap logoo1 {
             get {
                 object obj = ResourceManager.GetObject("logoo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logooisjecen {
+            get {
+                object obj = ResourceManager.GetObject("logooisjecen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
