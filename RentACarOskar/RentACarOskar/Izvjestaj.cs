@@ -1,4 +1,5 @@
-﻿using RentACarOskar.PropertyClass;
+﻿using Microsoft.Reporting.WinForms;
+using RentACarOskar.PropertyClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace RentACarOskar
         public Izvjestaj(PropertyInterface property)
         {
             InitializeComponent();
-            if(property.GetType() == typeof(PropertyVozilo))
+            if (property.GetType() == typeof(PropertyVozilo))
             {
                 rvIzvjestaj.ServerReport.ReportPath = "/Report_RentACarOscar/izvjestajVozila";
             }
@@ -32,6 +33,17 @@ namespace RentACarOskar
             {
                 rvIzvjestaj.ServerReport.ReportPath = "/Report_RentACarOscar/izvjestajSvihFaktura";
             }
+        }
+
+        public Izvjestaj(string ID)
+        {
+            InitializeComponent();
+            ReportParameter[] parametri = new ReportParameter[1];
+            parametri[0] = new ReportParameter("FakturaID", ID);
+
+            rvIzvjestaj.ServerReport.ReportPath = "/Report_RentACarOscar/izvjestajFaktura";
+            rvIzvjestaj.ServerReport.SetParameters(parametri);
+
         }
 
         private void Izvjestaj_Load(object sender, EventArgs e)

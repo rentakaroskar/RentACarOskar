@@ -272,7 +272,8 @@ namespace RentACarOskar
 
         private void btnStampaj_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            Izvjestaj pom = new Izvjestaj(fakturaID.ToString());
+            pom.ShowDialog();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
