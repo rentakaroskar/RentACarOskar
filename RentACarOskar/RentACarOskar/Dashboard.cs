@@ -94,7 +94,9 @@ namespace RentACarOskar
             bDelete.Visible = false;
             VoziloIspis pom = new VoziloIspis();
             //MeniZaDashboard dashboard = new MeniZaDashboard();
-           //panel2.Controls.Add(dashboard);
+            //panel2.Controls.Add(dashboard);
+            BgColor(panelHome);
+            
         }
 
         //f-ja za datum i vrijeme
@@ -292,6 +294,7 @@ namespace RentACarOskar
 
             //prikaz dashbord-a
             panelMeniDashboard.Visible = true;
+            panelMeniDashboard.Width = 1090;
 
         }
         #endregion
@@ -960,6 +963,8 @@ namespace RentACarOskar
             panelAutomobili.BackColor = Color.Transparent;
             panelHome.BackColor = Color.Transparent;
 
+            label1.BackColor = Color.Transparent;
+
 
             sender.BackColor = Color.FromArgb(20, 255, 255, 254);
             //sender.BackColor = Color.Red;
@@ -983,7 +988,10 @@ namespace RentACarOskar
                 bunifuCards1.Width = 345;
                 bunifuCards2.Width = bunifuCards1.Width;
                 panelFilter.Width = bunifuCards1.Width;
-                panelZaBunifuKartice.Width = panelPanelZaGV.Width;               
+                panelZaBunifuKartice.Width = panelPanelZaGV.Width;
+                panelMeniDashboard.Width = 1090;
+                pictureBox2.Width = 1600;
+
             }
             else
             {
@@ -1000,6 +1008,7 @@ namespace RentACarOskar
                 dgv.Size = panelPanelZaGV.Size;
                 panelSaTabelom.Width = panelPanelZaGV.Width;
                 panelZaBunifuKartice.Width = panelPanelZaGV.Width;
+                
             }
         }
 

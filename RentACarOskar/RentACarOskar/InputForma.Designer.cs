@@ -61,7 +61,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 23);
             this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Nazad";
+            this.btnCancel.Text = "Odustani";
             this.btnCancel.UseSelectable = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
